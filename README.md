@@ -212,6 +212,7 @@ NeuroDraw es una startup tecnológica emergente dedicada al diseño y desarrollo
 | ![Valentino](imagen)    | Santiago Valentino Solis Chang    | Ingeniería de Software | Tengo 20 años y curso el 5to ciclo en la Universidad Peruana de Ciencias Aplicadas. En mi tiempo libre disfruto jugar videojuegos, practicar tenis y aprender sobre programación web. Soy responsable, comprometido y capaz de trabajar en equipo.          |
 | ![Miguel](imagen)  | Miguel Angel Vila Guillen         | Ingeniería de Software | Tengo 21 años y estudio el 6to ciclo en la Universidad Peruana de Ciencias Aplicadas. Me gusta jugar videojuegos, tocar la guitarra y el fútbol. Me considero capaz de trabajar en equipo y aspiro a ser un profesional competente.                         |
 | ![Diego](assets/cap1/pfp-team/diegorequena1.jfif)  | Diego Gabriel Requena Gutiérrez   | Ingeniería de Software | Tengo 19 años y curso el 5to ciclo en la Universidad Peruana de Ciencias Aplicadas. Soy una persona comprometida con mis objetivos, busco optimizar mi rendimiento y mantener un equilibrio entre la excelencia y una vida saludable.                       |
+| ![Sebastián](assets/cap1/pfp-team/sebastian.jpg)  | Sebastián De Las Casas Latour   | Ingeniería de Software | Tengo 22 años y curso el 8vo ciclo en la Universidad Peruana de Ciencias Aplicadas. Busco desarrollar mis competencias en análisis, diseño y construcción de soluciones de software, aplicando los conocimientos adquiridos durante mi formación académica.                       |
 
 
 ## 1.2. Solution Profile
@@ -413,6 +414,25 @@ Preguntas:
 ### 2.2.2. Registro de entrevistas
 
 **Segmento 1: .**
+
+### Entrevista 1
+
+| Campo | Detalle |
+|---|---|
+| Nombres y apellidos | Johan Karl Bottger Salazar |
+| Segmento objetivo | Residente de Smart home  |
+| Cargo / actividad | Estudiante |
+| Duración | 5:56 |
+| URL del video | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202213553_upc_edu_pe/IQA4QWZM8EVETJ0W6LLa3DucAbWG09Fp3dRKpKRR39FSXmE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dQe3tg) |
+
+<p align="center">
+  <img src="assets/images/chapter2/entrevista-segmento1-1.png" width="700">
+</p>
+
+**Resumen:**  
+Johan detalla como le resultaría cómodo y útil un sistema que se adapte a su vivienda para avisar y desbloquear en caso de emergencia sísmica.
+
+---
 
 ### 2.2.3. Análisis de entrevistas
 
