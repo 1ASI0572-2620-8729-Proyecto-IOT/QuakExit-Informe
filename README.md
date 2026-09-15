@@ -288,9 +288,15 @@ Las inmobiliarias desarrollan edificios multifamiliares modernos buscando ofrece
 
 ## 1.3. Segmentos objetivo
 
-#### Segmento objetivo #1:
+#### Segmento objetivo #1: Dueños de Smart Homes
 
-#### Segmento objetivo #2:
+Este segmento representa a los usuarios que adquirirán el sistema de forma individual para implementarlo en sus viviendas actuales. Hombres y mujeres de 30 a 55 años de edad, pertenecientes a los niveles socioeconómicos A y B. Generalmente son propietarios de la vivienda o arrendatarios de largo plazo, muchos de ellos con familias constituidas a su cargo. Tienen un perfil tecnológico en el cual no tienen miedo de incorporar nuevas tecnologías si estas demuestran mejorar su calidad de vida o brindarles tranquilidad.
+
+#### Segmento objetivo #2: Inmobiliarias y Constructores
+
+Este segmento permite la escalabilidad del proyecto al integrar el hardware de QuakExit directamente en los planos eléctricos de nuevos proyectos multifamiliares. Son empresas competitivas que buscan constantemente factores diferenciadores que aumenten el valor por metro cuadrado de sus departamentos y aceleren el proceso de venta. Compran tecnología por volumen (Economía de Escala). Buscan proveedores tecnológicos que ofrezcan integración sencilla desde la fase de construcción y que cumplan con las normativas de seguridad de INDECI. Les interesa ofrecer a sus clientes finales un concepto de "Seguridad Sísmica Inteligente" lista para usar desde la entrega de llaves.
+
+---
 
 <div style="page-break-after: always;"></div>
 
