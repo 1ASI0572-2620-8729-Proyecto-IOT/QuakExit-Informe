@@ -238,6 +238,21 @@ Las inmobiliarias desarrollan edificios multifamiliares modernos buscando ofrece
 
 #### 1.2.2.2. Lean UX Assumptions
 
+**Business Assumptions (Suposiciones de Negocio)**
+  - Creemos que los dueños de Smart Homes preferirán adquirir QuakExit mediante un modelo de pago único que cubra el dispositivo y la instalación, en lugar de un modelo de suscripción mensual recurrente.
+  - Creemos que las empresas inmobiliarias y constructoras percibirán un alto valor comercial en integrar la tecnología de QuakExit desde la fase de construcción para ofrecer departamentos con "seguridad sísmica inteligente" como ventaja competitiva.
+  - Creemos que nuestro mercado objetivo inicial se encuentra en distritos de alta urbanización vertical en Lima (ej. Santiago de Surco), donde existe una mayor adopción tecnológica y preocupación por la seguridad en edificios.
+
+**User Assumptions (Suposiciones del Usuario)**
+  - Asumimos que el usuario priorizará su evacuación inmediata sobre el riesgo de intrusión física durante un evento sísmico de gran magnitud (es decir, aceptan que la puerta se desbloquee para poder huir).
+  - Asumimos que los usuarios desconfiarían de un sistema que dependa puramente de la red eléctrica comercial, por lo que requerirán evidencia de que el dispositivo cuenta con autonomía energética (batería de respaldo) para sentirse seguros.
+  - Asumimos que el usuario principal en un entorno B2C(negocio a consumidor) tiene conocimientos básicos de uso de aplicaciones móviles para recibir notificaciones y gestionar el estado del dispositivo.
+
+**Technical Assumptions (Suposiciones Técnicas)**
+  - Asumimos que las infraestructuras de red convencionales (Wi-Fi/Datos móviles) colapsarán durante el sismo, por lo que la acción crítica (el desbloqueo de cerraduras y activación de alarmas locales) debe ejecutarse mediante Edge Computing, operando de forma 100% offline en el microcontrolador.
+  - Asumimos que el hardware puede mantenerse operando bajo un esquema de eficiencia energética (modos Deep Sleep) para prolongar la vida útil de la batería de respaldo sin comprometer la sensibilidad de detección.
+  - Asumimos que para el MVP (maqueta universitaria), podremos simular estos escenarios críticos utilizando un microcontrolador (ej. ESP32/Arduino) y actuadores básicos (servomotores o relés para chapas electromagnéticas) que representen las puertas de la vivienda.
+
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
 #### 1.2.2.4. Lean UX Canvas
