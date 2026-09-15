@@ -299,6 +299,30 @@ En este apartado analizaremos las posibles competencias para **QuakExit**, evalu
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
+**Análisis FODA del proyecto: "QuakExit"**
+
+**F (Fortalezas):** Integración física e inmediata de hardware IoT (desbloqueo automático de cerraduras electromagnéticas y activación de iluminación de emergencia) ejecutada en los primeros segundos del sismo, eliminando las barreras físicas en las rutas de evacuación residenciales.
+
+**O (Oportunidades):** Alta vulnerabilidad en Lima y Callao ante el inminente riesgo sísmico de magnitud 8.8, sumado a la falta de respuesta física automatizada en los sistemas de alerta tradicionales (SISMATE/SASPe) y al alto porcentaje (~70%) de viviendas informales con rutas de salida complejas.
+
+**D (Debilidades):** Requerimiento de instalación física de hardware en los inmuebles y dependencia de respaldo eléctrico local (baterías de emergencia) ante cortes inmediatos de energía provocados por el terremoto.
+
+**A (Amenazas):** Resistencia inicial o desconfianza de los usuarios ante la automatización de accesos por temor a vulneraciones de seguridad patrimonial (robos), sumado a la eventual incursión de marcas consolidadas de domótica en el sector de gestión de desastres.
+
+---
+
+Para aprovechar las fortalezas y oportunidades de **QuakExit**, y al mismo tiempo mitigar sus debilidades y contrarrestar las amenazas del entorno competitivo, se establecen las siguientes estrategias y tácticas:
+
+● **Integración con alertas gubernamentales:** Desarrollar módulos de software que sincronicen las señales de alerta masiva de SISMATE/SASPe vía APIs/Webhooks como gatilladores secundarios, garantizando una acción física instantánea en la vivienda.
+
+● **Sistemas de hardware redundante y procesamiento local:** Diseñar el sistema con alimentación ininterrumpida (baterías de respaldo) y procesamiento *Edge Computing* para asegurar que las cerraduras y luces funcionen sin depender de conexión a internet o energía eléctrica durante el evento telúrico.
+
+● **Certificación y protocolos de seguridad física (fail-safe):** Implementar mecanismos mecánicos y electrónicos de liberación automática ante fallos de energía, asegurando ante los usuarios que el sistema anti-robos no comprometa la evacuación en situaciones de emergencia.
+
+● **Alianzas estratégicas con el sector inmobiliario y de seguros:** Comercializar paquetes de instalación prefabricados para proyectos de vivienda multifamiliar y gestionar reducciones en las primas de seguros de hogar para inmuebles equipados con QuakExit.
+
+● **Pruebas de evacuación y demostraciones prácticas:** Realizar simulaciones en vivo que certifiquen la reducción del tiempo de evacuación en la oscuridad, evidenciando el impacto directo del sistema frente al silencio sísmico de la costa central.
+
 ## 2.2. Entrevistas
 
 ### 2.2.1. Diseño de entrevistas
