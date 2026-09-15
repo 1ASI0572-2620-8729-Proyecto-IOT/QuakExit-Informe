@@ -255,6 +255,25 @@ Las inmobiliarias desarrollan edificios multifamiliares modernos buscando ofrece
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
+**Hypothesis Statement 01: Latencia de Evacuación**
+Creemos que facilitaremos la evacuación inmediata y reduciremos el pánico de los usuarios si automatizamos el desbloqueo de las vías de escape. Lo sabremos cuando las pruebas de estrés en nuestra maqueta funcional demuestren que el microcontrolador y el actuador logran abrir la puerta en un tiempo menor a 5 segundos tras la activación del modo de emergencia.
+
+**Hypothesis Statement 02: Resiliencia del Sistema**
+Creemos que generaremos total confianza en la fiabilidad del sistema si garantizamos su funcionamiento ante los cortes de servicios básicos que ocurren durante un sismo. Lo sabremos cuando el 100% de las pruebas de activación en la maqueta resulten exitosas simulando una desconexión total de la red Wi-Fi y operando exclusivamente con la batería de respaldo.
+
+**Hypothesis Statement 03: Alertas y Notificaciones**
+Creemos que el usuario percibirá un alto valor de seguridad si está informado en tiempo real sobre el estado de su vivienda, incluso si no se encuentra en ella. Lo sabremos cuando el sistema logre enviar la notificación de "Modo Emergencia Activado" al celular del usuario inmediatamente después de procesar la detección del sismo (siempre que la red de internet siga disponible en los primeros segundos del evento).
+
+**Hypothesis Statement 04: Aceptación de Mercado**
+Creemos que el mercado residencial e inmobiliario está dispuesto a invertir en prevención automatizada. Lo sabremos cuando alcancemos las siguientes métricas en nuestras entrevistas de validación:
+
+  - Al menos 8 de cada 10 personas (80%) afirmen estar dispuestos a adquirir e instalar la solución en sus hogares.
+
+  - Obtengamos una respuesta positiva o intención de compra teórica por parte de representantes de al menos una firma inmobiliaria.
+
+**Hypothesis Statement 05: Eficiencia Energética**
+Creemos que el dispositivo será viable para su implementación a largo plazo si no requiere intervención constante del usuario para cargar su batería. Lo sabremos cuando demostremos mediante cálculos técnicos que el uso de modos de bajo consumo (Deep Sleep) en el microcontrolador permite una autonomía prolongada utilizando únicamente el módulo de energía de respaldo.
+
 #### 1.2.2.4. Lean UX Canvas
 
 ## 1.3. Segmentos objetivo
