@@ -362,9 +362,53 @@ Para aprovechar las fortalezas y oportunidades de **QuakExit**, y al mismo tiemp
 
 ### 2.2.1. Diseño de entrevistas
 
-**Segmento: .**
+**Segmento 1: Dueños de Smart Homes**
 
-**Segmento: .**
+Para evaluar las necesidades, hábitos de seguridad y percepciones de riesgo ante eventos sísmicos en el hogar, hemos desarrollado una serie de preguntas enfocadas en comprender la experiencia de los propietarios o arrendatarios de viviendas. El objetivo es identificar cómo reaccionan ante situaciones de emergencia, qué mecanismos de seguridad física poseen actualmente y su disposición hacia la automatización IoT para la evacuación inmediata en sus hogares.
+
+Introducción:
+
+Buenos días/tardes, soy [...], representante del proyecto **QuakExit**. Estamos desarrollando una solución tecnológica orientada a la seguridad residencial que automatiza el desbloqueo de accesos y la iluminación de emergencia durante sismos. Nos gustaría conocer tu experiencia sobre la seguridad en tu vivienda y cómo gestionas la preparación ante desastres naturales. Tu perspectiva será fundamental para diseñar un sistema adaptado a las necesidades reales de tu hogar.
+
+Preguntas:
+
+1. Para comenzar, ¿podrías presentarte brevemente e indicarnos en qué tipo de vivienda resides y con cuántas personas convives?
+2. Ante la ocurrencia de un temblor o sismo nocturno, ¿cuáles son las primeras acciones que realizas junto a tu familia?
+3. ¿Cuáles son los principales obstáculos o dificultades que percibes al momento de intentar evacuar tu vivienda durante una emergencia?
+4. ¿Tu vivienda cuenta actualmente con cerraduras electrónicas, sistemas de domótica, alarmas anti-robos o iluminación de emergencia? ¿Cómo ha sido tu experiencia utilizándolos?
+5. Durante un evento sísmico, ¿has experimentado fallas de luz o bloqueos en puertas que hayan dificultado la salida? ¿Cómo resolviste la situación?
+6. ¿Qué tan seguro te sientes con los sistemas tradicionales de alerta sísmica (como SISMATE o alertas en el celular) en cuanto a su capacidad para facilitarte la evacuación física?
+7. Si existiera un sistema IoT que detectara el sismo y automáticamente desbloqueara las puertas y encendiera luces de ruta hacia la salida, ¿qué valor aportaría a la seguridad de tu hogar?
+8. ¿Qué temores o dudas te generaría delegar el desbloqueo de los accesos de tu casa a un sistema automatizado durante un sismo?
+9. ¿Qué características o respaldos técnicos (por ejemplo, baterías de emergencia o botones mecánicos de respaldo) considerarías indispensables para confiar en esta tecnología?
+10. ¿Estarías dispuesto a instalar un kit de automatización sísmica en tu vivienda actual? ¿Qué factores influirían en tu decisión de compra?
+
+---
+
+**Segmento 2: Inmobiliarias y Constructores**
+
+Para evaluar las oportunidades de escalabilidad e integración técnica de la solución en la etapa de edificación, se han diseñado preguntas orientadas a ejecutivos, arquitectos e ingenieros del sector inmobiliario y de construcción. Estas preguntas buscan entender cómo incorporan criterios de seguridad sísmica e innovación tecnológica en sus proyectos multifamiliares, así como los criterios normativos y económicos que consideran al evaluar nuevos proveedores de hardware IoT.
+
+Introducción:
+
+Buenos días/tardes, soy [...], representante del proyecto **QuakExit**. Estamos desarrollando una solución de automatización IoT enfocada en la evacuación sísmica residencial, diseñada para integrarse directamente desde la etapa de construcción en proyectos inmobiliarios. Nos interesa conocer la visión de su empresa respecto a la inclusión de tecnología de seguridad en edificaciones y los estándares que manejan para ofrecer un factor diferenciador a sus clientes. Agradecemos su tiempo y colaboración.
+
+Preguntas:
+
+1. Para empezar, ¿podría contarnos sobre su rol en la empresa y el tipo de proyectos inmobiliarios o residenciales que desarrollan habitualmente?
+2. ¿Qué tecnologías o elementos de diferenciación en seguridad e innovación suelen incorporar en sus proyectos para incrementar el valor por metro cuadrado?
+3. ¿Cómo abordan actualmente el cumplimiento de las normativas de evacuación y seguridad sísmica exigidas por INDECI y el Reglamento Nacional de Edificaciones?
+4. ¿Qué valor consideran que asigna el comprador final a las soluciones de "Seguridad Sísmica Inteligente" al momento de elegir un departamento?
+5. ¿Han considerado o implementado previamente sistemas domóticos centralizados en las áreas comunes o departamentos de sus entregas? ¿Cuál fue la respuesta del mercado?
+6. Al evaluar un nuevo proveedor de hardware IoT o infraestructura eléctrica para sus obras, ¿cuáles son los criterios clave (costo, facilidad de instalación, garantías, certificación) que determinan su elección?
+7. ¿Qué desafíos técnicos o logísticos identifican al momento de integrar un sistema de desbloqueo automático y luces de emergencia en los planos eléctricos de un edificio en plano o construcción?
+8. ¿Qué tipo de certificaciones, pruebas de carga o respaldos técnicos requerirían de un sistema como QuakExit para aprobar su instalación masiva en sus proyectos?
+9. ¿Bajo qué modalidad comercial (compra por volumen para todo el edificio o equipamiento opcional para el cliente) consideran más viable la adopción de este tipo de tecnología?
+10. ¿Estarían dispuestos a incluir este sistema como un estándar de seguridad en sus próximos lanzamientos inmobiliarios si demuestra acelerar la decisión de compra del cliente final?
+
+---
+
+
 
 ### 2.2.2. Registro de entrevistas
 
