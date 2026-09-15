@@ -231,24 +231,29 @@ Esta desconexión entre la alerta y la acción física obliga al usuario a depen
 #### 1.2.2.1. Lean UX Problem Statements
 
 **Problem Statement 1: Enfoque en el usuario final (Dueños de Smart Homes)**
+
 El mercado actual de dispositivos para Smart Homes se centra principalmente en el confort (iluminación, entretenimiento) y la seguridad anti-robos. Sin embargo, hemos observado que los usuarios residenciales carecen de automatización frente a desastres naturales. Durante un sismo de gran magnitud, los propios sistemas de seguridad de la vivienda (cerraduras mecánicas o electrónicas sin protocolo de emergencia) se convierten en obstáculos. Esto causa pánico, desorientación en la oscuridad y retrasos críticos en la evacuación debido a la búsqueda de llaves manuales. ¿Cómo podemos integrar un protocolo de emergencia IoT en los hogares inteligentes que reaccione instantáneamente ante la actividad sísmica, automatizando el desbloqueo de vías de escape y guiando al usuario hacia un entorno seguro de forma autónoma?
 
 **Problem Statement 2: Enfoque empresarial (Inmobiliarias y Constructoras)**
+
 Las inmobiliarias desarrollan edificios multifamiliares modernos buscando ofrecer ventajas competitivas basadas en tecnología y seguridad. Actualmente, los protocolos de emergencia estructurales se limitan a las áreas comunes (alarmas contra incendios, rociadores), pero no se integran con los accesos privados de cada departamento. Esto genera cuellos de botella severos, ya que la evacuación depende de que cada residente logre destrabar su puerta manualmente bajo estrés. ¿Cómo podemos ofrecer a las inmobiliarias una solución IoT escalable e integrable desde la construcción que garantice el desbloqueo simultáneo y coordinado de las rutas de evacuación en todo el edificio durante un sismo, agregando valor comercial a sus proyectos inmobiliarios?
 
 #### 1.2.2.2. Lean UX Assumptions
 
 **Business Assumptions (Suposiciones de Negocio)**
+
   - Creemos que los dueños de Smart Homes preferirán adquirir QuakExit mediante un modelo de pago único que cubra el dispositivo y la instalación, en lugar de un modelo de suscripción mensual recurrente.
   - Creemos que las empresas inmobiliarias y constructoras percibirán un alto valor comercial en integrar la tecnología de QuakExit desde la fase de construcción para ofrecer departamentos con "seguridad sísmica inteligente" como ventaja competitiva.
   - Creemos que nuestro mercado objetivo inicial se encuentra en distritos de alta urbanización vertical en Lima (ej. Santiago de Surco), donde existe una mayor adopción tecnológica y preocupación por la seguridad en edificios.
 
 **User Assumptions (Suposiciones del Usuario)**
+
   - Asumimos que el usuario priorizará su evacuación inmediata sobre el riesgo de intrusión física durante un evento sísmico de gran magnitud (es decir, aceptan que la puerta se desbloquee para poder huir).
   - Asumimos que los usuarios desconfiarían de un sistema que dependa puramente de la red eléctrica comercial, por lo que requerirán evidencia de que el dispositivo cuenta con autonomía energética (batería de respaldo) para sentirse seguros.
   - Asumimos que el usuario principal en un entorno B2C(negocio a consumidor) tiene conocimientos básicos de uso de aplicaciones móviles para recibir notificaciones y gestionar el estado del dispositivo.
 
 **Technical Assumptions (Suposiciones Técnicas)**
+
   - Asumimos que las infraestructuras de red convencionales (Wi-Fi/Datos móviles) colapsarán durante el sismo, por lo que la acción crítica (el desbloqueo de cerraduras y activación de alarmas locales) debe ejecutarse mediante Edge Computing, operando de forma 100% offline en el microcontrolador.
   - Asumimos que el hardware puede mantenerse operando bajo un esquema de eficiencia energética (modos Deep Sleep) para prolongar la vida útil de la batería de respaldo sin comprometer la sensibilidad de detección.
   - Asumimos que para el MVP (maqueta universitaria), podremos simular estos escenarios críticos utilizando un microcontrolador (ej. ESP32/Arduino) y actuadores básicos (servomotores o relés para chapas electromagnéticas) que representen las puertas de la vivienda.
@@ -256,23 +261,28 @@ Las inmobiliarias desarrollan edificios multifamiliares modernos buscando ofrece
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
 **Hypothesis Statement 01: Latencia de Evacuación**
-Creemos que facilitaremos la evacuación inmediata y reduciremos el pánico de los usuarios si automatizamos el desbloqueo de las vías de escape. Lo sabremos cuando las pruebas de estrés en nuestra maqueta funcional demuestren que el microcontrolador y el actuador logran abrir la puerta en un tiempo menor a 5 segundos tras la activación del modo de emergencia.
+
+**Creemos** que facilitaremos la evacuación inmediata y reduciremos el pánico de los usuarios si automatizamos el desbloqueo de las vías de escape. Lo **sabremos** **cuando** las pruebas de estrés en nuestra maqueta funcional demuestren que el microcontrolador y el actuador logran abrir la puerta en un tiempo menor a 5 segundos tras la activación del modo de emergencia.
 
 **Hypothesis Statement 02: Resiliencia del Sistema**
-Creemos que generaremos total confianza en la fiabilidad del sistema si garantizamos su funcionamiento ante los cortes de servicios básicos que ocurren durante un sismo. Lo sabremos cuando el 100% de las pruebas de activación en la maqueta resulten exitosas simulando una desconexión total de la red Wi-Fi y operando exclusivamente con la batería de respaldo.
+
+**Creemos** que generaremos total confianza en la fiabilidad del sistema si garantizamos su funcionamiento ante los cortes de servicios básicos que ocurren durante un sismo. **Lo sabremos** **cuando** el 100% de las pruebas de activación en la maqueta resulten exitosas simulando una desconexión total de la red Wi-Fi y operando exclusivamente con la batería de respaldo.
 
 **Hypothesis Statement 03: Alertas y Notificaciones**
-Creemos que el usuario percibirá un alto valor de seguridad si está informado en tiempo real sobre el estado de su vivienda, incluso si no se encuentra en ella. Lo sabremos cuando el sistema logre enviar la notificación de "Modo Emergencia Activado" al celular del usuario inmediatamente después de procesar la detección del sismo (siempre que la red de internet siga disponible en los primeros segundos del evento).
+
+**Creemos** que el usuario percibirá un alto valor de seguridad si está informado en tiempo real sobre el estado de su vivienda, incluso si no se encuentra en ella. **Lo sabremos cuando** el sistema logre enviar la notificación de "Modo Emergencia Activado" al celular del usuario inmediatamente después de procesar la detección del sismo (siempre que la red de internet siga disponible en los primeros segundos del evento).
 
 **Hypothesis Statement 04: Aceptación de Mercado**
-Creemos que el mercado residencial e inmobiliario está dispuesto a invertir en prevención automatizada. Lo sabremos cuando alcancemos las siguientes métricas en nuestras entrevistas de validación:
+
+**Creemos** que el mercado residencial e inmobiliario está dispuesto a invertir en prevención automatizada. **Lo sabremos cuando** alcancemos las siguientes métricas en nuestras entrevistas de validación:
 
   - Al menos 8 de cada 10 personas (80%) afirmen estar dispuestos a adquirir e instalar la solución en sus hogares.
 
   - Obtengamos una respuesta positiva o intención de compra teórica por parte de representantes de al menos una firma inmobiliaria.
 
 **Hypothesis Statement 05: Eficiencia Energética**
-Creemos que el dispositivo será viable para su implementación a largo plazo si no requiere intervención constante del usuario para cargar su batería. Lo sabremos cuando demostremos mediante cálculos técnicos que el uso de modos de bajo consumo (Deep Sleep) en el microcontrolador permite una autonomía prolongada utilizando únicamente el módulo de energía de respaldo.
+
+**Creemos** que el dispositivo será viable para su implementación a largo plazo si no requiere intervención constante del usuario para cargar su batería. **Lo sabremos cuando** demostremos mediante cálculos técnicos que el uso de modos de bajo consumo (Deep Sleep) en el microcontrolador permite una autonomía prolongada utilizando únicamente el módulo de energía de respaldo.
 
 #### 1.2.2.4. Lean UX Canvas
 
