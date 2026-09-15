@@ -218,6 +218,14 @@ NeuroDraw es una startup tecnológica emergente dedicada al diseño y desarrollo
 
 ### 1.2.1. Antecedentes y problemática
 
+El Perú se encuentra ubicado en el denominado Cinturón de Fuego del Pacífico, una de las zonas con mayor actividad telúrica del mundo. Específicamente para la ciudad de Lima y Callao, el Instituto Geofísico del Perú (IGP) y el Instituto Nacional de Defensa Civil (INDECI) han advertido sobre un "silencio sísmico" de aproximadamente 300 años en la costa central. Esta acumulación prolongada de energía proyecta la ocurrencia inminente de un terremoto de magnitud 8.8.
+
+Según estimaciones recientes de INDECI, un evento de esta naturaleza afectaría a cerca de 7 millones de personas. El riesgo se agrava al considerar que, según expertos, aproximadamente el 70% de las viviendas en Lima presentan altos niveles de vulnerabilidad estructural debido a la autoconstrucción, uso de suelos inestables y falta de supervisión técnica. En este contexto de inminente riesgo estructural, la capacidad de evacuación inmediata en los primeros segundos del sismo es el factor determinante para preservar la vida de los ocupantes.
+
+Las actuales alertas tempranas de sismos (como el sistema SISMATE o sensores sísmicos convencionales) cumplen un rol exclusivamente informativo. No están vinculadas a un ecosistema de respuesta física (Internet of Things) que accione mecanismos de salvaguarda, como el desbloqueo automático de chapas electromagnéticas o el encendido de señalización de emergencia.
+
+Esta desconexión entre la alerta y la acción física obliga al usuario a depender de su propia respuesta manual bajo condiciones de visibilidad nula y estrés extremo, convirtiendo el propio sistema de seguridad anti-robos de la vivienda en una trampa mortal durante un desastre natural.
+
 ### 1.2.2. Lean UX Process
 
 #### 1.2.2.1. Lean UX Problem Statements
