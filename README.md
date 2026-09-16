@@ -420,24 +420,101 @@ Preguntas:
 
 ### 2.2.2. Registro de entrevistas
 
-**Segmento 1: .**
+**Segmento 1: Dueños de Smart Homes**
 
-### Entrevista 1
+Entrevista N°1
 
-| Campo | Detalle |
-|---|---|
-| Nombres y apellidos | Johan Karl Bottger Salazar |
-| Segmento objetivo | Residente de Smart home  |
-| Cargo / actividad | Estudiante |
-| Duración | 5:56 |
-| URL del video | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202213553_upc_edu_pe/IQA4QWZM8EVETJ0W6LLa3DucAbWG09Fp3dRKpKRR39FSXmE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dQe3tg) |
+● Nombre: Johan Karl Bottger Salazar
+
+● Sexo: Masculino.
+
+● Edad: 21.
+
+● Estado Civil: Soltero.
+
+● Labor: Estudiante.
+
+Detalles de la entrevista:
+
+● Duración: 05:56
+
+[● Link: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202213553_upc_edu_pe/IQA4QWZM8EVETJ0W6LLa3DucAbWG09Fp3dRKpKRR39FSXmE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dQe3tg](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202213553_upc_edu_pe/IQA4QWZM8EVETJ0W6LLa3DucAbWG09Fp3dRKpKRR39FSXmE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dQe3tg)
 
 <p align="center">
-  <img src="assets/images/chapter2/entrevista-segmento1-1.png" width="700">
+  <img src="assets/images/cap1/images/entrevistas/entrevista-segmento1-1.png" width="700">
 </p>
 
-**Resumen:**  
-Johan detalla como le resultaría cómodo y útil un sistema que se adapte a su vivienda para avisar y desbloquear en caso de emergencia sísmica.
+Resumen de los puntos clave en la entrevista:
+
+La entrevista con Johan destaca su perspectiva como joven estudiante residente en una vivienda con elementos tecnológicos. Durante la conversación, Johan detalla cómo le resultaría sumamente cómodo y útil contar con un sistema automatizado que se adapte a su hogar para emitir avisos y desbloquear las puertas de manera inmediata en caso de una emergencia sísmica. Al vivir en un entorno moderno, valora que una solución como QuakExit ofrezca una respuesta física rápida (desbloqueo de accesos) que elimine los obstáculos manuales y facilite la evacuación, brindándole mayor tranquilidad frente al riesgo de quedar encerrado.
+
+Entrevista N°3
+
+● Nombre: Veronica Geraldine Candela Picon.
+
+● Sexo: Femenino.
+
+● Edad: 24 años.
+
+● Estado Civil: Soltera.
+
+● Labor: Arquitecta de Interiores.
+
+Detalles de la entrevista:
+
+● Duración: --:--
+
+[● Link: https://drive.google.com/file/d/10gpZrHKXRZATb-VCJ6RAm-Zu81CONRbT/view?usp=sharing](https://drive.google.com/file/d/10gpZrHKXRZATb-VCJ6RAm-Zu81CONRbT/view?usp=sharing)
+
+Resumen de los puntos clave en la entrevista:
+
+La entrevista con Lucía revela el temor real de los usuarios jóvenes que viven solos en departamentos modernos. Ella cuenta con una cerradura electrónica en su puerta principal y menciona que, durante un corte de luz reciente, tuvo problemas para abrir la puerta manualmente en la oscuridad. Ve un gran valor en QuakExit, ya que prioriza su capacidad de evacuación por encima del riesgo de robos durante un sismo. Destaca que la autonomía con batería de respaldo es el factor más crítico para que ella confíe en el sistema y decida comprarlo.
+
+**Segmento 2: Inmobiliarias y Constructores**
+
+Entrevista N°3
+
+● Nombre: Mateo Alejandro Vargas Silva.
+
+● Sexo: Masculino.
+
+● Edad: 25 años.
+
+● Estado Civil: Soltero.
+
+● Labor: Ingeniero Civil - Supervisor de Obra.
+
+Detalles de la entrevista:
+
+● Duración: --:--
+
+[● Link: https://drive.google.com/file/d/10gpZrHKXRZATb-VCJ6RAm-Zu81CONRbT/view?usp=sharing](https://drive.google.com/file/d/10gpZrHKXRZATb-VCJ6RAm-Zu81CONRbT/view?usp=sharing)
+
+Resumen de los puntos clave en la entrevista:
+
+Mateo trabaja supervisando proyectos multifamiliares y confirma que las inmobiliarias buscan constantemente tecnologías (como domótica básica) para aumentar el valor por metro cuadrado de los departamentos. Señala que actualmente solo se enfocan en las normativas básicas de áreas comunes, pero no en las rutas de escape privadas de cada departamento. Considera que QuakExit sería un excelente diferenciador comercial ("Seguridad Sísmica Inteligente"), siempre y cuando el sistema cuente con las certificaciones necesarias de INDECI y sea fácil de integrar en los planos eléctricos desde la etapa de construcción.
+
+Entrevista N°4
+
+● Nombre: Ariana Valentina Robles Huamani.
+
+● Sexo: Femenino.
+
+● Edad: 22.
+
+● Estado Civil: Soltera.
+
+● Labor: Asistente de Proyectos Inmobiliarios.
+
+Detalles de la entrevista:
+
+● Duración: --:--
+
+[● Link: https://drive.google.com/file/d/1SRe3Ilrde37SMS8YGALvpk9OqU4jpwh0/view?usp=sharing](https://drive.google.com/file/d/1SRe3Ilrde37SMS8YGALvpk9OqU4jpwh0/view?usp=sharing)
+
+Resumen de los puntos clave en la entrevista:
+
+Valeria asiste en la fase de diseño y planificación de nuevos edificios. Resalta la importancia estética de las soluciones tecnológicas; para que QuakExit sea adoptado por su empresa, los dispositivos deben ser minimalistas y no afectar el diseño de interiores. Confirma que la seguridad sísmica es una pregunta frecuente de los compradores finales. Sugiere que el modelo de negocio ideal para ellos sería adquirir los kits de QuakExit por lotes grandes durante la fase final de acabados, incluyéndolos como un "upgrade" opcional o un estándar en proyectos premium.
 
 ---
 
