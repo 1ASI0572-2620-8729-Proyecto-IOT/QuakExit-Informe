@@ -288,6 +288,12 @@ Las inmobiliarias desarrollan edificios multifamiliares modernos buscando ofrece
 
 #### 1.2.2.4. Lean UX Canvas
 
+Lean UX Canvas es una de las herramientas que hemos utilizado para comprender a nuestros posibles usuarios y sus necesidades. Esta es usada en el campo del diseño centrado en el usuario y la metodología Lean con la intención de desarrollar productos de forma eficientes y práctica para los usuarios. A su vez, esta puede ser utilizada por equipos multidisciplinarios para que colaboración de forma ordenada dentro un marco estructurado.
+
+<div>
+  <p align="center"><img src="assets/cap1/images/LeanUx/leanux_canvas.png" alt="Canvas" width="700px" /></p>
+</div>
+
 ## 1.3. Segmentos objetivo
 
 #### Segmento objetivo #1: Dueños de Smart Homes
