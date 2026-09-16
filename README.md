@@ -520,11 +520,49 @@ Valeria asiste en la fase de diseño y planificación de nuevos edificios. Resal
 
 ### 2.2.3. Análisis de entrevistas
 
-**Segmento 1: .**
+**Segmento 1: Dueños de Smart Homes**
 
-**Segmento 2: .**
+Hallazgos:
+
+● Existe un temor real y fundamentado frente a los cortes de luz durante un sismo, los cuales pueden trabar cerraduras electrónicas o mecánicas, dificultando la salida en la oscuridad.
+
+● Los usuarios priorizan su integridad física y la capacidad de evacuar rápidamente por encima de los riesgos de intrusión o robos durante una emergencia.
+
+● La principal condición técnica para que los usuarios confíen en el sistema es que cuente con autonomía energética (batería de respaldo) y no dependa de la red de internet o eléctrica del edificio.
+
+● Valoran altamente que el sistema elimine los obstáculos físicos de manera automática (manos libres) y brinde iluminación de emergencia, lo que reduce el pánico y la desorientación.
+
+● Muestran una alta disposición de compra si se les demuestra mediante pruebas que el sistema reacciona de forma inmediata y confiable.
+
+
+Conclusión:
+
+Los dueños y residentes de Smart Homes, especialmente aquellos que viven en departamentos o edificios multifamiliares, reconocen una vulnerabilidad crítica en sus sistemas de seguridad y accesos actuales ante desastres naturales. El miedo a quedar atrapados en la oscuridad por fallas eléctricas es latente. Por ello, están muy dispuestos a adoptar tecnologías como QuakExit, siempre y cuando estas garanticen una operatividad 100% offline e independiente mediante baterías de respaldo. Para este segmento, la tranquilidad de tener una ruta de evacuación asegurada, automática e iluminada en los primeros segundos de un sismo justifica plenamente la inversión, priorizando la vida sobre la protección patrimonial durante el evento.
+
+**Segmento 2: Inmobiliarias y Constructores**
+
+Hallazgos:
+
+● Las empresas inmobiliarias buscan constantemente integrar nuevas tecnologías (como "Smart Apartments") para aumentar el valor por metro cuadrado y ofrecer factores diferenciadores frente a la competencia.
+
+● Actualmente, la prevención sísmica y el cumplimiento de normativas (INDECI) se limitan estrictamente a las áreas comunes, dejando la responsabilidad de la evacuación de la puerta hacia adentro al cliente final.
+
+● El concepto de "Seguridad Sísmica Inteligente" es percibido como un excelente argumento de ventas, ya que responde a una preocupación real y frecuente de los compradores finales en Lima.
+
+● Los criterios decisivos para integrar un hardware a gran escala son: costo competitivo por volumen, facilidad de instalación en los planos eléctricos regulares, certificaciones formales de seguridad y un diseño estético/minimalista.
+
+● Consideran viable la comercialización del sistema ya sea como un estándar integrado en proyectos premium, o como un paquete de mejora opcional (upgrade) en las fases de acabados.
+
+
+Conclusión:
+
+El sector de inmobiliarias y constructoras representa una oportunidad clave de escalabilidad comercial (B2B) para QuakExit. Los profesionales de este segmento están muy abiertos a incorporar innovaciones IoT que agilicen la toma de decisión de sus clientes y mejoren la percepción de exclusividad y seguridad de sus proyectos. Sin embargo, para que el sistema sea adoptado masivamente desde la etapa de construcción, la solución no solo debe ser funcional, sino que debe superar barreras operativas: requiere certificaciones que eviten problemas municipales, debe integrarse sin encarecer excesivamente los costos de obra, y su diseño físico debe ser discreto para no afectar la arquitectura de interiores. Si cumple estos requisitos, QuakExit se posiciona como una potente ventaja competitiva en el mercado inmobiliario.
 
 ## 2.3. Needfinding
+
+Al recopilar toda la información de los segmentos objetivo y realizar las entrevistas se hará
+un análisis de estos mismos haciendo uso de User Persona, Task Matrix, Journey Mapping,
+Empathy Mapping y As-Is Scenario Mapping.
 
 ### 2.3.1. User Personas
 
