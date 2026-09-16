@@ -194,6 +194,27 @@
 
 ## Student Outcome
 
+## ABET – EAC - Student Outcome 4
+
+</div>
+
+**Criterio:** La capacidad de reconocer responsabilidades éticas y profesionales en situaciones de ingeniería y hacer juicios informados, que deben considerar el impacto de las soluciones de ingeniería en contextos globales, económicos, ambientales y sociales.
+
+En el siguiente cuadro se describen las acciones realizadas y enunciados de conclusiones por parte del equipo del proyecto **AniTec**, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 4 durante el **Primer Hito: AVANCE 1 - Sprint Review**.
+
+<br>
+
+| Criterio específico | Miembro del Equipo | Acciones realizadas (AV1) | Conclusiones |
+| :--- | :--- | :--- | :--- |
+| **4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software** | **Castro Picon, Manuel Fernando Joao** | Diseñó la arquitectura de software (*Domain-Driven Design*) y la base de datos garantizando la privacidad, seguridad y el manejo ético de la información de los ganaderos y veterinarios. | Se estableció un diseño arquitectónico y de persistencia de datos que cumple rigurosamente con los estándares éticos de seguridad de la información. |
+| | **Melgarejo Quiroz, Josep Eliu** | Ejecutó las entrevistas y el análisis de *Needfinding* asegurando el consentimiento informado y manteniendo un trato ético y respetuoso hacia los usuarios del sector agropecuario. | La elicitación de requerimientos se desarrolló bajo principios de ética profesional, logrando artefactos (*User Personas*, *Journey Maps*) veraces y empáticos. |
+| | **Baldeon Vivar, Santiago Armando** | Estableció las normativas de código (*Source Code Style Guide & Conventions*) y la gestión del repositorio, fomentando un entorno de desarrollo profesional, íntegro y colaborativo. | La configuración del entorno de trabajo (*Software Configuration Management*) refleja el alto compromiso del equipo con las buenas prácticas de la industria. |
+| **4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales** | **Castro Picon, Manuel Fernando Joao** | Analizó el impacto económico de la plataforma en el sector ganadero latinoamericano, detallando la optimización de recursos y costos dentro del *Solution Profile* y *Startup Profile*. | El perfilamiento de la startup demuestra un juicio informado sobre cómo AniTec impactará positivamente en el crecimiento económico del sector ganadero. |
+| | **Melgarejo Quiroz, Josep Eliu** | Evaluó el impacto social mediante el *Lean UX Process*, proyectando cómo la introducción de esta plataforma tecnológica ayudará a reducir la brecha digital en zonas rurales. | El diseño del producto integró una fuerte perspectiva de inclusión social, concibiendo aplicaciones accesibles y transformadoras para entornos rurales. |
+| | **Baldeon Vivar, Santiago Armando** | Consideró el impacto ambiental al planificar la infraestructura tecnológica (*Software Deployment Configuration*), priorizando servicios en la nube eficientes y escalables. | La estrategia de despliegue técnico evidencia responsabilidad medioambiental, apostando por arquitecturas modernas que optimizan el consumo de recursos. |
+
+<br>
+
 <div style="page-break-after: always;"></div>
 
 # Capítulo I: Introducción
