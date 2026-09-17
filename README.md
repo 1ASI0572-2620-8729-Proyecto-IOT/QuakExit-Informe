@@ -750,7 +750,24 @@ Este glosario define los términos clave que usamos en el proyecto para mantener
 | EP07     | Panel de Gestión B2B (Inmobiliarias) | US19  | Visualizar dashboard del edificio  | Como supervisor inmobiliario, quiero ver todos los dispositivos instalados en los departamentos desde un panel unificado.      | **Escenario 1: Panel cargado**<br>Dado que el supervisor ingresa a su cuenta B2B,<br>Cuando carga el dashboard,<br>Entonces visualiza el estado de todos los departamentos.<br><br>**Escenario 2: Sin permisos**<br>Dado que un residente intenta acceder al dashboard B2B,<br>Cuando ingresa a la URL,<br>Entonces el sistema deniega el acceso. |
 | EP07     | Panel de Gestión B2B (Inmobiliarias) | US20  | Configurar dispositivos por lotes  | Como instalador, quiero registrar múltiples dispositivos simultáneamente para no hacerlo uno por uno en una obra grande.       | **Escenario 1: Registro masivo**<br>Dado que el instalador sube un CSV con las MAC Address,<br>Cuando procesa el lote,<br>Entonces el sistema registra todos los equipos.<br><br>**Escenario 2: Error en CSV**<br>Dado que el archivo tiene datos corruptos,<br>Cuando intenta subirlo,<br>Entonces el sistema rechaza el archivo y marca el error. |
 
+---
+
 ## 3.2. Impact Mapping
+
+
+Impact Mapping - Segmento 1
+
+<div>
+  <p align="center"><img src="assets/md-images/impact_mapping/ImpactMapping_s1.png" alt="Impact mapping segmento 1" width="700px" /></p>
+</div>
+
+Impact Mapping - Segmento 2
+
+<div>
+  <p align="center"><img src="assets/md-images/impact_mapping/ImpactMapping_s2.png" alt="Impact mapping segmento 2" width="700px" /></p>
+</div>
+
+---
 
 ## 3.3. Product Backlog
 
