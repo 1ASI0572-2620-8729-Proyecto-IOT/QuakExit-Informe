@@ -842,8 +842,6 @@ A partir de los subdominios identificados durante el Event Storming y el Domain 
 
 Posteriormente se evaluaron diferentes alternativas de distribución de capacidades.
 
----
-
 ### Alternativa 1: Contextos Centralizados
 
 #### Descripción
@@ -875,8 +873,6 @@ Inicialmente se consideró concentrar la mayoría de las capacidades relacionada
 #### Conclusión
 
 Se descartó esta alternativa debido a que el Bounded Context de Gestión de Emergencias concentraba demasiadas responsabilidades críticas.
-
----
 
 ### Alternativa 2: Separación de la Coordinación de Evacuaciones
 
@@ -914,8 +910,6 @@ Se decidió extraer la capacidad de gestión de evacuaciones hacia un contexto i
 
 La separación permitió encapsular adecuadamente las reglas de negocio relacionadas con las evacuaciones, mejorando la claridad del modelo de dominio.
 
----
-
 ### Alternativa 3: Servicio Compartido de Notificaciones
 
 #### Pregunta de análisis
@@ -952,8 +946,6 @@ Crear un contexto independiente especializado en notificaciones.
 
 Se determinó que las notificaciones representan una capacidad transversal que debe mantenerse separada del núcleo del negocio.
 
----
-
 ### Alternativa 4: Aislamiento del Core Domain
 
 #### Pregunta de análisis
@@ -989,8 +981,6 @@ Las capacidades que generan mayor valor para QuakExit son:
 
 Esta alternativa fue considerada la más alineada con los principios de Domain-Driven Design.
 
----
-
 ### Context Mapping Seleccionado
 
 Después de evaluar las alternativas anteriores, se definió la siguiente estructura de Bounded Contexts:
@@ -1022,8 +1012,6 @@ Responsabilidades:
 - Detección de eventos físicos.
 - Publicación de eventos al sistema.
 
----
-
 #### Supporting Domains
 
 ##### Gestión de Usuarios
@@ -1050,11 +1038,9 @@ Responsabilidades:
 - Indicadores.
 - Historial de incidentes.
 
----
-
 ### Relaciones Entre Bounded Contexts
 
-#### 1. Gestión de Dispositivos IoT → Gestión de Emergencias
+#### 1. Gestión de Dispositivos IoT -> Gestión de Emergencias
 
 ##### Patrón DDD: Customer / Supplier
 
@@ -1066,9 +1052,7 @@ Responsabilidades:
 
 Los sensores generan eventos que son consumidos por Gestión de Emergencias para detectar situaciones de riesgo y activar protocolos de respuesta.
 
----
-
-#### 2. Gestión de Emergencias → Coordinación de Evacuación
+#### 2. Gestión de Emergencias -> Coordinación de Evacuación
 
 ##### Patrón DDD: Customer / Supplier
 
@@ -1080,9 +1064,7 @@ Los sensores generan eventos que son consumidos por Gestión de Emergencias para
 
 Solo cuando una emergencia es validada puede iniciarse el proceso de evacuación.
 
----
-
-#### 3. Gestión de Usuarios ↔ Coordinación de Evacuación
+#### 3. Gestión de Usuarios <-> Coordinación de Evacuación
 
 ##### Patrón DDD: Shared Kernel
 
@@ -1097,9 +1079,7 @@ Solo cuando una emergencia es validada puede iniciarse el proceso de evacuación
 
 Ambos contextos requieren mantener una representación común de los usuarios sin replicar completamente el modelo.
 
----
-
-#### 4. Gestión de Emergencias → Gestión de Notificaciones
+#### 4. Gestión de Emergencias -> Gestión de Notificaciones
 
 ##### Patrón DDD: Customer / Supplier
 
@@ -1111,9 +1091,7 @@ Ambos contextos requieren mantener una representación común de los usuarios si
 
 La lógica de envío de alertas se encuentra desacoplada de las reglas de negocio del dominio principal.
 
----
-
-#### 5. Gestión de Notificaciones → Servicios Externos
+#### 5. Gestión de Notificaciones -> Servicios Externos
 
 ##### Patrón DDD: Anti-Corruption Layer (ACL)
 
@@ -1123,8 +1101,7 @@ La capa ACL traduce el modelo interno de QuakExit hacia proveedores externos de 
 
 De esta manera cualquier cambio en proveedores externos no impacta directamente en el dominio.
 
-
-
+---
 
 ### 4.1.3. Software Architecture
 
