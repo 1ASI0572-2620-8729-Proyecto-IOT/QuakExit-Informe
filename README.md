@@ -194,6 +194,7 @@
 
 ## Student Outcome
 
+
 <div style="page-break-after: always;"></div>
 
 # Capítulo I: Introducción
@@ -209,7 +210,7 @@ NeuroDraw es una startup tecnológica emergente dedicada al diseño y desarrollo
 | Foto                                                    | Nombres y Apellidos               | Carrera                | Descripción                                                                                                                                                                                                                                                 |
 | ------------------------------------------------------- | --------------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ![Joao](imagen)    | Manuel Fernando Joao Castro Picón | Ingeniería de Software | Tengo 19 años y curso el 5to ciclo en la Universidad Peruana de Ciencias Aplicadas. Me gusta entrenar calistenia, escuchar música y jugar fútbol. Me considero responsable, adaptable al trabajo en equipo y con metas claras para ser un gran profesional. |
-| ![Valentino](imagen)    | Santiago Valentino Solis Chang    | Ingeniería de Software | Tengo 20 años y curso el 5to ciclo en la Universidad Peruana de Ciencias Aplicadas. En mi tiempo libre disfruto jugar videojuegos, practicar tenis y aprender sobre programación web. Soy responsable, comprometido y capaz de trabajar en equipo.          |
+| ![Valentino](assets/cap1/pfp-team/trevor_fb.jpg)    | Santiago Valentino Solis Chang    | Ingeniería de Software | Tengo 21 años y curso el 7mo ciclo en la Universidad Peruana de Ciencias Aplicadas. En mi tiempo libre disfruto jugar videojuegos, practicar tenis y aprender sobre programación web. Soy responsable, comprometido y capaz de trabajar en equipo.          |
 | ![Miguel](imagen)  | Miguel Angel Vila Guillen         | Ingeniería de Software | Tengo 21 años y estudio el 6to ciclo en la Universidad Peruana de Ciencias Aplicadas. Me gusta jugar videojuegos, tocar la guitarra y el fútbol. Me considero capaz de trabajar en equipo y aspiro a ser un profesional competente.                         |
 | ![Diego](assets/cap1/pfp-team/diegorequena1.jfif)  | Diego Gabriel Requena Gutiérrez   | Ingeniería de Software | Tengo 19 años y curso el 5to ciclo en la Universidad Peruana de Ciencias Aplicadas. Soy una persona comprometida con mis objetivos, busco optimizar mi rendimiento y mantener un equilibrio entre la excelencia y una vida saludable.                       |
 | ![Sebastián](assets/cap1/pfp-team/sebastian.jpg)  | Sebastián De Las Casas Latour   | Ingeniería de Software | Tengo 22 años y curso el 8vo ciclo en la Universidad Peruana de Ciencias Aplicadas. Busco desarrollar mis competencias en análisis, diseño y construcción de soluciones de software, aplicando los conocimientos adquiridos durante mi formación académica.                       |
@@ -286,6 +287,12 @@ Las inmobiliarias desarrollan edificios multifamiliares modernos buscando ofrece
 **Creemos** que el dispositivo será viable para su implementación a largo plazo si no requiere intervención constante del usuario para cargar su batería. **Lo sabremos cuando** demostremos mediante cálculos técnicos que el uso de modos de bajo consumo (Deep Sleep) en el microcontrolador permite una autonomía prolongada utilizando únicamente el módulo de energía de respaldo.
 
 #### 1.2.2.4. Lean UX Canvas
+
+Lean UX Canvas es una de las herramientas que hemos utilizado para comprender a nuestros posibles usuarios y sus necesidades. Esta es usada en el campo del diseño centrado en el usuario y la metodología Lean con la intención de desarrollar productos de forma eficientes y práctica para los usuarios. A su vez, esta puede ser utilizada por equipos multidisciplinarios para que colaboración de forma ordenada dentro un marco estructurado.
+
+<div>
+  <p align="center"><img src="assets/cap1/images/LeanUx/leanux_canvas.png" alt="Canvas" width="700px" /></p>
+</div>
 
 ## 1.3. Segmentos objetivo
 
@@ -413,46 +420,233 @@ Preguntas:
 
 ### 2.2.2. Registro de entrevistas
 
-**Segmento 1: .**
+**Segmento 1: Dueños de Smart Homes**
 
-### Entrevista 1
+Entrevista N°1
 
-| Campo | Detalle |
-|---|---|
-| Nombres y apellidos | Johan Karl Bottger Salazar |
-| Segmento objetivo | Residente de Smart home  |
-| Cargo / actividad | Estudiante |
-| Duración | 5:56 |
-| URL del video | [Ver video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202213553_upc_edu_pe/IQA4QWZM8EVETJ0W6LLa3DucAbWG09Fp3dRKpKRR39FSXmE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dQe3tg) |
+● Nombre: Johan Karl Bottger Salazar
+
+● Sexo: Masculino.
+
+● Edad: 21.
+
+● Estado Civil: Soltero.
+
+● Labor: Estudiante.
+
+Detalles de la entrevista:
+
+● Duración: 05:56
+
+[● Link: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202213553_upc_edu_pe/IQA4QWZM8EVETJ0W6LLa3DucAbWG09Fp3dRKpKRR39FSXmE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dQe3tg](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202213553_upc_edu_pe/IQA4QWZM8EVETJ0W6LLa3DucAbWG09Fp3dRKpKRR39FSXmE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dQe3tg)
 
 <p align="center">
-  <img src="assets/images/chapter2/entrevista-segmento1-1.png" width="700">
+  <img src="assets/cap2/image/entrevistas/entrevista-segemento1-1.png" width="700">
 </p>
 
-**Resumen:**  
-Johan detalla como le resultaría cómodo y útil un sistema que se adapte a su vivienda para avisar y desbloquear en caso de emergencia sísmica.
+Resumen de los puntos clave en la entrevista:
+
+La entrevista con Johan destaca su perspectiva como joven estudiante residente en una vivienda con elementos tecnológicos. Durante la conversación, Johan detalla cómo le resultaría sumamente cómodo y útil contar con un sistema automatizado que se adapte a su hogar para emitir avisos y desbloquear las puertas de manera inmediata en caso de una emergencia sísmica. Al vivir en un entorno moderno, valora que una solución como QuakExit ofrezca una respuesta física rápida (desbloqueo de accesos) que elimine los obstáculos manuales y facilite la evacuación, brindándole mayor tranquilidad frente al riesgo de quedar encerrado.
+
+Entrevista N°2
+
+● Nombre: Veronica Geraldine Candela Picon.
+
+● Sexo: Femenino.
+
+● Edad: 24 años.
+
+● Estado Civil: Soltera.
+
+● Labor: Arquitecta de Interiores.
+
+Detalles de la entrevista:
+
+● Duración: --:--
+
+[● Link: https://drive.google.com/file/d/10gpZrHKXRZATb-VCJ6RAm-Zu81CONRbT/view?usp=sharing](https://drive.google.com/file/d/10gpZrHKXRZATb-VCJ6RAm-Zu81CONRbT/view?usp=sharing)
+
+Resumen de los puntos clave en la entrevista:
+
+La entrevista con Lucía revela el temor real de los usuarios jóvenes que viven solos en departamentos modernos. Ella cuenta con una cerradura electrónica en su puerta principal y menciona que, durante un corte de luz reciente, tuvo problemas para abrir la puerta manualmente en la oscuridad. Ve un gran valor en QuakExit, ya que prioriza su capacidad de evacuación por encima del riesgo de robos durante un sismo. Destaca que la autonomía con batería de respaldo es el factor más crítico para que ella confíe en el sistema y decida comprarlo.
+
+**Segmento 2: Inmobiliarias y Constructores**
+
+Entrevista N°3
+
+● Nombre: Mateo Alejandro Vargas Silva.
+
+● Sexo: Masculino.
+
+● Edad: 25 años.
+
+● Estado Civil: Soltero.
+
+● Labor: Ingeniero Civil - Supervisor de Obra.
+
+Detalles de la entrevista:
+
+● Duración: --:--
+
+[● Link: https://drive.google.com/file/d/10gpZrHKXRZATb-VCJ6RAm-Zu81CONRbT/view?usp=sharing](https://drive.google.com/file/d/10gpZrHKXRZATb-VCJ6RAm-Zu81CONRbT/view?usp=sharing)
+
+Resumen de los puntos clave en la entrevista:
+
+Mateo trabaja supervisando proyectos multifamiliares y confirma que las inmobiliarias buscan constantemente tecnologías (como domótica básica) para aumentar el valor por metro cuadrado de los departamentos. Señala que actualmente solo se enfocan en las normativas básicas de áreas comunes, pero no en las rutas de escape privadas de cada departamento. Considera que QuakExit sería un excelente diferenciador comercial ("Seguridad Sísmica Inteligente"), siempre y cuando el sistema cuente con las certificaciones necesarias de INDECI y sea fácil de integrar en los planos eléctricos desde la etapa de construcción.
+
+Entrevista N°4
+
+● Nombre: Ariana Valentina Robles Huamani.
+
+● Sexo: Femenino.
+
+● Edad: 22.
+
+● Estado Civil: Soltera.
+
+● Labor: Asistente de Proyectos Inmobiliarios.
+
+Detalles de la entrevista:
+
+● Duración: --:--
+
+[● Link: https://drive.google.com/file/d/1SRe3Ilrde37SMS8YGALvpk9OqU4jpwh0/view?usp=sharing](https://drive.google.com/file/d/1SRe3Ilrde37SMS8YGALvpk9OqU4jpwh0/view?usp=sharing)
+
+Resumen de los puntos clave en la entrevista:
+
+Valeria asiste en la fase de diseño y planificación de nuevos edificios. Resalta la importancia estética de las soluciones tecnológicas; para que QuakExit sea adoptado por su empresa, los dispositivos deben ser minimalistas y no afectar el diseño de interiores. Confirma que la seguridad sísmica es una pregunta frecuente de los compradores finales. Sugiere que el modelo de negocio ideal para ellos sería adquirir los kits de QuakExit por lotes grandes durante la fase final de acabados, incluyéndolos como un "upgrade" opcional o un estándar en proyectos premium.
 
 ---
 
 ### 2.2.3. Análisis de entrevistas
 
-**Segmento 1: .**
+**Segmento 1: Dueños de Smart Homes**
 
-**Segmento 2: .**
+Hallazgos:
+
+● Existe un temor real y fundamentado frente a los cortes de luz durante un sismo, los cuales pueden trabar cerraduras electrónicas o mecánicas, dificultando la salida en la oscuridad.
+
+● Los usuarios priorizan su integridad física y la capacidad de evacuar rápidamente por encima de los riesgos de intrusión o robos durante una emergencia.
+
+● La principal condición técnica para que los usuarios confíen en el sistema es que cuente con autonomía energética (batería de respaldo) y no dependa de la red de internet o eléctrica del edificio.
+
+● Valoran altamente que el sistema elimine los obstáculos físicos de manera automática (manos libres) y brinde iluminación de emergencia, lo que reduce el pánico y la desorientación.
+
+● Muestran una alta disposición de compra si se les demuestra mediante pruebas que el sistema reacciona de forma inmediata y confiable.
+
+
+Conclusión:
+
+Los dueños y residentes de Smart Homes, especialmente aquellos que viven en departamentos o edificios multifamiliares, reconocen una vulnerabilidad crítica en sus sistemas de seguridad y accesos actuales ante desastres naturales. El miedo a quedar atrapados en la oscuridad por fallas eléctricas es latente. Por ello, están muy dispuestos a adoptar tecnologías como QuakExit, siempre y cuando estas garanticen una operatividad 100% offline e independiente mediante baterías de respaldo. Para este segmento, la tranquilidad de tener una ruta de evacuación asegurada, automática e iluminada en los primeros segundos de un sismo justifica plenamente la inversión, priorizando la vida sobre la protección patrimonial durante el evento.
+
+**Segmento 2: Inmobiliarias y Constructores**
+
+Hallazgos:
+
+● Las empresas inmobiliarias buscan constantemente integrar nuevas tecnologías (como "Smart Apartments") para aumentar el valor por metro cuadrado y ofrecer factores diferenciadores frente a la competencia.
+
+● Actualmente, la prevención sísmica y el cumplimiento de normativas (INDECI) se limitan estrictamente a las áreas comunes, dejando la responsabilidad de la evacuación de la puerta hacia adentro al cliente final.
+
+● El concepto de "Seguridad Sísmica Inteligente" es percibido como un excelente argumento de ventas, ya que responde a una preocupación real y frecuente de los compradores finales en Lima.
+
+● Los criterios decisivos para integrar un hardware a gran escala son: costo competitivo por volumen, facilidad de instalación en los planos eléctricos regulares, certificaciones formales de seguridad y un diseño estético/minimalista.
+
+● Consideran viable la comercialización del sistema ya sea como un estándar integrado en proyectos premium, o como un paquete de mejora opcional (upgrade) en las fases de acabados.
+
+
+Conclusión:
+
+El sector de inmobiliarias y constructoras representa una oportunidad clave de escalabilidad comercial (B2B) para QuakExit. Los profesionales de este segmento están muy abiertos a incorporar innovaciones IoT que agilicen la toma de decisión de sus clientes y mejoren la percepción de exclusividad y seguridad de sus proyectos. Sin embargo, para que el sistema sea adoptado masivamente desde la etapa de construcción, la solución no solo debe ser funcional, sino que debe superar barreras operativas: requiere certificaciones que eviten problemas municipales, debe integrarse sin encarecer excesivamente los costos de obra, y su diseño físico debe ser discreto para no afectar la arquitectura de interiores. Si cumple estos requisitos, QuakExit se posiciona como una potente ventaja competitiva en el mercado inmobiliario.
 
 ## 2.3. Needfinding
 
+Al recopilar toda la información de los segmentos objetivo y realizar las entrevistas se hará
+un análisis de estos mismos haciendo uso de User Persona, Task Matrix, Journey Mapping,
+Empathy Mapping y As-Is Scenario Mapping.
+
 ### 2.3.1. User Personas
 
+<div>
+  <p align="center"><img src="assets/cap2/image/user_persona/user_persona1.png" alt="User persona for Laura" width="700px" /></p>
+</div>
+
+<div>
+  <p align="center"><img src="assets/cap2/image/user_persona/user_persona2.png" alt="User persona for Andres" width="700px" /></p>
+</div>
+
 ### 2.3.2. User Task Matrix
+
+
+| Tareas                                                     | Verónica Candela |             | Mateo Vargas |             |
+| :--------------------------------------------------------- | :--------------- | :---------- | :----------- | :---------- |
+|                                                            | Frecuencia       | Importancia | Frecuencia   | Importancia |
+| **Verificar nivel de batería de respaldo y conexión IoT**  | Alta             | Alta        | Media        | Media       |
+| **Ejecutar pruebas de apertura automática (Simulacros)**   | Baja             | Alta        | Alta         | Alta        |
+| **Consultar documentación técnica y certificaciones**      | Baja             | Media       | Alta         | Alta        |
+| **Configurar notificaciones de alertas y estado del hogar**| Media            | Alta        | Baja         | Baja        |
+| **Integrar/Configurar dispositivos por lotes en proyectos**| Nula             | Nula        | Alta         | Alta        |
 
 ### 2.3.3. User Journey Mapping
 
 ### 2.3.4. Empathy Mapping
 
+<div>
+  <p align="center"><img src="assets/cap2/image/empathy_mapping/empathy_mapping1.png" alt="Empathy mapping part 1" width="700px" /></p>
+</div>
+
+<div>
+  <p align="center"><img src="assets/cap2/image/empathy_mapping/empathy_mapping2.png" alt="Empathy mapping part 2" width="700px" /></p>
+</div>
+
+<div>
+  <p align="center"><img src="assets/cap2/image/empathy_mapping/empathy_mapping3.png" alt="Empathy mapping part 3" width="700px" /></p>
+</div>
+
+<div>
+  <p align="center"><img src="assets/cap2/image/empathy_mapping/empathy_mapping4.png" alt="Empathy mapping part 4" width="700px" /></p>
+</div>
+
 ### 2.3.5. As-is Scenario Mapping
 
+**As-is Scenario Mapping de Verónica Candela (Segmento 1)**
+
+| Phases       | Verificar nivel de batería de respaldo y conexión IoT | Ejecutar pruebas de apertura automática (Simulacros) | Consultar documentación técnica y certificaciones | Configurar notificaciones de alertas y estado del hogar | Integrar/Configurar dispositivos por lotes en proyectos |
+| :----------- | :---------------------------------------------------- | :--------------------------------------------------- | :------------------------------------------------ | :------------------------------------------------------ | :------------------------------------------------------ |
+| **Doing**    | Revisa el estado de la batería desde la app móvil antes de ir a dormir. | Simula un corte de energía accionando el sistema para ver si la puerta se desbloquea. | Lee el manual rápido para entender cómo funciona el desbloqueo manual de emergencia. | Activa las alertas de simulacro y el estado del sistema en su celular. | Solicita soporte técnico para la instalación individual en su departamento. |
+| **Thinking** | Duda si la carga será suficiente en caso de que el corte de luz dure varios días. | Se pregunta si la puerta reaccionará igual de rápido durante un sismo real. | Evalúa si las instrucciones son demasiado complicadas para recordarlas durante el pánico. | Considera si el sonido de la notificación será lo suficientemente fuerte para despertarla. | Espera que el proceso de instalación no dañe la estética ni la pintura de su entrada. |
+| **Feeling**  | Siente alivio al visualizar que el sistema está cargado, activo y operando offline. | Experimenta tranquilidad al comprobar que el mecanismo electromagnético no se traba. | Se siente un poco abrumada por los términos técnicos, pero segura al entender el respaldo. | Muestra satisfacción al tener el control de su seguridad en la palma de su mano. | Siente impaciencia por tener el sistema listo y funcionando cuanto antes. |
+
+<br>
+
+**As-is Scenario Mapping de Mateo Vargas (Segmento 2)**
+
+| Phases       | Verificar nivel de batería de respaldo y conexión IoT | Ejecutar pruebas de apertura automática (Simulacros) | Consultar documentación técnica y certificaciones | Configurar notificaciones de alertas y estado del hogar | Integrar/Configurar dispositivos por lotes en proyectos |
+| :----------- | :---------------------------------------------------- | :--------------------------------------------------- | :------------------------------------------------ | :------------------------------------------------------ | :------------------------------------------------------ |
+| **Doing**    | Inspecciona los tableros eléctricos en obra para comprobar la conexión de los equipos. | Coordina con su equipo pruebas de evacuación activando los sensores en un piso piloto. | Revisa los certificados "fail-safe" de los dispositivos IoT para adjuntarlos al expediente. | Verifica que la caseta de vigilancia del edificio reciba las señales de cada departamento. | Programa la instalación masiva de hardware en los 40 departamentos del proyecto. |
+| **Thinking** | Calcula si la capacidad de la batería cumple con la normativa para edificios de gran altura. | Analiza si el tiempo de respuesta del sistema pasará las inspecciones de seguridad de INDECI. | Cuestiona si la municipalidad o los supervisores pondrán trabas con esta tecnología nueva. | Se pregunta cómo se gestionará el mantenimiento a largo plazo con la junta de propietarios. | Planifica la logística para que la instalación del cableado no retrase el cronograma de acabados. |
+| **Feeling**  | Siente responsabilidad por garantizar una infraestructura eléctrica impecable y segura. | Siente satisfacción cuando todas las puertas de la ruta de escape se liberan simultáneamente. | Experimenta confianza al tener toda la documentación legal, técnica y de garantías en regla. | Muestra optimismo al entregar un proyecto inmobiliario tecnológicamente avanzado. | Siente alivio al estandarizar un sistema de seguridad que justifica un mayor valor de venta. |
+
 ## 2.4. Ubiquitous Language
+
+Este glosario define los términos clave que usamos en el proyecto para mantener un lenguaje común entre el equipo de desarrollo de software, los ingenieros de hardware y los usuarios (residentes e inmobiliarias).
+
+| Término                            | Definición                                                                                                                                     |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Usuario Residente**              | Propietario o inquilino de la vivienda que utiliza la aplicación móvil para monitorear el sistema y realizar simulacros.                       |
+| **Cliente Inmobiliario**           | Empresa constructora o inmobiliaria (B2B) que adquiere e integra el hardware en proyectos multifamiliares desde la etapa de planos.            |
+| **QuakExit Hub (Microcontrolador)**| El dispositivo físico principal instalado en el hogar que procesa las señales de los sensores y controla los actuadores locales.               |
+| **Modo Emergencia**                | Estado crítico del sistema que se activa automáticamente al detectar un sismo, desencadenando la apertura de puertas y luces.                  |
+| **Sensor Sísmico (Acelerómetro)**  | Componente de hardware que mide las vibraciones y detecta las ondas sísmicas locales en tiempo real.                                           |
+| **Chapa Electromagnética**         | Cerradura electrónica instalada en la puerta de salida que el sistema libera (desbloquea) automáticamente durante un evento sísmico.           |
+| **Batería de Respaldo**            | Fuente de energía autónoma que garantiza el funcionamiento 100% offline del sistema ante cortes del suministro eléctrico.                      |
+| **Procesamiento Edge (Offline)**   | Capacidad del microcontrolador de analizar datos y tomar decisiones localmente, sin depender de una conexión Wi-Fi o servidores en la nube.    |
+| **Señal Externa (SISMATE)**        | Alerta temprana emitida por entidades gubernamentales que el sistema puede interceptar como un gatillador secundario de emergencia.            |
+| **Ruta de Evacuación**             | Trayecto físico dentro del inmueble que el sistema se encarga de liberar (abrir puertas) e iluminar (luces de emergencia) para el usuario.     |
+| **Simulacro (Prueba de Estrés)**   | Función de la aplicación móvil que permite al usuario o instalador accionar el sistema manualmente para verificar que la puerta se abra.       |
+| **Deep Sleep (Bajo consumo)**      | Modo de operación del microcontrolador diseñado para ahorrar energía y prolongar al máximo la autonomía de la batería de respaldo.             |
+| **Mecanismo Fail-safe**            | Protocolo de seguridad que garantiza que, ante un fallo catastrófico del equipo, la cerradura quede liberada para no atrapar al residente.     |
+| **Notificación de Estado**         | Mensaje enviado a la app del usuario informando sobre niveles de batería, estado de la conexión o activación del Modo Emergencia.              |
+| **Tablero de Control B2B**         | Interfaz web para que las inmobiliarias puedan gestionar, vincular y monitorear el estado de múltiples dispositivos instalados en un edificio. |
 
 <div style="page-break-after: always;"></div>
 
@@ -460,9 +654,163 @@ Johan detalla como le resultaría cómodo y útil un sistema que se adapte a su 
 
 ## 3.1. User Stories
 
+**Epic**
+
+| **EPIC ID** | **Nombre del Epic**                        | **Descripción**                                                                                                                                                                                                                  |
+| ----------- | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| EP01        | Registro y Configuración Inicial           | Como usuario nuevo, quiero registrarme, crear mi perfil de vivienda y vincular mi hardware QuakExit, para tener control inicial del sistema desde la aplicación.                                                                 |
+| EP02        | Gestión de Hardware y Actuadores           | Como usuario, quiero gestionar el estado de las cerraduras electromagnéticas y luces de emergencia, para asegurar que los componentes físicos estén listos para actuar.                                                          |
+| EP03        | Monitoreo de Energía y Autonomía           | Como usuario, quiero monitorear el nivel de batería de respaldo y detectar cortes de luz eléctrica, para garantizar que el sistema mantenga su operatividad 100% offline.                                                        |
+| EP04        | Detección Sísmica y Acción Inmediata       | Como usuario, quiero que el sistema detecte la actividad sísmica y ejecute el protocolo de apertura, para asegurar mi ruta de evacuación en los primeros segundos de la emergencia.                                              |
+| EP05        | Alertas, Eventos y Notificaciones          | Como usuario, quiero recibir alertas en tiempo real, visualizar el historial y configurar contactos de emergencia, para mantener informada a mi red de apoyo ante un sismo.                                                      |
+| EP06        | Simulacros y Pruebas de Evacuación         | Como residente, quiero ejecutar pruebas de estrés simuladas desde la aplicación, para verificar que el tiempo de respuesta del desbloqueo automático sea menor a 5 segundos.                                                     |
+| EP07        | Panel de Gestión B2B (Inmobiliarias)       | Como supervisor inmobiliario, quiero visualizar el estado de todos los dispositivos del edificio en un solo lugar y configurarlos por lotes, para agilizar la entrega de proyectos certificados a los clientes.                  |
+
+<br>
+
+**EP01 - Registro y Configuración Inicial**
+
+| User Story ID | Título                                  |
+| ------------: | --------------------------------------- |
+|          US01 | Registrar cuenta de usuario             |
+|          US02 | Configurar perfil de vivienda           |
+|          US03 | Vincular dispositivo QuakExit Hub       |
+
+**EP02 - Gestión de Hardware y Actuadores**
+
+| User Story ID | Título                                    |
+| ------------: | ----------------------------------------- |
+|          US04 | Verificar estado de conexión de cerraduras|
+|          US05 | Configurar luces de emergencia IoT        |
+|          US06 | Gestionar modo de bajo consumo            |
+
+**EP03 - Monitoreo de Energía y Autonomía**
+
+| User Story ID | Título                                    |
+| ------------: | ----------------------------------------- |
+|          US07 | Visualizar nivel de batería de respaldo   |
+|          US08 | Recibir alertas de batería baja           |
+|          US09 | Detectar corte de fluido eléctrico        |
+
+**EP04 - Detección Sísmica y Acción Inmediata**
+
+| User Story ID | Título                                    |
+| ------------: | ----------------------------------------- |
+|          US10 | Ajustar sensibilidad del sensor sísmico   |
+|          US11 | Ejecutar protocolo de desbloqueo          |
+|          US12 | Activar mecanismo mecánico fail-safe      |
+
+**EP05 - Alertas, Eventos y Notificaciones**
+
+| User Story ID | Título                                     |
+| ------------: | ------------------------------------------ |
+|          US13 | Notificación de Modo Emergencia activado   |
+|          US14 | Visualizar historial de eventos sísmicos   |
+|          US15 | Configurar contactos de emergencia         |
+
+**EP06 - Simulacros y Pruebas de Evacuación**
+
+| User Story ID | Título                                  |
+| ------------: | --------------------------------------- |
+|          US16 | Iniciar simulacro de evacuación manual  |
+|          US17 | Programar simulacros automáticos        |
+|          US18 | Generar reporte de tiempo de respuesta  |
+
+**EP07 - Panel de Gestión B2B (Inmobiliarias)**
+
+| User Story ID | Título                               |
+| ------------: | ------------------------------------ |
+|          US19 | Visualizar dashboard del edificio    |
+|          US20 | Configurar dispositivos por lotes    |
+
+<br>
+
+| ID Épica | Épica                            | ID HU | Título HU                               | Descripción HU                                                                                                                     | Criterios de Aceptación                                                                                                                                                                                                                                                                                                                            |
+| -------- | -------------------------------- | ----- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| EP01     | Registro y Configuración Inicial | US01  | Registrar cuenta de usuario             | Como nuevo usuario residente, quiero registrar una cuenta con mi correo, para acceder a la gestión de mi sistema QuakExit.         | **Escenario 1: Registro exitoso**<br>Dado que el usuario no tiene cuenta,<br>Cuando ingresa sus datos y acepta términos,<br>Entonces el sistema crea la cuenta y envía correo de verificación.<br><br>**Escenario 2: Correo duplicado**<br>Dado que el usuario ingresa un correo ya registrado,<br>Cuando intenta registrarse,<br>Entonces el sistema muestra error y sugiere iniciar sesión. |
+| EP01     | Registro y Configuración Inicial | US02  | Configurar perfil de vivienda           | Como usuario, quiero registrar los datos de mi departamento (piso, ubicación) para personalizar mi entorno.                        | **Escenario 1: Perfil guardado**<br>Dado que el usuario ingresa a su perfil,<br>Cuando guarda los detalles de su vivienda,<br>Entonces el sistema actualiza su cuenta.<br><br>**Escenario 2: Datos incompletos**<br>Dado que el usuario omite campos obligatorios,<br>Cuando intenta guardar,<br>Entonces el sistema resalta los campos faltantes en rojo. |
+| EP01     | Registro y Configuración Inicial | US03  | Vincular dispositivo QuakExit Hub       | Como usuario, quiero vincular mi dispositivo mediante un código QR para tener el control desde la aplicación.                      | **Escenario 1: Vinculación exitosa**<br>Dado que el usuario escanea el código del Hub,<br>Cuando el sistema verifica el ID,<br>Entonces el dispositivo aparece como "Conectado".<br><br>**Escenario 2: Código inválido**<br>Dado que el usuario escanea un QR erróneo,<br>Cuando el sistema lo procesa,<br>Entonces muestra un mensaje de "Dispositivo no reconocido". |
+
+| ID Épica | Épica                            | ID HU | Título HU                                 | Descripción HU                                                                                                                | Criterios de Aceptación                                                                                                                                                                                                                                                                                                                                          |
+| -------- | -------------------------------- | ----- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| EP02     | Gestión de Hardware y Actuadores | US04  | Verificar estado de conexión de cerraduras| Como usuario, quiero verificar si las chapas electromagnéticas están enlazadas correctamente al microcontrolador.             | **Escenario 1: Cerradura conectada**<br>Dado que la instalación es correcta,<br>Cuando el usuario consulta el estado,<br>Entonces la interfaz muestra la chapa en color verde ("Activa").<br><br>**Escenario 2: Falla de conexión**<br>Dado que hay un cable suelto o falla,<br>Cuando el usuario consulta,<br>Entonces el sistema muestra la chapa en rojo y emite alerta. |
+| EP02     | Gestión de Hardware y Actuadores | US05  | Configurar luces de emergencia IoT        | Como usuario, quiero vincular los relés de iluminación inteligente para que se enciendan en una emergencia.                   | **Escenario 1: Luces vinculadas**<br>Dado que el sistema detecta luces IoT,<br>Cuando el usuario confirma la vinculación,<br>Entonces se agregan al protocolo de emergencia.<br><br>**Escenario 2: Dispositivo no compatible**<br>Dado que se intenta conectar luz no soportada,<br>Cuando el sistema escanea,<br>Entonces arroja error de incompatibilidad. |
+| EP02     | Gestión de Hardware y Actuadores | US06  | Gestionar modo de bajo consumo            | Como usuario, quiero habilitar el Deep Sleep en sensores secundarios para prolongar la vida útil general.                     | **Escenario 1: Modo activado**<br>Dado que el usuario activa ahorro de energía,<br>Cuando guarda,<br>Entonces el Hub apaga LEDs informativos y reduce frecuencia de ping.<br><br>**Escenario 2: Modo deshabilitado**<br>Dado que se desactiva el ahorro,<br>Cuando guarda,<br>Entonces el sistema retorna a su transmisión constante habitual. |
+
+| ID Épica | Épica                            | ID HU | Título HU                               | Descripción HU                                                                                                                 | Criterios de Aceptación                                                                                                                                                                                                                                                                                                                                         |
+| -------- | -------------------------------- | ----- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| EP03     | Monitoreo de Energía y Autonomía | US07  | Visualizar nivel de batería de respaldo | Como usuario, quiero ver el porcentaje de batería del sistema para asegurar su funcionamiento offline.                         | **Escenario 1: Visualización correcta**<br>Dado que el usuario abre la app,<br>Cuando ingresa a "Estado",<br>Entonces el sistema muestra el porcentaje de la batería.<br><br>**Escenario 2: Pérdida de datos**<br>Dado que el Hub pierde conexión,<br>Cuando el usuario revisa la batería,<br>Entonces se muestra la última actualización disponible. |
+| EP03     | Monitoreo de Energía y Autonomía | US08  | Recibir alertas de batería baja         | Como usuario, quiero recibir alertas si la batería de respaldo cae por debajo de un umbral seguro.                             | **Escenario 1: Alerta enviada**<br>Dado que la batería baja del 15%,<br>Cuando el sistema lo detecta,<br>Entonces envía una notificación push crítica.<br><br>**Escenario 2: Batería restablecida**<br>Dado que se reconecta a la corriente,<br>Cuando supera el 15%,<br>Entonces la alerta de bajo nivel desaparece del dashboard. |
+| EP03     | Monitoreo de Energía y Autonomía | US09  | Detectar corte de fluido eléctrico      | Como usuario, quiero que la app me notifique cuando la casa ha perdido energía comercial y está operando a batería.            | **Escenario 1: Corte detectado**<br>Dado que se va la luz,<br>Cuando el microcontrolador cambia a batería,<br>Entonces notifica "Operando en modo respaldo offline".<br><br>**Escenario 2: Energía restaurada**<br>Dado que vuelve la luz,<br>Cuando el Hub detecta AC,<br>Entonces notifica "Suministro eléctrico principal restaurado". |
+
+| ID Épica | Épica                                | ID HU | Título HU                                | Descripción HU                                                                                                                 | Criterios de Aceptación                                                                                                                                                                                                                                                                                                                                         |
+| -------- | ------------------------------------ | ----- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| EP04     | Detección Sísmica y Acción Inmediata | US10  | Ajustar sensibilidad del sensor sísmico  | Como instalador, quiero calibrar el acelerómetro para evitar aperturas por vibraciones menores (ej. camiones pesados).         | **Escenario 1: Ajuste guardado**<br>Dado que el instalador accede a modo avanzado,<br>Cuando cambia la escala a sismos >5.0,<br>Entonces el sistema actualiza el umbral de disparo.<br><br>**Escenario 2: Valor fuera de rango**<br>Dado que ingresa un valor irracional,<br>Cuando intenta guardar,<br>Entonces el sistema bloquea y solicita valor estándar. |
+| EP04     | Detección Sísmica y Acción Inmediata | US11  | Ejecutar protocolo de desbloqueo         | Como usuario, quiero que el hardware corte la energía de la chapa magnética automáticamente al confirmar un sismo.             | **Escenario 1: Apertura inmediata**<br>Dado que se supera el umbral sísmico,<br>Cuando el microcontrolador procesa el dato,<br>Entonces la cerradura se abre en <2 segundos.<br><br>**Escenario 2: Activación de luces**<br>Dado que se ejecuta el protocolo,<br>Cuando la puerta se abre,<br>Entonces también se encienden los relés de iluminación. |
+| EP04     | Detección Sísmica y Acción Inmediata | US12  | Activar mecanismo mecánico fail-safe     | Como usuario, quiero asegurarme de que si el microcontrolador muere, la puerta se libere sola.                                 | **Escenario 1: Fallo crítico**<br>Dado que el Hub sufre daño total,<br>Cuando pierde emisión de señal "Keep Alive",<br>Entonces el relé Normally-Closed libera la puerta automáticamente.<br><br>**Escenario 2: Reinicio seguro**<br>Dado que el sistema reinicia por error,<br>Cuando vuelve a encender,<br>Entonces vuelve a magnetizar la chapa. |
+
+| ID Épica | Épica                             | ID HU | Título HU                                | Descripción HU                                                                                                                 | Criterios de Aceptación                                                                                                                                                                                                                                                                                                                                         |
+| -------- | --------------------------------- | ----- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| EP05     | Alertas, Eventos y Notificaciones | US13  | Notificación de Modo Emergencia activado | Como usuario, quiero recibir una notificación inmediata cuando el sistema detecte un sismo y abra las puertas.                 | **Escenario 1: Alerta exitosa**<br>Dado que el protocolo se activa,<br>Cuando hay conexión a internet,<br>Entonces la app envía una alerta crítica sonora.<br><br>**Escenario 2: Encolado offline**<br>Dado que el sismo corta el Wi-Fi,<br>Cuando el sistema actúa localmente,<br>Entonces guarda el log para enviarlo apenas regrese la red. |
+| EP05     | Alertas, Eventos y Notificaciones | US14  | Visualizar historial de eventos sísmicos | Como usuario, quiero revisar a qué hora exacta el sistema abrió las puertas en eventos o simulacros pasados.                   | **Escenario 1: Historial con datos**<br>Dado que hay activaciones pasadas,<br>Cuando el usuario ingresa al historial,<br>Entonces visualiza una lista cronológica.<br><br>**Escenario 2: Sin eventos**<br>Dado que es un sistema nuevo,<br>Cuando el usuario entra al historial,<br>Entonces muestra "No hay eventos registrados". |
+| EP05     | Alertas, Eventos y Notificaciones | US15  | Configurar contactos de emergencia       | Como usuario, quiero agregar a mis familiares para que reciban un aviso si el departamento entra en Modo Emergencia.           | **Escenario 1: Contacto agregado**<br>Dado que se ingresa un número de teléfono,<br>Cuando se guarda,<br>Entonces se añade a la lista de SMS de alerta.<br><br>**Escenario 2: Límite excedido**<br>Dado que el usuario ya registró 5 contactos,<br>Cuando intenta agregar otro,<br>Entonces el sistema indica que alcanzó el límite. |
+
+| ID Épica | Épica                              | ID HU | Título HU                              | Descripción HU                                                                                                                | Criterios de Aceptación                                                                                                                                                                                                                                                                                                                                 |
+| -------- | ---------------------------------- | ----- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| EP06     | Simulacros y Pruebas de Evacuación | US16  | Iniciar simulacro de evacuación manual | Como residente, quiero ejecutar un simulacro manual desde mi celular para comprobar que las cerraduras se liberan.            | **Escenario 1: Simulacro exitoso**<br>Dado que el usuario presiona "Iniciar Simulacro",<br>Cuando confirma la acción,<br>Entonces las cerraduras se abren físicamente.<br><br>**Escenario 2: Error mecánico**<br>Dado que hay un fallo en la chapa,<br>Cuando se intenta el simulacro,<br>Entonces la puerta no abre y la app genera reporte de fallo. |
+| EP06     | Simulacros y Pruebas de Evacuación | US17  | Programar simulacros automáticos       | Como administrador del edificio, quiero programar simulacros en fechas específicas para todo el condominio.                   | **Escenario 1: Programación guardada**<br>Dado que se selecciona fecha y hora,<br>Cuando se guarda,<br>Entonces el sistema agenda la prueba y notifica.<br><br>**Escenario 2: Fecha pasada**<br>Dado que se selecciona una fecha vencida,<br>Cuando se intenta guardar,<br>Entonces el sistema lanza advertencia de fecha inválida. |
+| EP06     | Simulacros y Pruebas de Evacuación | US18  | Generar reporte de tiempo de respuesta | Como usuario, quiero ver cuánto tardó la puerta en abrirse durante el simulacro para asegurar mi evaluación técnica.          | **Escenario 1: Reporte generado**<br>Dado que finaliza un simulacro,<br>Cuando el usuario consulta resultados,<br>Entonces el sistema muestra los milisegundos de respuesta.<br><br>**Escenario 2: Prueba cancelada**<br>Dado que se aborta el simulacro,<br>Cuando se consulta,<br>Entonces el reporte marca "Cancelada por usuario". |
+
+| ID Épica | Épica                                | ID HU | Título HU                          | Descripción HU                                                                                                                 | Criterios de Aceptación                                                                                                                                                                                                                                                                                                                             |
+| -------- | ------------------------------------ | ----- | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| EP07     | Panel de Gestión B2B (Inmobiliarias) | US19  | Visualizar dashboard del edificio  | Como supervisor inmobiliario, quiero ver todos los dispositivos instalados en los departamentos desde un panel unificado.      | **Escenario 1: Panel cargado**<br>Dado que el supervisor ingresa a su cuenta B2B,<br>Cuando carga el dashboard,<br>Entonces visualiza el estado de todos los departamentos.<br><br>**Escenario 2: Sin permisos**<br>Dado que un residente intenta acceder al dashboard B2B,<br>Cuando ingresa a la URL,<br>Entonces el sistema deniega el acceso. |
+| EP07     | Panel de Gestión B2B (Inmobiliarias) | US20  | Configurar dispositivos por lotes  | Como instalador, quiero registrar múltiples dispositivos simultáneamente para no hacerlo uno por uno en una obra grande.       | **Escenario 1: Registro masivo**<br>Dado que el instalador sube un CSV con las MAC Address,<br>Cuando procesa el lote,<br>Entonces el sistema registra todos los equipos.<br><br>**Escenario 2: Error en CSV**<br>Dado que el archivo tiene datos corruptos,<br>Cuando intenta subirlo,<br>Entonces el sistema rechaza el archivo y marca el error. |
+
+---
+
 ## 3.2. Impact Mapping
 
+
+Impact Mapping - Segmento 1
+
+<div>
+  <p align="center"><img src="assets/cap3/impact_mapping/impac_mapping1.png" alt="Impact mapping segmento 1" width="700px" /></p>
+</div>
+
+Impact Mapping - Segmento 2
+
+<div>
+  <p align="center"><img src="assets/cap3/impact_mapping/impac_mapping2.png" alt="Impact mapping segmento 2" width="700px" /></p>
+</div>
+
+---
+
 ## 3.3. Product Backlog
+
+_Orden de User Stories y Technical Stories_
+
+| Orden | ID   | User Story / Technical Story               | Story Points | Bounded Context       |
+| ----- | ---- | ------------------------------------------ | ------------ | --------------------- |
+| 01    | US01 | Registrar cuenta de usuario                | 3            | IAM                   |
+| 02    | US02 | Configurar perfil de vivienda              | 3            | Household Profile     |
+| 03    | US03 | Vincular dispositivo QuakExit Hub          | 5            | Device Provisioning   |
+| 04    | US04 | Verificar estado de conexión de cerraduras | 3            | Device Monitoring     |
+| 05    | US05 | Configurar luces de emergencia IoT         | 5            | Device Provisioning   |
+| 06    | US06 | Gestionar modo de bajo consumo             | 3            | Device Monitoring     |
+| 07    | US07 | Visualizar nivel de batería de respaldo    | 2            | Energy Monitoring     |
+| 08    | US08 | Recibir alertas de batería baja            | 3            | Alerting              |
+| 09    | US09 | Detectar corte de fluido eléctrico         | 5            | Energy Monitoring     |
+| 10    | US10 | Ajustar sensibilidad del sensor sísmico    | 3            | Emergency Core        |
+| 11    | US11 | Ejecutar protocolo de desbloqueo           | 8            | Emergency Core        |
+| 12    | US12 | Activar mecanismo mecánico fail-safe       | 5            | Emergency Core        |
+| 13    | US13 | Notificación de Modo Emergencia activado   | 5            | Alerting              |
+| 14    | US14 | Visualizar historial de eventos sísmicos   | 3            | Event History         |
+| 15    | US15 | Configurar contactos de emergencia         | 3            | Household Profile     |
+| 16    | US16 | Iniciar simulacro de evacuación manual     | 5            | Simulation & Testing  |
+| 17    | US17 | Programar simulacros automáticos           | 5            | Simulation & Testing  |
+| 18    | US18 | Generar reporte de tiempo de respuesta     | 3            | Analytics & Reports   |
+| 19    | US19 | Visualizar dashboard del edificio          | 8            | B2B Management        |
+| 20    | US20 | Configurar dispositivos por lotes          | 5            | B2B Management        |
 
 <div style="page-break-after: always;"></div>
 
