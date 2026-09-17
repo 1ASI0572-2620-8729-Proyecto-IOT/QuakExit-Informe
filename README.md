@@ -842,13 +842,11 @@ A partir de los subdominios identificados durante el Event Storming y el Domain 
 
 Posteriormente se evaluaron diferentes alternativas de distribución de capacidades.
 
-### Alternativa 1: Contextos Centralizados
-
-#### Descripción
+Alternativa 1: Contextos Centralizados
 
 Inicialmente se consideró concentrar la mayoría de las capacidades relacionadas con emergencias dentro de un único Bounded Context.
 
-##### Distribución propuesta
+Distribución propuesta
 
 | Bounded Context | Capacidades |
 |---------------|------------|
@@ -857,34 +855,35 @@ Inicialmente se consideró concentrar la mayoría de las capacidades relacionada
 | Dispositivos IoT | Captura de datos de sensores |
 | Notificaciones | Envío de alertas |
 | Analítica | Generación de reportes |
-#### Ventajas
+
+Ventajas
 
 - Arquitectura sencilla de comprender.
 - Menor complejidad inicial de integración.
 - Menor cantidad de contextos.
 
-#### Desventajas
+Desventajas
 
 - Sobrecarga del contexto de Gestión de Emergencias.
 - Baja cohesión interna.
 - Mayor dificultad para evolucionar funcionalidades específicas.
 - Posibles cuellos de botella funcionales.
 
-#### Conclusión
+Conclusión
 
 Se descartó esta alternativa debido a que el Bounded Context de Gestión de Emergencias concentraba demasiadas responsabilidades críticas.
 
-### Alternativa 2: Separación de la Coordinación de Evacuaciones
+Alternativa 2: Separación de la Coordinación de Evacuaciones
 
-#### Pregunta de análisis
+Pregunta de análisis
 
 **¿Qué pasaría si partimos el bounded context de Gestión de Emergencias en múltiples bounded contexts?**
 
-#### Propuesta
+Propuesta
 
 Se decidió extraer la capacidad de gestión de evacuaciones hacia un contexto independiente.
 
-##### Distribución
+Distribución
 
 | Bounded Context | Capacidades |
 |---------------|------------|
@@ -894,65 +893,65 @@ Se decidió extraer la capacidad de gestión de evacuaciones hacia un contexto i
 | Gestión de Usuarios | Administración de usuarios |
 | Notificaciones | Comunicación de alertas |
 
-#### Ventajas
+Ventajas
 
 - Mayor cohesión funcional.
 - Mejor mantenibilidad.
 - Escalabilidad independiente.
 - Menor complejidad por contexto.
 
-#### Desventajas
+Desventajas
 
 - Mayor número de integraciones.
 - Necesidad de sincronización entre contextos.
 
-#### Conclusión
+Conclusión
 
 La separación permitió encapsular adecuadamente las reglas de negocio relacionadas con las evacuaciones, mejorando la claridad del modelo de dominio.
 
-### Alternativa 3: Servicio Compartido de Notificaciones
+Alternativa 3: Servicio Compartido de Notificaciones
 
-#### Pregunta de análisis
+Pregunta de análisis
 
 **¿Qué pasaría si creamos un Shared Service para reducir la duplicación entre múltiples bounded contexts?**
 
-#### Problema identificado
+Problema identificado
 
 Tanto Gestión de Emergencias como Coordinación de Evacuación requerían funcionalidades para enviar alertas y notificaciones a los usuarios.
 
-#### Propuesta
+Propuesta
 
 Crear un contexto independiente especializado en notificaciones.
 
-##### Capacidades
+Capacidades
 
 - Envío de mensajes push.
 - Notificaciones móviles.
 - Correos electrónicos.
 - Alertas masivas.
 
-#### Ventajas
+Ventajas
 
 - Elimina duplicación de lógica.
 - Centraliza la comunicación.
 - Facilita la incorporación de nuevos canales.
 
-#### Desventajas
+Desventajas
 
 - Introduce dependencia de otros contextos.
 - Requiere alta disponibilidad.
 
-#### Conclusión
+Conclusión
 
 Se determinó que las notificaciones representan una capacidad transversal que debe mantenerse separada del núcleo del negocio.
 
-### Alternativa 4: Aislamiento del Core Domain
+Alternativa 4: Aislamiento del Core Domain
 
-#### Pregunta de análisis
+Pregunta de análisis
 
 **¿Qué pasaría si aislamos los core capabilities y movemos las capacidades de soporte a contextos separados?**
 
-#### Core Capabilities identificadas
+Core Capabilities identificadas
 
 Las capacidades que generan mayor valor para QuakExit son:
 
@@ -961,33 +960,33 @@ Las capacidades que generan mayor valor para QuakExit son:
 - Coordinación inteligente de evacuaciones.
 - Integración con sensores IoT.
 
-#### Supporting Capabilities
+Supporting Capabilities
 
 - Gestión de usuarios.
 - Notificaciones.
 - Analítica y reportes.
 
-#### Ventajas
+Ventajas
 
 - Protección del Core Domain.
 - Evolución independiente de funcionalidades de soporte.
 - Menor riesgo de afectar procesos críticos.
 
-#### Desventajas
+Desventajas
 
 - Necesidad de definir relaciones explícitas entre contextos.
 
-#### Conclusión
+Conclusión
 
 Esta alternativa fue considerada la más alineada con los principios de Domain-Driven Design.
 
-### Context Mapping Seleccionado
+Context Mapping Seleccionado
 
 Después de evaluar las alternativas anteriores, se definió la siguiente estructura de Bounded Contexts:
 
-#### Core Domains
+Core Domains
 
-##### Gestión de Emergencias
+Gestión de Emergencias
 
 Responsabilidades:
 
@@ -996,7 +995,7 @@ Responsabilidades:
 - Activación de protocolos.
 - Gestión de alertas críticas.
 
-##### Coordinación de Evacuación
+Coordinación de Evacuación
 
 Responsabilidades:
 
@@ -1004,7 +1003,7 @@ Responsabilidades:
 - Gestión de puntos de encuentro.
 - Seguimiento de evacuaciones.
 
-##### Gestión de Dispositivos IoT
+Gestión de Dispositivos IoT
 
 Responsabilidades:
 
@@ -1012,9 +1011,9 @@ Responsabilidades:
 - Detección de eventos físicos.
 - Publicación de eventos al sistema.
 
-#### Supporting Domains
+Supporting Domains
 
-##### Gestión de Usuarios
+Gestión de Usuarios
 
 Responsabilidades:
 
@@ -1022,7 +1021,7 @@ Responsabilidades:
 - Autenticación.
 - Gestión de roles.
 
-##### Gestión de Notificaciones
+Gestión de Notificaciones
 
 Responsabilidades:
 
@@ -1030,7 +1029,7 @@ Responsabilidades:
 - Envío de alertas.
 - Gestión de canales de comunicación.
 
-##### Analítica y Reportes
+Analítica y Reportes
 
 Responsabilidades:
 
@@ -1038,67 +1037,63 @@ Responsabilidades:
 - Indicadores.
 - Historial de incidentes.
 
-### Relaciones Entre Bounded Contexts
+Relaciones Entre Bounded Contexts
 
-#### 1. Gestión de Dispositivos IoT -> Gestión de Emergencias
+**1. Gestión de Dispositivos IoT -> Gestión de Emergencias**
 
-##### Patrón DDD: Customer / Supplier
+**Patrón DDD: Customer / Supplier**
 
 **Supplier:** Gestión de Dispositivos IoT
-
 **Customer:** Gestión de Emergencias
 
-##### Justificación
+**Justificación**
 
 Los sensores generan eventos que son consumidos por Gestión de Emergencias para detectar situaciones de riesgo y activar protocolos de respuesta.
 
-#### 2. Gestión de Emergencias -> Coordinación de Evacuación
+**2. Gestión de Emergencias -> Coordinación de Evacuación**
 
-##### Patrón DDD: Customer / Supplier
+**Patrón DDD: Customer / Supplier**
 
 **Supplier:** Gestión de Emergencias
-
 **Customer:** Coordinación de Evacuación
 
-##### Justificación
+**Justificación**
 
 Solo cuando una emergencia es validada puede iniciarse el proceso de evacuación.
 
-#### 3. Gestión de Usuarios <-> Coordinación de Evacuación
+**3. Gestión de Usuarios <-> Coordinación de Evacuación**
 
-##### Patrón DDD: Shared Kernel
+**Patrón DDD: Shared Kernel**
 
-##### Elementos Compartidos
+**Elementos Compartidos**
 
 - UserId
 - Roles
 - Información básica del usuario
 - Estado de participación en la evacuación
 
-##### Justificación
+**Justificación**
 
 Ambos contextos requieren mantener una representación común de los usuarios sin replicar completamente el modelo.
 
-#### 4. Gestión de Emergencias -> Gestión de Notificaciones
+**4. Gestión de Emergencias -> Gestión de Notificaciones**
 
-##### Patrón DDD: Customer / Supplier
+**Patrón DDD: Customer / Supplier**
 
 **Supplier:** Gestión de Notificaciones
-
 **Customer:** Gestión de Emergencias
 
-##### Justificación
+**Justificación**
 
 La lógica de envío de alertas se encuentra desacoplada de las reglas de negocio del dominio principal.
 
-#### 5. Gestión de Notificaciones -> Servicios Externos
+**5. Gestión de Notificaciones -> Servicios Externos**
 
-##### Patrón DDD: Anti-Corruption Layer (ACL)
+**Patrón DDD: Anti-Corruption Layer (ACL)**
 
-##### Justificación
+**Justificación**
 
 La capa ACL traduce el modelo interno de QuakExit hacia proveedores externos de mensajería, correo electrónico o servicios push.
-
 De esta manera cualquier cambio en proveedores externos no impacta directamente en el dominio.
 
 ---
