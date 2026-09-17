@@ -590,6 +590,22 @@ Empathy Mapping y As-Is Scenario Mapping.
 
 ### 2.3.4. Empathy Mapping
 
+<div>
+  <p align="center"><img src="assets/cap2/image/empathy_mapping/empathy_mapping1.png" alt="Empathy mapping part 1" width="700px" /></p>
+</div>
+
+<div>
+  <p align="center"><img src="assets/cap2/image/empathy_mapping/empathy_mapping2.png" alt="Empathy mapping part 2" width="700px" /></p>
+</div>
+
+<div>
+  <p align="center"><img src="assets/cap2/image/empathy_mapping/empathy_mapping3.png" alt="Empathy mapping part 3" width="700px" /></p>
+</div>
+
+<div>
+  <p align="center"><img src="assets/cap2/image/empathy_mapping/empathy_mapping4.png" alt="Empathy mapping part 4" width="700px" /></p>
+</div>
+
 ### 2.3.5. As-is Scenario Mapping
 
 **As-is Scenario Mapping de Verónica Candela (Segmento 1)**
