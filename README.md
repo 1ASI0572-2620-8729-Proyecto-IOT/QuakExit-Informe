@@ -467,7 +467,7 @@ Detalles de la entrevista:
 [● Link: https://drive.google.com/file/d/15guuxy5CC6sO1vHqo8wpGU37Cewfx9Nt/view?usp=sharing](https://drive.google.com/file/d/15guuxy5CC6sO1vHqo8wpGU37Cewfx9Nt/view?usp=sharing)
 
 <p align="center">
-  <img src="assets/cap2/image/entrevistas/entrevista-segemento1-2.jpg" width="700">
+  <img src="assets/cap2/image/entrevistas/entrevista-segemento1-2.jpeg" width="700">
 </p>
 
 Resumen de los puntos clave en la entrevista:
