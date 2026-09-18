@@ -849,7 +849,11 @@ El proceso para la toma de decisiones a nivel estratégico se desarrolló median
 
 ### 4.1.1. Design-Level EventStorming 
 
-Se debe explicar y evidenciar el proceso de EventStorming, el cual es una aproximación visual para modelar el dominio del problema. Se debe iniciar con una introducción y explicar las actividades realizadas en una sesión recomendada de 1 a 2 horas.   Diagrama: Sí. Se deben incluir capturas de lo elaborado en la herramienta indicada.
+En esta sección se presenta el Design-Level EventStorming realizado para la solución QuakExit. El objetivo de esta actividad fue identificar y organizar los principales elementos del dominio, tales como actores (residentes, administradores inmobiliarios), comandos, eventos de dominio, políticas de seguridad (mecanismos fail-safe), sistemas externos (alertas SISMATE), modelos de lectura y componentes IoT (microcontroladores Edge, sensores sísmicos, cerraduras electromagnéticas).
+
+A partir del análisis realizado en una sesión colaborativa de 2 horas, se modelaron los principales flujos de negocio relacionados con la detección de sismos, ejecución de protocolos de evacuación offline, monitoreo de energía y batería de respaldo, así como la gestión de usuarios, simulacros y el panel de administración B2B para inmobiliarias. 
+
+Los flujos identificados permiten representar el comportamiento de QuakExit ante escenarios críticos, asegurando la respuesta física automatizada frente a la pérdida de conectividad o cortes eléctricos. El resultado de este EventStorming constituye la base para las siguientes actividades del diseño estratégico, principalmente la identificación de los Bounded Contexts, el modelado de los flujos de mensajes y la elaboración de los Bounded Context Canvases.
 
 #### 4.1.1.1. Candidate Context Discovery
 
