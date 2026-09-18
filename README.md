@@ -514,11 +514,15 @@ Detalles de la entrevista:
 
 ● Duración: --:--
 
-[● Link: https://drive.google.com/file/d/1SRe3Ilrde37SMS8YGALvpk9OqU4jpwh0/view?usp=sharing](https://drive.google.com/file/d/1SRe3Ilrde37SMS8YGALvpk9OqU4jpwh0/view?usp=sharing)
+[● Link: https://drive.google.com/file/d/1Flz2QPm1-bVm4xuuo_XEsUUxDdI5EOhf/view?usp=sharing](https://drive.google.com/file/d/1Flz2QPm1-bVm4xuuo_XEsUUxDdI5EOhf/view?usp=sharing)
+
+<p align="center">
+  <img src="assets/cap2/image/entrevistas/entrevista-segemento1-3.jpeg" width="700">
+</p>
 
 Resumen de los puntos clave en la entrevista:
 
-Valeria asiste en la fase de diseño y planificación de nuevos edificios. Resalta la importancia estética de las soluciones tecnológicas; para que QuakExit sea adoptado por su empresa, los dispositivos deben ser minimalistas y no afectar el diseño de interiores. Confirma que la seguridad sísmica es una pregunta frecuente de los compradores finales. Sugiere que el modelo de negocio ideal para ellos sería adquirir los kits de QuakExit por lotes grandes durante la fase final de acabados, incluyéndolos como un "upgrade" opcional o un estándar en proyectos premium.
+Ariana asiste en la fase de diseño y planificación de nuevos edificios. Resalta la importancia estética de las soluciones tecnológicas; para que QuakExit sea adoptado por su empresa, los dispositivos deben ser minimalistas y no afectar el diseño de interiores. Confirma que la seguridad sísmica es una pregunta frecuente de los compradores finales. Sugiere que el modelo de negocio ideal para ellos sería adquirir los kits de QuakExit por lotes grandes durante la fase final de acabados, incluyéndolos como un "upgrade" opcional o un estándar en proyectos premium.
 
 ---
 
