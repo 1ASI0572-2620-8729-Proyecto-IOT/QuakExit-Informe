@@ -838,15 +838,28 @@ _Orden de User Stories y Technical Stories_
 
 ## 4.1. Strategic-Level Domain-Driven Design
 
+Se debe introducir y explicar el proceso realizado para tomar las decisiones a nivel estratégico aplicando Domain-Driven Design.  
+Diagrama: No se indica requerimiento de diagrama para esta sección introductoria.
+
 ### 4.1.1. Design-Level EventStorming 
+
+Se debe explicar y evidenciar el proceso de EventStorming, el cual es una aproximación visual para modelar el dominio del problema. Se debe iniciar con una introducción y explicar las actividades realizadas en una sesión recomendada de 1 a 2 horas.   Diagrama: Sí. Se deben incluir capturas de lo elaborado en la herramienta indicada.
 
 #### 4.1.1.1. Candidate Context Discovery
 
+A partir del EventStorming, se explica y evidencia el proceso para identificar los bounded contexts aplicando técnicas como start-with-value, start-with-simple o look-for-pivotal-events.   Diagrama: Sí. Se debe complementar la explicación con capturas en imagen de los cambios progresivos del EventStorm.
+
 #### 4.1.1.2. Domain Message Flows Modeling
+
+Se explica y evidencia cómo colaboran los bounded contexts para resolver los casos del negocio aplicando la técnica de visualización Domain Storytelling.   Diagrama: Sí. Se debe complementar la explicación con capturas en imágenes de los diagramas de Domain Storytelling elaborados. 
 
 #### 4.1.1.3 Bounded Context Canvases
 
+Se diseñan los candidate bounded contexts detallando sus criterios de diseño a través de un proceso iterativo que incluye definición general, reglas de negocio, lenguaje ubicuo, dependencias, entre otros.   Diagrama: Sí. Se debe elaborar y presentar el Bounded Context Canvas por cada contexto, ordenados por importancia.  
+
 ### 4.1.2. Context Mapping 
+
+Se explica y evidencia el proceso de elaboración de visualizaciones de las relaciones estructurales entre los bounded contexts. Se deben discutir las alternativas de diseño y considerar patrones de Domain-Driven Design como Anti-corruption Layer, Conformist, Customer/Supplier o Shared Kernel.   Diagrama: Sí. Se debe elaborar un conjunto de contexts maps (visualizaciones de las relaciones). 
 
 #### Objetivo
 
@@ -1120,32 +1133,63 @@ De esta manera cualquier cambio en proveedores externos no impacta directamente 
 
 ### 4.1.3. Software Architecture
 
+Se presenta y explica la representación de la Arquitectura de Software de la solución aplicando el Modelo C4.   Diagrama: Es la sección introductoria a los diagramas C4, los diagramas van en los subpuntos.
+
 #### 4.1.3.1. Software Architecture System Landscape Diagram
+
+El índice estructural del documento exige esta sección como parte del Modelo C4.   Diagrama: Sí. Requiere el diagrama de paisaje del sistema del Modelo C4.
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
+Se realiza una introducción y se presenta el diagrama de contexto, donde el sistema debe aparecer como un recuadro en el centro, rodeado por sus usuarios y otros sistemas con los que interactúa.   Diagrama: Sí. Se debe presentar en imagen el context diagram elaborado en la herramienta indicada y explicarlo. 
+
 #### 4.1.3.3. Software Architecture Container Level Diagrams
+
+Se realiza una introducción y se explica el Container Diagram, mostrando los elementos de alto nivel, cómo se distribuyen las responsabilidades, las decisiones de tecnología y cómo se comunican entre sí.   Diagrama: Sí. Se debe presentar el diagrama de contenedores, recordando que cada uno representa una unidad de despliegue independiente.
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
+El índice estructural del documento exige esta sección para detallar el despliegue del software.   Diagrama: Sí. Requiere el diagrama de despliegue.
+
 ## 4.2. Tactical-Level Domain-Driven Design
+
+Se explica y presenta la propuesta para la perspectiva táctica del diseño de software.   Diagrama: No, es texto introductorio.  
 
 ### 4.2.1. Bounded Context: <Bounded Context Name>
 
+Se incluyen secciones internas por cada bounded context. Se deben presentar las clases identificadas y detallarlas a manera de diccionario (nombre, propósito, atributos, métodos y relaciones).   Diagrama: No.
+
 #### 4.2.1.1. Domain Layer
+
+Se explica qué clases representarán el núcleo de la aplicación y las reglas de negocio, incluyendo Entities, Value Objects, Aggregates, Factories, Domain Services y Repositories.   Diagrama: No. 
+
 
 #### 4.2.1.2. Interface Layer
 
+Se introducen, presentan y explican las clases que forman parte de la capa de presentación/interfaz, como Controllers o Consumers.   Diagrama: No. 
+
 #### 4.2.1.3. Application Layer
+
+Se explica a través de qué clases se manejan los flujos de procesos del negocio, evidenciando los capabilities de la aplicación mediante clases como Command Handlers y Event Handlers.   Diagrama: No. 
 
 #### 4.2.1.4. Infrastructure Laye
 
+Se presentan las clases que acceden a servicios externos (bases de datos, sistemas de mensajería, emails) y la implementación de los Repositories.   Diagrama: No. 
+
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+Se explica el desglose de cada contenedor para identificar los bloques estructurales (componentes), sus responsabilidades y detalles de implementación.   Diagrama: Sí. Se deben presentar los Component Diagrams del Modelo C4 para cada uno de los contenedores considerados en el bounded context.
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
+Se presentan y explican los diagramas de mayor detalle sobre la implementación de componentes en el contexto.   Diagrama: Es la sección introductoria a los diagramas de código.
+
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 
+Se explican las clases, interfaces, enumeraciones y sus relaciones de la capa de dominio.   Diagrama: Sí. Se debe presentar el Class Diagram de UML. El nivel de detalle debe incluir miembros de cada clase (atributos, métodos, scope: private, public, protected), calificación con nombres, dirección y multiplicidad en las relaciones. 
+
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
+
+Se explica cómo se persistirá la información para los objetos del contexto, especificando tablas, columnas y constraints (primary y foreign keys).   Diagrama: Sí. Se debe presentar el Database Diagram evidenciando las relaciones entre las tablas. 
 
 <div style="page-break-after: always;"></div>
