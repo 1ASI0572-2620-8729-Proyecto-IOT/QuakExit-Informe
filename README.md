@@ -462,9 +462,13 @@ Entrevista N°2
 
 Detalles de la entrevista:
 
-● Duración: --:--
+● Duración: 3:46
 
-[● Link: https://drive.google.com/file/d/10gpZrHKXRZATb-VCJ6RAm-Zu81CONRbT/view?usp=sharing](https://drive.google.com/file/d/10gpZrHKXRZATb-VCJ6RAm-Zu81CONRbT/view?usp=sharing)
+[● Link: https://drive.google.com/file/d/15guuxy5CC6sO1vHqo8wpGU37Cewfx9Nt/view?usp=sharing](https://drive.google.com/file/d/15guuxy5CC6sO1vHqo8wpGU37Cewfx9Nt/view?usp=sharing)
+
+<p align="center">
+  <img src="assets/cap2/image/entrevistas/entrevista-segemento1-2.jpg" width="700">
+</p>
 
 Resumen de los puntos clave en la entrevista:
 
