@@ -214,7 +214,7 @@ NeuroDraw es una startup tecnológica emergente dedicada al diseño y desarrollo
 | ![Miguel](imagen)  | Miguel Angel Vila Guillen         | Ingeniería de Software | Tengo 21 años y estudio el 6to ciclo en la Universidad Peruana de Ciencias Aplicadas. Me gusta jugar videojuegos, tocar la guitarra y el fútbol. Me considero capaz de trabajar en equipo y aspiro a ser un profesional competente.                         |
 | ![Diego](assets/cap1/pfp-team/diegorequena1.jfif)  | Diego Gabriel Requena Gutiérrez   | Ingeniería de Software | Tengo 19 años y curso el 5to ciclo en la Universidad Peruana de Ciencias Aplicadas. Soy una persona comprometida con mis objetivos, busco optimizar mi rendimiento y mantener un equilibrio entre la excelencia y una vida saludable.                       |
 | ![Sebastián](assets/cap1/pfp-team/sebastian.jpg)  | Sebastián De Las Casas Latour   | Ingeniería de Software | Tengo 22 años y curso el 8vo ciclo en la Universidad Peruana de Ciencias Aplicadas. Busco desarrollar mis competencias en análisis, diseño y construcción de soluciones de software, aplicando los conocimientos adquiridos durante mi formación académica.                       |
-
+| ![César](assets/cap1/pfp-team/césar.jpg)  | César Augusto Navarro Correa   | Ingeniería de Software | Mi nombre es Cesar Navarro, tengo 19 años y soy de la carrera de Ingeniería de Software de la UPC. Me considero una persona creativa en la realización de los trabajos y resiliente en mis actividades. Tengo conocimientos de lenguajes de programación en C++ y Python, pues siempre tuve interés en la computación.                       |
 
 ## 1.2. Solution Profile
 
@@ -587,6 +587,18 @@ Empathy Mapping y As-Is Scenario Mapping.
 | **Integrar/Configurar dispositivos por lotes en proyectos**| Nula             | Nula        | Alta         | Alta        |
 
 ### 2.3.3. User Journey Mapping
+
+**User Journey Mapping de Verónica Candela (Segmento 1)**
+
+<div>
+  <p align="center"><img src="assets/cap2/image/user_journey_mapping/mapping1.png"/></p>
+</div>
+
+**User Journey Mapping de Mateo Vargas (Segmento 2)**
+
+<div>
+  <p align="center"><img src="assets/cap2/image/user_journey_mapping/mapping2.png"/></p>
+</div>
 
 ### 2.3.4. Empathy Mapping
 
