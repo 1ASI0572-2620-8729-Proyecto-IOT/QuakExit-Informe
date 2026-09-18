@@ -838,8 +838,14 @@ _Orden de User Stories y Technical Stories_
 
 ## 4.1. Strategic-Level Domain-Driven Design
 
-Se debe introducir y explicar el proceso realizado para tomar las decisiones a nivel estratégico aplicando Domain-Driven Design.  
-Diagrama: No se indica requerimiento de diagrama para esta sección introductoria.
+El diseño estratégico de QuakExit se enfoca en alinear la arquitectura de software directamente con el núcleo del negocio: la automatización inmediata de protocolos de evacuación sísmica residencial y multifamiliar a través de dispositivos IoT. Aplicando los principios de Domain-Driven Design (DDD), se analizó la complejidad del entorno para aislar y resolver los cuellos de botella que ocurren durante un sismo de gran magnitud, priorizando la resiliencia del sistema y la respuesta física automatizada frente a cortes de energía y conectividad.
+
+El proceso para la toma de decisiones a nivel estratégico se desarrolló mediante las siguientes fases metodológicas:
+
+* **Exploración del Dominio (EventStorming):** Se realizaron dinámicas colaborativas para trazar el comportamiento del sistema desde la perspectiva de los eventos de dominio. Esto permitió mapear los flujos críticos cronológicamente, desde la detección inicial de las ondas sísmicas locales hasta el desbloqueo electromagnético de las puertas y la emisión de notificaciones a los usuarios.
+* **Identificación de Contextos Delimitados (Candidate Context Discovery):** A partir del mapeo de eventos y comandos, se dividió la complejidad total del sistema en módulos lógicos y cohesionados conocidos como *Bounded Contexts*. Se aislaron las responsabilidades críticas (ej. interacción directa con el hardware y microcontroladores) de las responsabilidades de soporte (ej. gestión de perfiles de usuario o historial de simulacros).
+* **Consolidación del Lenguaje Ubicuo (Ubiquitous Language):** Se definió un vocabulario estándar y compartido entre los desarrolladores de software, ingenieros de hardware e integradores del sector inmobiliario. Términos como "Modo Emergencia", "QuakExit Hub" o "Mecanismo Fail-safe" garantizan una comunicación sin ambigüedades en todas las capas del diseño arquitectónico.
+* **Mapeo de Relaciones (Context Mapping):** Finalmente, se establecieron los patrones de integración y comunicación estructural entre los diferentes *Bounded Contexts* (mediante mapas de contexto), definiendo dependencias claras para asegurar que el procesamiento local (*Edge Computing*) mantenga su autonomía operativa frente a los servicios en la nube.
 
 ### 4.1.1. Design-Level EventStorming 
 
