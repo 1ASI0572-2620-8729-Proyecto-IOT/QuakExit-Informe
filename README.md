@@ -73,9 +73,9 @@
 
 <div style="page-break-after: always;"></div>
 
-## Registro de Versiones del Informe
-
 ## Project Report Collaboration Insights
+
+## Registro de Versiones del Informe
 
 ### Contribuciones por integrante
 
@@ -147,6 +147,17 @@
 <div style="page-break-after: always;"></div>
 
 ## Student Outcome
+
+El curso contribuye al cumplimiento del Student Outcome ABET:
+**ABET – EAC - Student Outcome 5**
+**Criterio:** La capacidad de funcionar efectivamente en un equipo cuyos miembros juntos proporcionan liderazgo, crean un entorno de colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen objetivos.
+
+En el siguiente cuadro se describen las acciones realizadas y los enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 5 para el primer avance (AV1).
+
+| Criterio específico | Acciones realizadas | Conclusiones |
+| :--- | :--- | :--- |
+| **Trabaja en equipo para proporcionar liderazgo en forma conjunta** | **Castro Picón, Manuel Fernando Joao**<br>**AV1:**<br>• Lideró la definición de la estrategia del negocio y facilitó las sesiones colaborativas de EventStorming.<br><br>**Solis Chang, Santiago Valentino**<br>**AV1:**<br>• Asumió el liderazgo en la delimitación de los Bounded Contexts y la elaboración estructural de los Canvases.<br><br>**Vila Guillen, Miguel Angel**<br>**AV1:**<br>• Dirigió el análisis arquitectónico a nivel macro, estableciendo los lineamientos y diagramas principales del modelo C4.<br><br>**Requena Gutiérrez, Diego Gabriel**<br>**AV1:**<br>• Tomó la iniciativa en la definición de la infraestructura técnica, los proveedores cloud y los diagramas de despliegue.<br><br>**De Las Casas Latour, Sebastián**<br>**AV1:**<br>• Lideró la estructuración táctica (DDD), organizando las responsabilidades de las capas internas (Dominio, Aplicación e Infraestructura).<br><br>**Navarro Correa, César Augusto**<br>**AV1:**<br>• Guió el modelado de entidades y repositorios, liderando el diseño de los diagramas de clases UML del sistema.<br><br>**Quiroz Zambrano, Fabrizio Javier**<br>**AV1:**<br>• Asumió el control del diseño de la persistencia de datos y la estructuración técnica de los diagramas Entidad-Relación. | **AV1:**<br>Durante el primer avance, el equipo logró distribuir el liderazgo de forma equitativa. Se delegó la dirección de tareas específicas basándose en las fortalezas técnicas de cada integrante (estrategia, arquitectura general y diseño táctico), lo que permitió un avance sostenido, especializado y un liderazgo verdaderamente compartido. |
+| **Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.** | **Castro Picón, Manuel Fernando Joao**<br>**AV1:**<br>• Planificó las tareas de investigación iniciales (Lean UX) y fomentó la participación equitativa en la definición de la problemática.<br><br>**Solis Chang, Santiago Valentino**<br>**AV1:**<br>• Colaboró en la redacción de requerimientos y organizó las sesiones de priorización para completar el Product Backlog a tiempo.<br><br>**Vila Guillen, Miguel Angel**<br>**AV1:**<br>• Integró las ideas del equipo para el análisis competitivo y aseguró el cumplimiento del cronograma en el diseño de arquitectura.<br><br>**Requena Gutiérrez, Diego Gabriel**<br>**AV1:**<br>• Estableció los objetivos de validación inicial y coordinó la recopilación y análisis conjunto de las entrevistas a los segmentos objetivo.<br><br>**De Las Casas Latour, Sebastián**<br>**AV1:**<br>• Creó un ambiente de apoyo para el subgrupo de diseño táctico, asegurando la entrega oportuna y articulada de los componentes de software.<br><br>**Navarro Correa, César Augusto**<br>**AV1:**<br>• Coordinó de manera inclusiva la integración de sus diagramas de clases con los requerimientos estratégicos planteados por el resto del equipo.<br><br>**Quiroz Zambrano, Fabrizio Javier**<br>**AV1:**<br>• Cumplió puntualmente con los objetivos de diseño de base de datos, manteniendo una comunicación constante y asertiva con los encargados de la arquitectura macro. | **AV1:**<br>El equipo consolidó un entorno de trabajo colaborativo mediante la división estratégica del trabajo en tres subgrupos principales. Se cumplieron todos los objetivos trazados para el AV1 respetando los cronogramas internos, asegurando que las decisiones de diseño arquitectónico fueran discutidas, consensuadas y aprobadas por los 7 integrantes del proyecto. |
 
 <div style="page-break-after: always;"></div>
 
