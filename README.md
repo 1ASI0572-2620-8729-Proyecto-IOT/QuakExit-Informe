@@ -101,8 +101,8 @@
          3. [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
          4. [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
    3. [1.3. Segmentos objetivo](#13-segmentos-objetivo)
-         1. [Segmento objetivo #1: Dueños de Smart Homes](#segmento-objetivo-1-dueños-de-smart-homes)
-         2. [Segmento objetivo #2: Inmobiliarias y Constructores](#segmento-objetivo-2-inmobiliarias-y-constructores)
+      1. [Segmento objetivo #1: Dueños de Smart Homes](#segmento-objetivo-1-dueños-de-smart-homes)
+      2. [Segmento objetivo #2: Inmobiliarias y Constructores](#segmento-objetivo-2-inmobiliarias-y-constructores)
 4. [Capítulo II: Requirements Elicitation \& Analysis](#capítulo-ii-requirements-elicitation--analysis)
    1. [2.1. Competidores](#21-competidores)
       1. [2.1.1. Análisis competitivo](#211-análisis-competitivo)
@@ -165,19 +165,11 @@ NeuroDraw es una startup tecnológica emergente dedicada al diseño y desarrollo
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
-| Foto                                                    | Nombres y Apellidos               | Carrera                | Descripción                                                                                                                                                                                                                                                 |
-| ------------------------------------------------------- | --------------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![Joao](assets/cap1/pfp-team/joaofoto.png)    | Manuel Fernando Joao Castro Picón | Ingeniería de Software | Tengo 20 años y curso el 7mo ciclo en la Universidad Peruana de Ciencias Aplicadas. Me gusta entrenar calistenia, escuchar música y jugar fútbol. Me considero responsable, adaptable al trabajo en equipo y con metas claras para ser un gran profesional. |
-| ![Valentino](assets/cap1/pfp-team/trevor_fb.jpg)    | Santiago Valentino Solis Chang    | Ingeniería de Software | Tengo 21 años y curso el 7mo ciclo en la Universidad Peruana de Ciencias Aplicadas. En mi tiempo libre disfruto jugar videojuegos, practicar tenis y aprender sobre programación web. Soy responsable, comprometido y capaz de trabajar en equipo.          |
-| ![Miguel](assets/cap1/pfp-team/cara.png)  | Miguel Angel Vila Guillen         | Ingeniería de Software | Tengo 21 años y estudio el 6to ciclo en la Universidad Peruana de Ciencias Aplicadas. Me gusta jugar videojuegos, tocar la guitarra y el fútbol. Me considero capaz de trabajar en equipo y aspiro a ser un profesional competente.                         |
-| ![Diego](assets/cap1/pfp-team/diegorequena1.jfif)  | Diego Gabriel Requena Gutiérrez   | Ingeniería de Software | Tengo 19 años y curso el 5to ciclo en la Universidad Peruana de Ciencias Aplicadas. Soy una persona comprometida con mis objetivos, busco optimizar mi rendimiento y mantener un equilibrio entre la excelencia y una vida saludable.                       |
-| ![Sebastián](assets/cap1/pfp-team/sebastian.jpg)  | Sebastián De Las Casas Latour   | Ingeniería de Software | Tengo 22 años y curso el 8vo ciclo en la Universidad Peruana de Ciencias Aplicadas. Busco desarrollar mis competencias en análisis, diseño y construcción de soluciones de software, aplicando los conocimientos adquiridos durante mi formación académica.                       |
-| ![César](assets/cap1/pfp-team/césar.jpg)  | César Augusto Navarro Correa   | Ingeniería de Software | Mi nombre es Cesar Navarro, tengo 19 años y soy de la carrera de Ingeniería de Software de la UPC. Me considero una persona creativa en la realización de los trabajos y resiliente en mis actividades. Tengo conocimientos de lenguajes de programación en C++ y Python, pues siempre tuve interés en la computación.                       |
 | Foto                                              | Nombres y Apellidos               | Carrera                | Descripción                                                                                                                                                                                                                                                                                                            |
 | ------------------------------------------------- | --------------------------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![Joao](imagen)                                   | Manuel Fernando Joao Castro Picón | Ingeniería de Software | Tengo 19 años y curso el 5to ciclo en la Universidad Peruana de Ciencias Aplicadas. Me gusta entrenar calistenia, escuchar música y jugar fútbol. Me considero responsable, adaptable al trabajo en equipo y con metas claras para ser un gran profesional.                                                            |
+| ![Joao](assets/cap1/pfp-team/joaofoto.png)        | Manuel Fernando Joao Castro Picón | Ingeniería de Software | Tengo 20 años y curso el 7mo ciclo en la Universidad Peruana de Ciencias Aplicadas. Me gusta entrenar calistenia, escuchar música y jugar fútbol. Me considero responsable, adaptable al trabajo en equipo y con metas claras para ser un gran profesional.                                                            |
 | ![Valentino](assets/cap1/pfp-team/trevor_fb.jpg)  | Santiago Valentino Solis Chang    | Ingeniería de Software | Tengo 21 años y curso el 7mo ciclo en la Universidad Peruana de Ciencias Aplicadas. En mi tiempo libre disfruto jugar videojuegos, practicar tenis y aprender sobre programación web. Soy responsable, comprometido y capaz de trabajar en equipo.                                                                     |
-| ![Miguel](imagen)                                 | Miguel Angel Vila Guillen         | Ingeniería de Software | Tengo 21 años y estudio el 6to ciclo en la Universidad Peruana de Ciencias Aplicadas. Me gusta jugar videojuegos, tocar la guitarra y el fútbol. Me considero capaz de trabajar en equipo y aspiro a ser un profesional competente.                                                                                    |
+| ![Miguel](assets/cap1/pfp-team/cara.png)          | Miguel Angel Vila Guillen         | Ingeniería de Software | Tengo 21 años y estudio el 6to ciclo en la Universidad Peruana de Ciencias Aplicadas. Me gusta jugar videojuegos, tocar la guitarra y el fútbol. Me considero capaz de trabajar en equipo y aspiro a ser un profesional competente.                                                                                    |
 | ![Diego](assets/cap1/pfp-team/diegorequena1.jfif) | Diego Gabriel Requena Gutiérrez   | Ingeniería de Software | Tengo 19 años y curso el 5to ciclo en la Universidad Peruana de Ciencias Aplicadas. Soy una persona comprometida con mis objetivos, busco optimizar mi rendimiento y mantener un equilibrio entre la excelencia y una vida saludable.                                                                                  |
 | ![Sebastián](assets/cap1/pfp-team/sebastian.jpg)  | Sebastián De Las Casas Latour     | Ingeniería de Software | Tengo 22 años y curso el 8vo ciclo en la Universidad Peruana de Ciencias Aplicadas. Busco desarrollar mis competencias en análisis, diseño y construcción de soluciones de software, aplicando los conocimientos adquiridos durante mi formación académica.                                                            |
 | ![César](assets/cap1/pfp-team/césar.jpg)          | César Augusto Navarro Correa      | Ingeniería de Software | Mi nombre es Cesar Navarro, tengo 19 años y soy de la carrera de Ingeniería de Software de la UPC. Me considero una persona creativa en la realización de los trabajos y resiliente en mis actividades. Tengo conocimientos de lenguajes de programación en C++ y Python, pues siempre tuve interés en la computación. |
@@ -821,13 +813,14 @@ Los flujos identificados permiten representar el comportamiento de QuakExit ante
 
 #### 4.1.1.1. Candidate Context Discovery
 
-A partir del mapeo general obtenido en la sesión de EventStorming, el equipo procedió a agrupar los eventos, comandos, actores y políticas fuertemente relacionados para descubrir los Contextos Delimitados (Bounded Contexts) candidatos del sistema QuakExit. 
+A partir del mapeo general obtenido en la sesión de EventStorming, el equipo procedió a agrupar los eventos, comandos, actores y políticas fuertemente relacionados para descubrir los Contextos Delimitados (Bounded Contexts) candidatos del sistema QuakExit.
 
-Para llevar a cabo este proceso de descomposición, se aplicaron dos técnicas principales: 
+Para llevar a cabo este proceso de descomposición, se aplicaron dos técnicas principales:
+
 1. **Start-with-value:** Se aisló inicialmente el núcleo crítico del negocio que aporta el mayor valor, es decir, la detección sísmica y el protocolo de apertura física inmediata.
 2. **Look-for-pivotal-events:** Se identificaron eventos clave que marcan un cambio de estado drástico en el dominio, tales como "Corte Eléctrico Detectado" o "Modo Emergencia Activado", los cuales nos permitieron separar las responsabilidades de monitoreo de hardware de las notificaciones a los usuarios.
 
-Como resultado de este análisis iterativo, la complejidad del sistema se dividió en los siguientes contextos candidatos: *IAM & Profile* (flujo de entrada lineal), *Emergency Core* (núcleo de evacuación), *IoT & Energy Management* (gestión de hardware y autonomía), *Alerting & Events* (comunicación), *Simulation & Testing* (simulacros) y *B2B Management* (panel de inmobiliarias). 
+Como resultado de este análisis iterativo, la complejidad del sistema se dividió en los siguientes contextos candidatos: _IAM & Profile_ (flujo de entrada lineal), _Emergency Core_ (núcleo de evacuación), _IoT & Energy Management_ (gestión de hardware y autonomía), _Alerting & Events_ (comunicación), _Simulation & Testing_ (simulacros) y _B2B Management_ (panel de inmobiliarias).
 
 A continuación, se presenta la representación visual de esta agrupación, donde los flujos de eventos han sido encapsulados en sus respectivos dominios lógicos.
 
@@ -854,14 +847,15 @@ A partir de los Bounded Contexts identificados durante el Candidate Context Disc
 
 Para la elaboración de cada Canvas se siguió un proceso iterativo compuesto por las siguientes actividades:
 
-*   **Context Overview Definition:** definición del propósito, alcance y responsabilidad principal de cada Bounded Context.
-*   **Business Rules Distillation & Ubiquitous Language Capture:** identificación de las principales reglas de negocio y términos del lenguaje ubicuo asociados al contexto.
-*   **Capability Analysis:** identificación de las capacidades necesarias para cumplir con la responsabilidad del contexto.
-*   **Capability Layering:** organización de las capacidades en diferentes niveles cuando resulta aplicable.
-*   **Dependencies Capture:** identificación de las dependencias y comunicaciones con otros Bounded Contexts o sistemas externos.
-*   **Design Critique:** revisión del diseño para verificar la claridad de los límites, responsabilidades, reglas y dependencias del contexto.
+- **Context Overview Definition:** definición del propósito, alcance y responsabilidad principal de cada Bounded Context.
+- **Business Rules Distillation & Ubiquitous Language Capture:** identificación de las principales reglas de negocio y términos del lenguaje ubicuo asociados al contexto.
+- **Capability Analysis:** identificación de las capacidades necesarias para cumplir con la responsabilidad del contexto.
+- **Capability Layering:** organización de las capacidades en diferentes niveles cuando resulta aplicable.
+- **Dependencies Capture:** identificación de las dependencias y comunicaciones con otros Bounded Contexts o sistemas externos.
+- **Design Critique:** revisión del diseño para verificar la claridad de los límites, responsabilidades, reglas y dependencias del contexto.
 
 Los Bounded Contexts analizados para la solución QuakExit son:
+
 1.  IAM & Profile
 2.  Emergency Core
 3.  IoT & Energy Management
@@ -907,10 +901,9 @@ Cada Canvas permite representar de manera individual los límites y responsabili
   <p align="center"><img src="assets/cap4/4.1/B2B Management.png" alt="Bounded Context Canvases" width="700px" /></p>
 </div>
 
-### 4.1.2. Context Mapping 
+### 4.1.2. Context Mapping
 
-Se explica y evidencia el proceso de elaboración de visualizaciones de las relaciones estructurales entre los bounded contexts. Se deben discutir las alternativas de diseño y considerar patrones de Domain-Driven Design como Anti-corruption Layer, Conformist, Customer/Supplier o Shared Kernel.   Diagrama: Sí. Se debe elaborar un conjunto de contexts maps (visualizaciones de las relaciones). 
-
+Se explica y evidencia el proceso de elaboración de visualizaciones de las relaciones estructurales entre los bounded contexts. Se deben discutir las alternativas de diseño y considerar patrones de Domain-Driven Design como Anti-corruption Layer, Conformist, Customer/Supplier o Shared Kernel. Diagrama: Sí. Se debe elaborar un conjunto de contexts maps (visualizaciones de las relaciones).
 
 A partir del EventStorming, se explica y evidencia el proceso para identificar los bounded contexts aplicando técnicas como start-with-value, start-with-simple o look-for-pivotal-events. Diagrama: Sí. Se debe complementar la explicación con capturas en imagen de los cambios progresivos del EventStorm.
 
