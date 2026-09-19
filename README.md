@@ -156,7 +156,7 @@
 
 ### 1.1.1. Descripción de la Startup
 
-NeuroDraw es una startup tecnológica emergente dedicada al diseño y desarrollo de soluciones integrales que fusionan el Internet de las Cosas (IoT) con el desarrollo de software orientado a la seguridad residencial. La empresa nace con el propósito de mitigar la vulnerabilidad de las personas frente a desastres naturales, específicamente eventos sísmicos, democratizando el acceso a sistemas de automatización que protegen la vida humana.
+TerraGuard es una startup tecnológica emergente dedicada al diseño y desarrollo de soluciones integrales que fusionan el Internet de las Cosas (IoT) con el desarrollo de software orientado a la seguridad residencial. La empresa nace con el propósito de mitigar la vulnerabilidad de las personas frente a desastres naturales, específicamente eventos sísmicos, democratizando el acceso a sistemas de automatización que protegen la vida humana.
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
@@ -1190,7 +1190,7 @@ El diseño arquitectónico de QuakExit se ha elaborado siguiendo el Modelo C4, p
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
-El diagrama de panorama del sistema (System Landscape) ofrece una visión macro de NeuroDraw como empresa tecnológica frente a su ecosistema operativo. En este nivel, se visualiza a QuakExit como la solución central que interactúa con dos arquetipos de usuarios principales: el residente o dueño de Smart Home (B2C) y el administrador inmobiliario (B2B). Asimismo, se evidencia la dependencia estratégica con sistemas externos de terceros, específicamente con Firebase Cloud Messaging (FCM) para la delegación del servicio de mensajería push, desacoplando así la responsabilidad de entrega de notificaciones críticas del servidor principal.
+El diagrama de panorama del sistema (System Landscape) ofrece una visión macro de TerraGuard como empresa tecnológica frente a su ecosistema operativo. En este nivel, se visualiza a QuakExit como la solución central que interactúa con dos arquetipos de usuarios principales: el residente o dueño de Smart Home (B2C) y el administrador inmobiliario (B2B). Asimismo, se evidencia la dependencia estratégica con sistemas externos de terceros, específicamente con Firebase Cloud Messaging (FCM) para la delegación del servicio de mensajería push, desacoplando así la responsabilidad de entrega de notificaciones críticas del servidor principal.
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
