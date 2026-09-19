@@ -77,7 +77,18 @@
 
 ## Registro de Versiones del Informe
 
-### Contribuciones por integrante
+El objetivo de esta sección es resumir las modificaciones relevantes que se realizan al informe durante el ciclo de vida del proyecto.
+
+| Versión | Fecha      | Autor(es)                                           | Descripción de modificación                                                                                                                                   |
+| :------ | :--------- | :-------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1.0     | 2026-09-10 | Manuel Castro                                       | Creación inicial del documento: carátula, perfiles del equipo (Startup Profile) y estructura base del Student Outcome (AV1).                                  |
+| 1.1     | 2026-09-12 | Diego Requena & Manuel Castro                       | Se añadió el Solution Profile (Antecedentes del riesgo sísmico, Lean UX Problem Statements, Assumptions e Hypothesis) y Segmentos Objetivo.                   |
+| 1.2     | 2026-09-14 | Santiago Solis & Miguel Vila                        | Se incorporó el análisis competitivo (SISMATE, SASSLA, ShakeAlert) y el registro y análisis de entrevistas (dueños de Smart Homes e Inmobiliarias).           |
+| 1.3     | 2026-09-15 | Manuel Castro & Diego Requena                       | Inclusión de la sección Needfinding (User Personas, Task Matrix, Journey Mapping, Empathy Mapping y As-is Scenario Mapping).                                  |
+| 1.4     | 2026-09-16 | Santiago Solis & Miguel Vila                        | Definición del Lenguaje Ubicuo, redacción de User Stories (7 Épicas), estructuración del Impact Mapping y consolidación del Product Backlog.                  |
+| 1.5     | 2026-09-17 | Manuel Castro & Santiago Solis                      | Inicio del Capítulo IV: Desarrollo del Strategic-Level DDD, Design-Level EventStorming, Candidate Context Discovery y Bounded Context Canvases.               |
+| 1.6     | 2026-09-18 | Miguel Vila & Diego Requena                         | Elaboración de la Arquitectura de Software bajo el Modelo C4, incluyendo los diagramas System Landscape, Context, Container y Deployment.                     |
+| 1.7     | 2026-09-19 | Sebastián De Las Casas, César Navarro & Fabrizio Quiroz | Inclusión del Tactical-Level DDD, definición de capas de dominio/aplicación, diagramas de clases UML y diseño de base de datos para los Bounded Contexts. |
 
 <div style="page-break-after: always;"></div>
 
