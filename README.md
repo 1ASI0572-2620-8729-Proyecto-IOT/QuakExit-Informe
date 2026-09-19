@@ -1190,7 +1190,14 @@ El diseño arquitectónico de QuakExit se ha elaborado siguiendo el Modelo C4, p
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
-El diagrama de panorama del sistema (System Landscape) ofrece una visión macro de TerraGuard como empresa tecnológica frente a su ecosistema operativo. En este nivel, se visualiza a QuakExit como la solución central que interactúa con dos arquetipos de usuarios principales: el residente o dueño de Smart Home (B2C) y el administrador inmobiliario (B2B). Asimismo, se evidencia la dependencia estratégica con sistemas externos de terceros, específicamente con Firebase Cloud Messaging (FCM) para la delegación del servicio de mensajería push, desacoplando así la responsabilidad de entrega de notificaciones críticas del servidor principal.
+Este diagrama muestra que la plataforma **QuakExit** opera dentro de un ecosistema compuesto por dos tipos de usuarios principales (Residente / Dueño de Smart Home y Administrador Inmobiliario) y un actor técnico de mantenimiento (Equipo de Desarrollo), los cuales interactúan directamente con el sistema central **QuakExit System**. 
+
+A su vez, el sistema se conecta externamente con **Firebase Cloud Messaging (FCM)** para delegar el envío de notificaciones push críticas en situaciones de emergencia. Los Residentes utilizan la plataforma para monitorear el estado de sus dispositivos IoT y recibir alertas de evacuación; los Administradores Inmobiliarios gestionan configuraciones masivas en proyectos multifamiliares; y el Equipo de Desarrollo asegura el mantenimiento continuo de la infraestructura en la nube.
+
+<p align="center">
+  <img src="assets/cap4/4.1/diagrama-landscape.png" width="900">
+</p>
+
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
