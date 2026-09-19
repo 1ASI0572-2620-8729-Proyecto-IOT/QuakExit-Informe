@@ -817,7 +817,19 @@ Los flujos identificados permiten representar el comportamiento de QuakExit ante
 
 #### 4.1.1.1. Candidate Context Discovery
 
-A partir del EventStorming, se explica y evidencia el proceso para identificar los bounded contexts aplicando técnicas como start-with-value, start-with-simple o look-for-pivotal-events.   Diagrama: Sí. Se debe complementar la explicación con capturas en imagen de los cambios progresivos del EventStorm.
+A partir del mapeo general obtenido en la sesión de EventStorming, el equipo procedió a agrupar los eventos, comandos, actores y políticas fuertemente relacionados para descubrir los Contextos Delimitados (Bounded Contexts) candidatos del sistema QuakExit. 
+
+Para llevar a cabo este proceso de descomposición, se aplicaron dos técnicas principales: 
+1. **Start-with-value:** Se aisló inicialmente el núcleo crítico del negocio que aporta el mayor valor, es decir, la detección sísmica y el protocolo de apertura física inmediata.
+2. **Look-for-pivotal-events:** Se identificaron eventos clave que marcan un cambio de estado drástico en el dominio, tales como "Corte Eléctrico Detectado" o "Modo Emergencia Activado", los cuales nos permitieron separar las responsabilidades de monitoreo de hardware de las notificaciones a los usuarios.
+
+Como resultado de este análisis iterativo, la complejidad del sistema se dividió en los siguientes contextos candidatos: *IAM & Profile* (flujo de entrada lineal), *Emergency Core* (núcleo de evacuación), *IoT & Energy Management* (gestión de hardware y autonomía), *Alerting & Events* (comunicación), *Simulation & Testing* (simulacros) y *B2B Management* (panel de inmobiliarias). 
+
+A continuación, se presenta la representación visual de esta agrupación, donde los flujos de eventos han sido encapsulados en sus respectivos dominios lógicos.
+
+<div>
+  <p align="center"><img src="assets/cap4/4.1/Candidate Context Discovery.jpeg" alt="Design-Level EventStorming" width="700px" /></p>
+</div>
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
