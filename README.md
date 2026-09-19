@@ -1191,7 +1191,7 @@ De esta manera cualquier cambio en proveedores externos no impacta directamente 
 
 ### 4.1.3. Software Architecture
 
-Se presenta y explica la representación de la Arquitectura de Software de la solución aplicando el Modelo C4. Diagrama: Es la sección introductoria a los diagramas C4, los diagramas van en los subpuntos.
+El diseño arquitectónico de QuakExit se ha elaborado siguiendo el Modelo C4, permitiendo una abstracción progresiva del sistema. Para asegurar la viabilidad económica y técnica del proyecto, se ha adoptado una arquitectura Serverless orientada a eventos, lo cual garantiza escalabilidad, tolerancia a fallos y un costo operativo inicial nulo gracias a las capas gratuitas de los proveedores en la nube.
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
