@@ -1749,15 +1749,83 @@ El **Seismic Monitoring Bounded Context** está compuesto por los siguientes mó
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
-Se presentan y explican los diagramas de mayor detalle sobre la implementación de componentes en el contexto. Diagrama: Es la sección introductoria a los diagramas de código.
+En esta sección se presentan los diagramas de mayor detalle que exponen la implementación táctica e interna de los componentes del **<Nombre del Bounded Context>** a nivel de código. El objetivo de este nivel (el nivel 4 del Modelo C4) es brindar una visión técnica, profunda y estructurada de cómo se organizan las clases del dominio y cómo se persiste la información crítica del sistema QuakExit.
+
+Para reflejar este nivel de detalle, la sección se divide en dos artefactos visuales fundamentales:
+
+1. **Domain Layer Class Diagrams:** Se expone el Diagrama de Clases UML que conforma el núcleo de las reglas de negocio. Se detallan las Entidades, Agregados, Objetos de Valor e Interfaces, especificando sus atributos, métodos, niveles de encapsulamiento (scope) y la multiplicidad de sus relaciones.
+2. **Database Design Diagram:** Se presenta el Modelo Físico de Datos (Diagrama Entidad-Relación), evidenciando cómo se mapean los objetos del dominio hacia la infraestructura de persistencia, especificando las tablas, columnas, restricciones, claves primarias (PK) y claves foráneas (FK).
+
 
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 
-Se explican las clases, interfaces, enumeraciones y sus relaciones de la capa de dominio. Diagrama: Sí. Se debe presentar el Class Diagram de UML. El nivel de detalle debe incluir miembros de cada clase (atributos, métodos, scope: private, public, protected), calificación con nombres, dirección y multiplicidad en las relaciones.
+El diagrama de clases correspondiente a la Domain Layer del **Seismic Monitoring Bounded Context** incluye las clases principales, como agregados, entidades y objetos de valor, así como las interfaces y enumeraciones que definen el comportamiento crítico del dominio para la detección de sismos.
+
+<div>
+  <p align="center"><img src="assets/cap4/4.2/Bounded Context Domain Layer Class Diagrams.png" alt="Bounded Context Domain Layer Class Diagrams" width="700px" /></p>
+</div>
+
+**Elementos principales del diagrama:**
+
+**1. Aggregates:**
+*   **SeismicEvent:** Agregado principal (Aggregate Root) que encapsula la lógica de negocio relacionada con la confirmación de un evento sísmico real.
+    *   **Atributos:**
+        *   `eventId`: Identificador único del evento sísmico.
+        *   `magnitude`: Magnitud consolidada del evento.
+        *   `epicenter`: Identificador o nombre de la zona del epicentro.
+        *   `riskLevel`: Nivel de riesgo calculado para la evacuación.
+        *   `occurrenceDate`: Fecha y hora de confirmación.
+    *   **Métodos:**
+        *   `confirmEvent()`: Valida y consolida el evento para disparar la alerta.
+        *   `classifyRisk(Magnitude mag)`: Asigna el nivel de riesgo según la intensidad.
+        *   `updateMagnitude(Magnitude newMag)`: Actualiza la magnitud si llegan lecturas más fuertes.
+
+**2. Entities:**
+*   **SeismicRecord:** Entidad que representa cada lectura individual capturada por los sensores físicos (ESP32) asociados al evento.
+    *   **Atributos:**
+        *   `recordId`: Identificador único de la lectura.
+        *   `magnitude`: Intensidad de la vibración registrada.
+        *   `timestamp`: Momento exacto de la medición.
+    *   **Métodos:**
+        *   `validateMeasurement()`: Verifica que la lectura no sea un falso positivo (ej. vibraciones de camiones).
+        *   `isCritical() : Boolean`: Retorna verdadero si la lectura supera el umbral de disparo.
+
+**3. Value Objects & Enumerations:**
+*   **RiskLevel:** Enumeración (`«enumeration»`) que define los estados posibles de riesgo de un sismo (`LOW`, `MEDIUM`, `HIGH`, `CRITICAL`).
+*   **GeographicLocation:** Objeto de valor (Value Object) que representa la ubicación física exacta mediante coordenadas (latitud y longitud).
+*   **Magnitude:** Objeto de valor que representa la intensidad del sismo con sus respectivas reglas de validación (debe ser mayor a 0).
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
 
-Se explica cómo se persistirá la información para los objetos del contexto, especificando tablas, columnas y constraints (primary y foreign keys). Diagrama: Sí. Se debe presentar el Database Diagram evidenciando las relaciones entre las tablas.
+El diseño de la base de datos para el **Seismic Monitoring Bounded Context** refleja la estructura del dominio, asegurando que las entidades y relaciones definidas en la Domain Layer (como los eventos y sus lecturas) se representen de manera eficiente en el modelo de persistencia.
+
+<div>
+  <p align="center"><img src="assets/cap4/4.2/Bounded Context Database Design Diagram.png" alt="Bounded Context Database Design Diagram" width="700px" /></p>
+</div>
+
+Este diseño incluye las siguientes tablas principales:
+
+**1. SEISMIC_EVENTS:**
+Representa los eventos sísmicos confirmados y consolidados por el sistema.
+*   **Atributos principales:**
+    *   `id`: Identificador único del evento sísmico (PK).
+    *   `magnitude`: Magnitud general consolidada del sismo.
+    *   `epicenter`: Zona o identificador de la ubicación del epicentro.
+    *   `risk_level`: Nivel de riesgo calculado (ej. LOW, MEDIUM, HIGH, CRITICAL).
+    *   `occurrence_date`: Fecha y hora exacta de la confirmación del evento.
+    *   `created_at`: Fecha de registro en la base de datos.
+    *   `updated_at`: Fecha de última actualización.
+
+**2. SEISMIC_RECORDS:**
+Representa las lecturas o mediciones individuales capturadas por los sensores (QuakExit Hubs) asociadas a un evento.
+*   **Atributos principales:**
+    *   `id`: Identificador único del registro de lectura (PK).
+    *   `event_id`: Identificador del evento sísmico al que pertenece esta lectura (FK).
+    *   `sensor_id`: Identificador del sensor IoT que generó la lectura.
+    *   `magnitude`: Intensidad de la vibración registrada por ese sensor en específico.
+    *   `depth`: Profundidad estimada de la onda.
+    *   `timestamp`: Fecha y hora exacta de la captura física por el hardware.
+
 
 <div style="page-break-after: always;"></div>
 
