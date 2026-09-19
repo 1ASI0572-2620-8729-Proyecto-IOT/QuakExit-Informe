@@ -1203,7 +1203,15 @@ El diagrama de contexto sitúa a la plataforma QuakExit en el centro (como una c
 
 #### 4.1.3.3. Software Architecture Container Level Diagrams
 
-Se realiza una introducción y se explica el Container Diagram, mostrando los elementos de alto nivel, cómo se distribuyen las responsabilidades, las decisiones de tecnología y cómo se comunican entre sí. Diagrama: Sí. Se debe presentar el diagrama de contenedores, recordando que cada uno representa una unidad de despliegue independiente.
+A nivel de contenedores, se "abre" el sistema para revelar la arquitectura técnica responsable de soportar las historias de usuario. La solución se compone de los siguientes contenedores principales:
+
+  - **Interfaces de Usuario:** Una aplicación móvil construida en **Flutter** para la gestión residencial rápida y reactiva, y un panel web en HTML/CSS/JS impulsado por Fetch API para la administración B2B.
+
+  - **API y Lógica Backend:** Un **Amazon API Gateway** que enruta las peticiones HTTP seguras hacia un backend Serverless compuesto por funciones AWS Lambda desarrolladas en Python, las cuales manejan la validación de tokens JWT y la lógica central de evacuación.
+
+  - **Persistencia:** **Amazon DynamoDB**, seleccionado como base de datos NoSQL por su baja latencia para registrar perfiles de dispositivos y eventos sísmicos.
+
+  - **Capa IoT:** Un microcontrolador **ESP32 (IoT Hub)** instalado localmente, el cual gestiona la detección física y la apertura de cerraduras mediante Edge Computing. Este componente se sincroniza asíncronamente con el backend utilizando el protocolo MQTT a través de AWS IoT Core, lo que permite mantener modos de bajo consumo (Deep Sleep) críticos para la duración de la batería de respaldo.
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
