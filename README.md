@@ -828,7 +828,7 @@ Como resultado de este análisis iterativo, la complejidad del sistema se dividi
 A continuación, se presenta la representación visual de esta agrupación, donde los flujos de eventos han sido encapsulados en sus respectivos dominios lógicos.
 
 <div>
-  <p align="center"><img src="assets/cap4/4.1/Candidate Context Discovery.jpeg" alt="Design-Level EventStorming" width="700px" /></p>
+  <p align="center"><img src="assets/cap4/4.1/Candidate Context Discovery.jpeg" alt="Candidate Context Discovery" width="700px" /></p>
 </div>
 
 #### 4.1.1.2. Domain Message Flows Modeling
@@ -841,12 +841,67 @@ problemas potenciales más fácilmente y optimizar la estructura del diseño. A 
 continuación algunos diagramas aplicados a nuestro sistema.
 
 <div>
-  <p align="center"><img src="assets/cap4/4.1/Domain Message Flows Modeling.png" alt="Design-Level EventStorming" width="700px" /></p>
+  <p align="center"><img src="assets/cap4/4.1/Domain Message Flows Modeling.png" alt="Domain Message Flows Modeling" width="700px" /></p>
 </div>
 
 #### 4.1.1.3 Bounded Context Canvases
 
-Se diseñan los candidate bounded contexts detallando sus criterios de diseño a través de un proceso iterativo que incluye definición general, reglas de negocio, lenguaje ubicuo, dependencias, entre otros.   Diagrama: Sí. Se debe elaborar y presentar el Bounded Context Canvas por cada contexto, ordenados por importancia.  
+A partir de los Bounded Contexts identificados durante el Candidate Context Discovery, se elaboraron los Bounded Context Canvases con el propósito de definir con mayor precisión las responsabilidades, propósito, lenguaje ubicuo, decisiones de negocio y comunicaciones de cada contexto.
+
+Para la elaboración de cada Canvas se siguió un proceso iterativo compuesto por las siguientes actividades:
+
+*   **Context Overview Definition:** definición del propósito, alcance y responsabilidad principal de cada Bounded Context.
+*   **Business Rules Distillation & Ubiquitous Language Capture:** identificación de las principales reglas de negocio y términos del lenguaje ubicuo asociados al contexto.
+*   **Capability Analysis:** identificación de las capacidades necesarias para cumplir con la responsabilidad del contexto.
+*   **Capability Layering:** organización de las capacidades en diferentes niveles cuando resulta aplicable.
+*   **Dependencies Capture:** identificación de las dependencias y comunicaciones con otros Bounded Contexts o sistemas externos.
+*   **Design Critique:** revisión del diseño para verificar la claridad de los límites, responsabilidades, reglas y dependencias del contexto.
+
+Los Bounded Contexts analizados para la solución QuakExit son:
+1.  IAM & Profile
+2.  Emergency Core
+3.  IoT & Energy Management
+4.  Alerting & Events
+5.  Simulation & Testing
+6.  B2B Management
+
+Cada Canvas permite representar de manera individual los límites y responsabilidades de cada Bounded Context, sirviendo como base para el posterior análisis de las relaciones entre contextos mediante el Context Mapping.
+
+**1. IAM & Profile**
+
+<div>
+  <p align="center"><img src="assets/cap4/4.1/IAM & Profile.png" alt="Bounded Context Canvases" width="700px" /></p>
+</div>
+
+**2. Emergency Core**
+
+<div>
+  <p align="center"><img src="assets/cap4/4.1/Emergency Core.png" alt="Bounded Context Canvases" width="700px" /></p>
+</div>
+
+**3. IoT & Energy Management**
+
+<div>
+  <p align="center"><img src="assets/cap4/4.1/IoT & Energy Management.png" alt="Bounded Context Canvases" width="700px" /></p>
+</div>
+
+**4. Alerting & Events**
+
+<div>
+  <p align="center"><img src="assets/cap4/4.1/Alerting & Events.png" alt="Bounded Context Canvases" width="700px" /></p>
+</div>
+
+**5. Simulation & Testing**
+
+<div>
+  <p align="center"><img src="assets/cap4/4.1/Simulation & Testing.png" alt="Bounded Context Canvases" width="700px" /></p>
+</div>
+
+**6. B2B Management**
+
+<div>
+  <p align="center"><img src="assets/cap4/4.1/B2B Management.png" alt="Bounded Context Canvases" width="700px" /></p>
+</div>
 
 ### 4.1.2. Context Mapping 
 
