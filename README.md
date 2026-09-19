@@ -2101,6 +2101,8 @@ Se explica cómo se persistirá la información para los objetos del contexto, e
 
 <div style="page-break-after: always;"></div>
 
+---
+
 ##### Conclusiones
 
 
@@ -2114,18 +2116,24 @@ Se explica cómo se persistirá la información para los objetos del contexto, e
 
 <div style="page-break-after: always;"></div>
 
+---
+
 ##### Bibliografía
 
-Brown, S. (2018). *Software architecture for developers: Visualise, document and explore your software architecture*. Leanpub.
+Brandolini, A. (2021). *Introducing EventStorming*. EventStorming. https://www.eventstorming.com/
 
-Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of software*. Addison-Wesley Professional.
+Brown, S. (s.f.). *The C4 model for visualising software architecture*. C4 Model. https://c4model.com/
 
-Gothelf, J., & Seiden, J. (2021). *Lean UX: Designing great products with agile teams* (3.ª ed.). O'Reilly Media.
+DDD Crew. (2023). *Bounded Context Canvas*. GitHub. https://github.com/ddd-crew/bounded-context-canvas
 
-Instituto Nacional de Defensa Civil [INDECI]. (2023). *Plan Nacional de Gestión del Riesgo de Desastres (PLANAGERD) 2022-2030*. Gobierno del Perú. https://www.gob.pe/indeci
+Gothelf, J., & Seiden, J. (2021). *Lean UX: Designing great products with agile teams*. Jeff Gothelf. https://jeffgothelf.com/lean-ux-book/
 
-Vernon, V. (2013). *Implementing domain-driven design*. Addison-Wesley Professional.
+Instituto Geofísico del Perú [IGP]. (2023). *Centro Nacional de Alerta de Tsunamis y Sismos*. Gobierno del Perú. https://www.igp.gob.pe/
+
+Ministerio de Transportes y Comunicaciones [MTC]. (s.f.). *Sistema de Mensajería de Alerta Temprana de Emergencias (SISMATE)*. Gobierno del Perú. https://www.gob.pe/institucion/mtc/colecciones/532-sistema-de-mensajeria-de-alerta-temprana-de-emergencias-sismate
 
 <div style="page-break-after: always;"></div>
+
+---
 
 ##### Anexos
