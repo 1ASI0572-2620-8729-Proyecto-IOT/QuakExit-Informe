@@ -93,15 +93,15 @@ A continuación, se presentan las evidencias de participación y colaboración d
 
 El objetivo de esta sección es resumir las modificaciones relevantes que se realizan al informe durante el ciclo de vida del proyecto.
 
-| Versión | Fecha      | Autor(es)                                           | Descripción de modificación                                                                                                                                   |
-| :------ | :--------- | :-------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1.0     | 2026-09-10 | Manuel Castro                                       | Creación inicial del documento: carátula, perfiles del equipo (Startup Profile) y estructura base del Student Outcome (AV1).                                  |
-| 1.1     | 2026-09-12 | Diego Requena & Manuel Castro                       | Se añadió el Solution Profile (Antecedentes del riesgo sísmico, Lean UX Problem Statements, Assumptions e Hypothesis) y Segmentos Objetivo.                   |
-| 1.2     | 2026-09-14 | Santiago Solis & Miguel Vila                        | Se incorporó el análisis competitivo (SISMATE, SASSLA, ShakeAlert) y el registro y análisis de entrevistas (dueños de Smart Homes e Inmobiliarias).           |
-| 1.3     | 2026-09-15 | Manuel Castro & Diego Requena                       | Inclusión de la sección Needfinding (User Personas, Task Matrix, Journey Mapping, Empathy Mapping y As-is Scenario Mapping).                                  |
-| 1.4     | 2026-09-16 | Santiago Solis & Miguel Vila                        | Definición del Lenguaje Ubicuo, redacción de User Stories (7 Épicas), estructuración del Impact Mapping y consolidación del Product Backlog.                  |
-| 1.5     | 2026-09-17 | Manuel Castro & Santiago Solis                      | Inicio del Capítulo IV: Desarrollo del Strategic-Level DDD, Design-Level EventStorming, Candidate Context Discovery y Bounded Context Canvases.               |
-| 1.6     | 2026-09-18 | Miguel Vila & Diego Requena                         | Elaboración de la Arquitectura de Software bajo el Modelo C4, incluyendo los diagramas System Landscape, Context, Container y Deployment.                     |
+| Versión | Fecha      | Autor(es)                                               | Descripción de modificación                                                                                                                               |
+| :------ | :--------- | :------------------------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.0     | 2026-09-10 | Manuel Castro                                           | Creación inicial del documento: carátula, perfiles del equipo (Startup Profile) y estructura base del Student Outcome (AV1).                              |
+| 1.1     | 2026-09-12 | Diego Requena & Manuel Castro                           | Se añadió el Solution Profile (Antecedentes del riesgo sísmico, Lean UX Problem Statements, Assumptions e Hypothesis) y Segmentos Objetivo.               |
+| 1.2     | 2026-09-14 | Santiago Solis & Miguel Vila                            | Se incorporó el análisis competitivo (SISMATE, SASSLA, ShakeAlert) y el registro y análisis de entrevistas (dueños de Smart Homes e Inmobiliarias).       |
+| 1.3     | 2026-09-15 | Manuel Castro & Diego Requena                           | Inclusión de la sección Needfinding (User Personas, Task Matrix, Journey Mapping, Empathy Mapping y As-is Scenario Mapping).                              |
+| 1.4     | 2026-09-16 | Santiago Solis & Miguel Vila                            | Definición del Lenguaje Ubicuo, redacción de User Stories (7 Épicas), estructuración del Impact Mapping y consolidación del Product Backlog.              |
+| 1.5     | 2026-09-17 | Manuel Castro & Santiago Solis                          | Inicio del Capítulo IV: Desarrollo del Strategic-Level DDD, Design-Level EventStorming, Candidate Context Discovery y Bounded Context Canvases.           |
+| 1.6     | 2026-09-18 | Miguel Vila & Diego Requena                             | Elaboración de la Arquitectura de Software bajo el Modelo C4, incluyendo los diagramas System Landscape, Context, Container y Deployment.                 |
 | 1.7     | 2026-09-19 | Sebastián De Las Casas, César Navarro & Fabrizio Quiroz | Inclusión del Tactical-Level DDD, definición de capas de dominio/aplicación, diagramas de clases UML y diseño de base de datos para los Bounded Contexts. |
 
 <div style="page-break-after: always;"></div>
@@ -163,7 +163,7 @@ El objetivo de esta sección es resumir las modificaciones relevantes que se rea
          3. [4.1.3.3. Software Architecture Container Level Diagrams](#4133-software-architecture-container-level-diagrams)
          4. [4.1.3.4. Software Architecture Deployment Diagrams](#4134-software-architecture-deployment-diagrams)
    2. [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
-      1. [4.2.1. Bounded Context: ](#421-bounded-context-)
+      1. [4.2.1. Bounded Contexts:](#421-bounded-contexts)
          1. [4.2.1.1. Domain Layer](#4211-domain-layer)
          2. [4.2.1.1. Domain Layer](#4211-domain-layer-1)
          3. [1. User Management Context](#1-user-management-context)
@@ -199,9 +199,9 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 
 En el siguiente cuadro se describen las acciones realizadas y los enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 5 para el primer avance (AV1).
 
-| Criterio específico | Acciones realizadas | Conclusiones |
-| :--- | :--- | :--- |
-| **Trabaja en equipo para proporcionar liderazgo en forma conjunta** | **Castro Picón, Manuel Fernando Joao**<br>**AV1:**<br>• Lideró la definición de la estrategia del negocio y facilitó las sesiones colaborativas de EventStorming.<br><br>**Solis Chang, Santiago Valentino**<br>**AV1:**<br>• Asumió el liderazgo en la delimitación de los Bounded Contexts y la elaboración estructural de los Canvases.<br><br>**Vila Guillen, Miguel Angel**<br>**AV1:**<br>• Dirigió el análisis arquitectónico a nivel macro, estableciendo los lineamientos y diagramas principales del modelo C4.<br><br>**Requena Gutiérrez, Diego Gabriel**<br>**AV1:**<br>• Tomó la iniciativa en la definición de la infraestructura técnica, los proveedores cloud y los diagramas de despliegue.<br><br>**De Las Casas Latour, Sebastián**<br>**AV1:**<br>• Lideró la estructuración táctica (DDD), organizando las responsabilidades de las capas internas (Dominio, Aplicación e Infraestructura).<br><br>**Navarro Correa, César Augusto**<br>**AV1:**<br>• Guió el modelado de entidades y repositorios, liderando el diseño de los diagramas de clases UML del sistema.<br><br>**Quiroz Zambrano, Fabrizio Javier**<br>**AV1:**<br>• Asumió el control del diseño de la persistencia de datos y la estructuración técnica de los diagramas Entidad-Relación. | **AV1:**<br>Durante el primer avance, el equipo logró distribuir el liderazgo de forma equitativa. Se delegó la dirección de tareas específicas basándose en las fortalezas técnicas de cada integrante (estrategia, arquitectura general y diseño táctico), lo que permitió un avance sostenido, especializado y un liderazgo verdaderamente compartido. |
+| Criterio específico                                                                                 | Acciones realizadas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Conclusiones                                                                                                                                                                                                                                                                                                                                                                      |
+| :-------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Trabaja en equipo para proporcionar liderazgo en forma conjunta**                                 | **Castro Picón, Manuel Fernando Joao**<br>**AV1:**<br>• Lideró la definición de la estrategia del negocio y facilitó las sesiones colaborativas de EventStorming.<br><br>**Solis Chang, Santiago Valentino**<br>**AV1:**<br>• Asumió el liderazgo en la delimitación de los Bounded Contexts y la elaboración estructural de los Canvases.<br><br>**Vila Guillen, Miguel Angel**<br>**AV1:**<br>• Dirigió el análisis arquitectónico a nivel macro, estableciendo los lineamientos y diagramas principales del modelo C4.<br><br>**Requena Gutiérrez, Diego Gabriel**<br>**AV1:**<br>• Tomó la iniciativa en la definición de la infraestructura técnica, los proveedores cloud y los diagramas de despliegue.<br><br>**De Las Casas Latour, Sebastián**<br>**AV1:**<br>• Lideró la estructuración táctica (DDD), organizando las responsabilidades de las capas internas (Dominio, Aplicación e Infraestructura).<br><br>**Navarro Correa, César Augusto**<br>**AV1:**<br>• Guió el modelado de entidades y repositorios, liderando el diseño de los diagramas de clases UML del sistema.<br><br>**Quiroz Zambrano, Fabrizio Javier**<br>**AV1:**<br>• Asumió el control del diseño de la persistencia de datos y la estructuración técnica de los diagramas Entidad-Relación.                                                                                                                                                      | **AV1:**<br>Durante el primer avance, el equipo logró distribuir el liderazgo de forma equitativa. Se delegó la dirección de tareas específicas basándose en las fortalezas técnicas de cada integrante (estrategia, arquitectura general y diseño táctico), lo que permitió un avance sostenido, especializado y un liderazgo verdaderamente compartido.                         |
 | **Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.** | **Castro Picón, Manuel Fernando Joao**<br>**AV1:**<br>• Planificó las tareas de investigación iniciales (Lean UX) y fomentó la participación equitativa en la definición de la problemática.<br><br>**Solis Chang, Santiago Valentino**<br>**AV1:**<br>• Colaboró en la redacción de requerimientos y organizó las sesiones de priorización para completar el Product Backlog a tiempo.<br><br>**Vila Guillen, Miguel Angel**<br>**AV1:**<br>• Integró las ideas del equipo para el análisis competitivo y aseguró el cumplimiento del cronograma en el diseño de arquitectura.<br><br>**Requena Gutiérrez, Diego Gabriel**<br>**AV1:**<br>• Estableció los objetivos de validación inicial y coordinó la recopilación y análisis conjunto de las entrevistas a los segmentos objetivo.<br><br>**De Las Casas Latour, Sebastián**<br>**AV1:**<br>• Creó un ambiente de apoyo para el subgrupo de diseño táctico, asegurando la entrega oportuna y articulada de los componentes de software.<br><br>**Navarro Correa, César Augusto**<br>**AV1:**<br>• Coordinó de manera inclusiva la integración de sus diagramas de clases con los requerimientos estratégicos planteados por el resto del equipo.<br><br>**Quiroz Zambrano, Fabrizio Javier**<br>**AV1:**<br>• Cumplió puntualmente con los objetivos de diseño de base de datos, manteniendo una comunicación constante y asertiva con los encargados de la arquitectura macro. | **AV1:**<br>El equipo consolidó un entorno de trabajo colaborativo mediante la división estratégica del trabajo en tres subgrupos principales. Se cumplieron todos los objetivos trazados para el AV1 respetando los cronogramas internos, asegurando que las decisiones de diseño arquitectónico fueran discutidas, consensuadas y aprobadas por los 7 integrantes del proyecto. |
 
 <div style="page-break-after: always;"></div>
@@ -217,14 +217,14 @@ TerraGuard es una startup tecnológica emergente dedicada al diseño y desarroll
 ### 1.1.2. Perfiles de integrantes del equipo
 
 | Foto                                              | Nombres y Apellidos               | Carrera                | Descripción                                                                                                                                                                                                                                                                                                            |
-|---------------------------------------------------|-----------------------------------| ---------------------- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------------------------------------- | --------------------------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ![Joao](assets/cap1/pfp-team/joaofoto.png)        | Manuel Fernando Joao Castro Picón | Ingeniería de Software | Tengo 20 años y curso el 7mo ciclo en la Universidad Peruana de Ciencias Aplicadas. Me gusta entrenar calistenia, escuchar música y jugar fútbol. Me considero responsable, adaptable al trabajo en equipo y con metas claras para ser un gran profesional.                                                            |
 | ![Valentino](assets/cap1/pfp-team/trevor_fb.jpg)  | Santiago Valentino Solis Chang    | Ingeniería de Software | Tengo 21 años y curso el 7mo ciclo en la Universidad Peruana de Ciencias Aplicadas. En mi tiempo libre disfruto jugar videojuegos, practicar tenis y aprender sobre programación web. Soy responsable, comprometido y capaz de trabajar en equipo.                                                                     |
 | ![Miguel](assets/cap1/pfp-team/cara.png)          | Miguel Angel Vila Guillen         | Ingeniería de Software | Tengo 21 años y estudio el 6to ciclo en la Universidad Peruana de Ciencias Aplicadas. Me gusta jugar videojuegos, tocar la guitarra y el fútbol. Me considero capaz de trabajar en equipo y aspiro a ser un profesional competente.                                                                                    |
 | ![Diego](assets/cap1/pfp-team/diegorequena1.jfif) | Diego Gabriel Requena Gutiérrez   | Ingeniería de Software | Tengo 19 años y curso el 5to ciclo en la Universidad Peruana de Ciencias Aplicadas. Soy una persona comprometida con mis objetivos, busco optimizar mi rendimiento y mantener un equilibrio entre la excelencia y una vida saludable.                                                                                  |
 | ![Sebastián](assets/cap1/pfp-team/sebastian.jpg)  | Sebastián De Las Casas Latour     | Ingeniería de Software | Tengo 22 años y curso el 8vo ciclo en la Universidad Peruana de Ciencias Aplicadas. Busco desarrollar mis competencias en análisis, diseño y construcción de soluciones de software, aplicando los conocimientos adquiridos durante mi formación académica.                                                            |
 | ![César](assets/cap1/pfp-team/césar.jpg)          | César Augusto Navarro Correa      | Ingeniería de Software | Mi nombre es Cesar Navarro, tengo 19 años y soy de la carrera de Ingeniería de Software de la UPC. Me considero una persona creativa en la realización de los trabajos y resiliente en mis actividades. Tengo conocimientos de lenguajes de programación en C++ y Python, pues siempre tuve interés en la computación. |
-| ![Fabrizio](assets/cap1/pfp-team/Fabrizio1.jpg)       | Fabrizio Javier Quiroz Zambrano   | Ingeniería de Software | Mi nombre es Fabrizio, tengo 21 años y me interesa todo lo que tenga que ver con conmputacion. Trabajo bien en grupo y siempre trato de aprender mas.                                                                                                                                                                  |
+| ![Fabrizio](assets/cap1/pfp-team/Fabrizio1.jpg)   | Fabrizio Javier Quiroz Zambrano   | Ingeniería de Software | Mi nombre es Fabrizio, tengo 21 años y me interesa todo lo que tenga que ver con conmputacion. Trabajo bien en grupo y siempre trato de aprender mas.                                                                                                                                                                  |
 
 ## 1.2. Solution Profile
 
@@ -498,7 +498,7 @@ Entrevista N°3
 
 Detalles de la entrevista:
 
-● Duración: 3:36 
+● Duración: 3:36
 
 [● Link: https://drive.google.com/file/d/1Ti5ddVAuLGcROgMK2zO_ZwPaFr7pjRpn/view?usp=sharing](https://drive.google.com/file/d/1Ti5ddVAuLGcROgMK2zO_ZwPaFr7pjRpn/view?usp=sharing)
 
@@ -924,37 +924,37 @@ Cada Canvas permite representar de manera individual los límites y responsabili
 **1. IAM & Profile**
 
 <div>
-  <p align="center"><img src="assets/cap4/4.1/IAM & Profile.png" alt="Bounded Context Canvases" width="700px" /></p>
+  <p align="center"><img src="assets/cap4/4.1/bc_canvases/IAM & Profile.png" alt="Bounded Context Canvases" width="700px" /></p>
 </div>
 
 **2. Emergency Core**
 
 <div>
-  <p align="center"><img src="assets/cap4/4.1/Emergency Core.png" alt="Bounded Context Canvases" width="700px" /></p>
+  <p align="center"><img src="assets/cap4/4.1/bc_canvases/Emergency Core.png" alt="Bounded Context Canvases" width="700px" /></p>
 </div>
 
 **3. IoT & Energy Management**
 
 <div>
-  <p align="center"><img src="assets/cap4/4.1/IoT & Energy Management.png" alt="Bounded Context Canvases" width="700px" /></p>
+  <p align="center"><img src="assets/cap4/4.1/bc_canvases/IoT & Energy Management.png" alt="Bounded Context Canvases" width="700px" /></p>
 </div>
 
 **4. Alerting & Events**
 
 <div>
-  <p align="center"><img src="assets/cap4/4.1/Alerting & Events.png" alt="Bounded Context Canvases" width="700px" /></p>
+  <p align="center"><img src="assets/cap4/4.1/bc_canvases/Alerting & Events.png" alt="Bounded Context Canvases" width="700px" /></p>
 </div>
 
 **5. Simulation & Testing**
 
 <div>
-  <p align="center"><img src="assets/cap4/4.1/Simulation & Testing.png" alt="Bounded Context Canvases" width="700px" /></p>
+  <p align="center"><img src="assets/cap4/4.1/bc_canvases/Simulation & Testing.png" alt="Bounded Context Canvases" width="700px" /></p>
 </div>
 
 **6. B2B Management**
 
 <div>
-  <p align="center"><img src="assets/cap4/4.1/B2B Management.png" alt="Bounded Context Canvases" width="700px" /></p>
+  <p align="center"><img src="assets/cap4/4.1/bc_canvases/B2B Management.png" alt="Bounded Context Canvases" width="700px" /></p>
 </div>
 
 ### 4.1.2. Context Mapping
@@ -1251,14 +1251,13 @@ El diseño arquitectónico de QuakExit se ha elaborado siguiendo el Modelo C4, p
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
-Este diagrama muestra que la plataforma **QuakExit** opera dentro de un ecosistema compuesto por dos tipos de usuarios principales (Residente / Dueño de Smart Home y Administrador Inmobiliario) y un actor técnico de mantenimiento (Equipo de Desarrollo), los cuales interactúan directamente con el sistema central **QuakExit System**. 
+Este diagrama muestra que la plataforma **QuakExit** opera dentro de un ecosistema compuesto por dos tipos de usuarios principales (Residente / Dueño de Smart Home y Administrador Inmobiliario) y un actor técnico de mantenimiento (Equipo de Desarrollo), los cuales interactúan directamente con el sistema central **QuakExit System**.
 
 A su vez, el sistema se conecta externamente con **Firebase Cloud Messaging (FCM)** para delegar el envío de notificaciones push críticas en situaciones de emergencia. Los Residentes utilizan la plataforma para monitorear el estado de sus dispositivos IoT y recibir alertas de evacuación; los Administradores Inmobiliarios gestionan configuraciones masivas en proyectos multifamiliares; y el Equipo de Desarrollo asegura el mantenimiento continuo de la infraestructura en la nube.
 
 <p align="center">
   <img src="assets/cap4/4.1/diagrama-landscape.png" width="900">
 </p>
-
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
@@ -1272,13 +1271,13 @@ El diagrama de contexto sitúa a la plataforma QuakExit en el centro (como una c
 
 A nivel de contenedores, se "abre" el sistema para revelar la arquitectura técnica responsable de soportar las historias de usuario. La solución se compone de los siguientes contenedores principales:
 
-  - **Interfaces de Usuario:** Una aplicación móvil construida en **Flutter** para la gestión residencial rápida y reactiva, y un panel web en HTML/CSS/JS impulsado por Fetch API para la administración B2B.
+- **Interfaces de Usuario:** Una aplicación móvil construida en **Flutter** para la gestión residencial rápida y reactiva, y un panel web en HTML/CSS/JS impulsado por Fetch API para la administración B2B.
 
-  - **API y Lógica Backend:** Un **Amazon API Gateway** que enruta las peticiones HTTP seguras hacia un backend Serverless compuesto por funciones AWS Lambda desarrolladas en Python, las cuales manejan la validación de tokens JWT y la lógica central de evacuación.
+- **API y Lógica Backend:** Un **Amazon API Gateway** que enruta las peticiones HTTP seguras hacia un backend Serverless compuesto por funciones AWS Lambda desarrolladas en Python, las cuales manejan la validación de tokens JWT y la lógica central de evacuación.
 
-  - **Persistencia:** **Amazon DynamoDB**, seleccionado como base de datos NoSQL por su baja latencia para registrar perfiles de dispositivos y eventos sísmicos.
+- **Persistencia:** **Amazon DynamoDB**, seleccionado como base de datos NoSQL por su baja latencia para registrar perfiles de dispositivos y eventos sísmicos.
 
-  - **Capa IoT:** Un microcontrolador **ESP32 (IoT Hub)** instalado localmente, el cual gestiona la detección física y la apertura de cerraduras mediante Edge Computing. Este componente se sincroniza asíncronamente con el backend utilizando el protocolo MQTT a través de AWS IoT Core, lo que permite mantener modos de bajo consumo (Deep Sleep) críticos para la duración de la batería de respaldo.
+- **Capa IoT:** Un microcontrolador **ESP32 (IoT Hub)** instalado localmente, el cual gestiona la detección física y la apertura de cerraduras mediante Edge Computing. Este componente se sincroniza asíncronamente con el backend utilizando el protocolo MQTT a través de AWS IoT Core, lo que permite mantener modos de bajo consumo (Deep Sleep) críticos para la duración de la batería de respaldo.
 
 <p align="center">
   <img src="assets/cap4/software_architecture/containers_diagramContainers-dark.png" width="900">
@@ -1292,14 +1291,11 @@ En **AWS Cloud**, el sistema aprovecha una arquitectura Serverless orientada a e
 
 En los **Dispositivos Cliente**, la aplicación móvil desarrollada en **Flutter** corre sobre dispositivos Android e iOS para el monitoreo del usuario B2C, mientras que el panel de administración B2B se ejecuta en navegadores web mediante peticiones HTTP asíncronas. Como servicio externo, se integra **Firebase Cloud Messaging (FCM)** para la entrega masiva de notificaciones push críticas.
 
-En la **Infraestructura Residencial / Smart Home**, se despliega el microcontrolador **ESP32 (IoT Hub)** en la vivienda del usuario. Este dispositivo gestiona localmente sensores y actuadores (cerraduras electromagnéticas y luces de emergencia), ejecutando algoritmos en el borde (*Edge Computing*) para operar incluso en situaciones de desconexión o pérdida de energía eléctrica mediante baterías de respaldo.
-
+En la **Infraestructura Residencial / Smart Home**, se despliega el microcontrolador **ESP32 (IoT Hub)** en la vivienda del usuario. Este dispositivo gestiona localmente sensores y actuadores (cerraduras electromagnéticas y luces de emergencia), ejecutando algoritmos en el borde (_Edge Computing_) para operar incluso en situaciones de desconexión o pérdida de energía eléctrica mediante baterías de respaldo.
 
 <p align="center">
   <img src="assets/cap4/4.1/diagrama-deployment.png" width="900">
 </p>
-
-
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
@@ -1310,47 +1306,48 @@ Seismic Monitoring Context
 Emergency Alert Context
 Evacuation Management Context
 
-### 4.2.1. Bounded Context: <Bounded Context Name>
+### 4.2.1. Bounded Contexts:
 
 Se incluyen secciones internas por cada bounded context. Se deben presentar las clases identificadas y detallarlas a manera de diccionario (nombre, propósito, atributos, métodos y relaciones). Diagrama: No.
 
 **User Managment Context**
 Este Bounded Context es responsable de la gestión de usuarios dentro de la plataforma, incluyendo autenticación, administración de perfiles y configuración de información necesaria para situaciones de emergencia.
 
-| **Clase** | **Propósito** | **Atributos** | **Métodos** | **Relaciones** |
-|---|---|---|---|---|
-| Usuario | Representar a una persona registrada dentro de la plataforma. | userId: UUID, firstName: String, lastName: String, email: String, passwordHash: String, role: String, status: Boolean | register(), login(), updateProfile(), deactivateAccount() | Posee un PerfilEmergencia. Se encuentra asociado a un Rol. |
-|PerfilEmergencia| Almacenar información relevante para la atención y localización del usuario durante una emergencia.| profileId: UUID, emergencyContact: String, bloodType: String, specialCondition: String, preferredLocation: String | updateContact(), updateMedicalInformation(), getEmergencyInformation() | Pertenece a un Usuario.
-| Rol | Definir los permisos y privilegios que posee un usuario dentro de la plataforma. | roleId: UUID, roleName: String, description: String | assignPermission(), revokePermission(), updateRole() | Puede ser asignado a múltiples Usuarios. |
+| **Clase**        | **Propósito**                                                                                       | **Atributos**                                                                                                         | **Métodos**                                                            | **Relaciones**                                             |
+| ---------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------- |
+| Usuario          | Representar a una persona registrada dentro de la plataforma.                                       | userId: UUID, firstName: String, lastName: String, email: String, passwordHash: String, role: String, status: Boolean | register(), login(), updateProfile(), deactivateAccount()              | Posee un PerfilEmergencia. Se encuentra asociado a un Rol. |
+| PerfilEmergencia | Almacenar información relevante para la atención y localización del usuario durante una emergencia. | profileId: UUID, emergencyContact: String, bloodType: String, specialCondition: String, preferredLocation: String     | updateContact(), updateMedicalInformation(), getEmergencyInformation() | Pertenece a un Usuario.                                    |
+| Rol              | Definir los permisos y privilegios que posee un usuario dentro de la plataforma.                    | roleId: UUID, roleName: String, description: String                                                                   | assignPermission(), revokePermission(), updateRole()                   | Puede ser asignado a múltiples Usuarios.                   |
 
 **Seismic Monitoring Context**
 Este Bounded Context administra la captura y procesamiento de datos sísmicos provenientes de los sensores IoT desplegados en la infraestructura monitoreada.
 
-| **Clase** | **Propósito** | **Atributos** | **Métodos** | **Relaciones** |
-|---|---|---|---|---|
-|Sensor| Representar un dispositivo IoT encargado de capturar información sísmica. | sensorId: UUID, serialNumber: String, latitude: Double, longitude: Double, status: String | captureData(), sendReading(), selfDiagnostic() | Genera múltiples RegistroSismico.|
-|RegistroSismico| Registrar una medición realizada por un sensor en un momento específico. | recordId: UUID, magnitude: Decimal, timestamp: DateTime, location: String,depth: Decimal | validateData(), calculateRisk(), storeRecord() | Pertenece a un Sensor. Contribuye a la creación de un EventoSismico. |
-|EventoSismico| Representar un evento sísmico confirmado por el sistema a partir de múltiples registros. | eventId: UUID, magnitude: Decimal, epicenter: String,  depth: Decimal, riskLevel: String, occurrenceDate: DateTime| confirmEvent(), classifyRisk(), updateMagnitude() | Se genera a partir de varios RegistroSismico. Puede generar una Alerta.
+| **Clase**       | **Propósito**                                                                            | **Atributos**                                                                                                     | **Métodos**                                       | **Relaciones**                                                          |
+| --------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- | ----------------------------------------------------------------------- |
+| Sensor          | Representar un dispositivo IoT encargado de capturar información sísmica.                | sensorId: UUID, serialNumber: String, latitude: Double, longitude: Double, status: String                         | captureData(), sendReading(), selfDiagnostic()    | Genera múltiples RegistroSismico.                                       |
+| RegistroSismico | Registrar una medición realizada por un sensor en un momento específico.                 | recordId: UUID, magnitude: Decimal, timestamp: DateTime, location: String,depth: Decimal                          | validateData(), calculateRisk(), storeRecord()    | Pertenece a un Sensor. Contribuye a la creación de un EventoSismico.    |
+| EventoSismico   | Representar un evento sísmico confirmado por el sistema a partir de múltiples registros. | eventId: UUID, magnitude: Decimal, epicenter: String, depth: Decimal, riskLevel: String, occurrenceDate: DateTime | confirmEvent(), classifyRisk(), updateMagnitude() | Se genera a partir de varios RegistroSismico. Puede generar una Alerta. |
 
 **Emergency Alert Context**
 Este Bounded Context se encarga de la creación, gestión y distribución de alertas de emergencia cuando se detecta un evento sísmico de riesgo.
 
-| **Clase** | **Propósito** | **Atributos** | **Métodos** | **Relaciones** |
-|---|---|---|---|---|
-|Alerta|Representar una alerta de emergencia generada por el sistema.|alertId: UUID, title: String, message: String, severityLevel: String, issueDate: DateTime, status: String |createAlert(), activateAlert(), cancelAlert(), updateStatus()|Es generada por un EventoSismico. Contiene múltiples Notificacion.
-|Notificacion|Gestionar el envío de mensajes de emergencia a los usuarios.|notificationId: UUID, recipient: String, channel: String, deliveryDate: DateTime, status: String|send(), retryDelivery(), verifyDelivery()|Pertenece a una Alerta. Utiliza un CanalNotificacion.|
-|CanalNotificacion|Definir el medio de comunicación utilizado para la entrega de alertas.|channelId: UUID, channelName: String, availabilityStatus: Boolean|enable(), disable(), validateAvailability()|Puede ser utilizado por múltiples Notificacion.|
+| **Clase**         | **Propósito**                                                          | **Atributos**                                                                                             | **Métodos**                                                   | **Relaciones**                                                     |
+| ----------------- | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Alerta            | Representar una alerta de emergencia generada por el sistema.          | alertId: UUID, title: String, message: String, severityLevel: String, issueDate: DateTime, status: String | createAlert(), activateAlert(), cancelAlert(), updateStatus() | Es generada por un EventoSismico. Contiene múltiples Notificacion. |
+| Notificacion      | Gestionar el envío de mensajes de emergencia a los usuarios.           | notificationId: UUID, recipient: String, channel: String, deliveryDate: DateTime, status: String          | send(), retryDelivery(), verifyDelivery()                     | Pertenece a una Alerta. Utiliza un CanalNotificacion.              |
+| CanalNotificacion | Definir el medio de comunicación utilizado para la entrega de alertas. | channelId: UUID, channelName: String, availabilityStatus: Boolean                                         | enable(), disable(), validateAvailability()                   | Puede ser utilizado por múltiples Notificacion.                    |
 
 **Evacuation Management Context**
 Este Bounded Context administra las rutas seguras y los procedimientos de evacuación recomendados durante una emergencia sísmica.
 
-| **Clase** | **Propósito** | **Atributos** | **Métodos** | **Relaciones** |
-|---|---|---|---|---|
-|RutaEvacuacion|Representar una ruta segura para conducir a los usuarios hacia zonas protegidas.|routeId: UUID, routeName: String, distance: Decimal, estimatedTime: Integer, status: String|calculateRoute(), validateSafety(), updateRoute()|Conduce a un PuntoSeguro. Puede ser utilizada durante una Evacuacion.|
-|PuntoSeguro|Representar una ubicación considerada segura para la concentración de personas evacuadas.|safePointId: UUID, name: String, latitude: Double, longitude: Double, capacity: Integer|updateCapacity(), verifyAvailability(), registerOccupancy()|Recibe múltiples RutaEvacuacion. Participa en una Evacuacion.|
-|Evacuacion|Gestionar el proceso de evacuación generado a partir de una emergencia sísmica.|evacuationId: UUID, startTime: DateTime, endTime: DateTime, status: String, affectedUsers: Integer|startEvacuation(), monitorProgress(), completeEvacuation()|Utiliza una RutaEvacuacion. Tiene como destino un PuntoSeguro. Puede originarse por una Alerta activa.| 
+| **Clase**      | **Propósito**                                                                             | **Atributos**                                                                                      | **Métodos**                                                 | **Relaciones**                                                                                         |
+| -------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| RutaEvacuacion | Representar una ruta segura para conducir a los usuarios hacia zonas protegidas.          | routeId: UUID, routeName: String, distance: Decimal, estimatedTime: Integer, status: String        | calculateRoute(), validateSafety(), updateRoute()           | Conduce a un PuntoSeguro. Puede ser utilizada durante una Evacuacion.                                  |
+| PuntoSeguro    | Representar una ubicación considerada segura para la concentración de personas evacuadas. | safePointId: UUID, name: String, latitude: Double, longitude: Double, capacity: Integer            | updateCapacity(), verifyAvailability(), registerOccupancy() | Recibe múltiples RutaEvacuacion. Participa en una Evacuacion.                                          |
+| Evacuacion     | Gestionar el proceso de evacuación generado a partir de una emergencia sísmica.           | evacuationId: UUID, startTime: DateTime, endTime: DateTime, status: String, affectedUsers: Integer | startEvacuation(), monitorProgress(), completeEvacuation()  | Utiliza una RutaEvacuacion. Tiene como destino un PuntoSeguro. Puede originarse por una Alerta activa. |
 
 **Resumen de Relaciones**
+
 - Usuario -> PerfilEmergencia
 - Usuario -> Rol
 - Sensor -> RegistroSismico
@@ -1373,72 +1370,81 @@ La Domain Layer concentra la lógica de negocio principal de QuakExit y está co
 #### 1. User Management Context
 
 ##### Aggregates & Entities
-| Elemento | Tipo | Propósito | Atributos clave | Métodos / Comportamiento |
-| :--- | :--- | :--- | :--- | :--- |
-| **User Aggregate** | `Aggregate` | Raíz: `User`. Internas: `EmergencyProfile`. Mantiene consistencia y reglas de activación. | — | — |
-| **User** | `Entity` (Root) | Representar a un usuario registrado. | `userId: UserId`, `firstName: String`, `lastName: String`, `email: String`, `passwordHash: String`, `status: UserStatus` | `updateProfile()`, `activate()`, `deactivate()` |
-| **EmergencyProfile** | `Entity` | Información médica y de contacto para emergencias. | `profileId: UUID`, `emergencyContact: String`, `bloodType: String`, `medicalConditions: String` | `updateEmergencyContact()`, `updateMedicalInformation()` |
+
+| Elemento             | Tipo            | Propósito                                                                                 | Atributos clave                                                                                                          | Métodos / Comportamiento                                 |
+| :------------------- | :-------------- | :---------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------- |
+| **User Aggregate**   | `Aggregate`     | Raíz: `User`. Internas: `EmergencyProfile`. Mantiene consistencia y reglas de activación. | —                                                                                                                        | —                                                        |
+| **User**             | `Entity` (Root) | Representar a un usuario registrado.                                                      | `userId: UserId`, `firstName: String`, `lastName: String`, `email: String`, `passwordHash: String`, `status: UserStatus` | `updateProfile()`, `activate()`, `deactivate()`          |
+| **EmergencyProfile** | `Entity`        | Información médica y de contacto para emergencias.                                        | `profileId: UUID`, `emergencyContact: String`, `bloodType: String`, `medicalConditions: String`                          | `updateEmergencyContact()`, `updateMedicalInformation()` |
 
 ##### Value Objects, Factories & Repositories
-| Elemento | Tipo | Detalle / Valores / Métodos |
-| :--- | :--- | :--- |
-| **Email** | `Value Object` | Atributo: `value: String`. Reglas: formato válido y valor único. |
-| **UserStatus** | `Value Object` | Valores: `ACTIVE`, `INACTIVE`, `SUSPENDED`. |
-| **UserFactory** | `Factory` | `createUser()` |
-| **UserRepository** | `Repository` | `save(User)`, `findById(UserId)`, `findByEmail(Email)`, `delete(User)` |
+
+| Elemento           | Tipo           | Detalle / Valores / Métodos                                            |
+| :----------------- | :------------- | :--------------------------------------------------------------------- |
+| **Email**          | `Value Object` | Atributo: `value: String`. Reglas: formato válido y valor único.       |
+| **UserStatus**     | `Value Object` | Valores: `ACTIVE`, `INACTIVE`, `SUSPENDED`.                            |
+| **UserFactory**    | `Factory`      | `createUser()`                                                         |
+| **UserRepository** | `Repository`   | `save(User)`, `findById(UserId)`, `findByEmail(Email)`, `delete(User)` |
 
 #### 2. Seismic Monitoring Context
 
 ##### Aggregates & Entities
-| Elemento | Tipo | Propósito | Atributos clave | Métodos / Comportamiento |
-| :--- | :--- | :--- | :--- | :--- |
-| **SeismicEvent Aggregate** | `Aggregate` | Raíz: `SeismicEvent`. Internas: `SeismicRecord`. Consolida registros y calcula riesgo. | — | — |
-| **SeismicEvent** | `Entity` (Root) | Evento sísmico confirmado por el sistema. | `eventId: UUID`, `magnitude: Decimal`, `epicenter: String`, `riskLevel: RiskLevel`, `occurrenceDate: DateTime` | `classifyRisk()`, `confirmEvent()` |
-| **Sensor** | `Entity` | Dispositivo IoT de captura sísmica. | `sensorId: UUID`, `serialNumber: String`, `location: GeographicLocation`, `status: SensorStatus` | `registerReading()`, `updateStatus()` |
-| **SeismicRecord** | `Entity` | Medición puntual capturada por sensor. | `recordId: UUID`, `magnitude: Decimal`, `depth: Decimal`, `timestamp: DateTime` | `validateMeasurement()` |
+
+| Elemento                   | Tipo            | Propósito                                                                              | Atributos clave                                                                                                | Métodos / Comportamiento              |
+| :------------------------- | :-------------- | :------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------- | :------------------------------------ |
+| **SeismicEvent Aggregate** | `Aggregate`     | Raíz: `SeismicEvent`. Internas: `SeismicRecord`. Consolida registros y calcula riesgo. | —                                                                                                              | —                                     |
+| **SeismicEvent**           | `Entity` (Root) | Evento sísmico confirmado por el sistema.                                              | `eventId: UUID`, `magnitude: Decimal`, `epicenter: String`, `riskLevel: RiskLevel`, `occurrenceDate: DateTime` | `classifyRisk()`, `confirmEvent()`    |
+| **Sensor**                 | `Entity`        | Dispositivo IoT de captura sísmica.                                                    | `sensorId: UUID`, `serialNumber: String`, `location: GeographicLocation`, `status: SensorStatus`               | `registerReading()`, `updateStatus()` |
+| **SeismicRecord**          | `Entity`        | Medición puntual capturada por sensor.                                                 | `recordId: UUID`, `magnitude: Decimal`, `depth: Decimal`, `timestamp: DateTime`                                | `validateMeasurement()`               |
 
 ##### Value Objects, Services & Repositories
-| Elemento | Tipo | Detalle / Valores / Métodos |
-| :--- | :--- | :--- |
-| **GeographicLocation** | `Value Object` | `latitude: Double`, `longitude: Double` |
-| **RiskLevel** | `Value Object` | Valores: `LOW`, `MEDIUM`, `HIGH`, `CRITICAL` |
-| **EventDetectionService** | `Domain Service` | `detectEvent()`, `calculateMagnitude()`, `determineRiskLevel()` |
-| **SeismicEventRepository** | `Repository` | `save(SeismicEvent)`, `findById(UUID)`, `findRecentEvents()` |
+
+| Elemento                   | Tipo             | Detalle / Valores / Métodos                                     |
+| :------------------------- | :--------------- | :-------------------------------------------------------------- |
+| **GeographicLocation**     | `Value Object`   | `latitude: Double`, `longitude: Double`                         |
+| **RiskLevel**              | `Value Object`   | Valores: `LOW`, `MEDIUM`, `HIGH`, `CRITICAL`                    |
+| **EventDetectionService**  | `Domain Service` | `detectEvent()`, `calculateMagnitude()`, `determineRiskLevel()` |
+| **SeismicEventRepository** | `Repository`     | `save(SeismicEvent)`, `findById(UUID)`, `findRecentEvents()`    |
 
 #### 3. Emergency Alert Context
 
 ##### Aggregates & Entities
-| Elemento | Tipo | Propósito | Atributos clave | Métodos / Comportamiento |
-| :--- | :--- | :--- | :--- | :--- |
-| **Alert Aggregate** | `Aggregate` | Raíz: `Alert`. Internas: `Notification`. Ciclo de vida de alerta y distribución. | — | — |
-| **Alert** | `Entity` (Root) | Alerta sísmica emitida por la plataforma. | `alertId: UUID`, `title: String`, `message: String`, `severityLevel: String`, `issuedAt: DateTime`, `status: AlertStatus` | `activate()`, `cancel()`, `updateMessage()` |
-| **Notification** | `Entity` | Notificación enviada al usuario. | `notificationId: UUID`, `recipientId: UUID`, `channel: NotificationChannel`, `sentAt: DateTime` | `send()`, `retry()` |
+
+| Elemento            | Tipo            | Propósito                                                                        | Atributos clave                                                                                                           | Métodos / Comportamiento                    |
+| :------------------ | :-------------- | :------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------ | :------------------------------------------ |
+| **Alert Aggregate** | `Aggregate`     | Raíz: `Alert`. Internas: `Notification`. Ciclo de vida de alerta y distribución. | —                                                                                                                         | —                                           |
+| **Alert**           | `Entity` (Root) | Alerta sísmica emitida por la plataforma.                                        | `alertId: UUID`, `title: String`, `message: String`, `severityLevel: String`, `issuedAt: DateTime`, `status: AlertStatus` | `activate()`, `cancel()`, `updateMessage()` |
+| **Notification**    | `Entity`        | Notificación enviada al usuario.                                                 | `notificationId: UUID`, `recipientId: UUID`, `channel: NotificationChannel`, `sentAt: DateTime`                           | `send()`, `retry()`                         |
 
 ##### Value Objects, Factories, Services & Repositories
-| Elemento | Tipo | Detalle / Valores / Métodos |
-| :--- | :--- | :--- |
-| **NotificationChannel** | `Value Object` | Valores: `PUSH`, `EMAIL`, `SMS` |
-| **AlertStatus** | `Value Object` | Valores: `CREATED`, `ACTIVE`, `CLOSED` |
+
+| Elemento                     | Tipo             | Detalle / Valores / Métodos                                |
+| :--------------------------- | :--------------- | :--------------------------------------------------------- |
+| **NotificationChannel**      | `Value Object`   | Valores: `PUSH`, `EMAIL`, `SMS`                            |
+| **AlertStatus**              | `Value Object`   | Valores: `CREATED`, `ACTIVE`, `CLOSED`                     |
 | **AlertDistributionService** | `Domain Service` | `distributeAlert()`, `notifyUsers()`, `validateDelivery()` |
-| **AlertFactory** | `Factory` | `createAlertFromEvent()` |
-| **AlertRepository** | `Repository` | `save(Alert)`, `findById(UUID)`, `findActiveAlerts()` |
+| **AlertFactory**             | `Factory`        | `createAlertFromEvent()`                                   |
+| **AlertRepository**          | `Repository`     | `save(Alert)`, `findById(UUID)`, `findActiveAlerts()`      |
 
 #### 4. Evacuation Management Context
+
 ##### Aggregates & Entities
-| Elemento | Tipo | Propósito | Atributos clave | Métodos / Comportamiento |
-| :--- | :--- | :--- | :--- | :--- |
-| **Evacuation Aggregate** | `Aggregate` | Raíz: `Evacuation`. Internas: `EvacuationRoute`, `SafeZone`. Gestión de rutas seguras. | — | — |
-| **Evacuation** | `Entity` (Root) | Proceso de evacuación en marcha. | `evacuationId: UUID`, `status: EvacuationStatus`, `startTime: DateTime`, `endTime: DateTime` | `start()`, `complete()`, `cancel()` |
-| **SafeZone** | `Entity` | Zona segura disponible para evacuar. | `safeZoneId: UUID`, `name: String`, `capacity: Integer`, `location: GeographicLocation` | `updateCapacity()`, `registerOccupancy()` |
-| **EvacuationRoute** | `Entity` | Ruta recomendada para evacuar. | `routeId: UUID`, `distance: Decimal`, `estimatedTime: Integer` | `calculateRoute()`, `verifyAccessibility()` |
+
+| Elemento                 | Tipo            | Propósito                                                                              | Atributos clave                                                                              | Métodos / Comportamiento                    |
+| :----------------------- | :-------------- | :------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------- | :------------------------------------------ |
+| **Evacuation Aggregate** | `Aggregate`     | Raíz: `Evacuation`. Internas: `EvacuationRoute`, `SafeZone`. Gestión de rutas seguras. | —                                                                                            | —                                           |
+| **Evacuation**           | `Entity` (Root) | Proceso de evacuación en marcha.                                                       | `evacuationId: UUID`, `status: EvacuationStatus`, `startTime: DateTime`, `endTime: DateTime` | `start()`, `complete()`, `cancel()`         |
+| **SafeZone**             | `Entity`        | Zona segura disponible para evacuar.                                                   | `safeZoneId: UUID`, `name: String`, `capacity: Integer`, `location: GeographicLocation`      | `updateCapacity()`, `registerOccupancy()`   |
+| **EvacuationRoute**      | `Entity`        | Ruta recomendada para evacuar.                                                         | `routeId: UUID`, `distance: Decimal`, `estimatedTime: Integer`                               | `calculateRoute()`, `verifyAccessibility()` |
 
 ##### Value Objects, Services & Repositories
-| Elemento | Tipo | Detalle / Valores / Métodos |
-| :--- | :--- | :--- |
-| **EvacuationStatus** | `Value Object` | Valores: `PENDING`, `ACTIVE`, `COMPLETED`, `CANCELLED` |
-| **RouteOptimizationService** | `Domain Service` | `generateOptimalRoute()`, `calculateEstimatedTime()`, `validateRouteSafety()` |
-| **CapacityManagementService** | `Domain Service` | `checkAvailability()`, `assignSafeZone()`, `updateOccupancy()` |
-| **EvacuationRepository** | `Repository` | `save(Evacuation)`, `findById(UUID)`, `findActiveEvacuations()` |
+
+| Elemento                      | Tipo             | Detalle / Valores / Métodos                                                   |
+| :---------------------------- | :--------------- | :---------------------------------------------------------------------------- |
+| **EvacuationStatus**          | `Value Object`   | Valores: `PENDING`, `ACTIVE`, `COMPLETED`, `CANCELLED`                        |
+| **RouteOptimizationService**  | `Domain Service` | `generateOptimalRoute()`, `calculateEstimatedTime()`, `validateRouteSafety()` |
+| **CapacityManagementService** | `Domain Service` | `checkAvailability()`, `assignSafeZone()`, `updateOccupancy()`                |
+| **EvacuationRepository**      | `Repository`     | `save(Evacuation)`, `findById(UUID)`, `findActiveEvacuations()`               |
 
 #### 4.2.1.2. Interface Layer
 
@@ -1446,33 +1452,33 @@ La Interface Layer expone el dominio de QuakExit hacia los consumidores externos
 
 **User Management Context**
 
-| Clase | Tipo | Métodos expuestos | Endpoint / Trigger | Consumido por |
-|---|---|---|---|---|
-| AuthController | REST Controller (Lambda) | register(), login(), refreshToken() | POST /auth/register, POST /auth/login | App Flutter, Panel B2B |
-| UserProfileController | REST Controller (Lambda) | getProfile(), updateProfile(), updateEmergencyProfile() | GET/PUT /users/{userId} | App Flutter |
-| IAMAuthorizer | Lambda Custom Authorizer | validateToken(), extractRole() | Autorización previa en API Gateway | Todos los endpoints protegidos |
+| Clase                 | Tipo                     | Métodos expuestos                                       | Endpoint / Trigger                    | Consumido por                  |
+| --------------------- | ------------------------ | ------------------------------------------------------- | ------------------------------------- | ------------------------------ |
+| AuthController        | REST Controller (Lambda) | register(), login(), refreshToken()                     | POST /auth/register, POST /auth/login | App Flutter, Panel B2B         |
+| UserProfileController | REST Controller (Lambda) | getProfile(), updateProfile(), updateEmergencyProfile() | GET/PUT /users/{userId}               | App Flutter                    |
+| IAMAuthorizer         | Lambda Custom Authorizer | validateToken(), extractRole()                          | Autorización previa en API Gateway    | Todos los endpoints protegidos |
 
 **Seismic Monitoring Context**
 
-| Clase | Tipo | Métodos expuestos | Endpoint / Trigger | Consumido por |
-|---|---|---|---|---|
-| SeismicDataConsumer | IoT Consumer (Lambda suscrita a AWS IoT Core) | onMessageReceived(), parseReading() | Topic MQTT `quakexit/{hubId}/seismic` | QuakExit Hub (ESP32) |
-| SeismicEventController | REST Controller (Lambda) | getRecentEvents(), getEventById() | GET /seismic-events | App Flutter, Panel B2B |
-| SensorStatusController | REST Controller (Lambda) | registerSensor(), getSensorStatus() | POST/GET /sensors | App Flutter (instalador) |
+| Clase                  | Tipo                                          | Métodos expuestos                   | Endpoint / Trigger                    | Consumido por            |
+| ---------------------- | --------------------------------------------- | ----------------------------------- | ------------------------------------- | ------------------------ |
+| SeismicDataConsumer    | IoT Consumer (Lambda suscrita a AWS IoT Core) | onMessageReceived(), parseReading() | Topic MQTT `quakexit/{hubId}/seismic` | QuakExit Hub (ESP32)     |
+| SeismicEventController | REST Controller (Lambda)                      | getRecentEvents(), getEventById()   | GET /seismic-events                   | App Flutter, Panel B2B   |
+| SensorStatusController | REST Controller (Lambda)                      | registerSensor(), getSensorStatus() | POST/GET /sensors                     | App Flutter (instalador) |
 
 **Emergency Alert Context**
 
-| Clase | Tipo | Métodos expuestos | Endpoint / Trigger | Consumido por |
-|---|---|---|---|---|
-| AlertController | REST Controller (Lambda) | getActiveAlerts(), cancelAlert() | GET /alerts, PATCH /alerts/{id}/cancel | App Flutter, Panel B2B |
-| NotificationDeliveryConsumer | Event Consumer (Lambda) | onDeliveryReceipt() | Webhook de confirmación de entrega | Firebase Cloud Messaging |
+| Clase                        | Tipo                     | Métodos expuestos                | Endpoint / Trigger                     | Consumido por            |
+| ---------------------------- | ------------------------ | -------------------------------- | -------------------------------------- | ------------------------ |
+| AlertController              | REST Controller (Lambda) | getActiveAlerts(), cancelAlert() | GET /alerts, PATCH /alerts/{id}/cancel | App Flutter, Panel B2B   |
+| NotificationDeliveryConsumer | Event Consumer (Lambda)  | onDeliveryReceipt()              | Webhook de confirmación de entrega     | Firebase Cloud Messaging |
 
 **Evacuation Management Context**
 
-| Clase | Tipo | Métodos expuestos | Endpoint / Trigger | Consumido por |
-|---|---|---|---|---|
-| EvacuationController | REST Controller (Lambda) | getEvacuationStatus(), getEvacuationHistory() | GET /evacuations | App Flutter, Panel B2B |
-| SafeZoneController | REST Controller (Lambda) | listSafeZones(), updateCapacity() | GET/PATCH /safe-zones | Panel B2B |
+| Clase                | Tipo                     | Métodos expuestos                             | Endpoint / Trigger    | Consumido por          |
+| -------------------- | ------------------------ | --------------------------------------------- | --------------------- | ---------------------- |
+| EvacuationController | REST Controller (Lambda) | getEvacuationStatus(), getEvacuationHistory() | GET /evacuations      | App Flutter, Panel B2B |
+| SafeZoneController   | REST Controller (Lambda) | listSafeZones(), updateCapacity()             | GET/PATCH /safe-zones | Panel B2B              |
 
 ---
 
@@ -1482,32 +1488,32 @@ La Application Layer orquesta los casos de uso: invoca las Entities/Aggregates/D
 
 **User Management Context**
 
-| Clase | Tipo | Dispara / Escucha | Descripción |
-|---|---|---|---|
-| RegisterUserCommandHandler | Command Handler | Comando: RegisterUserCommand | Invoca UserFactory.createUser(), persiste con UserRepository y publica el evento UserRegistered |
-| AuthenticateUserCommandHandler | Command Handler | Comando: AuthenticateUserCommand | Valida credenciales contra User Aggregate y genera el JWT vía JWTTokenService |
-| UpdateEmergencyProfileCommandHandler | Command Handler | Comando: UpdateEmergencyProfileCommand | Actualiza el EmergencyProfile dentro del User Aggregate |
+| Clase                                | Tipo            | Dispara / Escucha                      | Descripción                                                                                     |
+| ------------------------------------ | --------------- | -------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| RegisterUserCommandHandler           | Command Handler | Comando: RegisterUserCommand           | Invoca UserFactory.createUser(), persiste con UserRepository y publica el evento UserRegistered |
+| AuthenticateUserCommandHandler       | Command Handler | Comando: AuthenticateUserCommand       | Valida credenciales contra User Aggregate y genera el JWT vía JWTTokenService                   |
+| UpdateEmergencyProfileCommandHandler | Command Handler | Comando: UpdateEmergencyProfileCommand | Actualiza el EmergencyProfile dentro del User Aggregate                                         |
 
 **Seismic Monitoring Context**
 
-| Clase | Tipo | Dispara / Escucha | Descripción |
-|---|---|---|---|
-| ProcessSeismicReadingCommandHandler | Command Handler | Comando: ProcessSeismicReadingCommand | Recibe la lectura del SeismicDataConsumer, invoca EventDetectionService.detectEvent() y persiste el SeismicRecord |
-| SeismicEventDetectedHandler | Event Handler | Escucha: umbral superado (EventDetectionService) | Confirma el SeismicEvent (confirmEvent(), classifyRisk()) y publica el evento de dominio SeismicEventDetected hacia Emergency Alert Context |
+| Clase                               | Tipo            | Dispara / Escucha                                | Descripción                                                                                                                                 |
+| ----------------------------------- | --------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| ProcessSeismicReadingCommandHandler | Command Handler | Comando: ProcessSeismicReadingCommand            | Recibe la lectura del SeismicDataConsumer, invoca EventDetectionService.detectEvent() y persiste el SeismicRecord                           |
+| SeismicEventDetectedHandler         | Event Handler   | Escucha: umbral superado (EventDetectionService) | Confirma el SeismicEvent (confirmEvent(), classifyRisk()) y publica el evento de dominio SeismicEventDetected hacia Emergency Alert Context |
 
 **Emergency Alert Context**
 
-| Clase | Tipo | Dispara / Escucha | Descripción |
-|---|---|---|---|
-| CreateAlertFromSeismicEventHandler | Event Handler | Escucha: SeismicEventDetected | Invoca AlertFactory.createAlertFromEvent() y persiste el Alert Aggregate en estado ACTIVE |
-| DistributeAlertCommandHandler | Command Handler | Comando: DistributeAlertCommand | Invoca AlertDistributionService.distributeAlert() y coordina el envío multicanal (push, SMS) |
+| Clase                              | Tipo            | Dispara / Escucha               | Descripción                                                                                  |
+| ---------------------------------- | --------------- | ------------------------------- | -------------------------------------------------------------------------------------------- |
+| CreateAlertFromSeismicEventHandler | Event Handler   | Escucha: SeismicEventDetected   | Invoca AlertFactory.createAlertFromEvent() y persiste el Alert Aggregate en estado ACTIVE    |
+| DistributeAlertCommandHandler      | Command Handler | Comando: DistributeAlertCommand | Invoca AlertDistributionService.distributeAlert() y coordina el envío multicanal (push, SMS) |
 
 **Evacuation Management Context**
 
-| Clase | Tipo | Dispara / Escucha | Descripción |
-|---|---|---|---|
-| StartEvacuationCommandHandler | Event Handler | Escucha: AlertActivated | Invoca RouteOptimizationService y CapacityManagementService, crea el Evacuation Aggregate y lo asocia a un SafeZone |
-| CompleteEvacuationCommandHandler | Command Handler | Comando: CompleteEvacuationCommand | Cierra el proceso (complete()) y actualiza affectedUsers/estadísticas para Analítica |
+| Clase                            | Tipo            | Dispara / Escucha                  | Descripción                                                                                                         |
+| -------------------------------- | --------------- | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| StartEvacuationCommandHandler    | Event Handler   | Escucha: AlertActivated            | Invoca RouteOptimizationService y CapacityManagementService, crea el Evacuation Aggregate y lo asocia a un SafeZone |
+| CompleteEvacuationCommandHandler | Command Handler | Comando: CompleteEvacuationCommand | Cierra el proceso (complete()) y actualiza affectedUsers/estadísticas para Analítica                                |
 
 **Flujo end-to-end (Modo Emergencia):**
 `SeismicDataConsumer → ProcessSeismicReadingCommandHandler → SeismicEventDetectedHandler → CreateAlertFromSeismicEventHandler → DistributeAlertCommandHandler → StartEvacuationCommandHandler`
@@ -1516,31 +1522,31 @@ La Application Layer orquesta los casos de uso: invoca las Entities/Aggregates/D
 
 #### 4.2.1.4. Infrastructure Layer
 
-La Infrastructure Layer implementa las interfaces de Repository declaradas en el Domain Layer usando **Amazon DynamoDB**, y aísla los servicios externos (Firebase, AWS IoT Core, SMS) mediante adaptadores tipo Anti-Corruption Layer, según la relación *Gestión de Notificaciones → Servicios Externos* del Context Mapping.
+La Infrastructure Layer implementa las interfaces de Repository declaradas en el Domain Layer usando **Amazon DynamoDB**, y aísla los servicios externos (Firebase, AWS IoT Core, SMS) mediante adaptadores tipo Anti-Corruption Layer, según la relación _Gestión de Notificaciones → Servicios Externos_ del Context Mapping.
 
 **Repositorios (implementación de las interfaces del Domain Layer)**
 
-| Clase | Implementa | Tabla DynamoDB | Detalle |
-|---|---|---|---|
-| DynamoUserRepository | UserRepository | Users | PK: userId · GSI: email (para findByEmail) |
-| DynamoSeismicEventRepository | SeismicEventRepository | SeismicEvents | PK: eventId · SK: occurrenceDate (para findRecentEvents) |
-| DynamoAlertRepository | AlertRepository | Alerts | PK: alertId · GSI: status (para findActiveAlerts) |
-| DynamoEvacuationRepository | EvacuationRepository | Evacuations | PK: evacuationId · GSI: status |
+| Clase                        | Implementa             | Tabla DynamoDB | Detalle                                                  |
+| ---------------------------- | ---------------------- | -------------- | -------------------------------------------------------- |
+| DynamoUserRepository         | UserRepository         | Users          | PK: userId · GSI: email (para findByEmail)               |
+| DynamoSeismicEventRepository | SeismicEventRepository | SeismicEvents  | PK: eventId · SK: occurrenceDate (para findRecentEvents) |
+| DynamoAlertRepository        | AlertRepository        | Alerts         | PK: alertId · GSI: status (para findActiveAlerts)        |
+| DynamoEvacuationRepository   | EvacuationRepository   | Evacuations    | PK: evacuationId · GSI: status                           |
 
 **Adaptadores de servicios externos (Anti-Corruption Layer)**
 
-| Clase | Adapta | Detalle |
-|---|---|---|
-| FCMNotificationGateway | Notification → Firebase Cloud Messaging | Traduce el modelo interno de Notification al payload de FCM; usado por AlertDistributionService |
-| AWSIoTCoreGateway | Mensajes MQTT del ESP32 Hub → SeismicDataConsumer | Gestiona la suscripción a topics y la autenticación mutua por certificado de dispositivo (TLS) |
-| SmsGatewayAdapter | Notification (canal SMS) → proveedor externo de SMS | Usado para el envío a contactos de emergencia (US15) |
+| Clase                  | Adapta                                              | Detalle                                                                                         |
+| ---------------------- | --------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| FCMNotificationGateway | Notification → Firebase Cloud Messaging             | Traduce el modelo interno de Notification al payload de FCM; usado por AlertDistributionService |
+| AWSIoTCoreGateway      | Mensajes MQTT del ESP32 Hub → SeismicDataConsumer   | Gestiona la suscripción a topics y la autenticación mutua por certificado de dispositivo (TLS)  |
+| SmsGatewayAdapter      | Notification (canal SMS) → proveedor externo de SMS | Usado para el envío a contactos de emergencia (US15)                                            |
 
 **Servicios de soporte**
 
-| Clase | Responsabilidad |
-|---|---|
-| JWTTokenService | Genera y valida los tokens JWT firmados; usado por AuthenticateUserCommandHandler e IAMAuthorizer |
-| ConfigurationProvider | Obtiene credenciales y parámetros (AWS Secrets Manager / SSM) para FCM, IoT Core y claves JWT |
+| Clase                 | Responsabilidad                                                                                   |
+| --------------------- | ------------------------------------------------------------------------------------------------- |
+| JWTTokenService       | Genera y valida los tokens JWT firmados; usado por AuthenticateUserCommandHandler e IAMAuthorizer |
+| ConfigurationProvider | Obtiene credenciales y parámetros (AWS Secrets Manager / SSM) para FCM, IoT Core y claves JWT     |
 
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -1553,25 +1559,28 @@ En esta sección se presenta el diagrama de componentes del **Seismic Monitoring
 El **Seismic Monitoring Bounded Context** está compuesto por los siguientes módulos principales:
 
 **1. Application Layer:**
-*   Coordina las operaciones críticas relacionadas con el procesamiento de lecturas sísmicas y la confirmación de sismos.
-*   Incluye servicios de comandos (Command Handlers como `ProcessSeismicReadingCommandHandler`) que orquestan los flujos entre la Interface Layer y la Domain Layer.
-*   Maneja y reacciona a eventos de dominio (Event Handlers como `SeismicEventDetectedHandler`) para propagar cambios de estado hacia otros contextos.
+
+- Coordina las operaciones críticas relacionadas con el procesamiento de lecturas sísmicas y la confirmación de sismos.
+- Incluye servicios de comandos (Command Handlers como `ProcessSeismicReadingCommandHandler`) que orquestan los flujos entre la Interface Layer y la Domain Layer.
+- Maneja y reacciona a eventos de dominio (Event Handlers como `SeismicEventDetectedHandler`) para propagar cambios de estado hacia otros contextos.
 
 **2. Interface Layer:**
-*   Expone los puntos de entrada al sistema tanto para clientes HTTP como para los microcontroladores locales.
-*   Incluye controladores REST (como `SeismicEventController` y `SensorStatusController`) para las consultas desde la App Flutter y el Panel B2B.
-*   Implementa consumidores de eventos (como `SeismicDataConsumer`) que se suscriben a los tópicos MQTT para recibir datos crudos directamente desde los dispositivos IoT.
+
+- Expone los puntos de entrada al sistema tanto para clientes HTTP como para los microcontroladores locales.
+- Incluye controladores REST (como `SeismicEventController` y `SensorStatusController`) para las consultas desde la App Flutter y el Panel B2B.
+- Implementa consumidores de eventos (como `SeismicDataConsumer`) que se suscriben a los tópicos MQTT para recibir datos crudos directamente desde los dispositivos IoT.
 
 **3. Domain Layer:**
-*   Encapsula la lógica de negocio pura y crítica relacionada con la detección y validación de eventos sísmicos.
-*   Define el Agregado principal (`SeismicEvent`) y las Entidades internas (`Sensor`, `SeismicRecord`).
-*   Incluye los Servicios de Dominio (como `EventDetectionService`) que contienen los algoritmos para calcular magnitudes y determinar los niveles de riesgo (RiskLevel).
+
+- Encapsula la lógica de negocio pura y crítica relacionada con la detección y validación de eventos sísmicos.
+- Define el Agregado principal (`SeismicEvent`) y las Entidades internas (`Sensor`, `SeismicRecord`).
+- Incluye los Servicios de Dominio (como `EventDetectionService`) que contienen los algoritmos para calcular magnitudes y determinar los niveles de riesgo (RiskLevel).
 
 **4. Infrastructure Layer:**
-*   Proporciona las implementaciones técnicas necesarias para soportar las operaciones de persistencia y comunicación externa.
-*   Incluye repositorios (como `DynamoSeismicEventRepository`) para la persistencia de datos orientada a baja latencia en Amazon DynamoDB.
-*   Implementa los adaptadores (Gateways como `AWSIoTCoreGateway`) que actúan como capa anticorrupción para conectar la lógica de negocio con la infraestructura en la nube de AWS.
 
+- Proporciona las implementaciones técnicas necesarias para soportar las operaciones de persistencia y comunicación externa.
+- Incluye repositorios (como `DynamoSeismicEventRepository`) para la persistencia de datos orientada a baja latencia en Amazon DynamoDB.
+- Implementa los adaptadores (Gateways como `AWSIoTCoreGateway`) que actúan como capa anticorrupción para conectar la lógica de negocio con la infraestructura en la nube de AWS.
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -1581,7 +1590,6 @@ Para reflejar este nivel de detalle, la sección se divide en dos artefactos vis
 
 1. **Domain Layer Class Diagrams:** Se expone el Diagrama de Clases UML que conforma el núcleo de las reglas de negocio. Se detallan las Entidades, Agregados, Objetos de Valor e Interfaces, especificando sus atributos, métodos, niveles de encapsulamiento (scope) y la multiplicidad de sus relaciones.
 2. **Database Design Diagram:** Se presenta el Modelo Físico de Datos (Diagrama Entidad-Relación), evidenciando cómo se mapean los objetos del dominio hacia la infraestructura de persistencia, especificando las tablas, columnas, restricciones, claves primarias (PK) y claves foráneas (FK).
-
 
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 
@@ -1594,32 +1602,35 @@ El diagrama de clases correspondiente a la Domain Layer del **Seismic Monitoring
 **Elementos principales del diagrama:**
 
 **1. Aggregates:**
-*   **SeismicEvent:** Agregado principal (Aggregate Root) que encapsula la lógica de negocio relacionada con la confirmación de un evento sísmico real.
-    *   **Atributos:**
-        *   `eventId`: Identificador único del evento sísmico.
-        *   `magnitude`: Magnitud consolidada del evento.
-        *   `epicenter`: Identificador o nombre de la zona del epicentro.
-        *   `riskLevel`: Nivel de riesgo calculado para la evacuación.
-        *   `occurrenceDate`: Fecha y hora de confirmación.
-    *   **Métodos:**
-        *   `confirmEvent()`: Valida y consolida el evento para disparar la alerta.
-        *   `classifyRisk(Magnitude mag)`: Asigna el nivel de riesgo según la intensidad.
-        *   `updateMagnitude(Magnitude newMag)`: Actualiza la magnitud si llegan lecturas más fuertes.
+
+- **SeismicEvent:** Agregado principal (Aggregate Root) que encapsula la lógica de negocio relacionada con la confirmación de un evento sísmico real.
+  - **Atributos:**
+    - `eventId`: Identificador único del evento sísmico.
+    - `magnitude`: Magnitud consolidada del evento.
+    - `epicenter`: Identificador o nombre de la zona del epicentro.
+    - `riskLevel`: Nivel de riesgo calculado para la evacuación.
+    - `occurrenceDate`: Fecha y hora de confirmación.
+  - **Métodos:**
+    - `confirmEvent()`: Valida y consolida el evento para disparar la alerta.
+    - `classifyRisk(Magnitude mag)`: Asigna el nivel de riesgo según la intensidad.
+    - `updateMagnitude(Magnitude newMag)`: Actualiza la magnitud si llegan lecturas más fuertes.
 
 **2. Entities:**
-*   **SeismicRecord:** Entidad que representa cada lectura individual capturada por los sensores físicos (ESP32) asociados al evento.
-    *   **Atributos:**
-        *   `recordId`: Identificador único de la lectura.
-        *   `magnitude`: Intensidad de la vibración registrada.
-        *   `timestamp`: Momento exacto de la medición.
-    *   **Métodos:**
-        *   `validateMeasurement()`: Verifica que la lectura no sea un falso positivo (ej. vibraciones de camiones).
-        *   `isCritical() : Boolean`: Retorna verdadero si la lectura supera el umbral de disparo.
+
+- **SeismicRecord:** Entidad que representa cada lectura individual capturada por los sensores físicos (ESP32) asociados al evento.
+  - **Atributos:**
+    - `recordId`: Identificador único de la lectura.
+    - `magnitude`: Intensidad de la vibración registrada.
+    - `timestamp`: Momento exacto de la medición.
+  - **Métodos:**
+    - `validateMeasurement()`: Verifica que la lectura no sea un falso positivo (ej. vibraciones de camiones).
+    - `isCritical() : Boolean`: Retorna verdadero si la lectura supera el umbral de disparo.
 
 **3. Value Objects & Enumerations:**
-*   **RiskLevel:** Enumeración (`«enumeration»`) que define los estados posibles de riesgo de un sismo (`LOW`, `MEDIUM`, `HIGH`, `CRITICAL`).
-*   **GeographicLocation:** Objeto de valor (Value Object) que representa la ubicación física exacta mediante coordenadas (latitud y longitud).
-*   **Magnitude:** Objeto de valor que representa la intensidad del sismo con sus respectivas reglas de validación (debe ser mayor a 0).
+
+- **RiskLevel:** Enumeración (`«enumeration»`) que define los estados posibles de riesgo de un sismo (`LOW`, `MEDIUM`, `HIGH`, `CRITICAL`).
+- **GeographicLocation:** Objeto de valor (Value Object) que representa la ubicación física exacta mediante coordenadas (latitud y longitud).
+- **Magnitude:** Objeto de valor que representa la intensidad del sismo con sus respectivas reglas de validación (debe ser mayor a 0).
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
 
@@ -1633,25 +1644,26 @@ Este diseño incluye las siguientes tablas principales:
 
 **1. SEISMIC_EVENTS:**
 Representa los eventos sísmicos confirmados y consolidados por el sistema.
-*   **Atributos principales:**
-    *   `id`: Identificador único del evento sísmico (PK).
-    *   `magnitude`: Magnitud general consolidada del sismo.
-    *   `epicenter`: Zona o identificador de la ubicación del epicentro.
-    *   `risk_level`: Nivel de riesgo calculado (ej. LOW, MEDIUM, HIGH, CRITICAL).
-    *   `occurrence_date`: Fecha y hora exacta de la confirmación del evento.
-    *   `created_at`: Fecha de registro en la base de datos.
-    *   `updated_at`: Fecha de última actualización.
+
+- **Atributos principales:**
+  - `id`: Identificador único del evento sísmico (PK).
+  - `magnitude`: Magnitud general consolidada del sismo.
+  - `epicenter`: Zona o identificador de la ubicación del epicentro.
+  - `risk_level`: Nivel de riesgo calculado (ej. LOW, MEDIUM, HIGH, CRITICAL).
+  - `occurrence_date`: Fecha y hora exacta de la confirmación del evento.
+  - `created_at`: Fecha de registro en la base de datos.
+  - `updated_at`: Fecha de última actualización.
 
 **2. SEISMIC_RECORDS:**
 Representa las lecturas o mediciones individuales capturadas por los sensores (QuakExit Hubs) asociadas a un evento.
-*   **Atributos principales:**
-    *   `id`: Identificador único del registro de lectura (PK).
-    *   `event_id`: Identificador del evento sísmico al que pertenece esta lectura (FK).
-    *   `sensor_id`: Identificador del sensor IoT que generó la lectura.
-    *   `magnitude`: Intensidad de la vibración registrada por ese sensor en específico.
-    *   `depth`: Profundidad estimada de la onda.
-    *   `timestamp`: Fecha y hora exacta de la captura física por el hardware.
 
+- **Atributos principales:**
+  - `id`: Identificador único del registro de lectura (PK).
+  - `event_id`: Identificador del evento sísmico al que pertenece esta lectura (FK).
+  - `sensor_id`: Identificador del sensor IoT que generó la lectura.
+  - `magnitude`: Intensidad de la vibración registrada por ese sensor en específico.
+  - `depth`: Profundidad estimada de la onda.
+  - `timestamp`: Fecha y hora exacta de la captura física por el hardware.
 
 <div style="page-break-after: always;"></div>
 
@@ -1659,14 +1671,11 @@ Representa las lecturas o mediciones individuales capturadas por los sensores (Q
 
 ##### Conclusiones
 
-
-* A través del proceso de investigación y validación con la metodología Lean UX, se comprobó que existe una necesidad crítica en el mercado residencial (B2C) e inmobiliario (B2B) por sistemas de seguridad que superen el enfoque meramente informativo. QuakExit demostró viabilidad al cubrir la brecha existente entre las alertas tempranas estatales (SISMATE) y la ejecución de acciones físicas de salvaguarda, como el desbloqueo automático de cerraduras en situaciones de falta de suministro eléctrico.
-* La aplicación del Domain-Driven Design (DDD) a nivel estratégico, apoyada en dinámicas de EventStorming, permitió descomponer eficazmente la complejidad del dominio sísmico e IoT. Como resultado, se identificaron 6 Bounded Contexts altamente cohesionados, aislando procesos críticos como el *Emergency Core* y el *IoT & Energy Management* de los dominios de soporte, lo que garantiza que la lógica de evacuación no se vea afectada por fallos en otras áreas del sistema.
-* El diseño de la Arquitectura de Software bajo el Modelo C4 validó la factibilidad técnica del proyecto. Se consolidó una topología híbrida que combina el *Edge Computing* local (mediante microcontroladores ESP32 operando offline con baterías de respaldo) y una infraestructura *Serverless* en AWS orientada a eventos. Esto asegura latencias mínimas para la acción de los actuadores y una alta escalabilidad sin costos iniciales prohibitivos.
-* El modelado táctico del software permitió definir con claridad las capas internas de cada Bounded Context (Dominio, Aplicación, Infraestructura e Interfaz). La definición de Agregados, Entidades y Objetos de Valor asegura que las reglas de negocio, como el procesamiento de métricas sísmicas y el umbral de activación fail-safe, queden encapsuladas y sean trazables directamente hasta el código fuente y el diseño de la base de datos.
-* La organización del equipo en subgrupos especializados (estrategia y requerimientos, arquitectura macro y diseño táctico) garantizó el cumplimiento de los hitos del primer avance (AV1). Esta distribución permitió satisfacer los criterios del Student Outcome 5 (ABET), evidenciando un entorno colaborativo y un liderazgo compartido en la toma de decisiones técnicas.
-
-
+- A través del proceso de investigación y validación con la metodología Lean UX, se comprobó que existe una necesidad crítica en el mercado residencial (B2C) e inmobiliario (B2B) por sistemas de seguridad que superen el enfoque meramente informativo. QuakExit demostró viabilidad al cubrir la brecha existente entre las alertas tempranas estatales (SISMATE) y la ejecución de acciones físicas de salvaguarda, como el desbloqueo automático de cerraduras en situaciones de falta de suministro eléctrico.
+- La aplicación del Domain-Driven Design (DDD) a nivel estratégico, apoyada en dinámicas de EventStorming, permitió descomponer eficazmente la complejidad del dominio sísmico e IoT. Como resultado, se identificaron 6 Bounded Contexts altamente cohesionados, aislando procesos críticos como el _Emergency Core_ y el _IoT & Energy Management_ de los dominios de soporte, lo que garantiza que la lógica de evacuación no se vea afectada por fallos en otras áreas del sistema.
+- El diseño de la Arquitectura de Software bajo el Modelo C4 validó la factibilidad técnica del proyecto. Se consolidó una topología híbrida que combina el _Edge Computing_ local (mediante microcontroladores ESP32 operando offline con baterías de respaldo) y una infraestructura _Serverless_ en AWS orientada a eventos. Esto asegura latencias mínimas para la acción de los actuadores y una alta escalabilidad sin costos iniciales prohibitivos.
+- El modelado táctico del software permitió definir con claridad las capas internas de cada Bounded Context (Dominio, Aplicación, Infraestructura e Interfaz). La definición de Agregados, Entidades y Objetos de Valor asegura que las reglas de negocio, como el procesamiento de métricas sísmicas y el umbral de activación fail-safe, queden encapsuladas y sean trazables directamente hasta el código fuente y el diseño de la base de datos.
+- La organización del equipo en subgrupos especializados (estrategia y requerimientos, arquitectura macro y diseño táctico) garantizó el cumplimiento de los hitos del primer avance (AV1). Esta distribución permitió satisfacer los criterios del Student Outcome 5 (ABET), evidenciando un entorno colaborativo y un liderazgo compartido en la toma de decisiones técnicas.
 
 <div style="page-break-after: always;"></div>
 
@@ -1674,17 +1683,17 @@ Representa las lecturas o mediciones individuales capturadas por los sensores (Q
 
 ##### Bibliografía
 
-Brandolini, A. (2021). *Introducing EventStorming*. EventStorming. https://www.eventstorming.com/
+Brandolini, A. (2021). _Introducing EventStorming_. EventStorming. https://www.eventstorming.com/
 
-Brown, S. (s.f.). *The C4 model for visualising software architecture*. C4 Model. https://c4model.com/
+Brown, S. (s.f.). _The C4 model for visualising software architecture_. C4 Model. https://c4model.com/
 
-DDD Crew. (2023). *Bounded Context Canvas*. GitHub. https://github.com/ddd-crew/bounded-context-canvas
+DDD Crew. (2023). _Bounded Context Canvas_. GitHub. https://github.com/ddd-crew/bounded-context-canvas
 
-Gothelf, J., & Seiden, J. (2021). *Lean UX: Designing great products with agile teams*. Jeff Gothelf. https://jeffgothelf.com/lean-ux-book/
+Gothelf, J., & Seiden, J. (2021). _Lean UX: Designing great products with agile teams_. Jeff Gothelf. https://jeffgothelf.com/lean-ux-book/
 
-Instituto Geofísico del Perú [IGP]. (2023). *Centro Nacional de Alerta de Tsunamis y Sismos*. Gobierno del Perú. https://www.igp.gob.pe/
+Instituto Geofísico del Perú [IGP]. (2023). _Centro Nacional de Alerta de Tsunamis y Sismos_. Gobierno del Perú. https://www.igp.gob.pe/
 
-Ministerio de Transportes y Comunicaciones [MTC]. (s.f.). *Sistema de Mensajería de Alerta Temprana de Emergencias (SISMATE)*. Gobierno del Perú. https://www.gob.pe/institucion/mtc/colecciones/532-sistema-de-mensajeria-de-alerta-temprana-de-emergencias-sismate
+Ministerio de Transportes y Comunicaciones [MTC]. (s.f.). _Sistema de Mensajería de Alerta Temprana de Emergencias (SISMATE)_. Gobierno del Perú. https://www.gob.pe/institucion/mtc/colecciones/532-sistema-de-mensajeria-de-alerta-temprana-de-emergencias-sismate
 
 <div style="page-break-after: always;"></div>
 
