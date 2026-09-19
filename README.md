@@ -11,7 +11,7 @@
   <p align="center">NRC: 8729</p>
   <p align="center">Nombre del profesor: Marco Antonio Leon Baca</p>
   <p align="center"><b>Informe de Primer Avance</b></p>
-  <p align="center">Nombre del startup: QuakExit</p>
+  <p align="center">Nombre del startup: TerraGuard</p>
   <p align="center">Nombre del producto: QuakExit</p>
 </div>
 
