@@ -1718,7 +1718,34 @@ La Infrastructure Layer implementa las interfaces de Repository declaradas en el
 
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 
-Se explica el desglose de cada contenedor para identificar los bloques estructurales (componentes), sus responsabilidades y detalles de implementación. Diagrama: Sí. Se deben presentar los Component Diagrams del Modelo C4 para cada uno de los contenedores considerados en el bounded context.
+En esta sección se presenta el diagrama de componentes del **Seismic Monitoring Bounded Context**, el cual detalla los principales módulos y sus interacciones dentro del contexto delimitado. Este diagrama sigue el enfoque del C4 Model para representar los componentes clave, como manejadores de comandos, controladores, repositorios y gateways externos, junto con sus relaciones estructurales.
+
+<div>
+  <p align="center"><img src="assets/cap4/4.2/Bounded Context Software Architecture Component Level Diagrams.png" alt="Bounded Context Software Architecture Component Level Diagrams" width="700px" /></p>
+</div>
+
+El **Seismic Monitoring Bounded Context** está compuesto por los siguientes módulos principales:
+
+**1. Application Layer:**
+*   Coordina las operaciones críticas relacionadas con el procesamiento de lecturas sísmicas y la confirmación de sismos.
+*   Incluye servicios de comandos (Command Handlers como `ProcessSeismicReadingCommandHandler`) que orquestan los flujos entre la Interface Layer y la Domain Layer.
+*   Maneja y reacciona a eventos de dominio (Event Handlers como `SeismicEventDetectedHandler`) para propagar cambios de estado hacia otros contextos.
+
+**2. Interface Layer:**
+*   Expone los puntos de entrada al sistema tanto para clientes HTTP como para los microcontroladores locales.
+*   Incluye controladores REST (como `SeismicEventController` y `SensorStatusController`) para las consultas desde la App Flutter y el Panel B2B.
+*   Implementa consumidores de eventos (como `SeismicDataConsumer`) que se suscriben a los tópicos MQTT para recibir datos crudos directamente desde los dispositivos IoT.
+
+**3. Domain Layer:**
+*   Encapsula la lógica de negocio pura y crítica relacionada con la detección y validación de eventos sísmicos.
+*   Define el Agregado principal (`SeismicEvent`) y las Entidades internas (`Sensor`, `SeismicRecord`).
+*   Incluye los Servicios de Dominio (como `EventDetectionService`) que contienen los algoritmos para calcular magnitudes y determinar los niveles de riesgo (RiskLevel).
+
+**4. Infrastructure Layer:**
+*   Proporciona las implementaciones técnicas necesarias para soportar las operaciones de persistencia y comunicación externa.
+*   Incluye repositorios (como `DynamoSeismicEventRepository`) para la persistencia de datos orientada a baja latencia en Amazon DynamoDB.
+*   Implementa los adaptadores (Gateways como `AWSIoTCoreGateway`) que actúan como capa anticorrupción para conectar la lógica de negocio con la infraestructura en la nube de AWS.
+
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
