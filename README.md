@@ -1201,6 +1201,10 @@ El diagrama de panorama del sistema (System Landscape) ofrece una visión macro 
 
 El diagrama de contexto sitúa a la plataforma QuakExit en el centro (como una caja negra) para delimitar claramente las fronteras del software. Aquí se define qué actores interactúan directamente con la solución y qué valor extraen de ella. El residente interactúa para el monitoreo de la energía de su hogar y la recepción de alertas sísmicas, mientras que el administrador B2B requiere capacidades de gestión por lotes. El límite del sistema establece que QuakExit es responsable de detectar el evento sísmico y procesarlo, pero delega la entrega en la capa de red móvil al servicio externo de FCM.
 
+<p align="center">
+  <img src="assets/software_architecture/context_diagramContext-dark.png" width="900">
+</p>
+
 #### 4.1.3.3. Software Architecture Container Level Diagrams
 
 A nivel de contenedores, se "abre" el sistema para revelar la arquitectura técnica responsable de soportar las historias de usuario. La solución se compone de los siguientes contenedores principales:
