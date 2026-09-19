@@ -1223,7 +1223,20 @@ A nivel de contenedores, se "abre" el sistema para revelar la arquitectura técn
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
-El índice estructural del documento exige esta sección para detallar el despliegue del software. Diagrama: Sí. Requiere el diagrama de despliegue.
+Este diagrama mapea la infraestructura física y lógica sobre la cual se despliega el sistema **QuakExit**, detallando cómo los artefactos de software se distribuyen en tres entornos o nodos principales: la Nube de AWS (Amazon Web Services), los Dispositivos Cliente y la Infraestructura Residencial (Edge IoT).
+
+En **AWS Cloud**, el sistema aprovecha una arquitectura Serverless orientada a eventos para maximizar la disponibilidad y reducir costos operativos. Se utiliza **Amazon API Gateway** como punto de entrada unificado gestionando solicitudes HTTPS, el cual enruta el tráfico hacia funciones **AWS Lambda (Python)** encargadas de la lógica de negocio y autenticación. La capa de persistencia se aloja en **Amazon DynamoDB** para garantizar accesos de baja latencia a los registros de usuarios y eventos. La comunicación bidireccional con el hardware local se canaliza mediante **AWS IoT Core** utilizando el protocolo MQTT/TLS.
+
+En los **Dispositivos Cliente**, la aplicación móvil desarrollada en **Flutter** corre sobre dispositivos Android e iOS para el monitoreo del usuario B2C, mientras que el panel de administración B2B se ejecuta en navegadores web mediante peticiones HTTP asíncronas. Como servicio externo, se integra **Firebase Cloud Messaging (FCM)** para la entrega masiva de notificaciones push críticas.
+
+En la **Infraestructura Residencial / Smart Home**, se despliega el microcontrolador **ESP32 (IoT Hub)** en la vivienda del usuario. Este dispositivo gestiona localmente sensores y actuadores (cerraduras electromagnéticas y luces de emergencia), ejecutando algoritmos en el borde (*Edge Computing*) para operar incluso en situaciones de desconexión o pérdida de energía eléctrica mediante baterías de respaldo.
+
+
+<p align="center">
+  <img src="assets/cap4/4.1/diagrama-deployment.png" width="900">
+</p>
+
+
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
