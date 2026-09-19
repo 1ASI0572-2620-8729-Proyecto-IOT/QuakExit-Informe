@@ -1195,7 +1195,7 @@ El diseño arquitectónico de QuakExit se ha elaborado siguiendo el Modelo C4, p
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
-El índice estructural del documento exige esta sección como parte del Modelo C4. Diagrama: Sí. Requiere el diagrama de paisaje del sistema del Modelo C4.
+El diagrama de panorama del sistema (System Landscape) ofrece una visión macro de NeuroDraw como empresa tecnológica frente a su ecosistema operativo. En este nivel, se visualiza a QuakExit como la solución central que interactúa con dos arquetipos de usuarios principales: el residente o dueño de Smart Home (B2C) y el administrador inmobiliario (B2B). Asimismo, se evidencia la dependencia estratégica con sistemas externos de terceros, específicamente con Firebase Cloud Messaging (FCM) para la delegación del servicio de mensajería push, desacoplando así la responsabilidad de entrega de notificaciones críticas del servidor principal.
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
