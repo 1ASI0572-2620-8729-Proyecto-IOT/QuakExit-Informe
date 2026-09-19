@@ -1231,6 +1231,13 @@ En los **Dispositivos Cliente**, la aplicación móvil desarrollada en **Flutter
 
 En la **Infraestructura Residencial / Smart Home**, se despliega el microcontrolador **ESP32 (IoT Hub)** en la vivienda del usuario. Este dispositivo gestiona localmente sensores y actuadores (cerraduras electromagnéticas y luces de emergencia), ejecutando algoritmos en el borde (*Edge Computing*) para operar incluso en situaciones de desconexión o pérdida de energía eléctrica mediante baterías de respaldo.
 
+
+<p align="center">
+  <img src="assets/cap4/4.1/diagrama-deployment.png" width="900">
+</p>
+
+
+
 ## 4.2. Tactical-Level Domain-Driven Design
 
 Se explica y presenta la propuesta para la perspectiva táctica del diseño de software. Diagrama: No, es texto introductorio.
