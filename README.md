@@ -75,6 +75,20 @@
 
 ## Project Report Collaboration Insights
 
+El equipo ha trabajado de manera colaborativa en el repositorio de GitHub, registrando avances constantes en la construcción del informe.  
+Repositorio del informe: [https://github.com/1ASI0572-2620-8729-Proyecto-IOT/QuakExit-Informe](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/QuakExit-Informe)
+
+A continuación, se presentan las evidencias de participación y colaboración de los integrantes:
+
+- Cada integrante del grupo realizó commits, modificaciones y carga de archivos en distintas secciones del informe.
+- Se refleja la división de tareas entre redacción, correcciones de estilo, incorporación de imágenes y ajustes técnicos en Markdown.
+- Todos los miembros participaron en mayor o menor medida, garantizando que el documento evolucionara de forma colaborativa y transparente.
+- La evidencia gráfica incluye la vista de contribuciones, así como el historial de actividad donde se observa el detalle de commits y cambios en el repositorio.
+
+<div>
+  <p align="center"><img src="assets/cap1/github/commits.png" alt="Team members stats" width="700px" /></p>
+</div>
+
 ## Registro de Versiones del Informe
 
 El objetivo de esta sección es resumir las modificaciones relevantes que se realizan al informe durante el ciclo de vida del proyecto.
