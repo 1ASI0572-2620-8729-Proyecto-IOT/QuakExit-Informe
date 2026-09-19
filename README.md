@@ -1261,24 +1261,9 @@ Este Bounded Context es responsable de la gestión de usuarios dentro de la plat
 
 - **Propósito:** Representar a una persona registrada dentro de la plataforma.
 
-- **Atributos**
-  - userId: UUID
-  - firstName: String
-  - lastName: String
-  - email: String
-  - passwordHash: String
-  - role: String
-  - status: Boolean
-
-- **Métodos**
-  - register()
-  - login()
-  - updateProfile()
-  - deactivateAccount()
-
-- **Relaciones**
-  - Posee un PerfilEmergencia.
-  - Se encuentra asociado a un Rol.
+| **Atributos** | **Métodos** | **Relaciones** |
+|---|---|---|
+| userId: UUID, firstName: String, lastName: String, email: String, passwordHash: String, role: String, status: Boolean | register(), login(), updateProfile(), deactivateAccount() | - Posee un PerfilEmergencia. - Se encuentra asociado a un Rol. |
 
 2. **PerfilEmergencia**
 
