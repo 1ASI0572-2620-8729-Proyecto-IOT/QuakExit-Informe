@@ -1536,450 +1536,79 @@ Clases Identificadas:
 
 Se explica qué clases representarán el núcleo de la aplicación y las reglas de negocio, incluyendo Entities, Value Objects, Aggregates, Factories, Domain Services y Repositories. Diagrama: No.
 
+#### 4.2.1.1. Domain Layer
+
 La Domain Layer concentra la lógica de negocio principal de QuakExit y está compuesta por las entidades, objetos de valor, agregados, servicios de dominio, fábricas y repositorios que permiten representar las reglas del negocio relacionadas con la detección de eventos sísmicos, la generación de alertas y la gestión de evacuaciones.
 
-**User Managment Context**
-
-Entities:
-
-1. User
-
-**Propósito:** Representar a un usuario registrado dentro de la plataforma.
-
-**Atributos**
-- userId: UserId
-- firstName: String
-- lastName: String
-- email: String
-- passwordHash: String
-- status: UserStatus
-
-**Métodos**
-- updateProfile()
-- activate()
-- deactivate()
-
-2. EmergencyProfile
-
-**Propósito:** Almacenar información relevante para situaciones de emergencia.
-
-**Atributos**
-- profileId: UUID
-- emergencyContact: String
-- bloodType: String
-- medicalConditions: String
-
-**Métodos**
-- updateEmergencyContact()
-- updateMedicalInformation()
-
-
-Value Objects:
-
-1. Email
-
-**Propósito:** Representar un correo electrónico válido.
-
-**Atributos**
-- value: String
-
-**Reglas**
-- Debe tener formato válido.
-- Debe ser único dentro del sistema.
-
-2. UserStatus
-
-**Propósito:** Representar el estado actual del usuario.
-
-**Valores posibles**
-- ACTIVE
-- INACTIVE
-- SUSPENDED
-
-Aggregate:
-
-1. User Aggregate
-
-**Aggregate Root**
-- User
-
-**Entidades internas**
-- EmergencyProfile
-
-**Responsabilidades**
-- Mantener la consistencia de la información del usuario.
-- Gestionar cambios en el perfil de emergencia.
-- Validar reglas de activación y desactivación.
-
-Factory:
-
-1. UserFactory
-
-**Propósito:** Centralizar la creación de usuarios válidos.
-
-**Métodos**
-- createUser()
-
-Repository:
-
-1. UserRepository
-
-**Propósito:** Proporcionar acceso a la persistencia de usuarios.
-
-**Métodos**
-- save(User user)
-- findById(UserId userId)
-- findByEmail(Email email)
-- delete(User user)
-
-**Seismic Monitoring Context**
-
-Entities:
-
-1. Sensor
-
-**Propósito:** Representar un dispositivo IoT encargado de capturar actividad sísmica.
-
-**Atributos**
-- sensorId: UUID
-- serialNumber: String
-- location: GeographicLocation
-- status: SensorStatus
-
-**Métodos**
-- registerReading()
-- updateStatus()
-
-SeismicRecord
-
-**Propósito:** Registrar una medición sísmica capturada por un sensor.
-
-**Atributos**
-- recordId: UUID
-- magnitude: Decimal
-- depth: Decimal
-- timestamp: DateTime
-
-**Métodos**
-- validateMeasurement()
-
-2. SeismicEvent
-
-**Propósito:** Representar un evento sísmico confirmado por el sistema.
-
-**Atributos**
-- eventId: UUID
-- magnitude: Decimal
-- epicenter: String
-- riskLevel: RiskLevel
-- occurrenceDate: DateTime
-
-**Métodos**
-- classifyRisk()
-- confirmEvent()
-
-Value Objects:
-
-1. GeographicLocation
-
-**Propósito:** Representar coordenadas geográficas.
-
-**Atributos**
-- latitude: Double
-- longitude: Double
-
-2. RiskLevel
-
-**Propósito:** Representar el nivel de riesgo asociado a un evento sísmico.
-
-**Valores posibles**
-- LOW
-- MEDIUM
-- HIGH
-- CRITICAL
-
-Aggregate:
-
-1. SeismicEvent Aggregate
-
-**Aggregate Root**
-- SeismicEvent
-
-**Entidades internas**
-- SeismicRecord
-
-**Responsabilidades**
-- Consolidar registros sísmicos.
-- Validar la ocurrencia de un evento sísmico.
-- Calcular el nivel de riesgo.
-
-Domain Service:
-
-1. EventDetectionService
-
-**Propósito:** Analizar los datos de múltiples sensores para determinar la existencia de un evento sísmico.
-
-**Métodos**
-- detectEvent()
-- calculateMagnitude()
-- determineRiskLevel()
-
-Repository:
-
-1. SeismicEventRepository
-
-**Métodos**
-- save(SeismicEvent event)
-- findById(UUID id)
-- findRecentEvents()
-
-
-
-**Emergency Alert Context**
-
-Entities:
-
-1. Alert
-
-**Propósito:** Representar una alerta sísmica emitida por la plataforma.
-
-**Atributos**
-- alertId: UUID
-- title: String
-- message: String
-- severityLevel: String
-- issuedAt: DateTime
-- status: AlertStatus
-
-**Métodos**
-- activate()
-- cancel()
-- updateMessage()
-
-2. Notification
-
-**Propósito:** Representar una notificación enviada a un usuario.
-
-**Atributos**
-- notificationId: UUID
-- recipientId: UUID
-- channel: NotificationChannel
-- sentAt: DateTime
-
-**Métodos**
-- send()
-- retry()
-
-Value Objects:
-
-1. NotificationChannel
-
-**Propósito:** Representar el canal de distribución de una alerta.
-
-**Valores posibles**
-- PUSH
-- EMAIL
-- SMS
-
-2. AlertStatus
-
-**Propósito:** Representar el estado de una alerta.
-
-**Valores posibles**
-- CREATED
-- ACTIVE
-- CLOSED
-
-Aggregate
-
-1. Alert Aggregate
-
-**Aggregate Root**
-- Alert
-
-**Entidades internas**
-- Notification
-
-**Responsabilidades**
-- Gestionar el ciclo de vida de una alerta.
-- Coordinar la distribución de notificaciones.
-
-Domain Service
-
-1. AlertDistributionService
-
-**Propósito:** Gestionar la propagación de alertas hacia múltiples usuarios y canales.
-
-**Métodos**
-- distributeAlert()
-- notifyUsers()
-- validateDelivery()
-
-Factory:
-
-1. AlertFactory
-
-**Propósito:** Construir una alerta a partir de un evento sísmico confirmado.
-
-**Métodos**
-- createAlertFromEvent()
-
-Repository:
-
-1. AlertRepository
-
-**Métodos**
-- save(Alert alert)
-- findById(UUID id)
-- findActiveAlerts()
-
-**Evacuation Management Context**
-
-Entities
-
-1. Evacuation
-
-**Propósito:** Representar un proceso de evacuación iniciado por una emergencia.
-
-**Atributos**
-- evacuationId: UUID
-- status: EvacuationStatus
-- startTime: DateTime
-- endTime: DateTime
-
-**Métodos**
-- start()
-- complete()
-- cancel()
-
-2. SafeZone
-
-**Propósito:** Representar una zona segura disponible para evacuar personas.
-
-**Atributos**
-- safeZoneId: UUID
-- name: String
-- capacity: Integer
-- location: GeographicLocation
-
-**Métodos**
-- updateCapacity()
-- registerOccupancy()
-
-3. EvacuationRoute
-
-**Propósito:** Representar una ruta recomendada para evacuar.
-
-**Atributos**
-- routeId: UUID
-- distance: Decimal
-- estimatedTime: Integer
-
-**Métodos**
-- calculateRoute()
-- verifyAccessibility()
-
-Value Objects
-
-1. EvacuationStatus
-
-**Propósito:** Representar el estado de una evacuación.
-
-**Valores posibles**
-- PENDING
-- ACTIVE
-- COMPLETED
-- CANCELLED
-
-Aggregate
-
-1. Evacuation Aggregate
-
-**Aggregate Root**
-- Evacuation
-
-**Entidades internas**
-- EvacuationRoute
-- SafeZone
-
-**Responsabilidades**
-- Gestionar el proceso de evacuación.
-- Garantizar la selección de rutas seguras.
-- Mantener información actualizada de zonas seguras.
-
-Domain Service
-
-1. RouteOptimizationService
-
-**Propósito:** Determinar la ruta de evacuación más segura y eficiente.
-
-**Métodos**
-- generateOptimalRoute()
-- calculateEstimatedTime()
-- validateRouteSafety()
-
-2. CapacityManagementService
-
-**Propósito:** Administrar la capacidad disponible de las zonas seguras.
-
-**Métodos**
-- checkAvailability()
-- assignSafeZone()
-- updateOccupancy()
-
-Repository
-
-1. EvacuationRepository
-
-**Métodos**
-- save(Evacuation evacuation)
-- findById(UUID id)
-- findActiveEvacuations()
-
-Resumen de Patrones DDD Utilizados
-
-- Entities
-  - User
-  - EmergencyProfile
-  - Sensor
-  - SeismicRecord
-  - SeismicEvent
-  - Alert
-  - Notification
-  - Evacuation
-  - EvacuationRoute
-  - SafeZone
-
-- Value Objects
-  - Email
-  - UserStatus
-  - GeographicLocation
-  - RiskLevel
-  - NotificationChannel
-  - AlertStatus
-  - EvacuationStatus
-
-- Aggregates
-  - User Aggregate
-  - SeismicEvent Aggregate
-  - Alert Aggregate
-  - Evacuation Aggregate
-
-- Factories
-  - UserFactory
-  - AlertFactory
-
-- Domain Services
-  - EventDetectionService
-  - AlertDistributionService
-  - RouteOptimizationService
-  - CapacityManagementService
-
-- Repositories
-  - UserRepository
-  - SeismicEventRepository
-  - AlertRepository
-  - EvacuationRepository
+#### 1. User Management Context
+
+##### Aggregates & Entities
+| Elemento | Tipo | Propósito | Atributos clave | Métodos / Comportamiento |
+| :--- | :--- | :--- | :--- | :--- |
+| **User Aggregate** | `Aggregate` | Raíz: `User`. Internas: `EmergencyProfile`. Mantiene consistencia y reglas de activación. | — | — |
+| **User** | `Entity` (Root) | Representar a un usuario registrado. | `userId: UserId`, `firstName: String`, `lastName: String`, `email: String`, `passwordHash: String`, `status: UserStatus` | `updateProfile()`, `activate()`, `deactivate()` |
+| **EmergencyProfile** | `Entity` | Información médica y de contacto para emergencias. | `profileId: UUID`, `emergencyContact: String`, `bloodType: String`, `medicalConditions: String` | `updateEmergencyContact()`, `updateMedicalInformation()` |
+
+##### Value Objects, Factories & Repositories
+| Elemento | Tipo | Detalle / Valores / Métodos |
+| :--- | :--- | :--- |
+| **Email** | `Value Object` | Atributo: `value: String`. Reglas: formato válido y valor único. |
+| **UserStatus** | `Value Object` | Valores: `ACTIVE`, `INACTIVE`, `SUSPENDED`. |
+| **UserFactory** | `Factory` | `createUser()` |
+| **UserRepository** | `Repository` | `save(User)`, `findById(UserId)`, `findByEmail(Email)`, `delete(User)` |
+
+#### 2. Seismic Monitoring Context
+
+##### Aggregates & Entities
+| Elemento | Tipo | Propósito | Atributos clave | Métodos / Comportamiento |
+| :--- | :--- | :--- | :--- | :--- |
+| **SeismicEvent Aggregate** | `Aggregate` | Raíz: `SeismicEvent`. Internas: `SeismicRecord`. Consolida registros y calcula riesgo. | — | — |
+| **SeismicEvent** | `Entity` (Root) | Evento sísmico confirmado por el sistema. | `eventId: UUID`, `magnitude: Decimal`, `epicenter: String`, `riskLevel: RiskLevel`, `occurrenceDate: DateTime` | `classifyRisk()`, `confirmEvent()` |
+| **Sensor** | `Entity` | Dispositivo IoT de captura sísmica. | `sensorId: UUID`, `serialNumber: String`, `location: GeographicLocation`, `status: SensorStatus` | `registerReading()`, `updateStatus()` |
+| **SeismicRecord** | `Entity` | Medición puntual capturada por sensor. | `recordId: UUID`, `magnitude: Decimal`, `depth: Decimal`, `timestamp: DateTime` | `validateMeasurement()` |
+
+##### Value Objects, Services & Repositories
+| Elemento | Tipo | Detalle / Valores / Métodos |
+| :--- | :--- | :--- |
+| **GeographicLocation** | `Value Object` | `latitude: Double`, `longitude: Double` |
+| **RiskLevel** | `Value Object` | Valores: `LOW`, `MEDIUM`, `HIGH`, `CRITICAL` |
+| **EventDetectionService** | `Domain Service` | `detectEvent()`, `calculateMagnitude()`, `determineRiskLevel()` |
+| **SeismicEventRepository** | `Repository` | `save(SeismicEvent)`, `findById(UUID)`, `findRecentEvents()` |
+
+#### 3. Emergency Alert Context
+
+##### Aggregates & Entities
+| Elemento | Tipo | Propósito | Atributos clave | Métodos / Comportamiento |
+| :--- | :--- | :--- | :--- | :--- |
+| **Alert Aggregate** | `Aggregate` | Raíz: `Alert`. Internas: `Notification`. Ciclo de vida de alerta y distribución. | — | — |
+| **Alert** | `Entity` (Root) | Alerta sísmica emitida por la plataforma. | `alertId: UUID`, `title: String`, `message: String`, `severityLevel: String`, `issuedAt: DateTime`, `status: AlertStatus` | `activate()`, `cancel()`, `updateMessage()` |
+| **Notification** | `Entity` | Notificación enviada al usuario. | `notificationId: UUID`, `recipientId: UUID`, `channel: NotificationChannel`, `sentAt: DateTime` | `send()`, `retry()` |
+
+##### Value Objects, Factories, Services & Repositories
+| Elemento | Tipo | Detalle / Valores / Métodos |
+| :--- | :--- | :--- |
+| **NotificationChannel** | `Value Object` | Valores: `PUSH`, `EMAIL`, `SMS` |
+| **AlertStatus** | `Value Object` | Valores: `CREATED`, `ACTIVE`, `CLOSED` |
+| **AlertDistributionService** | `Domain Service` | `distributeAlert()`, `notifyUsers()`, `validateDelivery()` |
+| **AlertFactory** | `Factory` | `createAlertFromEvent()` |
+| **AlertRepository** | `Repository` | `save(Alert)`, `findById(UUID)`, `findActiveAlerts()` |
+
+#### 4. Evacuation Management Context
+##### Aggregates & Entities
+| Elemento | Tipo | Propósito | Atributos clave | Métodos / Comportamiento |
+| :--- | :--- | :--- | :--- | :--- |
+| **Evacuation Aggregate** | `Aggregate` | Raíz: `Evacuation`. Internas: `EvacuationRoute`, `SafeZone`. Gestión de rutas seguras. | — | — |
+| **Evacuation** | `Entity` (Root) | Proceso de evacuación en marcha. | `evacuationId: UUID`, `status: EvacuationStatus`, `startTime: DateTime`, `endTime: DateTime` | `start()`, `complete()`, `cancel()` |
+| **SafeZone** | `Entity` | Zona segura disponible para evacuar. | `safeZoneId: UUID`, `name: String`, `capacity: Integer`, `location: GeographicLocation` | `updateCapacity()`, `registerOccupancy()` |
+| **EvacuationRoute** | `Entity` | Ruta recomendada para evacuar. | `routeId: UUID`, `distance: Decimal`, `estimatedTime: Integer` | `calculateRoute()`, `verifyAccessibility()` |
+
+##### Value Objects, Services & Repositories
+| Elemento | Tipo | Detalle / Valores / Métodos |
+| :--- | :--- | :--- |
+| **EvacuationStatus** | `Value Object` | Valores: `PENDING`, `ACTIVE`, `COMPLETED`, `CANCELLED` |
+| **RouteOptimizationService** | `Domain Service` | `generateOptimalRoute()`, `calculateEstimatedTime()`, `validateRouteSafety()` |
+| **CapacityManagementService** | `Domain Service` | `checkAvailability()`, `assignSafeZone()`, `updateOccupancy()` |
+| **EvacuationRepository** | `Repository` | `save(Evacuation)`, `findById(UUID)`, `findActiveEvacuations()` |
 
 #### 4.2.1.2. Interface Layer
 
