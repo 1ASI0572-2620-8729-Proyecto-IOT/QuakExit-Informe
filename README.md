@@ -1217,6 +1217,10 @@ A nivel de contenedores, se "abre" el sistema para revelar la arquitectura técn
 
   - **Capa IoT:** Un microcontrolador **ESP32 (IoT Hub)** instalado localmente, el cual gestiona la detección física y la apertura de cerraduras mediante Edge Computing. Este componente se sincroniza asíncronamente con el backend utilizando el protocolo MQTT a través de AWS IoT Core, lo que permite mantener modos de bajo consumo (Deep Sleep) críticos para la duración de la batería de respaldo.
 
+<p align="center">
+  <img src="assets/software_architecture/containers_diagramContext-dark.png" width="900">
+</p>
+
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
 El índice estructural del documento exige esta sección para detallar el despliegue del software. Diagrama: Sí. Requiere el diagrama de despliegue.
