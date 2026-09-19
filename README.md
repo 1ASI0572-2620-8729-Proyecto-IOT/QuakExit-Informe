@@ -1976,16 +1976,105 @@ Resumen de Patrones DDD Utilizados
 
 #### 4.2.1.2. Interface Layer
 
-Se introducen, presentan y explican las clases que forman parte de la capa de presentación/interfaz, como Controllers o Consumers. Diagrama: No.
+La Interface Layer expone el dominio de QuakExit hacia los consumidores externos: la app móvil Flutter (residentes), el panel web B2B (inmobiliarias) y el propio QuakExit Hub (ESP32) vía MQTT. Todos los Controllers se implementan como funciones **AWS Lambda** enrutadas por **Amazon API Gateway**; no contienen lógica de negocio, solo validan la entrada (DTOs), invocan a la Application Layer y traducen las respuestas o excepciones de dominio a códigos HTTP.
+
+**User Management Context**
+
+| Clase | Tipo | Métodos expuestos | Endpoint / Trigger | Consumido por |
+|---|---|---|---|---|
+| AuthController | REST Controller (Lambda) | register(), login(), refreshToken() | POST /auth/register, POST /auth/login | App Flutter, Panel B2B |
+| UserProfileController | REST Controller (Lambda) | getProfile(), updateProfile(), updateEmergencyProfile() | GET/PUT /users/{userId} | App Flutter |
+| IAMAuthorizer | Lambda Custom Authorizer | validateToken(), extractRole() | Autorización previa en API Gateway | Todos los endpoints protegidos |
+
+**Seismic Monitoring Context**
+
+| Clase | Tipo | Métodos expuestos | Endpoint / Trigger | Consumido por |
+|---|---|---|---|---|
+| SeismicDataConsumer | IoT Consumer (Lambda suscrita a AWS IoT Core) | onMessageReceived(), parseReading() | Topic MQTT `quakexit/{hubId}/seismic` | QuakExit Hub (ESP32) |
+| SeismicEventController | REST Controller (Lambda) | getRecentEvents(), getEventById() | GET /seismic-events | App Flutter, Panel B2B |
+| SensorStatusController | REST Controller (Lambda) | registerSensor(), getSensorStatus() | POST/GET /sensors | App Flutter (instalador) |
+
+**Emergency Alert Context**
+
+| Clase | Tipo | Métodos expuestos | Endpoint / Trigger | Consumido por |
+|---|---|---|---|---|
+| AlertController | REST Controller (Lambda) | getActiveAlerts(), cancelAlert() | GET /alerts, PATCH /alerts/{id}/cancel | App Flutter, Panel B2B |
+| NotificationDeliveryConsumer | Event Consumer (Lambda) | onDeliveryReceipt() | Webhook de confirmación de entrega | Firebase Cloud Messaging |
+
+**Evacuation Management Context**
+
+| Clase | Tipo | Métodos expuestos | Endpoint / Trigger | Consumido por |
+|---|---|---|---|---|
+| EvacuationController | REST Controller (Lambda) | getEvacuationStatus(), getEvacuationHistory() | GET /evacuations | App Flutter, Panel B2B |
+| SafeZoneController | REST Controller (Lambda) | listSafeZones(), updateCapacity() | GET/PATCH /safe-zones | Panel B2B |
+
+---
 
 #### 4.2.1.3. Application Layer
 
-Se explica a través de qué clases se manejan los flujos de procesos del negocio, evidenciando los capabilities de la aplicación mediante clases como Command Handlers y Event Handlers. Diagrama: No.
+La Application Layer orquesta los casos de uso: invoca las Entities/Aggregates/Domain Services definidos en la Domain Layer, coordina la persistencia a través de los Repositories y publica/escucha eventos de dominio entre contextos, según las relaciones definidas en el Context Mapping. No contiene reglas de negocio propias, solo coordinación y transaccionalidad.
 
-#### 4.2.1.4. Infrastructure Laye
+**User Management Context**
 
-Se presentan las clases que acceden a servicios externos (bases de datos, sistemas de mensajería, emails) y la implementación de los Repositories. Diagrama: No.
+| Clase | Tipo | Dispara / Escucha | Descripción |
+|---|---|---|---|
+| RegisterUserCommandHandler | Command Handler | Comando: RegisterUserCommand | Invoca UserFactory.createUser(), persiste con UserRepository y publica el evento UserRegistered |
+| AuthenticateUserCommandHandler | Command Handler | Comando: AuthenticateUserCommand | Valida credenciales contra User Aggregate y genera el JWT vía JWTTokenService |
+| UpdateEmergencyProfileCommandHandler | Command Handler | Comando: UpdateEmergencyProfileCommand | Actualiza el EmergencyProfile dentro del User Aggregate |
 
+**Seismic Monitoring Context**
+
+| Clase | Tipo | Dispara / Escucha | Descripción |
+|---|---|---|---|
+| ProcessSeismicReadingCommandHandler | Command Handler | Comando: ProcessSeismicReadingCommand | Recibe la lectura del SeismicDataConsumer, invoca EventDetectionService.detectEvent() y persiste el SeismicRecord |
+| SeismicEventDetectedHandler | Event Handler | Escucha: umbral superado (EventDetectionService) | Confirma el SeismicEvent (confirmEvent(), classifyRisk()) y publica el evento de dominio SeismicEventDetected hacia Emergency Alert Context |
+
+**Emergency Alert Context**
+
+| Clase | Tipo | Dispara / Escucha | Descripción |
+|---|---|---|---|
+| CreateAlertFromSeismicEventHandler | Event Handler | Escucha: SeismicEventDetected | Invoca AlertFactory.createAlertFromEvent() y persiste el Alert Aggregate en estado ACTIVE |
+| DistributeAlertCommandHandler | Command Handler | Comando: DistributeAlertCommand | Invoca AlertDistributionService.distributeAlert() y coordina el envío multicanal (push, SMS) |
+
+**Evacuation Management Context**
+
+| Clase | Tipo | Dispara / Escucha | Descripción |
+|---|---|---|---|
+| StartEvacuationCommandHandler | Event Handler | Escucha: AlertActivated | Invoca RouteOptimizationService y CapacityManagementService, crea el Evacuation Aggregate y lo asocia a un SafeZone |
+| CompleteEvacuationCommandHandler | Command Handler | Comando: CompleteEvacuationCommand | Cierra el proceso (complete()) y actualiza affectedUsers/estadísticas para Analítica |
+
+**Flujo end-to-end (Modo Emergencia):**
+`SeismicDataConsumer → ProcessSeismicReadingCommandHandler → SeismicEventDetectedHandler → CreateAlertFromSeismicEventHandler → DistributeAlertCommandHandler → StartEvacuationCommandHandler`
+
+---
+
+#### 4.2.1.4. Infrastructure Layer
+
+La Infrastructure Layer implementa las interfaces de Repository declaradas en el Domain Layer usando **Amazon DynamoDB**, y aísla los servicios externos (Firebase, AWS IoT Core, SMS) mediante adaptadores tipo Anti-Corruption Layer, según la relación *Gestión de Notificaciones → Servicios Externos* del Context Mapping.
+
+**Repositorios (implementación de las interfaces del Domain Layer)**
+
+| Clase | Implementa | Tabla DynamoDB | Detalle |
+|---|---|---|---|
+| DynamoUserRepository | UserRepository | Users | PK: userId · GSI: email (para findByEmail) |
+| DynamoSeismicEventRepository | SeismicEventRepository | SeismicEvents | PK: eventId · SK: occurrenceDate (para findRecentEvents) |
+| DynamoAlertRepository | AlertRepository | Alerts | PK: alertId · GSI: status (para findActiveAlerts) |
+| DynamoEvacuationRepository | EvacuationRepository | Evacuations | PK: evacuationId · GSI: status |
+
+**Adaptadores de servicios externos (Anti-Corruption Layer)**
+
+| Clase | Adapta | Detalle |
+|---|---|---|
+| FCMNotificationGateway | Notification → Firebase Cloud Messaging | Traduce el modelo interno de Notification al payload de FCM; usado por AlertDistributionService |
+| AWSIoTCoreGateway | Mensajes MQTT del ESP32 Hub → SeismicDataConsumer | Gestiona la suscripción a topics y la autenticación mutua por certificado de dispositivo (TLS) |
+| SmsGatewayAdapter | Notification (canal SMS) → proveedor externo de SMS | Usado para el envío a contactos de emergencia (US15) |
+
+**Servicios de soporte**
+
+| Clase | Responsabilidad |
+|---|---|
+| JWTTokenService | Genera y valida los tokens JWT firmados; usado por AuthenticateUserCommandHandler e IAMAuthorizer |
+| ConfigurationProvider | Obtiene credenciales y parámetros (AWS Secrets Manager / SSM) para FCM, IoT Core y claves JWT |
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 
 Se explica el desglose de cada contenedor para identificar los bloques estructurales (componentes), sus responsabilidades y detalles de implementación. Diagrama: Sí. Se deben presentar los Component Diagrams del Modelo C4 para cada uno de los contenedores considerados en el bounded context.
