@@ -464,9 +464,13 @@ Entrevista N°3
 
 Detalles de la entrevista:
 
-● Duración: --:--
+● Duración: 3:36 
 
-[● Link: https://drive.google.com/file/d/10gpZrHKXRZATb-VCJ6RAm-Zu81CONRbT/view?usp=sharing](https://drive.google.com/file/d/10gpZrHKXRZATb-VCJ6RAm-Zu81CONRbT/view?usp=sharing)
+[● Link: https://drive.google.com/file/d/1Ti5ddVAuLGcROgMK2zO_ZwPaFr7pjRpn/view?usp=sharing](https://drive.google.com/file/d/1Ti5ddVAuLGcROgMK2zO_ZwPaFr7pjRpn/view?usp=sharing)
+
+<p align="center">
+  <img src="assets/cap2/image/entrevistas/entrevista-segemento2-4.jpeg" width="700">
+</p>
 
 Resumen de los puntos clave en la entrevista:
 
@@ -486,7 +490,7 @@ Entrevista N°4
 
 Detalles de la entrevista:
 
-● Duración: --:--
+● Duración: 2:40
 
 [● Link: https://drive.google.com/file/d/1Flz2QPm1-bVm4xuuo_XEsUUxDdI5EOhf/view?usp=sharing](https://drive.google.com/file/d/1Flz2QPm1-bVm4xuuo_XEsUUxDdI5EOhf/view?usp=sharing)
 
