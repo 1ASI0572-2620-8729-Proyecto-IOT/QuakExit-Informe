@@ -142,15 +142,15 @@ El objetivo de esta sección es resumir las modificaciones relevantes que se rea
       - [4.1.3.3. Software Architecture Container Level Diagrams](#4133-software-architecture-container-level-diagrams)
       - [4.1.3.4. Software Architecture Deployment Diagrams](#4134-software-architecture-deployment-diagrams)
   - [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
-    - [4.2.X. Bounded Context: <Nombre>](#42x-bounded-context-nombre)
-      - [4.2.X.1. Domain Layer](#42x1-domain-layer)
-      - [4.2.X.2. Interface Layer](#42x2-interface-layer)
-      - [4.2.X.3. Application Layer](#42x3-application-layer)
-      - [4.2.X.4. Infrastructure Layer](#42x4-infrastructure-layer)
-      - [4.2.X.5. Bounded Context Software Architecture Component Level Diagrams](#42x5-bounded-context-software-architecture-component-level-diagrams)
-      - [4.2.X.6. Bounded Context Software Architecture Code Level Diagrams](#42x6-bounded-context-software-architecture-code-level-diagrams)
-        - [4.2.X.6.1. Bounded Context Domain Layer Class Diagrams](#42x61-bounded-context-domain-layer-class-diagrams)
-        - [4.2.X.6.2. Bounded Context Database Design Diagram](#42x62-bounded-context-database-design-diagram)
+    - [4.2.1. Bounded Context: <Nombre>](#421-bounded-context-nombre)
+      - [4.2.1.1. Domain Layer](#4211-domain-layer)
+      - [4.2.1.2. Interface Layer](#4212-interface-layer)
+      - [4.2.1.3. Application Layer](#4213-application-layer)
+      - [4.2.1.4. Infrastructure Layer](#4214-infrastructure-layer)
+      - [4.2.1.5. Bounded Context Software Architecture Component Level Diagrams](#4215-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.1.6. Bounded Context Software Architecture Code Level Diagrams](#4216-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.1.6.1. Bounded Context Domain Layer Class Diagrams](#42161-bounded-context-domain-layer-class-diagrams)
+        - [4.2.1.6.2. Bounded Context Database Design Diagram](#42162-bounded-context-database-design-diagram)
 - [Conclusiones](#conclusiones)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
@@ -2082,6 +2082,7 @@ La Infrastructure Layer implementa las interfaces de Repository declaradas en el
 |---|---|
 | JWTTokenService | Genera y valida los tokens JWT firmados; usado por AuthenticateUserCommandHandler e IAMAuthorizer |
 | ConfigurationProvider | Obtiene credenciales y parámetros (AWS Secrets Manager / SSM) para FCM, IoT Core y claves JWT |
+
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 
 Se explica el desglose de cada contenedor para identificar los bloques estructurales (componentes), sus responsabilidades y detalles de implementación. Diagrama: Sí. Se deben presentar los Component Diagrams del Modelo C4 para cada uno de los contenedores considerados en el bounded context.
@@ -2099,3 +2100,32 @@ Se explican las clases, interfaces, enumeraciones y sus relaciones de la capa de
 Se explica cómo se persistirá la información para los objetos del contexto, especificando tablas, columnas y constraints (primary y foreign keys). Diagrama: Sí. Se debe presentar el Database Diagram evidenciando las relaciones entre las tablas.
 
 <div style="page-break-after: always;"></div>
+
+##### Conclusiones
+
+
+* A través del proceso de investigación y validación con la metodología Lean UX, se comprobó que existe una necesidad crítica en el mercado residencial (B2C) e inmobiliario (B2B) por sistemas de seguridad que superen el enfoque meramente informativo. QuakExit demostró viabilidad al cubrir la brecha existente entre las alertas tempranas estatales (SISMATE) y la ejecución de acciones físicas de salvaguarda, como el desbloqueo automático de cerraduras en situaciones de falta de suministro eléctrico.
+* La aplicación del Domain-Driven Design (DDD) a nivel estratégico, apoyada en dinámicas de EventStorming, permitió descomponer eficazmente la complejidad del dominio sísmico e IoT. Como resultado, se identificaron 6 Bounded Contexts altamente cohesionados, aislando procesos críticos como el *Emergency Core* y el *IoT & Energy Management* de los dominios de soporte, lo que garantiza que la lógica de evacuación no se vea afectada por fallos en otras áreas del sistema.
+* El diseño de la Arquitectura de Software bajo el Modelo C4 validó la factibilidad técnica del proyecto. Se consolidó una topología híbrida que combina el *Edge Computing* local (mediante microcontroladores ESP32 operando offline con baterías de respaldo) y una infraestructura *Serverless* en AWS orientada a eventos. Esto asegura latencias mínimas para la acción de los actuadores y una alta escalabilidad sin costos iniciales prohibitivos.
+* El modelado táctico del software permitió definir con claridad las capas internas de cada Bounded Context (Dominio, Aplicación, Infraestructura e Interfaz). La definición de Agregados, Entidades y Objetos de Valor asegura que las reglas de negocio, como el procesamiento de métricas sísmicas y el umbral de activación fail-safe, queden encapsuladas y sean trazables directamente hasta el código fuente y el diseño de la base de datos.
+* La organización del equipo en subgrupos especializados (estrategia y requerimientos, arquitectura macro y diseño táctico) garantizó el cumplimiento de los hitos del primer avance (AV1). Esta distribución permitió satisfacer los criterios del Student Outcome 5 (ABET), evidenciando un entorno colaborativo y un liderazgo compartido en la toma de decisiones técnicas.
+
+
+
+<div style="page-break-after: always;"></div>
+
+##### Bibliografía
+
+Brown, S. (2018). *Software architecture for developers: Visualise, document and explore your software architecture*. Leanpub.
+
+Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of software*. Addison-Wesley Professional.
+
+Gothelf, J., & Seiden, J. (2021). *Lean UX: Designing great products with agile teams* (3.ª ed.). O'Reilly Media.
+
+Instituto Nacional de Defensa Civil [INDECI]. (2023). *Plan Nacional de Gestión del Riesgo de Desastres (PLANAGERD) 2022-2030*. Gobierno del Perú. https://www.gob.pe/indeci
+
+Vernon, V. (2013). *Implementing domain-driven design*. Addison-Wesley Professional.
+
+<div style="page-break-after: always;"></div>
+
+##### Anexos
