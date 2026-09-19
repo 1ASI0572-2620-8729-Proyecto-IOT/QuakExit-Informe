@@ -1283,246 +1283,38 @@ Se incluyen secciones internas por cada bounded context. Se deben presentar las 
 **User Managment Context**
 Este Bounded Context es responsable de la gestión de usuarios dentro de la plataforma, incluyendo autenticación, administración de perfiles y configuración de información necesaria para situaciones de emergencia.
 
-1. **Usuario**
-
-- **Propósito:** Representar a una persona registrada dentro de la plataforma.
-
-| **Atributos** | **Métodos** | **Relaciones** |
-|---|---|---|
-| userId: UUID, firstName: String, lastName: String, email: String, passwordHash: String, role: String, status: Boolean | register(), login(), updateProfile(), deactivateAccount() | - Posee un PerfilEmergencia. - Se encuentra asociado a un Rol. |
-
-2. **PerfilEmergencia**
-
-- **Propósito:** Almacenar información relevante para la atención y localización del usuario durante una emergencia.
- 
-- **Atributos**
-  - profileId: UUID
-  - emergencyContact: String
-  - bloodType: String
-  - specialCondition: String
-  - preferredLocation: String
-
-- **Métodos**
-  - updateContact()
-  - updateMedicalInformation()
-  - getEmergencyInformation()
- 
-- **Relaciones**
-  - Pertenece a un Usuario.
-
-3. **Rol**
-
-- **Propósito:** Definir los permisos y privilegios que posee un usuario dentro de la plataforma.
-
-- **Atributos**
-  - roleId: UUID
-  - roleName: String
-  - description: String
-
-- **Métodos**
-  - assignPermission()
-  - revokePermission()
-  - updateRole()
- 
-- **Relaciones**
-  - Puede ser asignado a múltiples Usuarios.
-
+| **Clase** | **Propósito** | **Atributos** | **Métodos** | **Relaciones** |
+|---|---|---|---|---|
+| Usuario | Representar a una persona registrada dentro de la plataforma. | userId: UUID, firstName: String, lastName: String, email: String, passwordHash: String, role: String, status: Boolean | register(), login(), updateProfile(), deactivateAccount() | Posee un PerfilEmergencia. Se encuentra asociado a un Rol. |
+|PerfilEmergencia| Almacenar información relevante para la atención y localización del usuario durante una emergencia.| profileId: UUID, emergencyContact: String, bloodType: String, specialCondition: String, preferredLocation: String | updateContact(), updateMedicalInformation(), getEmergencyInformation() | Pertenece a un Usuario.
+| Rol | Definir los permisos y privilegios que posee un usuario dentro de la plataforma. | roleId: UUID, roleName: String, description: String | assignPermission(), revokePermission(), updateRole() | Puede ser asignado a múltiples Usuarios. |
 
 **Seismic Monitoring Context**
 Este Bounded Context administra la captura y procesamiento de datos sísmicos provenientes de los sensores IoT desplegados en la infraestructura monitoreada.
 
-Clases Identificadas:
-
-1. **Sensor**
-
-- **Propósito:** Representar un dispositivo IoT encargado de capturar información sísmica.
-
-- **Atributos**
-  - sensorId: UUID
-  - serialNumber: String
-  - latitude: Double
-  - longitude: Double
-  - status: String
-
-- **Métodos**
-  - captureData()
-  - sendReading()
-  - selfDiagnostic()
-
-- **Relaciones**
-  - Genera múltiples RegistroSismico.
-
-2. **RegistroSismico**
-
-- **Propósito:** Registrar una medición realizada por un sensor en un momento específico.
-
-- **Atributos**
-  - recordId: UUID
-  - magnitude: Decimal
-  - timestamp: DateTime
-  - location: String
-  - depth: Decimal
-
-- **Métodos**
-  - validateData()
-  - calculateRisk()
-  - storeRecord()
-
-- **Relaciones**
-  - Pertenece a un Sensor.
-  - Contribuye a la creación de un EventoSismico.
-
-3. **EventoSismico**
-
-- **Propósito:** Representar un evento sísmico confirmado por el sistema a partir de múltiples registros.
-
-- **Atributos**
-  - eventId: UUID
-  - magnitude: Decimal
-  - epicenter: String
-  - depth: Decimal
-  - riskLevel: String
-  - occurrenceDate: DateTime
-
-- **Métodos**
-  - confirmEvent()
-  - classifyRisk()
-  - updateMagnitude()
-
-- **Relaciones**
-  - Se genera a partir de varios RegistroSismico.
-  - Puede generar una Alerta.
+| **Clase** | **Propósito** | **Atributos** | **Métodos** | **Relaciones** |
+|---|---|---|---|---|
+|Sensor| Representar un dispositivo IoT encargado de capturar información sísmica. | sensorId: UUID, serialNumber: String, latitude: Double, longitude: Double, status: String | captureData(), sendReading(), selfDiagnostic() | Genera múltiples RegistroSismico.|
+|RegistroSismico| Registrar una medición realizada por un sensor en un momento específico. | recordId: UUID, magnitude: Decimal, timestamp: DateTime, location: String,depth: Decimal | validateData(), calculateRisk(), storeRecord() | Pertenece a un Sensor. Contribuye a la creación de un EventoSismico. |
+|EventoSismico| Representar un evento sísmico confirmado por el sistema a partir de múltiples registros. | eventId: UUID, magnitude: Decimal, epicenter: String,  depth: Decimal, riskLevel: String, occurrenceDate: DateTime| confirmEvent(), classifyRisk(), updateMagnitude() | Se genera a partir de varios RegistroSismico. Puede generar una Alerta.
 
 **Emergency Alert Context**
 Este Bounded Context se encarga de la creación, gestión y distribución de alertas de emergencia cuando se detecta un evento sísmico de riesgo.
 
-Clases Identificadas:
-
-1. **Alerta**
-
-- **Propósito:** Representar una alerta de emergencia generada por el sistema.
-
-- **Atributos**
-  - alertId: UUID
-  - title: String
-  - message: String
-  - severityLevel: String
-  - issueDate: DateTime
-  - status: String
-
-- **Métodos**
-  - createAlert()
-  - activateAlert()
-  - cancelAlert()
-  - updateStatus()
-
-- **Relaciones**
-  - Es generada por un EventoSismico.
-  - Contiene múltiples Notificacion.
-
-2. **Notificacion**
-
-- **Propósito:** Gestionar el envío de mensajes de emergencia a los usuarios.
-
-- **Atributos**
-  - notificationId: UUID
-  - recipient: String
-  - channel: String
-  - deliveryDate: DateTime
-  - status: String
-
-- **Métodos**
-  - send()
-  - retryDelivery()
-  - verifyDelivery()
-
-- **Relaciones**
-  - Pertenece a una Alerta.
-  - Utiliza un CanalNotificacion.
-
-3. **CanalNotificacion**
-
-- **Propósito:** Definir el medio de comunicación utilizado para la entrega de alertas.
-
-- **Atributos**
-  - channelId: UUID
-  - channelName: String
-  - availabilityStatus: Boolean
-
-- **Métodos**
-  - enable()
-  - disable()
-  - validateAvailability()
-
-- **Relaciones**
-  - Puede ser utilizado por múltiples Notificacion.
-
+| **Clase** | **Propósito** | **Atributos** | **Métodos** | **Relaciones** |
+|---|---|---|---|---|
+|Alerta|Representar una alerta de emergencia generada por el sistema.|alertId: UUID, title: String, message: String, severityLevel: String, issueDate: DateTime, status: String |createAlert(), activateAlert(), cancelAlert(), updateStatus()|Es generada por un EventoSismico. Contiene múltiples Notificacion.
+|Notificacion|Gestionar el envío de mensajes de emergencia a los usuarios.|notificationId: UUID, recipient: String, channel: String, deliveryDate: DateTime, status: String|send(), retryDelivery(), verifyDelivery()|Pertenece a una Alerta. Utiliza un CanalNotificacion.|
+|CanalNotificacion|Definir el medio de comunicación utilizado para la entrega de alertas.|channelId: UUID, channelName: String, availabilityStatus: Boolean|enable(), disable(), validateAvailability()|Puede ser utilizado por múltiples Notificacion.|
 
 **Evacuation Management Context**
 Este Bounded Context administra las rutas seguras y los procedimientos de evacuación recomendados durante una emergencia sísmica.
 
-Clases Identificadas:
-
-1. **RutaEvacuacion**
-
-- **Propósito:** Representar una ruta segura para conducir a los usuarios hacia zonas protegidas.
-
-- **Atributos**
-  - routeId: UUID
-  - routeName: String
-  - distance: Decimal
-  - estimatedTime: Integer
-  - status: String
-
-- **Métodos**
-  - calculateRoute()
-  - validateSafety()
-  - updateRoute()
-
-- **Relaciones**
-  - Conduce a un PuntoSeguro.
-  - Puede ser utilizada durante una Evacuacion.
-
-2. **PuntoSeguro**
-
-- **Propósito:** Representar una ubicación considerada segura para la concentración de personas evacuadas.
-
-- **Atributos**
-  - safePointId: UUID
-  - name: String
-  - latitude: Double
-  - longitude: Double
-  - capacity: Integer
-
-- **Métodos**
-  - updateCapacity()
-  - verifyAvailability()
-  - registerOccupancy()
-
-- **Relaciones**
-  - Recibe múltiples RutaEvacuacion.
-  - Participa en una Evacuacion.
-
-3. **Evacuacion**
-
-- **Propósito:** Gestionar el proceso de evacuación generado a partir de una emergencia sísmica.
-
-- **Atributos**
-  - evacuationId: UUID
-  - startTime: DateTime
-  - endTime: DateTime
-  - status: String
-  - affectedUsers: Integer
-
-- **Métodos**
-  - startEvacuation()
-  - monitorProgress()
-  - completeEvacuation()
-
-- **Relaciones**
-  - Utiliza una RutaEvacuacion.
-  - Tiene como destino un PuntoSeguro.
-  - Puede originarse por una Alerta activa.
+| **Clase** | **Propósito** | **Atributos** | **Métodos** | **Relaciones** |
+|---|---|---|---|---|
+|RutaEvacuacion|Representar una ruta segura para conducir a los usuarios hacia zonas protegidas.|routeId: UUID, routeName: String, distance: Decimal, estimatedTime: Integer, status: String|calculateRoute(), validateSafety(), updateRoute()|Conduce a un PuntoSeguro. Puede ser utilizada durante una Evacuacion.|
+|PuntoSeguro|Representar una ubicación considerada segura para la concentración de personas evacuadas.|safePointId: UUID, name: String, latitude: Double, longitude: Double, capacity: Integer|updateCapacity(), verifyAvailability(), registerOccupancy()|Recibe múltiples RutaEvacuacion. Participa en una Evacuacion.|
+|Evacuacion|Gestionar el proceso de evacuación generado a partir de una emergencia sísmica.|evacuationId: UUID, startTime: DateTime, endTime: DateTime, status: String, affectedUsers: Integer|startEvacuation(), monitorProgress(), completeEvacuation()|Utiliza una RutaEvacuacion. Tiene como destino un PuntoSeguro. Puede originarse por una Alerta activa.| 
 
 **Resumen de Relaciones**
 - Usuario -> PerfilEmergencia
