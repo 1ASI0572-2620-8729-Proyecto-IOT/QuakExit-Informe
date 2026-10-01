@@ -1703,7 +1703,36 @@ Representa las lecturas o mediciones individuales capturadas por los sensores (Q
 
 #### 5.1.1. General Style Guidelines
 
+En esta sección definimos los principios visuales y de interacción que rigen toda la experiencia QuakExit, asegurando coherencia entre nuestras plataformas (Web, Móvil e IoT). Establecemos una identidad visual clara y orientada a la prevención mediante el uso de una paleta de colores de alto contraste, tipografía altamente legible bajo situaciones de estrés, iconografía universal de emergencia, espaciado funcional y un tono comunicacional directo, preventivo y unificado.
+
+<p align="center">
+  <img src="assets/cap5/Style Guidelines/General Style Guidelines.png" width="700">
+</p>
+
 #### 5.1.2. Web, Mobile and IoT Style Guidelines
+
+Diseñamos interfaces web centradas en la claridad y eficiencia, priorizando la experiencia del usuario en pantallas
+grandes. Aplicamos estructuras responsivas, patrones de navegación consistentes y un uso óptimo del grid para
+garantizar accesibilidad y fluidez en entornos de escritorio.
+
+<p align="center">
+  <img src="assets/cap5/Style Guidelines/Guía de estilo web QuakExit.png" width="700">
+</p>
+
+Adaptamos la experiencia Tavolo a dispositivos móviles optimizando la usabilidad táctil, la jerarquía visual y la
+agilidad en la navegación. Nos enfocamos en gestos intuitivos, tiempos de carga mínimos y transiciones suaves
+entre pantallas, respetando las limitaciones y ventajas del entorno móvil.
+
+<p align="center">
+  <img src="assets/cap5/Style Guidelines/Guía de estilo móvil QuakExit.png" width="700">
+</p>
+
+Extendemos nuestros lineamientos a dispositivos IoT garantizando interfaces funcionales y simples. Diseñamos
+visuales claras y compactas, con códigos de color efectivos y elementos visuales que facilitan la comprensión.
+
+<p align="center">
+  <img src="assets/cap5/Style Guidelines/Guía de estilo IoT QuakExit.png" width="700">
+</p>
 
 ### 5.2. Information Architecture
 
