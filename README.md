@@ -1810,11 +1810,13 @@ Para asegurar un historial de cambios legible y estandarizado, el equipo aplica 
 
 *chore:* para mantenimiento, actualización de dependencias o configuración del entorno.
 
-**D. Gestión del Proyecto y Comunicación**
+#### 6.1.1. Software Development Environment Configuration
+
+**A. Gestión del Proyecto y Comunicación**
 
 El seguimiento del Product Backlog y el estado de las User Stories (Capítulo III) se gestiona de forma visual mediante tableros Kanban en *Trello*, permitiendo al equipo tener claridad sobre las tareas pendientes (To Do), en progreso (Doing) y finalizadas (Done). Toda la coordinación diaria, resolución de bloqueos y reuniones sincrónicas (Daily Stand-ups) se centraliza mediante canales de voz y texto en Discord.
 
-**E. Entornos de Desarrollo Integrado (IDEs)**
+**B. Entornos de Desarrollo Integrado (IDEs)**
 
 Para el desarrollo de las diferentes capas de software, los ingenieros de NeuroDraw han homologado el uso de los siguientes entornos:
 
@@ -1825,8 +1827,6 @@ Android Studio: Utilizado para la compilación, emulación y desarrollo de la ap
 Entorno Backend (Java): Se emplean IDEs compatibles con el ecosistema Java (ej. IntelliJ IDEA o VS Code con extensiones de Java) para la construcción de los servicios core.
 
 Hardware (Por definir): La programación en C++ del ESP32 se ejecutará en entornos especializados para sistemas embebidos, como Arduino IDE o la extensión PlatformIO.
-
-#### 6.1.1. Software Development Environment Configuration
 
 #### 6.1.2. Source Code Management
 
