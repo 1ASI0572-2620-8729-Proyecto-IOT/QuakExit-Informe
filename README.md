@@ -1776,40 +1776,6 @@ visuales claras y compactas, con códigos de color efectivos y elementos visuale
 
 Para garantizar un ciclo de desarrollo organizado, trazable y colaborativo, el equipo de NeuroDraw ha establecido un conjunto de herramientas y normativas que rigen la configuración del entorno de trabajo para el proyecto QuakExit.
 
-**A. Gestión de Código Fuente (Source Code Management)**
-
-El código fuente del proyecto se gestiona de manera centralizada a través de GitHub. Para mantener la separación lógica de los componentes de la arquitectura, se creó la organización académica 1ASI0572-2620-8729-Proyecto-IOT, la cual alberga los siguientes repositorios principales:
-
-Backend-QuakExit: Contiene la lógica de negocio, configuración de la API y los servicios desarrollados en Java.
-
-Frontend-QuakExit: Contiene el código fuente de la aplicación desarrollada en Flutter/Dart (o interfaces web en TypeScript) para la gestión del usuario.
-
-QuakExit-Landing: Contiene el sitio web promocional e informativo del producto, desarrollado utilizando el framework Astro.
-
-QuakExit-Informe: Repositorio dedicado al control de versiones de la documentación técnica y académica del proyecto.
-
-**B. Modelo de Ramas (Branching Model)**
-
-El equipo ha adoptado una variación ágil del flujo GitFlow, estructurando las ramas de la siguiente manera para proteger la estabilidad del producto:
-
-main: Rama de producción que contiene el código validado, funcional y estable.
-
-develop: Rama de integración donde convergen todos los avances antes de pasar a producción.
-
-feature/* (ej. feature/login, feature/mqtt-connection): Ramas efímeras creadas a partir de develop para el desarrollo aislado de nuevas historias de usuario o características.
-
-**C. Convenciones de Control de Versiones**
-
-Para asegurar un historial de cambios legible y estandarizado, el equipo aplica la especificación Conventional Commits. Cada cambio subido a los repositorios debe prefijarse con un indicador de tipo, como:
-
-*feat:* para nuevas características funcionales.
-
-*fix:* para corrección de errores (bugs).
-
-*docs:* para actualizaciones en la documentación o memoria técnica.
-
-*chore:* para mantenimiento, actualización de dependencias o configuración del entorno.
-
 #### 6.1.1. Software Development Environment Configuration
 
 **A. Gestión del Proyecto y Comunicación**
@@ -1853,6 +1819,18 @@ develop: Rama de integración donde convergen todos los avances antes de pasar a
 feature/* (ej. feature/login, feature/mqtt-connection): Ramas efímeras creadas a partir de develop para el desarrollo aislado de nuevas historias de usuario o características.
 
 #### 6.1.3. Source Code Style Guide & Conventions
+
+**Convenciones de Control de Versiones**
+
+Para asegurar un historial de cambios legible y estandarizado, el equipo aplica la especificación Conventional Commits. Cada cambio subido a los repositorios debe prefijarse con un indicador de tipo, como:
+
+*feat:* para nuevas características funcionales.
+
+*fix:* para corrección de errores (bugs).
+
+*docs:* para actualizaciones en la documentación o memoria técnica.
+
+*chore:* para mantenimiento, actualización de dependencias o configuración del entorno.
 
 #### 6.1.4. Software Deployment Configuration
 
