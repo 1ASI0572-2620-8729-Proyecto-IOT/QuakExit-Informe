@@ -1738,6 +1738,8 @@ visuales claras y compactas, con códigos de color efectivos y elementos visuale
 
 #### 5.2.1. Organization Systems
 
+<img src="assets/cap5/5.2/organization_systems.jpg" width="900">
+
 #### 5.2.2. Labeling Systems
 
 #### 5.2.3. SEO Tags and Meta Tags
