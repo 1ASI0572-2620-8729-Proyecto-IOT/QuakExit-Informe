@@ -1774,6 +1774,58 @@ visuales claras y compactas, con códigos de color efectivos y elementos visuale
 
 ### 6.1. Software Configuration Management
 
+Para garantizar un ciclo de desarrollo organizado, trazable y colaborativo, el equipo de NeuroDraw ha establecido un conjunto de herramientas y normativas que rigen la configuración del entorno de trabajo para el proyecto QuakExit.
+
+**A. Gestión de Código Fuente (Source Code Management)**
+
+El código fuente del proyecto se gestiona de manera centralizada a través de GitHub. Para mantener la separación lógica de los componentes de la arquitectura, se creó la organización académica 1ASI0572-2620-8729-Proyecto-IOT, la cual alberga los siguientes repositorios principales:
+
+Backend-QuakExit: Contiene la lógica de negocio, configuración de la API y los servicios desarrollados en Java.
+
+Frontend-QuakExit: Contiene el código fuente de la aplicación desarrollada en Flutter/Dart (o interfaces web en TypeScript) para la gestión del usuario.
+
+QuakExit-Landing: Contiene el sitio web promocional e informativo del producto, desarrollado utilizando el framework Astro.
+
+QuakExit-Informe: Repositorio dedicado al control de versiones de la documentación técnica y académica del proyecto.
+
+**B. Modelo de Ramas (Branching Model)**
+
+El equipo ha adoptado una variación ágil del flujo GitFlow, estructurando las ramas de la siguiente manera para proteger la estabilidad del producto:
+
+main: Rama de producción que contiene el código validado, funcional y estable.
+
+develop: Rama de integración donde convergen todos los avances antes de pasar a producción.
+
+feature/* (ej. feature/login, feature/mqtt-connection): Ramas efímeras creadas a partir de develop para el desarrollo aislado de nuevas historias de usuario o características.
+
+**C. Convenciones de Control de Versiones**
+
+Para asegurar un historial de cambios legible y estandarizado, el equipo aplica la especificación Conventional Commits. Cada cambio subido a los repositorios debe prefijarse con un indicador de tipo, como:
+
+*feat:* para nuevas características funcionales.
+
+*fix:* para corrección de errores (bugs).
+
+*docs:* para actualizaciones en la documentación o memoria técnica.
+
+*chore:* para mantenimiento, actualización de dependencias o configuración del entorno.
+
+**D. Gestión del Proyecto y Comunicación**
+
+El seguimiento del Product Backlog y el estado de las User Stories (Capítulo III) se gestiona de forma visual mediante tableros Kanban en *Trello*, permitiendo al equipo tener claridad sobre las tareas pendientes (To Do), en progreso (Doing) y finalizadas (Done). Toda la coordinación diaria, resolución de bloqueos y reuniones sincrónicas (Daily Stand-ups) se centraliza mediante canales de voz y texto en Discord.
+
+**E. Entornos de Desarrollo Integrado (IDEs)**
+
+Para el desarrollo de las diferentes capas de software, los ingenieros de NeuroDraw han homologado el uso de los siguientes entornos:
+
+VS Code: Utilizado como editor principal para el desarrollo del ecosistema web (TypeScript) y la landing page (Astro).
+
+Android Studio: Utilizado para la compilación, emulación y desarrollo de la aplicación móvil (Flutter), aprovechando sus herramientas de profiling nativas.
+
+Entorno Backend (Java): Se emplean IDEs compatibles con el ecosistema Java (ej. IntelliJ IDEA o VS Code con extensiones de Java) para la construcción de los servicios core.
+
+Hardware (Por definir): La programación en C++ del ESP32 se ejecutará en entornos especializados para sistemas embebidos, como Arduino IDE o la extensión PlatformIO.
+
 #### 6.1.1. Software Development Environment Configuration
 
 #### 6.1.2. Source Code Management
