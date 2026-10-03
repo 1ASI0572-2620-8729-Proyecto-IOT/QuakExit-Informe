@@ -1929,8 +1929,11 @@ Cada Sprint documenta, para cada producto, las siguientes etapas: Sprint Plannin
 | Producto | Repositorio | URL desplegada |
 | :-- | :-- | :-- |
 | Landing Page | [QuakExit-Landing](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/QuakExit-Landing) | [quakexit-landing.netlify.app](https://quakexit-landing.netlify.app/) |
-| Web Services | [Backend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit) | `[COMPLETAR: URL de la API desplegada]` |
-| Web Application | [Frontend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit) | `[COMPLETAR: URL de la aplicación desplegada]` |
+| Web Services | [Backend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit) | [quakexit-back.onrender.com](https://quakexit-back.onrender.com/swagger-ui/index.html) |
+| Web Application | [Frontend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit) | [https://frontend-quakexit.netlify.app/](https://frontend-quakexit.netlify.app/) |
+
+Nota sobre la disponibilidad del backend: Los Web Services están desplegados en el plan gratuito de Render, por lo que el servicio entra en suspensión tras unos 15 minutos sin recibir peticiones. Al recibir una nueva solicitud, el servidor se reactiva automáticamente, pero este proceso puede tardar entre uno y dos minutos, durante los cuales el frontend podría mostrar demoras o errores temporales de conexión. Además, la base de datos MySQL está alojada en el plan gratuito de Aiven, que también puede apagarse por inactividad. Si el sistema no responde, se recomienda esperar unos minutos y volver a intentarlo. Estas limitaciones se deben únicamente a la infraestructura gratuita utilizada para el despliegue y no al funcionamiento del sistema; un plan de pago las eliminaría.
+
 
 #### 6.2.1. Sprint 1
 
@@ -2147,7 +2150,35 @@ En el Sprint 1 se publicó la primera versión de la Landing Page y se implement
 
 **Landing Page**
 
-> 📸 **SUBIR CAPTURAS (6):** sección principal, El Problema + Cómo Funciona, Soluciones, Planes y Precios, Preguntas frecuentes + Contacto, y vista móvil.
+> Vistas de nuestro Landing Page:
+
+<p align="center">
+  <img src="assets/cap6/LandingIotConUrlPublica.png" alt="Landing Page" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/LandingIotConUrlPublica2.png" alt="Landing Page" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/LandingIotConUrlPublica3.png" alt="Landing Page" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/LandingIotConUrlPublica4.png" alt="Landing Page" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/LandingIotConUrlPublica5.png" alt="Landing Page" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/LandingIotConUrlPublica6.png" alt="Landing Page" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/LandingIotConUrlPublica7.png" alt="Landing Page" width="700" />
+</p>
 
 | Vista | Captura |
 | :-- | :-- |
@@ -2156,11 +2187,36 @@ En el Sprint 1 se publicó la primera versión de la Landing Page y se implement
 | Soluciones por segmento | `![Solutions](assets/cap6/sprint1/landing-solutions.png)` |
 | Planes y Precios | `![Pricing](assets/cap6/sprint1/landing-pricing.png)` |
 | Preguntas frecuentes y Contacto | `![FAQ](assets/cap6/sprint1/landing-faq-contact.png)` |
-| Vista móvil | `![Mobile](assets/cap6/sprint1/landing-mobile.png)` |
+
 
 **Web Application**
 
-> 📸 **SUBIR CAPTURAS (6):** una por cada vista de la tabla.
+> Vistas de nuestro Frontend: 
+
+<p align="center">
+  <img src="assets/cap6/FrontendQuakExitDesplegado.png" alt="Web Application" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/FrontendDesplegadoIot.png" alt="Web Application" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/FrontIot3.png" alt="Web Application" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/FrontIot4.png" alt="Web Application" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/FrontIot5.png" alt="Web Application" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/FrontIot6.png" alt="Web Application" width="700" />
+</p>
+
 
 | Vista | User Story | Descripción | Captura |
 | :-- | :-- | :-- | :-- |
@@ -2172,7 +2228,6 @@ En el Sprint 1 se publicó la primera versión de la Landing Page y se implement
 | Historial de eventos | US14 | Lista de eventos sísmicos y simulacros con fecha y hora. | `![History](assets/cap6/sprint1/web-event-history.png)` |
 
 - **Video de navegación (Product Navigation):** `[COMPLETAR: URL de Microsoft Stream/Clipchamp]`
-- **Nomenclatura del archivo:** `upc-pre-202620-1asi0572-8729-terraguard-product-navigation-sprint-1.mp4`
 
 ##### 6.2.1.7. Services Documentation Evidence for Sprint Review
 
@@ -2182,7 +2237,7 @@ En el Sprint 1 se publicó la primera versión de la Landing Page y se implement
 
 - **Repositorio:** [Backend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit)
 - **URL local de Swagger UI:** `http://localhost:8080/swagger-ui.html`
-- **URL desplegada de Swagger UI:** `[COMPLETAR: https://<url-de-la-api>/swagger-ui.html]`
+- **URL desplegada de Swagger UI:** [quakexit-back.onrender.com](https://quakexit-back.onrender.com/swagger-ui/index.html)
 
 | Endpoint | Acción (verbo HTTP) | Sintaxis de llamada | Parámetros | Ejemplo y explicación de la respuesta |
 | :-- | :-- | :-- | :-- | :-- |
@@ -2196,7 +2251,15 @@ En el Sprint 1 se publicó la primera versión de la Landing Page y se implement
 
 > Los nombres de rutas y campos siguen el diseño del Capítulo IV; verifica que coincidan exactamente con lo que muestra tu Swagger.
 
-> 📸 **SUBIR CAPTURAS:** (1) Swagger UI con la lista de endpoints; (2) una petición `POST /api/v1/auth/register` ejecutada con su respuesta `201`; (3) `/v3/api-docs` respondiendo HTTP 200.
+> Evidencias del Swagger desplegado y verificación con uno de los endpoints puestos, probando login:
+
+<p align="center">
+  <img src="assets/cap6/DespliegueBackendIot.png" alt="Swagger" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/BackendIotLoginExitoso.png" alt="Swagger" width="700" />
+</p>
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
 | :-- | :-- | :-- | :-- | :-- | :-- |
@@ -2216,10 +2279,10 @@ Durante el Sprint 1 se configuró el despliegue de los tres productos digitales 
 
 - **URL:** [https://quakexit-landing.netlify.app/](https://quakexit-landing.netlify.app/)
 
-> 📸 **SUBIR CAPTURA:** panel de Netlify con el despliegue exitoso (Deploys) y la landing abierta en el navegador.
+> Evidencias del despliegue del Landing Page con URL publica:
 
 <p align="center">
-  <img src="assets/cap6/sprint1/netlify-landing.png" alt="Landing deployment" width="700" />
+  <img src="assets/cap6/LandingIotConUrlPublica.png" alt="Landing deployment" width="700" />
 </p>
 
 **Web Services (AWS: EC2 y RDS for MySQL)**
@@ -2232,13 +2295,12 @@ Durante el Sprint 1 se configuró el despliegue de los tres productos digitales 
 6. Se abrió el puerto de la API en el grupo de seguridad.
 7. Se verificó que `/v3/api-docs` responde con HTTP 200 y que Swagger UI está disponible.
 
-- **URL de la API:** `[COMPLETAR: https://<url-de-la-api>]`
-- **URL de Swagger UI:** `[COMPLETAR: https://<url-de-la-api>/swagger-ui.html]`
+- **URL de Swagger UI:** [quakexit-back.onrender.com](https://quakexit-back.onrender.com/swagger-ui/index.html)`
 
-> 📸 **SUBIR CAPTURAS:** (1) consola de AWS con la instancia EC2 y la base de datos RDS; (2) Swagger UI abierto desde la URL pública.
+> Evidencias del despliegue del Backend con URL publica:
 
 <p align="center">
-  <img src="assets/cap6/sprint1/aws-backend.png" alt="Backend deployment" width="700" />
+  <img src="assets/cap6/DespliegueBackendIot.png" alt="Swagger" width="700" />
 </p>
 
 **Web Application (Netlify)**
@@ -2249,12 +2311,16 @@ Durante el Sprint 1 se configuró el despliegue de los tres productos digitales 
 4. Se agregó la regla de redirección `/* /index.html 200` para el enrutamiento de la aplicación.
 5. Se verificó el registro e inicio de sesión contra la API desplegada.
 
-- **URL:** `[COMPLETAR: https://<url-de-la-aplicacion>.netlify.app]`
+- **URL:** [https://frontend-quakexit.netlify.app/](https://frontend-quakexit.netlify.app/)
 
-> 📸 **SUBIR CAPTURAS:** (1) panel de Netlify con el despliegue exitoso y la variable `VITE_API_URL`; (2) la aplicación abierta en el navegador con la URL pública.
+> Evidencias del despliegue del Frontend con URL publica:
 
 <p align="center">
-  <img src="assets/cap6/sprint1/netlify-web-app.png" alt="Web application deployment" width="700" />
+  <img src="assets/cap6/FrontendQuakExitDesplegado.png" alt="Web Application" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/FrontendDesplegadoIot.png" alt="Web application deployment" width="700" />
 </p>
 
 ##### 6.2.1.9. Team Collaboration Insights during Sprint
