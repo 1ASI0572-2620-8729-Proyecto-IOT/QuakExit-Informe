@@ -1799,12 +1799,13 @@ La siguiente tabla resume los productos de software que utilizan los miembros de
 | IoT Device Design | **Wokwi / Cirkit Designer** | Diseño y simulación del circuito del QuakExit Hub (ESP32, sensor sísmico, relé, LED). | [wokwi.com](https://wokwi.com/) |
 | Software Development (Landing Page) | **Visual Studio Code** | Editor principal para la Landing Page y las aplicaciones web. | [code.visualstudio.com](https://code.visualstudio.com/) |
 | Software Development (Landing Page) | **Astro** (HTML5, CSS3, JavaScript) | Framework para generar el sitio web estático de la Landing Page. | [astro.build](https://astro.build/) |
+| Software Development (Landing Page) | **pnpm** | Gestor de paquetes para instalar dependencias y ejecutar los comandos `dev` y `build`. | [pnpm.io](https://pnpm.io/) |
 | Software Development (Web Applications) | **TypeScript** | Lenguaje de programación del frontend web. | [typescriptlang.org](https://www.typescriptlang.org/) |
 | Software Development (Mobile) | **Android Studio** + **Flutter (Dart)** | Compilación, emulación y desarrollo de la Mobile Application. | [flutter.dev](https://flutter.dev/) |
 | Software Development (Web Services) | **IntelliJ IDEA** / VS Code (Java) | Construcción de los RESTful Web Services. | [jetbrains.com/idea](https://www.jetbrains.com/idea/) |
 | Software Development (Embedded) | **PlatformIO** / Arduino IDE (C++) | Programación y carga del firmware del ESP32. | [platformio.org](https://platformio.org/) |
 | Software Testing | **Postman** · **Lighthouse** · **W3C Validator** | Pruebas de endpoints, auditoría de rendimiento/accesibilidad/SEO de la Landing Page y validación de HTML/CSS. | [postman.com](https://www.postman.com/) · [web.dev/measure](https://web.dev/measure/) · [validator.w3.org](https://validator.w3.org/) |
-| Software Deployment | **GitHub Pages** | Publicación de la Landing Page. | [pages.github.com](https://pages.github.com/) |
+| Software Deployment | **Netlify** | Publicación de la Landing Page a partir del repositorio de GitHub. | [netlify.com](https://www.netlify.com/) |
 | Software Deployment | **AWS** (API Gateway, Lambda, DynamoDB, IoT Core) | Infraestructura serverless de los Web Services y la comunicación con el QuakExit Hub. | [aws.amazon.com](https://aws.amazon.com/) |
 | Software Deployment | **Firebase App Distribution** | Distribución de la Mobile Application para pruebas en dispositivos físicos. | [firebase.google.com/docs/app-distribution](https://firebase.google.com/docs/app-distribution) |
 | Software Documentation | **GitHub** (Markdown) | Informe del proyecto (`README.md`) versionado en la organización del equipo. | [github.com](https://github.com/) |
@@ -1820,7 +1821,9 @@ El equipo utiliza **GitHub** como plataforma de control de versiones. Todos los 
 | Web Services (Backend) | [Backend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit) |
 | Frontend (Web / Mobile Applications) | [Frontend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit) |
 | Informe del proyecto | [QuakExit-Informe](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/QuakExit-Informe) |
-
+| Edge Service / Embedded Application | `[COMPLETAR: URL del repositorio del Edge API y del firmware ESP32]` |
+ 
+> El repositorio `Frontend-QuakExit` aloja la Web Application. Si la Mobile Application tiene un repositorio propio, agrégalo a esta tabla.
  
 **GitFlow.** El equipo aplica GitFlow como flujo de trabajo de control de versiones, con las siguientes ramas:
  
@@ -1869,14 +1872,20 @@ Todos los identificadores (variables, funciones, clases, archivos, ramas y commi
  
 A continuación se describe la configuración del despliegue de cada producto digital a partir de sus repositorios.
  
-**Landing Page (GitHub Pages)**
+**Landing Page (Netlify)**
  
 1. Se crea el repositorio `QuakExit-Landing` en la organización de GitHub del equipo.
-2. Se configura el proyecto de Astro con salida estática (`output: 'static'`) y la propiedad `site` con la URL pública de GitHub Pages.
-3. Se crea el workflow de GitHub Actions (`.github/workflows/deploy.yml`) que ejecuta `npm ci` y `npm run build` al hacer push a `main`.
-4. El workflow publica el contenido de la carpeta `dist/` en GitHub Pages.
-5. En *Settings → Pages* del repositorio se selecciona *GitHub Actions* como fuente de despliegue.
-6. Se verifica que la URL pública carga con HTTPS y que los enlaces de call-to-action apuntan a las vistas correspondientes de las aplicaciones.
+2. En Netlify se crea un nuevo sitio importando el repositorio desde GitHub.
+3. Se configura el comando de construcción `pnpm build` y el directorio de publicación `dist`.
+4. Netlify construye y publica el sitio en cada push a la rama `main`, por lo que el despliegue es continuo.
+5. El sitio queda disponible por HTTPS en `https://quakexit-landing.netlify.app/`.
+6. Se verifica que los call-to-action apuntan a las vistas correspondientes de las aplicaciones.
+**Web Application (Frontend)**
+ 
+1. Se conecta el repositorio `Frontend-QuakExit` al servicio de hosting elegido por el equipo: `[COMPLETAR: Netlify / Vercel / Firebase Hosting]`.
+2. Se configura el comando de construcción y el directorio de publicación del framework utilizado.
+3. Se define la variable de entorno con la URL base de la API de los Web Services.
+4. El hosting publica la aplicación en cada push a `main` y la expone por HTTPS.
 **Web Services (AWS Serverless)**
  
 1. Se crea una cuenta de AWS y se configuran los permisos con IAM.
@@ -1901,29 +1910,249 @@ A continuación se describe la configuración del despliegue de cada producto di
  
 ### 6.2. Landing Page, Services & Applications Implementation
  
-En esta sección se documenta el proceso de implementación, pruebas, documentación y despliegue de los productos de QuakExit, organizado por Sprint a partir del Product Backlog definido en el Capítulo III. La presente versión documenta la **Landing Page**, a cargo de **Solis Chang, Santiago Valentino**; los demás productos (Web Services, Web Applications, Mobile Application y Embedded Application) son documentados por los miembros responsables de cada uno.
+En esta sección se documenta el proceso de implementación, pruebas, documentación y despliegue de los productos de QuakExit, organizado por Sprint a partir del Product Backlog definido en el Capítulo III. Los productos del alcance son:
  
-La Landing Page es el sitio web estático que presenta el modelo de negocio de QuakExit a los dos segmentos objetivo (Dueños de Smart Homes e Inmobiliarias y Constructores), comunica la propuesta de valor, presenta al equipo y redirige al visitante mediante call-to-action hacia las aplicaciones.
-
+- **Landing Page:** sitio web estático que presenta el modelo de negocio, los planes y la propuesta de valor a los dos segmentos objetivo, y redirige al visitante hacia las aplicaciones mediante call-to-action.
+- **Web Services (Backend):** RESTful API que soporta la gestión de identidad, dispositivos, eventos sísmicos, alertas y evacuaciones.
+- **Web Applications (Frontend):** panel web de gestión para los usuarios de QuakExit, integrado con los Web Services.
+Cada Sprint documenta, para cada producto, las siguientes etapas: Sprint Planning, asignación de líderes y colaboradores, Sprint Backlog, evidencia de desarrollo, pruebas, ejecución, documentación de servicios, despliegue y análisis de colaboración.
+ 
+| Producto | Repositorio | URL desplegada |
+| :-- | :-- | :-- |
+| Landing Page | [QuakExit-Landing](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/QuakExit-Landing) | [quakexit-landing.netlify.app](https://quakexit-landing.netlify.app/) |
+| Web Services | [Backend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit) | `[COMPLETAR: URL de la API desplegada]` |
+| Web Application | [Frontend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit) | `[COMPLETAR: URL de la aplicación desplegada]` |
+ 
 #### 6.2.1. Sprint 1
-
+ 
 ##### 6.2.1.1. Sprint Planning 1
-
+ 
+| Sprint # | Sprint 1 |
+| :-- | :-- |
+| **Sprint Planning Background** | |
+| Date | `[COMPLETAR: YYYY-MM-DD]` |
+| Time | `[COMPLETAR: HH:MM AM/PM]` |
+| Location | Reunión virtual por Discord |
+| Prepared By | Solis Chang, Santiago Valentino |
+| Attendees (to planning meeting) | Castro Picón, Manuel Fernando Joao / Requena Gutiérrez, Diego Gabriel / Quiroz Zambrano, Fabrizio Javier / Solis Chang, Santiago Valentino / Vila Guillen, Miguel Angel / De Las Casas Latour, Sebastián / Navarro Correa, César Augusto |
+| Sprint 0 Review Summary | Se completó el diseño estratégico y táctico del Capítulo IV: arquitectura C4, cuatro Bounded Contexts (User Management, Seismic Monitoring, Emergency Alert y Evacuation Management), diagramas de clases y diseño de base de datos. Aún no existía implementación de software. |
+| Sprint 0 Retrospective Summary | Aciertos: la división en subgrupos de estrategia, arquitectura y diseño táctico permitió avanzar en paralelo y cumplir los plazos internos. Oportunidades de mejora: sincronizar antes los diagramas entre subgrupos y definir con anticipación los repositorios y el flujo de ramas. |
+| **Sprint Goal & User Stories** | |
+| Sprint 1 Goal | **Our focus is on** delivering the first deployed version of QuakExit's website, web services and web application: a bilingual and accessible Landing Page for homeowners and real estate developers, secure access and device management endpoints for developers, and a management dashboard for residents and building administrators. **We believe it delivers** confidence to visitors to request a kit or a quote, a solid foundation for the development team to build new features on the API, and early visibility of their devices to users. **This will be confirmed when** visitors reach the contact form or the call-to-action of their segment in no more than three clicks, the published Landing Page scores 90 or more in Lighthouse for Accessibility and SEO, the web application authenticates a user against the deployed API, and the endpoints are documented with OpenAPI. |
+| Sprint 1 Velocity | `[COMPLETAR: Story Points que acepta el equipo]` |
+| Sum of Story Points | `[COMPLETAR: suma de landing + web services + web application]` (Landing Page: 22) |
+ 
+> El Sprint Goal es del equipo completo. Revisa con tus compañeros que la parte de Web Services y Web Application refleje lo que realmente implementaron.
+ 
+**User Stories de la Landing Page incluidas en el Sprint 1.** El enunciado exige considerar la Landing Page desde el primer Sprint, por lo que estas historias deben agregarse también a las secciones 3.1 (User Stories) y 3.3 (Product Backlog).
+ 
+| Story ID | Título | Descripción | Criterios de Aceptación | Épica | Story Points |
+| :-- | :-- | :-- | :-- | :-- | :-: |
+| LP01 | Conocer la propuesta de valor | Como visitante, deseo ver qué problema resuelve QuakExit y cómo responde ante un sismo, para decidir si me interesa la solución. | **Escenario 1: Propuesta de valor visible**<br>Given que el visitante ingresa a la Landing Page<br>When la página termina de cargar<br>Then el sistema muestra el problema sísmico, la solución y las métricas clave de QuakExit. | EP-LP | 3 |
+| LP02 | Conocer las soluciones por segmento | Como visitante del segmento Dueños de Smart Homes o Inmobiliarias y Constructoras, deseo ver las características y beneficios dirigidos a mi segmento, para evaluar si QuakExit satisface mis necesidades. | **Escenario 1: Contenido por segmento**<br>Given que el visitante está en la Landing Page<br>When el visitante llega a la sección de soluciones<br>Then el sistema muestra los beneficios y características de cada segmento por separado. | EP-LP | 3 |
+| LP03 | Acceder a las aplicaciones desde un call-to-action | Como visitante, deseo acceder al panel web o a la descarga de la aplicación móvil, para comenzar a usar QuakExit. | **Escenario 1: Redirección web**<br>Given que el visitante está en la sección principal<br>When el visitante selecciona el call-to-action del panel web<br>Then el sistema redirige a la vista de acceso del panel web.<br>**Escenario 2: Redirección móvil**<br>Given que el visitante está en la sección principal<br>When el visitante selecciona el call-to-action de descarga<br>Then el sistema redirige al sitio de distribución de la aplicación móvil. | EP-LP | 3 |
+| LP04 | Consultar planes y precios | Como visitante, deseo comparar los planes y precios de QuakExit, para elegir el que se ajusta a mi vivienda o proyecto. | **Escenario 1: Planes visibles**<br>Given que el visitante está en la Landing Page<br>When el visitante llega a la sección de planes<br>Then el sistema muestra cada plan con su precio, contenido y botón de solicitud. | EP-LP | 2 |
+| LP05 | Resolver dudas frecuentes | Como visitante, deseo leer las preguntas frecuentes sobre la tecnología, para resolver mis dudas sin contactar al equipo. | **Escenario 1: Respuesta desplegable**<br>Given que el visitante está en la sección de preguntas frecuentes<br>When el visitante selecciona una pregunta<br>Then el sistema muestra su respuesta. | EP-LP | 1 |
+| LP06 | Contactar al equipo o solicitar cotización | Como visitante, deseo enviar mis datos y el perfil de mi interés, para recibir una propuesta técnica. | **Escenario 1: Envío exitoso**<br>Given que el visitante completa los datos requeridos<br>When el visitante envía la solicitud<br>Then el sistema confirma que la solicitud fue recibida.<br>**Escenario 2: Datos incompletos**<br>Given que el visitante omite un dato requerido<br>When el visitante intenta enviar la solicitud<br>Then el sistema indica el dato faltante y no envía la solicitud. | EP-LP | 2 |
+| LP07 | Conocer al equipo | Como visitante, deseo conocer a los integrantes de TerraGuard, para confiar en quienes desarrollan la solución. | **Escenario 1: Presentación del equipo**<br>Given que el visitante está en la Landing Page<br>When el visitante llega a la sección del equipo<br>Then el sistema muestra la foto, nombre y carrera de cada integrante. | EP-LP | 2 |
+| LP08 | Ver el video About-the-Product | Como visitante, deseo ver un video del producto, para comprender rápidamente su funcionamiento. | **Escenario 1: Reproducción del video**<br>Given que el visitante está en la sección del video<br>When el visitante inicia la reproducción<br>Then el sistema reproduce el video sin salir de la página. | EP-LP | 2 |
+| LP09 | Cambiar el idioma | Como visitante, deseo cambiar entre inglés y español latinoamericano, para leer el contenido en mi idioma. | **Escenario 1: Idioma por defecto**<br>Given que el visitante ingresa por primera vez<br>When la página carga<br>Then el sistema muestra el contenido en inglés (en_US).<br>**Escenario 2: Cambio de idioma**<br>Given que la Landing Page se muestra en inglés<br>When el visitante selecciona español (es_419)<br>Then el sistema muestra todo el contenido en español. | EP-LP | 3 |
+| LP10 | Consultar términos y condiciones | Como visitante, deseo consultar los términos y condiciones de servicio, para conocer mis derechos y responsabilidades. | **Escenario 1: Enlace de términos**<br>Given que el visitante llega al pie de página<br>When la página termina de cargar<br>Then el sistema muestra un enlace a los términos y condiciones de servicio. | EP-LP | 1 |
+ 
+**User Stories de Web Services y Web Application.** `[COMPLETAR: los compañeros responsables de backend y frontend listan aquí los IDs y títulos de las User Stories y Technical Stories del Product Backlog (Capítulo III) que entran al Sprint 1.]`
+ 
 ##### 6.2.1.2. Aspect Leaders and Collaborators
-
+ 
+Los aspectos considerados en el Sprint 1 son: Landing Page (contenido y diseño responsivo, i18n y accesibilidad, equipo y video), Web Services (identidad y acceso, dispositivos y eventos sísmicos), Web Application (autenticación y panel de gestión) y despliegue. La matriz debe ser consistente con la asignación de tasks del Sprint Backlog.
+ 
+| Team Member (Last Name, First Name) | GitHub Username | Landing Page: contenido y diseño | Landing Page: i18n y a11y | Web Services | Web Application | Despliegue |
+| :-- | :-- | :-: | :-: | :-: | :-: | :-: |
+| Solis Chang, Santiago Valentino | `[COMPLETAR]` | `[L / C]` | `[L / C]` | `[L / C]` | `[L / C]` | `[L / C]` |
+| Castro Picón, Manuel Fernando Joao | `[COMPLETAR]` | `[L / C]` | `[L / C]` | `[L / C]` | `[L / C]` | `[L / C]` |
+| Requena Gutiérrez, Diego Gabriel | `[COMPLETAR]` | `[L / C]` | `[L / C]` | `[L / C]` | `[L / C]` | `[L / C]` |
+| Quiroz Zambrano, Fabrizio Javier | `[COMPLETAR]` | `[L / C]` | `[L / C]` | `[L / C]` | `[L / C]` | `[L / C]` |
+| Vila Guillen, Miguel Angel | `[COMPLETAR]` | `[L / C]` | `[L / C]` | `[L / C]` | `[L / C]` | `[L / C]` |
+| De Las Casas Latour, Sebastián | `[COMPLETAR]` | `[L / C]` | `[L / C]` | `[L / C]` | `[L / C]` | `[L / C]` |
+| Navarro Correa, César Augusto | `[COMPLETAR]` | `[L / C]` | `[L / C]` | `[L / C]` | `[L / C]` | `[L / C]` |
+ 
+> Escribe L (Leader) o C (Collaborator) según lo que hizo cada integrante. Todos deben figurar en la Landing Page y las Web Applications.
+ 
 ##### 6.2.1.3. Sprint Backlog 1
-
+ 
+El objetivo del Sprint 1 es publicar la primera versión de la Landing Page, los Web Services y la Web Application, desplegadas y documentadas.
+ 
+- **Tablero del Sprint (Trello):** `[COMPLETAR: URL público del tablero]`
+> 📸 **SUBIR CAPTURA:** tablero de Trello del Sprint 1 con las columnas To-do / InProcess / ToReview / Done.
+ 
+<p align="center">
+  <img src="assets/cap6/sprint1/trello-sprint1.png" alt="Sprint 1 board" width="800" />
+</p>
+Las horas son estimaciones propuestas y los estados reflejan lo observado en el sitio publicado; ajústalos con tu Trello.
+ 
+| Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+| :-- | :-- | :-- | :-- | :-- | :-: | :-- | :-- |
+| LP01 | Conocer la propuesta de valor | LP01-T1 | Crear proyecto base | Inicializar el proyecto con Astro y pnpm, layout general, barra de navegación y pie de página. | 3 | `[COMPLETAR]` | Done |
+| LP01 | Conocer la propuesta de valor | LP01-T2 | Implementar sección principal | Titular, mensaje de valor y métricas clave (< 5 s, Edge IoT, Fail-Safe, batería). | 4 | `[COMPLETAR]` | Done |
+| LP01 | Conocer la propuesta de valor | LP01-T3 | Implementar secciones El Problema y Cómo Funciona | Tres problemas del contexto sísmico y tres pasos del protocolo de emergencia. | 4 | `[COMPLETAR]` | Done |
+| LP02 | Conocer las soluciones por segmento | LP02-T1 | Implementar sección Soluciones | Contenido y beneficios para Familias y Smart Homes, e Inmobiliarias y Constructoras. | 5 | `[COMPLETAR]` | Done |
+| LP03 | Acceder a las aplicaciones desde un call-to-action | LP03-T1 | Implementar botones de acceso | Botones hacia el panel web y la descarga en Google Play; reemplazar el enlace provisional de Google Play. | 2 | `[COMPLETAR]` | InProcess |
+| LP04 | Consultar planes y precios | LP04-T1 | Implementar sección Planes y Precios | Tarjetas de Kit Departamento, Kit Smart Home e Inmobiliarias B2B. | 4 | `[COMPLETAR]` | Done |
+| LP05 | Resolver dudas frecuentes | LP05-T1 | Implementar sección de preguntas frecuentes | Cuatro preguntas con respuestas desplegables. | 2 | `[COMPLETAR]` | Done |
+| LP06 | Contactar al equipo o solicitar cotización | LP06-T1 | Implementar formulario de contacto | Nombre, correo, perfil de interés y mensaje, con validación de datos requeridos. | 4 | `[COMPLETAR]` | Done |
+| LP06 | Contactar al equipo o solicitar cotización | LP06-T2 | Conectar el formulario a un servicio de recepción | Definir a dónde llegan las solicitudes (ej. Netlify Forms). | 2 | `[COMPLETAR]` | `[COMPLETAR]` |
+| LP07 | Conocer al equipo | LP07-T1 | Implementar sección About the Team | Tarjetas con foto, nombre y carrera de los 7 integrantes. | 3 | `[COMPLETAR]` | To-do |
+| LP08 | Ver el video About-the-Product | LP08-T1 | Integrar video incrustado | Incrustar el video publicado en YouTube con título accesible. | 2 | `[COMPLETAR]` | To-do |
+| LP09 | Cambiar el idioma | LP09-T1 | Implementar i18n en_US / es_419 | Archivos de traducción y selector de idioma; inglés por defecto. | 6 | `[COMPLETAR]` | To-do |
+| LP10 | Consultar términos y condiciones | LP10-T1 | Redactar y publicar términos y condiciones | Redactar según el código de ética ACM/IEEE y del CIP; enlace en el pie de página. | 3 | `[COMPLETAR]` | To-do |
+| — | (Task transversal) | T-01 | Diseño responsivo según Style Guidelines | Aplicar paleta, tipografía y breakpoints de la sección 5.1. | 5 | `[COMPLETAR]` | `[COMPLETAR]` |
+| — | (Task transversal) | T-02 | Accesibilidad (a11y) | Atributos ARIA, contraste, `alt` en imágenes y navegación por teclado. | 4 | `[COMPLETAR]` | `[COMPLETAR]` |
+| — | (Task transversal) | T-03 | SEO y meta tags | Title, description, keywords y author; el sitio ya tiene title y description. | 2 | `[COMPLETAR]` | InProcess |
+| — | (Task transversal) | T-04 | Despliegue en Netlify | Conectar el repositorio y publicar `dist/` en cada push a `main`. | 2 | `[COMPLETAR]` | Done |
+| `[COMPLETAR]` | Web Services | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR: tasks de backend]` | `[ ]` | `[COMPLETAR]` | `[COMPLETAR]` |
+| `[COMPLETAR]` | Web Application | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR: tasks de frontend]` | `[ ]` | `[COMPLETAR]` | `[COMPLETAR]` |
+ 
 ##### 6.2.1.4. Development Evidence for Sprint Review
-
+ 
+En el Sprint 1 se implementó la primera versión de la Landing Page (secciones El Problema, Cómo Funciona, Soluciones, Planes y Precios, Preguntas frecuentes y Contacto), de los Web Services y de la Web Application. Los commits más relevantes por repositorio se detallan a continuación.
+ 
+Para obtener los datos de cada repositorio, ejecuta:
+ 
+```bash
+git log --pretty=format:"%h | %s | %ad | %an" --date=short
+```
+ 
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| 1ASI0572-2620-8729-Proyecto-IOT/QuakExit-Landing | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` |
+| 1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` |
+| 1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` |
+ 
 ##### 6.2.1.5. Testing Suite Evidence for Sprint Review
-
+ 
+**Landing Page.** Es un sitio estático sin Web Services propios, por lo que no incluye Unit Tests ni Integration Tests de API. Las pruebas son de validación y de aceptación sobre el sitio publicado.
+ 
+| Prueba | Herramienta | User Story relacionada | Resultado esperado |
+| :-- | :-- | :-- | :-- |
+| Validación de HTML y CSS | W3C Validator | Todas | Sin errores de sintaxis. |
+| Rendimiento, accesibilidad, buenas prácticas y SEO | Lighthouse | LP01, LP09 | Puntaje de 90 o más en Accessibility y SEO. |
+| Diseño responsivo | Chrome DevTools (móvil, tableta, escritorio) | LP01, LP02 | Sin desplazamiento horizontal en los tres tamaños. |
+| Envío del formulario | Prueba manual | LP06 | Con datos completos se confirma; con datos faltantes se indica el error. |
+| Redirección de call-to-action | Prueba manual | LP03 | Cada botón dirige a la vista esperada. |
+ 
+Escenario de aceptación (BDD) para LP06, archivo `contact-request.feature`:
+ 
+```gherkin
+Feature: Contact request
+  As a visitor
+  I want to send my details and interest profile
+  So that I receive a technical proposal
+ 
+  Scenario: Successful submission
+    Given the visitor completes all required fields
+    When the visitor submits the request
+    Then the system confirms that the request was received
+ 
+  Scenario: Missing required field
+    Given the visitor omits a required field
+    When the visitor attempts to submit the request
+    Then the system indicates the missing field
+    And the request is not sent
+```
+ 
+> 📸 **SUBIR CAPTURA:** reporte de Lighthouse de la landing (Performance, Accessibility, Best Practices, SEO).
+ 
+<p align="center">
+  <img src="assets/cap6/sprint1/lighthouse-landing.png" alt="Lighthouse report" width="700" />
+</p>
+**Web Services.** `[COMPLETAR: el responsable del backend lista los Unit Tests (clases y comportamientos) y los Integration/Acceptance Tests con sus archivos .feature, y la ruta del repositorio de pruebas.]`
+ 
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| 1ASI0572-2620-8729-Proyecto-IOT/QuakExit-Landing | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` |
+| 1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` |
+ 
 ##### 6.2.1.6. Execution Evidence for Sprint Review
-
+ 
+En el Sprint 1 se publicó la primera versión de la Landing Page y de la Web Application. A continuación se presentan las vistas principales de cada producto.
+ 
+**Landing Page**
+ 
+> 📸 **SUBIR CAPTURAS (6):** sección principal, El Problema + Cómo Funciona, Soluciones, Planes y Precios, Preguntas frecuentes + Contacto, y vista móvil.
+ 
+| Vista | Captura |
+| :-- | :-- |
+| Sección principal | `![Hero](assets/cap6/sprint1/landing-hero.png)` |
+| El Problema y Cómo Funciona | `![Problem](assets/cap6/sprint1/landing-problem.png)` |
+| Soluciones por segmento | `![Solutions](assets/cap6/sprint1/landing-solutions.png)` |
+| Planes y Precios | `![Pricing](assets/cap6/sprint1/landing-pricing.png)` |
+| Preguntas frecuentes y Contacto | `![FAQ](assets/cap6/sprint1/landing-faq-contact.png)` |
+| Vista móvil | `![Mobile](assets/cap6/sprint1/landing-mobile.png)` |
+ 
+**Web Application**
+ 
+> 📸 **SUBIR CAPTURAS:** pantallas principales de la aplicación web (inicio de sesión, panel de gestión, etc.).
+ 
+`[COMPLETAR: el responsable del frontend agrega las capturas y una breve descripción de cada vista.]`
+ 
+- **Video de navegación (Product Navigation):** `[COMPLETAR: URL de Microsoft Stream/Clipchamp]`
+- **Nomenclatura del archivo:** `upc-pre-202620-1asi0572-8729-terraguard-product-navigation-sprint-1.mp4`
 ##### 6.2.1.7. Services Documentation Evidence for Sprint Review
-
+ 
+**Landing Page.** Es un sitio web estático y no expone endpoints propios, por lo que no genera documentación OpenAPI.
+ 
+**Web Services.** Los endpoints se documentan con OpenAPI mediante Swagger.
+ 
+- **Repositorio:** [Backend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit)
+- **URL de la documentación Swagger:** `[COMPLETAR]`
+| Endpoint | Acción (verbo HTTP) | Sintaxis de llamada | Parámetros | Ejemplo y explicación de la respuesta |
+| :-- | :-- | :-- | :-- | :-- |
+| `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` |
+ 
+> 📸 **SUBIR CAPTURAS:** interfaz de Swagger con los endpoints del Sprint 1 y una captura de una petición de prueba con su respuesta.
+ 
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| 1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` | `[COMPLETAR]` |
+ 
 ##### 6.2.1.8. Software Deployment Evidence for Sprint Review
-
+ 
+Durante el Sprint 1 se desplegaron los productos digitales del alcance.
+ 
+**Landing Page (Netlify)**
+ 
+1. Se creó el repositorio `QuakExit-Landing` en la organización de GitHub del equipo.
+2. Se creó el sitio en Netlify importando el repositorio.
+3. Se configuró el comando de construcción `pnpm build` y el directorio de publicación `dist`.
+4. Netlify publica automáticamente el sitio en cada push a `main`.
+5. Se verificó el acceso por HTTPS y el funcionamiento del sitio.
+- **URL:** [https://quakexit-landing.netlify.app/](https://quakexit-landing.netlify.app/)
+> 📸 **SUBIR CAPTURA:** panel de Netlify con el despliegue exitoso (Deploys) y la landing abierta en el navegador.
+ 
+<p align="center">
+  <img src="assets/cap6/sprint1/netlify-deploy.png" alt="Netlify deployment" width="700" />
+</p>
+**Web Services**
+ 
+`[COMPLETAR: pasos realizados (cuenta, recursos en la nube, configuración) y URL de la API desplegada.]`
+ 
+> 📸 **SUBIR CAPTURAS:** consola del proveedor cloud con los recursos creados y la API respondiendo.
+ 
+**Web Application**
+ 
+`[COMPLETAR: hosting utilizado, pasos y URL de la aplicación desplegada.]`
+ 
+> 📸 **SUBIR CAPTURAS:** panel del hosting con el despliegue exitoso y la aplicación abierta en el navegador.
+ 
 ##### 6.2.1.9. Team Collaboration Insights during Sprint
+ 
+Durante el Sprint 1, el equipo repartió el trabajo según la matriz de líderes y colaboradores. Cada integrante desarrolló en su propia rama `feature/*` y la integró a `develop` mediante Pull Requests revisados por al menos otro miembro, aplicando Conventional Commits. El análisis de contribuciones de cada repositorio muestra la participación de los integrantes del equipo.
+ 
+> 📸 **SUBIR CAPTURAS (una por repositorio):** GitHub → Insights → Contributors de `QuakExit-Landing`, `Backend-QuakExit` y `Frontend-QuakExit`.
+ 
+<p align="center">
+  <img src="assets/cap6/sprint1/insights-landing.png" alt="Landing contributors" width="700" />
+</p>
+`[COMPLETAR: 2 o 3 líneas interpretando las capturas, indicando que los 7 integrantes tienen commits en la Landing Page y la Web Application.]`
 
 <div style="page-break-after: always;"></div>
 
