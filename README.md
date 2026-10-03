@@ -2228,8 +2228,34 @@ En el Sprint 1 se implementó la primera versión de la Landing Page (secciones 
 | Envío del formulario                               | Prueba manual                                | LP06                   | Con datos completos se confirma; con datos faltantes se indica el error. |
 | Redirección de call-to-action                      | Prueba manual                                | LP03                   | Cada botón dirige a la vista esperada.                                   |
 
-> 📸 **SUBIR CAPTURA:** reporte de Lighthouse de la landing (Performance, Accessibility, Best Practices, SEO).
+- El despliegue de la Landing Page
 
+1. Lo primero que hicimos fue ir a la página de [Netlify](https://www.netlify.com/) y loguearnos.
+
+  <p align="center">
+  <img src="assets/cap6/landing/despliegue/netlify-frontpg.png" alt="Netlify Home" width="700" />
+</p>
+
+2. Luego le damos click al botón "Add new project" y seleccionamos Github, para posteriormente seleccionar el repositorio donde está nuestra landing
+
+  <p align="center">
+  <img src="assets/cap6/landing/despliegue/add-new-pj.png" alt="Add new project view" width="700" />
+  <img src="assets/cap6/landing/despliegue/searching.png" alt="Looking for our landing repository" width="700" />
+</p>
+
+3. Luego cambiamos algunas cosas en la configuración, como el nombre de la url.
+
+  <p align="center">
+  <img src="assets/cap6/landing/despliegue/configuration.png" alt="Landing configuration" width="700" />
+</p>
+
+4. Una vez configurado todo, la landing page habrá sido desplegada.
+
+  <p align="center">
+  <img src="assets/cap6/landing/despliegue/deployed.png" alt="Landing deployed" width="700" />
+</p>
+
+Adicionalmente, realizamos la prueba Lighthouse de nuestra Landing Page.
 <p align="center">
   <img src="assets/cap6/sprint1/lighthouse-landing.png" alt="Lighthouse report" width="700" />
 </p>
@@ -2318,31 +2344,31 @@ En el Sprint 1 se publicó la primera versión de la Landing Page y se implement
 > Vistas de nuestro Landing Page:
 
 <p align="center">
-  <img src="assets/cap6/LandingIotConUrlPublica.png" alt="Landing Page" width="700" />
+  <img src="assets/cap6/landing/LandingIotConUrlPublica.png" alt="Landing Page" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/LandingIotConUrlPublica2.png" alt="Landing Page" width="700" />
+  <img src="assets/cap6/landing/LandingIotConUrlPublica2.png" alt="Landing Page" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/LandingIotConUrlPublica3.png" alt="Landing Page" width="700" />
+  <img src="assets/cap6/landing/LandingIotConUrlPublica3.png" alt="Landing Page" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/LandingIotConUrlPublica4.png" alt="Landing Page" width="700" />
+  <img src="assets/cap6/landing/LandingIotConUrlPublica4.png" alt="Landing Page" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/LandingIotConUrlPublica5.png" alt="Landing Page" width="700" />
+  <img src="assets/cap6/landing/LandingIotConUrlPublica5.png" alt="Landing Page" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/LandingIotConUrlPublica6.png" alt="Landing Page" width="700" />
+  <img src="assets/cap6/landing/LandingIotConUrlPublica6.png" alt="Landing Page" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/LandingIotConUrlPublica7.png" alt="Landing Page" width="700" />
+  <img src="assets/cap6/landing/LandingIotConUrlPublica7.png" alt="Landing Page" width="700" />
 </p>
 
 | Vista                           | Captura                                                   |
@@ -2358,27 +2384,27 @@ En el Sprint 1 se publicó la primera versión de la Landing Page y se implement
 > Vistas de nuestro Frontend:
 
 <p align="center">
-  <img src="assets/cap6/FrontendQuakExitDesplegado.png" alt="Web Application" width="700" />
+  <img src="assets/cap6/frontend/despliegue/FrontendQuakExitDesplegado.png" alt="Web Application" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/FrontendDesplegadoIot.png" alt="Web Application" width="700" />
+  <img src="assets/cap6/frontend/despliegue/FrontendDesplegadoIot.png" alt="Web Application" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/FrontIot3.png" alt="Web Application" width="700" />
+  <img src="assets/cap6/frontend/FrontIot3.png" alt="Web Application" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/FrontIot4.png" alt="Web Application" width="700" />
+  <img src="assets/cap6/frontend/FrontIot4.png" alt="Web Application" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/FrontIot5.png" alt="Web Application" width="700" />
+  <img src="assets/cap6/frontend/FrontIot5.png" alt="Web Application" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/FrontIot6.png" alt="Web Application" width="700" />
+  <img src="assets/cap6/frontend/FrontIot6.png" alt="Web Application" width="700" />
 </p>
 
 | Vista                  | User Story | Descripción                                                        | Captura                                                 |
@@ -2417,11 +2443,11 @@ En el Sprint 1 se publicó la primera versión de la Landing Page y se implement
 > Evidencias del Swagger desplegado y verificación con uno de los endpoints puestos, probando login:
 
 <p align="center">
-  <img src="assets/cap6/DespliegueBackendIot.png" alt="Swagger" width="700" />
+  <img src="assets/cap6/backend/DespliegueBackendIot.png" alt="Swagger" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/BackendIotLoginExitoso.png" alt="Swagger" width="700" />
+  <img src="assets/cap6/backend/BackendIotLoginExitoso.png" alt="Swagger" width="700" />
 </p>
 
 | Repository                                       | Branch                              | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
@@ -2445,7 +2471,7 @@ Durante el Sprint 1 se configuró el despliegue de los tres productos digitales 
 > Evidencias del despliegue del Landing Page con URL publica:
 
 <p align="center">
-  <img src="assets/cap6/LandingIotConUrlPublica.png" alt="Landing deployment" width="700" />
+  <img src="assets/cap6/landing/LandingIotConUrlPublica.png" alt="Landing deployment" width="700" />
 </p>
 
 **Web Services (AWS: EC2 y RDS for MySQL)**
@@ -2463,7 +2489,7 @@ Durante el Sprint 1 se configuró el despliegue de los tres productos digitales 
 > Evidencias del despliegue del Backend con URL publica:
 
 <p align="center">
-  <img src="assets/cap6/DespliegueBackendIot.png" alt="Swagger" width="700" />
+  <img src="assets/cap6/backend/DespliegueBackendIot.png" alt="Swagger" width="700" />
 </p>
 
 **Web Application (Netlify)**
@@ -2479,11 +2505,11 @@ Durante el Sprint 1 se configuró el despliegue de los tres productos digitales 
 > Evidencias del despliegue del Frontend con URL publica:
 
 <p align="center">
-  <img src="assets/cap6/FrontendQuakExitDesplegado.png" alt="Web Application" width="700" />
+  <img src="assets/cap6/frontend/despliegue/FrontendQuakExitDesplegado.png" alt="Web Application" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/FrontendDesplegadoIot.png" alt="Web application deployment" width="700" />
+  <img src="assets/cap6/frontend/despliegue/FrontendDesplegadoIot.png" alt="Web application deployment" width="700" />
 </p>
 
 ##### 6.2.1.9. Team Collaboration Insights during Sprint
