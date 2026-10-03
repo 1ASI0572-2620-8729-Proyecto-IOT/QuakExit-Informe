@@ -2516,16 +2516,16 @@ Durante el Sprint 1 se configuró el despliegue de los tres productos digitales 
 
 Durante el Sprint 1, el equipo repartió el trabajo según la matriz de líderes y colaboradores: la Landing Page estuvo a cargo de Solis Chang con apoyo en contenido, internacionalización y accesibilidad; los Web Services y la Web Application fueron liderados por Castro Picón con apoyo en persistencia, pruebas y diseño de capas; y el despliegue fue liderado por Requena Gutiérrez. Cada integrante desarrolló en su propia rama `feature/*` y la integró a `develop` mediante Pull Requests revisados por al menos otro miembro, aplicando Conventional Commits.
 
-> 📸 **SUBIR CAPTURAS (una por repositorio):** GitHub → Insights → Contributors de `QuakExit-Landing`, `Backend-QuakExit` y `Frontend-QuakExit`.
+Evidencias de Insights del LandingPage, Backend y Frontend:
 
 <p align="center">
-  <img src="assets/cap6/sprint1/insights-landing.png" alt="Landing contributors" width="700" />
+  <img src="assets/cap6/sprint1/InsightsLandinPage.png" alt="Landing contributors" width="700" />
 </p>
 <p align="center">
-  <img src="assets/cap6/sprint1/insights-backend.png" alt="Backend contributors" width="700" />
+  <img src="assets/cap6/sprint1/InsightsBackend.png" alt="Backend contributors" width="700" />
 </p>
 <p align="center">
-  <img src="assets/cap6/sprint1/insights-frontend.png" alt="Frontend contributors" width="700" />
+  <img src="assets/cap6/sprint1/InsightsFrontend.png" alt="Frontend contributors" width="700" />
 </p>
 
 Los analíticos muestran la participación de los integrantes en cada repositorio, en coherencia con la matriz de la sección 6.2.1.2.
