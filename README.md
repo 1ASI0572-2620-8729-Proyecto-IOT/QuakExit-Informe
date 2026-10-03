@@ -2096,7 +2096,7 @@ Cada Sprint documenta, para cada producto, las siguientes etapas: Sprint Plannin
 | :-------------- | :---------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------- |
 | Landing Page    | [QuakExit-Landing](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/QuakExit-Landing)   | [quakexit-landing.netlify.app](https://quakexit-landing.netlify.app/)                  |
 | Web Services    | [Backend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit)   | [quakexit-back.onrender.com](https://quakexit-back.onrender.com/swagger-ui/index.html) |
-| Web Application | [Frontend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit) | [https://frontend-quakexit.netlify.app/](https://frontend-quakexit.netlify.app/)       |
+| Web Application | [Frontend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit) | [https://frontend-quak-exit.vercel.app/](https://frontend-quak-exit.vercel.app/)       |
 
 Nota sobre la disponibilidad del backend: Los Web Services están desplegados en el plan gratuito de Render, por lo que el servicio entra en suspensión tras unos 15 minutos sin recibir peticiones. Al recibir una nueva solicitud, el servidor se reactiva automáticamente, pero este proceso puede tardar entre uno y dos minutos, durante los cuales el frontend podría mostrar demoras o errores temporales de conexión. Además, la base de datos MySQL está alojada en el plan gratuito de Aiven, que también puede apagarse por inactividad. Si el sistema no responde, se recomienda esperar unos minutos y volver a intentarlo. Estas limitaciones se deben únicamente a la infraestructura gratuita utilizada para el despliegue y no al funcionamiento del sistema; un plan de pago las eliminaría.
 
@@ -2492,15 +2492,15 @@ Durante el Sprint 1 se configuró el despliegue de los tres productos digitales 
   <img src="assets/cap6/backend/DespliegueBackendIot.png" alt="Swagger" width="700" />
 </p>
 
-**Web Application (Netlify)**
+**Web Application **
 
-1. Se importó el repositorio `Frontend-QuakExit` en un nuevo sitio de Netlify.
+1. Se importó el repositorio `Frontend-QuakExit` en un nuevo sitio de Vercel.
 2. Se configuró el comando de construcción `npm run build` y el directorio de publicación `dist`.
 3. Se definió la variable de entorno `VITE_API_URL` con la URL pública de los Web Services.
 4. Se agregó la regla de redirección `/* /index.html 200` para el enrutamiento de la aplicación.
 5. Se verificó el registro e inicio de sesión contra la API desplegada.
 
-- **URL:** [https://frontend-quakexit.netlify.app/](https://frontend-quakexit.netlify.app/)
+- **URL:** [https://frontend-quak-exit.vercel.app/](https://frontend-quak-exit.vercel.app/)
 
 > Evidencias del despliegue del Frontend con URL publica:
 
@@ -2570,7 +2570,7 @@ Ministerio de Transportes y Comunicaciones [MTC]. (s.f.). _Sistema de Mensajerí
 
 - **Landing Page:** [![Landing Page](https://img.shields.io/badge/Visit-Landing%20Page-blue?style=for-the-badge&logo=netlify&logoColor=white)](https://quakexit-landing.netlify.app/)
 
-- **Frontend:** [![Frontend Page](https://img.shields.io/badge/Visit-Frontend%20Page-blue?style=for-the-badge&logo=netlify&logoColor=white)](https://frontend-quakexit.netlify.app/)
+- **Frontend:** [![Frontend Page](https://img.shields.io/badge/Visit-Frontend%20Page-blue?style=for-the-badge&logo=netlify&logoColor=white)](https://frontend-quak-exit.vercel.app/)
 
 <!-- Pegar abajo, borra el comentario cuando pegues :P -->
 
