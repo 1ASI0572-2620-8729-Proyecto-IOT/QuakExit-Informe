@@ -1773,70 +1773,137 @@ visuales claras y compactas, con códigos de color efectivos y elementos visuale
 ---
 
 ## Capítulo VI: Product Implementation, Validation & Deployment
-
+ 
+Este capítulo documenta cómo el equipo **TerraGuard** implementa, prueba, despliega y valida los productos digitales de **QuakExit**: la Landing Page, los Web Services, las Web Applications, la Mobile Application y las Embedded Applications del QuakExit Hub (ESP32). Se organiza en dos partes: la configuración del trabajo del equipo (6.1) y la implementación por Sprint (6.2).
+ 
+---
+ 
 ### 6.1. Software Configuration Management
-
-Para garantizar un ciclo de desarrollo organizado, trazable y colaborativo, el equipo de NeuroDraw ha establecido un conjunto de herramientas y normativas que rigen la configuración del entorno de trabajo para el proyecto QuakExit.
-
+ 
+Para garantizar un ciclo de vida organizado, trazable y colaborativo, el equipo TerraGuard definió las herramientas, convenciones y flujos de trabajo que rigen el desarrollo de QuakExit. Esta sección cubre el entorno de desarrollo, la gestión del código fuente, las convenciones de código y la configuración del despliegue.
+ 
 #### 6.1.1. Software Development Environment Configuration
-
-**A. Gestión del Proyecto y Comunicación**
-
-El seguimiento del Product Backlog y el estado de las User Stories (Capítulo III) se gestiona de forma visual mediante tableros Kanban en *Trello*, permitiendo al equipo tener claridad sobre las tareas pendientes (To Do), en progreso (Doing) y finalizadas (Done). Toda la coordinación diaria, resolución de bloqueos y reuniones sincrónicas (Daily Stand-ups) se centraliza mediante canales de voz y texto en Discord.
-
-**B. Entornos de Desarrollo Integrado (IDEs)**
-
-Para el desarrollo de las diferentes capas de software, los ingenieros de NeuroDraw han homologado el uso de los siguientes entornos:
-
-VS Code: Utilizado como editor principal para el desarrollo del ecosistema web (TypeScript) y la landing page (Astro).
-
-Android Studio: Utilizado para la compilación, emulación y desarrollo de la aplicación móvil (Flutter), aprovechando sus herramientas de profiling nativas.
-
-Entorno Backend (Java): Se emplean IDEs compatibles con el ecosistema Java (ej. IntelliJ IDEA o VS Code con extensiones de Java) para la construcción de los servicios core.
-
-Hardware (Por definir): La programación en C++ del ESP32 se ejecutará en entornos especializados para sistemas embebidos, como Arduino IDE o la extensión PlatformIO.
-
+ 
+La siguiente tabla resume los productos de software que utilizan los miembros del equipo, agrupados por tipo de actividad.
+ 
+| Actividad | Producto | Propósito en el proyecto | Referencia |
+| :-- | :-- | :-- | :-- |
+| Project Management | **Trello** | Tablero Kanban para el Product Backlog y el Sprint Backlog (To-do / InProcess / ToReview / Done). | [trello.com](https://trello.com/) |
+| Project Management | **Discord** | Comunicación diaria, Daily Stand-ups y reuniones de Sprint Planning, Review y Retrospective. | [discord.com](https://discord.com/) |
+| Requirements Management | **UXPressia** | User Personas, Empathy Maps, User Journey Maps e Impact Mapping. | [uxpressia.com](https://uxpressia.com/) |
+| Requirements Management | **Miro / FigJam** | Sesiones de Big Picture y Design-Level EventStorming. | [miro.com](https://miro.com/) · [figma.com/figjam](https://www.figma.com/figjam/) |
+| Product UX/UI Design | **Figma** | Wireframes, Mock-ups, Prototypes y guías de estilo de la Landing Page y las aplicaciones. | [figma.com](https://www.figma.com/) |
+| Product UX/UI Design | **FigJam / LucidChart** | Wireflows y User Flows. | [lucidchart.com](https://www.lucidchart.com/) |
+| Software Architecture | **Structurizr** | Diagramas C4 Model (System Landscape, Context, Container, Component, Deployment). | [structurizr.com](https://structurizr.com/) |
+| Software Architecture | **LucidChart / PlantUML** | Diagramas de clases UML y diagramas de base de datos. | [plantuml.com](https://plantuml.com/) |
+| IoT Device Design | **Wokwi / Cirkit Designer** | Diseño y simulación del circuito del QuakExit Hub (ESP32, sensor sísmico, relé, LED). | [wokwi.com](https://wokwi.com/) |
+| Software Development (Landing Page) | **Visual Studio Code** | Editor principal para la Landing Page y las aplicaciones web. | [code.visualstudio.com](https://code.visualstudio.com/) |
+| Software Development (Landing Page) | **Astro** (HTML5, CSS3, JavaScript) | Framework para generar el sitio web estático de la Landing Page. | [astro.build](https://astro.build/) |
+| Software Development (Web Applications) | **TypeScript** | Lenguaje de programación del frontend web. | [typescriptlang.org](https://www.typescriptlang.org/) |
+| Software Development (Mobile) | **Android Studio** + **Flutter (Dart)** | Compilación, emulación y desarrollo de la Mobile Application. | [flutter.dev](https://flutter.dev/) |
+| Software Development (Web Services) | **IntelliJ IDEA** / VS Code (Java) | Construcción de los RESTful Web Services. | [jetbrains.com/idea](https://www.jetbrains.com/idea/) |
+| Software Development (Embedded) | **PlatformIO** / Arduino IDE (C++) | Programación y carga del firmware del ESP32. | [platformio.org](https://platformio.org/) |
+| Software Testing | **Postman** · **Lighthouse** · **W3C Validator** | Pruebas de endpoints, auditoría de rendimiento/accesibilidad/SEO de la Landing Page y validación de HTML/CSS. | [postman.com](https://www.postman.com/) · [web.dev/measure](https://web.dev/measure/) · [validator.w3.org](https://validator.w3.org/) |
+| Software Deployment | **GitHub Pages** | Publicación de la Landing Page. | [pages.github.com](https://pages.github.com/) |
+| Software Deployment | **AWS** (API Gateway, Lambda, DynamoDB, IoT Core) | Infraestructura serverless de los Web Services y la comunicación con el QuakExit Hub. | [aws.amazon.com](https://aws.amazon.com/) |
+| Software Deployment | **Firebase App Distribution** | Distribución de la Mobile Application para pruebas en dispositivos físicos. | [firebase.google.com/docs/app-distribution](https://firebase.google.com/docs/app-distribution) |
+| Software Documentation | **GitHub** (Markdown) | Informe del proyecto (`README.md`) versionado en la organización del equipo. | [github.com](https://github.com/) |
+| Software Documentation | **Swagger / OpenAPI** | Documentación de los endpoints de los Web Services. | [swagger.io](https://swagger.io/) |
+ 
 #### 6.1.2. Source Code Management
+ 
+El equipo utiliza **GitHub** como plataforma de control de versiones. Todos los repositorios pertenecen a la organización pública **1ASI0572-2620-8729-Proyecto-IOT**.
+ 
+| Producto | Repositorio |
+| :-- | :-- |
+| Landing Page | [QuakExit-Landing](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/QuakExit-Landing) |
+| Web Services (Backend) | [Backend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit) |
+| Frontend (Web / Mobile Applications) | [Frontend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit) |
+| Informe del proyecto | [QuakExit-Informe](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/QuakExit-Informe) |
 
-**A. Gestión de Código Fuente (Source Code Management)**
-
-El código fuente del proyecto se gestiona de manera centralizada a través de GitHub. Para mantener la separación lógica de los componentes de la arquitectura, se creó la organización académica 1ASI0572-2620-8729-Proyecto-IOT, la cual alberga los siguientes repositorios principales:
-
-Backend-QuakExit: Contiene la lógica de negocio, configuración de la API y los servicios desarrollados en Java.
-
-Frontend-QuakExit: Contiene el código fuente de la aplicación desarrollada en Flutter/Dart (o interfaces web en TypeScript) para la gestión del usuario.
-
-QuakExit-Landing: Contiene el sitio web promocional e informativo del producto, desarrollado utilizando el framework Astro.
-
-QuakExit-Informe: Repositorio dedicado al control de versiones de la documentación técnica y académica del proyecto.
-
-**B. Modelo de Ramas (Branching Model)**
-
-El equipo ha adoptado una variación ágil del flujo GitFlow, estructurando las ramas de la siguiente manera para proteger la estabilidad del producto:
-
-main: Rama de producción que contiene el código validado, funcional y estable.
-
-develop: Rama de integración donde convergen todos los avances antes de pasar a producción.
-
-feature/* (ej. feature/login, feature/mqtt-connection): Ramas efímeras creadas a partir de develop para el desarrollo aislado de nuevas historias de usuario o características.
-
+ 
+**GitFlow.** El equipo aplica GitFlow como flujo de trabajo de control de versiones, con las siguientes ramas:
+ 
+| Rama | Origen | Destino | Convención de nombre | Propósito |
+| :-- | :-- | :-- | :-- | :-- |
+| `main` | — | — | `main` | Código estable y desplegado. Cada merge a `main` genera un Release con etiqueta. |
+| `develop` | `main` | `main` (vía release) | `develop` | Integración continua de los avances antes de un Release. |
+| Feature | `develop` | `develop` | `feature/<id-user-story>-<descripcion-corta>` (ej. `feature/lp01-hero-section`) | Desarrollo aislado de una User Story o Technical Story. Una rama por feature. |
+| Release | `develop` | `main` y `develop` | `release/<MAJOR.MINOR.PATCH>` (ej. `release/1.0.0`) | Preparación y estabilización de un Release. |
+| Hotfix | `main` | `main` y `develop` | `hotfix/<MAJOR.MINOR.PATCH>` (ej. `hotfix/1.0.1`) | Corrección urgente de errores en producción. |
+ 
+**Semantic Versioning.** Los Releases se nombran con el formato `MAJOR.MINOR.PATCH` según [Semantic Versioning 2.0.0](https://semver.org/). `MAJOR` cambia con modificaciones incompatibles, `MINOR` con nuevas funcionalidades compatibles y `PATCH` con correcciones. El primer Release de la Landing Page es `v1.0.0`.
+ 
+**Conventional Commits.** Todos los mensajes de commit siguen la especificación [Conventional Commits](https://www.conventionalcommits.org/) con el formato `<tipo>(<ámbito opcional>): <descripción>`:
+ 
+| Tipo | Uso |
+| :-- | :-- |
+| `feat` | Nueva funcionalidad. |
+| `fix` | Corrección de un error. |
+| `docs` | Cambios en documentación o en el informe. |
+| `style` | Formato o estilos que no afectan la lógica. |
+| `refactor` | Reestructuración de código sin cambio funcional. |
+| `test` | Creación o modificación de pruebas. |
+| `chore` | Mantenimiento, dependencias o configuración del entorno. |
+| `ci` | Cambios en la configuración de integración y despliegue. |
+ 
+Ejemplo: `feat(landing): add hero section with segment call-to-action`.
+ 
 #### 6.1.3. Source Code Style Guide & Conventions
-
-**Convenciones de Control de Versiones**
-
-Para asegurar un historial de cambios legible y estandarizado, el equipo aplica la especificación Conventional Commits. Cada cambio subido a los repositorios debe prefijarse con un indicador de tipo, como:
-
-*feat:* para nuevas características funcionales.
-
-*fix:* para corrección de errores (bugs).
-
-*docs:* para actualizaciones en la documentación o memoria técnica.
-
-*chore:* para mantenimiento, actualización de dependencias o configuración del entorno.
-
+ 
+Todos los identificadores (variables, funciones, clases, archivos, ramas y commits) se escriben en inglés. El equipo adopta las siguientes guías:
+ 
+| Lenguaje / Artefacto | Guía adoptada | Reglas principales |
+| :-- | :-- | :-- |
+| HTML | [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html) y [HTML Style Guide and Coding Conventions](https://www.w3schools.com/html/html5_syntax.asp) | Etiquetas y atributos en minúsculas, elementos cerrados, atributo `alt` en imágenes, uso de elementos semánticos y atributos ARIA. |
+| CSS | [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html) | Propiedades en minúsculas, nombres de clase descriptivos separados por guiones (`kebab-case`), una declaración por línea, variables CSS para colores y espaciado. |
+| JavaScript / TypeScript | [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html) | `const` y `let` en lugar de `var`, `camelCase` para variables y funciones, `PascalCase` para clases y componentes, tipado explícito en TypeScript. |
+| Astro (componentes) | Documentación oficial de Astro | Un componente por archivo `.astro`, nombres en `PascalCase`, estilos con alcance al componente. |
+| Dart / Flutter | [Effective Dart](https://dart.dev/effective-dart) | `lowerCamelCase` para miembros, `UpperCamelCase` para tipos, `snake_case` para archivos. |
+| Java | [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html) y [Spring Boot Features](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html) | Paquetes por capa (`domain`, `application`, `infrastructure`, `interfaces`), llaves en todos los bloques, un archivo por clase pública. |
+| C++ (firmware) | [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/) | Constantes en `UPPER_SNAKE_CASE`, funciones cortas y con una única responsabilidad. |
+| Python (Edge / Lambda) | [PEP 8](https://peps.python.org/pep-0008/) | `snake_case` para funciones y variables, `PascalCase` para clases. |
+| Gherkin (`.feature`) | [Gherkin Conventions for Readable Specifications](https://specflow.org/gherkin/gherkin-conventions-for-readable-specifications/) | Estructura Given-When-Then, tercera persona y tiempo presente, un escenario por comportamiento. |
+ 
 #### 6.1.4. Software Deployment Configuration
-
+ 
+A continuación se describe la configuración del despliegue de cada producto digital a partir de sus repositorios.
+ 
+**Landing Page (GitHub Pages)**
+ 
+1. Se crea el repositorio `QuakExit-Landing` en la organización de GitHub del equipo.
+2. Se configura el proyecto de Astro con salida estática (`output: 'static'`) y la propiedad `site` con la URL pública de GitHub Pages.
+3. Se crea el workflow de GitHub Actions (`.github/workflows/deploy.yml`) que ejecuta `npm ci` y `npm run build` al hacer push a `main`.
+4. El workflow publica el contenido de la carpeta `dist/` en GitHub Pages.
+5. En *Settings → Pages* del repositorio se selecciona *GitHub Actions* como fuente de despliegue.
+6. Se verifica que la URL pública carga con HTTPS y que los enlaces de call-to-action apuntan a las vistas correspondientes de las aplicaciones.
+**Web Services (AWS Serverless)**
+ 
+1. Se crea una cuenta de AWS y se configuran los permisos con IAM.
+2. Se crean las tablas de Amazon DynamoDB (`Users`, `SeismicEvents`, `Alerts`, `Evacuations`).
+3. Se despliegan las funciones AWS Lambda con la lógica de negocio.
+4. Se configura Amazon API Gateway como punto de entrada HTTPS y se asocia el Lambda Authorizer para validar tokens JWT.
+5. Se configura AWS IoT Core con certificados por dispositivo para la comunicación MQTT con el QuakExit Hub.
+6. Se publica la documentación OpenAPI mediante Swagger.
+**Mobile Application (Firebase App Distribution)**
+ 
+1. Se genera el archivo de instalación (`.apk`) de la aplicación Flutter.
+2. Se registra el proyecto en Firebase y se sube la compilación a App Distribution.
+3. Se invita a los testers del equipo y de las entrevistas de validación.
+**QuakExit Hub (ESP32)**
+ 
+1. Se compila el firmware con PlatformIO.
+2. Se carga en el microcontrolador mediante USB.
+3. Se aprovisionan las credenciales Wi-Fi y los certificados MQTT del dispositivo.
+> **Software Architecture Deployment Diagram:** ver la sección [4.1.3.4](#4134-software-architecture-deployment-diagrams).
+ 
+---
+ 
 ### 6.2. Landing Page, Services & Applications Implementation
+ 
+En esta sección se documenta el proceso de implementación, pruebas, documentación y despliegue de los productos de QuakExit, organizado por Sprint a partir del Product Backlog definido en el Capítulo III. La presente versión documenta la **Landing Page**, a cargo de **Solis Chang, Santiago Valentino**; los demás productos (Web Services, Web Applications, Mobile Application y Embedded Application) son documentados por los miembros responsables de cada uno.
+ 
+La Landing Page es el sitio web estático que presenta el modelo de negocio de QuakExit a los dos segmentos objetivo (Dueños de Smart Homes e Inmobiliarias y Constructores), comunica la propuesta de valor, presenta al equipo y redirige al visitante mediante call-to-action hacia las aplicaciones.
 
 #### 6.2.1. Sprint 1
 
