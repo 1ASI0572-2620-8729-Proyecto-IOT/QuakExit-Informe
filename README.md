@@ -2005,7 +2005,41 @@ El contenido está estructurado de forma atractiva y funcional, destacando la pr
 
 #### 5.4.2. Applications Wireflow Diagrams
 
-#### 5.4.3. Applications Mock-ups
+### 5.4.3. Applications Mock-ups
+
+#### Versión Web
+
+Las pantallas de inicio de sesión y registro mantienen un diseño uniforme y accesible para ambos segmentos de usuario (Residentes y Administradores Inmobiliarios). En el módulo de inicio de sesión, el usuario ingresa sus credenciales de acceso para validar su identidad y acceder al panel de control. Por su parte, la pantalla de registro presenta un formulario intuitivo para la creación de nuevas cuentas, solicitando los campos esenciales como correo electrónico y contraseña, optimizados para un ingreso ágil y seguro a la plataforma web de **QuakExit**.
+
+
+<p align="center">
+  <img src="assets/cap6/frontend/despliegue/FrontendQuakExitDesplegado.png" alt="landing wireframe 5" width="800" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/frontend/despliegue/FrontendQuakExitDesplegadoRegistro.png" alt="landing wireframe 5" width="800" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/frontend/despliegue/FrontendQuakExitDesplegadoCuentaCreadayPantallaDashboard.png" alt="landing wireframe 5" width="800" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/frontend/FrontIot3.png" alt="landing wireframe 5" width="800" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/frontend/FrontIot4.png" alt="landing wireframe 5" width="800" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/frontend/FrontIot5.png" alt="landing wireframe 5" width="800" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/frontend/FrontIot6.png" alt="landing wireframe 5" width="800" />
+</p>
+
 
 #### 5.4.4. Applications User Flow Diagrams
 
