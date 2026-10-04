@@ -1943,6 +1943,26 @@ contenido sin detalles visuales. Su objetivo es definir la jerarquía informativ
 Este diseño inicial se enfoca en la lógica y disposición del contenido, sin aplicar aún colores, imágenes o estilos
 gráficos.
 
+<p align="center">
+  <img src="assets/cap5/wireframes/landign1wireframe.jpeg" alt="landing wireframe 1" width="800" />
+</p>
+
+<p align="center">
+  <img src="assets/cap5/wireframes/landign2wireframe.jpeg" alt="landing wireframe 2" width="800" />
+</p>
+
+<p align="center">
+  <img src="assets/cap5/wireframes/landign3wireframe.jpeg" alt="landing wireframe 3" width="800" />
+</p>
+
+<p align="center">
+  <img src="assets/cap5/wireframes/landign4wireframe.jpeg" alt="landing wireframe 4" width="800" />
+</p>
+
+<p align="center">
+  <img src="assets/cap5/wireframes/landign5wireframe.jpeg" alt="landing wireframe 5" width="800" />
+</p>
+
 
 #### 5.3.2. Landing Page Mock-up
 
