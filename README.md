@@ -2013,7 +2013,7 @@ En esta sección se presenta la estructura funcional preliminar de las pantallas
 
 ![Dispositivos](assets/cap5/wireframes/Application/Dispositivos.png)
 
-![Mi Perfil](assets/cap5/wireframes/Application/Mi perfil.png)
+![Mi Perfil](assets/cap5/wireframes/Application/Miperfil.png)
 
 ![Emergencias](assets/cap5/wireframes/Application/Emergencias.png)
 
