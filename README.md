@@ -1966,6 +1966,39 @@ gráficos.
 
 #### 5.3.2. Landing Page Mock-up
 
+El mockup de la landing page de **QuakExit** muestra una versión visual refinada y de alta fidelidad del diseño final de la interfaz web. Siguiendo las *General Style Guidelines* definidas, el diseño respeta la paleta de colores institucional, la jerarquía tipográfica y los patrones de contraste visual necesarios para proyectar seguridad y claridad. 
+
+El contenido está estructurado de forma atractiva y funcional, destacando la propuesta de valor principal de QuakExit: la automatización física e inmediata de rutas de evacuación residencial frente a eventos sísmicos mediante tecnología IoT. Las distintas secciones explican de manera detallada el funcionamiento del sistema en los primeros segundos del sismo, sus beneficios tanto para propietarios de Smart Homes como para proyectos inmobiliarios (B2B), e incluyen botones de llamado a la acción (*Call to Action*), demostraciones dinámicas de la tecnología de desbloqueo y un formulario de contacto para cotizaciones. Este mockup transmite una experiencia profesional, confiable y orientada a la protección de la vida humana.
+
+<p align="center">
+  <img src="assets/cap5/wireframes/mockup1landing.jpeg" alt="landing wireframe 5" width="800" />
+</p>
+
+<p align="center">
+  <img src="assets/cap5/wireframes/mockup3landing.jpeg" alt="landing wireframe 5" width="800" />
+</p>
+
+<p align="center">
+  <img src="assets/cap5/wireframes/mockup4landing.jpeg" alt="landing wireframe 5" width="800" />
+</p>
+
+<p align="center">
+  <img src="assets/cap5/wireframes/mockup5landing.jpeg" alt="landing wireframe 5" width="800" />
+</p>
+
+<p align="center">
+  <img src="assets/cap5/wireframes/mockup6landing.jpeg" alt="landing wireframe 5" width="800" />
+</p>
+
+<p align="center">
+  <img src="assets/cap5/wireframes/mockup7landing.jpeg" alt="landing wireframe 5" width="800" />
+</p>
+
+<p align="center">
+  <img src="assets/cap5/wireframes/mockup8landing.jpeg" alt="landing wireframe 5" width="800" />
+</p>
+
+
 ### 5.4. Applications UX/UI Design
 
 #### 5.4.1. Applications Wireframes
