@@ -2064,6 +2064,18 @@ Los diagramas de flujo de usuario permiten entender cómo los usuarios interact�
 
 ### 5.5. Applications Prototyping
 
+#### Web application prototyping
+
+**Residentes / Dueños de Smart Homes**
+
+Se diseñó un prototipo interactivo para la plataforma web que permite a los usuarios monitorear la seguridad sísmica de su vivienda en tiempo real. La interfaz ofrece un panel centralizado donde los residentes pueden verificar el estado de conexión y nivel de batería de los hubs de **QuakExit**, supervisar eventos sísmicos recientes, realizar simulaciones de evacuación y configurar canales de notificaciones de emergencia, priorizando la usabilidad y la claridad informativa en situaciones críticas.
+
+<p align="center">
+  <img src="assets/cap5/wireframes/diagramafinal2.jpeg" alt="landing wireframe 5" width="800" />
+</p>
+
+
+
 ### 5.6. IoT Device Design
 
 <div style="page-break-after: always;"></div>
