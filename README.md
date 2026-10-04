@@ -1912,7 +1912,27 @@ búsqueda. A continuación, detallamos las principales etiquetas implementadas:
 
 #### 5.2.4. Searching Systems
 
+El sistema de navegación de la plataforma web está diseñado para ofrecer un acceso inmediato y accesible para que los usuarios utilizar las funciones operativas y de monitoreo, minimizando la carga cognitiva en situaciones de estrés.
+
+*   **Navegación Global:**
+    *   La plataforma web emplea una barra de navegación lateral persistente que agrupa las funcionalidades en 6 secciones principales: **Dashboard**, **Dispositivos**, **Simulacro**, **Perfil**, **Emergencias** y **Operaciones**. Esto permite al usuario alternar entre vistas de monitoreo y auditoría sin perder el contexto de la aplicación.
+*   **Navegación Auxiliar y Notificaciones:**
+    *   En la esquina superior derecha se sitúa un área de navegación constante que muestra el nombre de usuario ingresado y su rol del usuario, acompañado del icono para acceder rápidamente a notificaciones o alertas en tiempo real.
+*   **Navegación por Pestañas (Tab Navigation):**
+    *   Para organizar submódulos con alta densidad de información sin saturar el menú lateral, se implementan pestañas horizontales. Esto se evidencia en la sección de **Operaciones**, el usuario puede navegar fluidamente entre *Notificaciones*, *Auditoría*, *Reportes* y *Mantenimiento*.
+*   **Navegación Móvil (App Residentes):**
+    *   *(Mantiene el estándar definido)* Uso de una *Bottom Navigation Bar* para accesos rápidos en dispositivos móviles, priorizando el estado del sistema, simulacros y contactos de emergencia.
+
 #### 5.2.5. Navigation Systems
+
+Con el objetivo de evitar ostigamiento visual por el volumen de datos IoT y los registros históricos, el sistema proporciona herramientas de búsqueda contextualizadas directamente en las tablas de datos.
+
+*   **Búsqueda Directa:**
+    *   En paneles de listado como **Dispositivos**, se integra una barra de búsqueda dedicada *Buscar* en la parte superior de la lista de los dispositivos incorporados. Esto permite a los usuarios localizar instantáneamente nodos específicos escribiendo una variable de alguno de ellos, pero se le dará prioridad al atributo "Codigo".
+*   **Busqueda Avanzada a través de filtros:**
+    *   En secciones analíticas como el "Historial de notificaciones" dentro de **Operaciones**, se despliega una barra de filtros estructurada. Los usuarios pueden refinar la búsqueda combinando múltiples variables a través de menús desplegables y selectores de fechas, aplicando la búsqueda mediante el botón *Aplicar*.
+*   **Presentación Contextual de Resultados:**
+    *   Los resultados de búsqueda se organizan en tablas de datos que hacen uso intensivo de las etiquetas de estado del *Labeling System* para facilitar la lectura rápida. Por ejemplo, al buscar emergencias, las columnas muestran el estado con indicadores semánticos de color (`ACTIVE` en rojo, `DETECTED` en amarillo, `RESOLVED` en verde) y la severidad correspondiente (`CRITICAL`, `HIGH`, `LOW`). Del mismo modo, la búsqueda de dispositivos devuelve resultados apoyados por barras visuales de batería y "tags" de conexión (`ONLINE`, `SLEEPING`, `ALERT`).
 
 ### 5.3. Landing Page UI Design
 
