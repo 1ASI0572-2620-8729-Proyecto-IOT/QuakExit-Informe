@@ -2003,6 +2003,21 @@ El contenido está estructurado de forma atractiva y funcional, destacando la pr
 
 #### 5.4.1. Applications Wireframes
 
+En esta sección se presenta la estructura funcional preliminar de las pantallas principales de la aplicación QuakExit (panel operativo del residente). Los wireframes definen la jerarquía de información, la navegación lateral y la disposición de los componentes de cada pantalla, sin aplicar aún estilos visuales definitivos.
+
+![Login](assets/cap5/wireframes/Application/Login.png)
+
+![Registro](assets/cap5/wireframes/Application/Registro.png)
+
+![Dashboard](assets/cap5/wireframes/Application/Dashboard.png)
+
+![Dispositivos](assets/cap5/wireframes/Application/Dispositivos.png)
+
+![Mi Perfil](assets/cap5/wireframes/Application/Mi perfil.png)
+
+![Emergencias](assets/cap5/wireframes/Application/Emergencias.png)
+
+![Operaciones](assets/cap5/wireframes/Application/Operaciones.png)
 #### 5.4.2. Applications Wireflow Diagrams
 
 ### 5.4.3. Applications Mock-ups
