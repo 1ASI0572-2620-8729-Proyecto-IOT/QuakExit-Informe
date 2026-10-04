@@ -2041,7 +2041,26 @@ Las pantallas de inicio de sesión y registro mantienen un diseño uniforme y ac
 </p>
 
 
-#### 5.4.4. Applications User Flow Diagrams
+### 5.4.4. Applications User Flow Diagrams
+
+Los diagramas de flujo de usuario permiten entender cómo los usuarios interactúan con la aplicación desde una perspectiva lógica, no visual. Estos diagramas incluyen decisiones condicionales, caminos alternativos y respuestas del sistema según la acción realizada por el usuario.
+
+**User Flow – Residente / Dueño de Smart Home (Versión Web):**
+
+1. Inicia sesión o crea una cuenta
+2. Accede al Dashboard principal de monitoreo
+3. Visualiza el estado sísmico en tiempo real y el nivel de batería de sus hubs
+4. Consulta el listado de dispositivos IoT vinculados
+5. (Opcional) Vincula un nuevo dispositivo o hub de evacuación
+6. Accede a la sección de emergencias para revisar el historial de alertas
+7. (Opcional) Ejecuta una simulación de lectura sísmica para prueba de evacuación
+8. Configura canales de notificación (Push, SMS, WhatsApp) en el panel de operaciones
+9. Cierra sesión de forma segura
+
+<p align="center">
+  <img src="assets/cap5/wireframes/diagramafinal.jpeg" alt="landing wireframe 5" width="800" />
+</p>
+
 
 ### 5.5. Applications Prototyping
 
