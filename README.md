@@ -1938,6 +1938,12 @@ Con el objetivo de evitar ostigamiento visual por el volumen de datos IoT y los 
 
 #### 5.3.1. Landing Page Wireframe
 
+En esta sección representamos una estructura funcional preliminar que organiza los principales bloques de
+contenido sin detalles visuales. Su objetivo es definir la jerarquía informativa y el flujo de navegación del usuario.
+Este diseño inicial se enfoca en la lógica y disposición del contenido, sin aplicar aún colores, imágenes o estilos
+gráficos.
+
+
 #### 5.3.2. Landing Page Mock-up
 
 ### 5.4. Applications UX/UI Design
