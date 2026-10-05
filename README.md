@@ -2001,7 +2001,7 @@ El contenido está estructurado de forma atractiva y funcional, destacando la pr
 
 ### 5.4. Applications UX/UI Design
 
-#### 5.4.1. Applications Wireframes
+### 5.4.1. Applications Wireframes
 
 En esta sección se presenta la estructura funcional preliminar de las pantallas principales de la aplicación QuakExit (panel operativo del residente). Los wireframes definen la jerarquía de información, la navegación lateral y la disposición de los componentes de cada pantalla, sin aplicar aún estilos visuales definitivos.
 
@@ -2018,7 +2018,12 @@ En esta sección se presenta la estructura funcional preliminar de las pantallas
 ![Emergencias](assets/cap5/wireframes/Application/Emergencias.png)
 
 ![Operaciones](assets/cap5/wireframes/Application/Operaciones.png)
-#### 5.4.2. Applications Wireflow Diagrams
+
+### 5.4.2. Applications Wireflow Diagrams
+
+A continuación se detallarán los Wireflow Diagrams para los usuarios de nuestro aapplicativo. Esto se analizó tomando en cuenta las User Stories y las necesidades que los usuarios podrían presentar al utilizar nuestro servicio.
+
+![Application Wireflow Diagram](assets/cap5/wireframes/Application/Wireflow.png)
 
 ### 5.4.3. Applications Mock-ups
 
