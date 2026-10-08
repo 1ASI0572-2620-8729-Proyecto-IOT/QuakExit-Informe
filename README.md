@@ -2056,7 +2056,6 @@ Los diagramas de flujo de usuario permiten entender cómo los usuarios interact�
   <img src="assets/cap5/wireframes/diagramafinal.jpeg" alt="landing wireframe 5" width="800" />
 </p>
 
-
 ### 5.5. Applications Prototyping
 
 #### Web application prototyping
@@ -2070,8 +2069,120 @@ Se diseñó un prototipo interactivo para la plataforma web que permite a los us
 </p>
 
 
-
 ### 5.6. IoT Device Design
+
+El QuakExit Hub es el dispositivo IoT que se instala en la vivienda. Su función es detectar un sismo, liberar la chapa electromagnética de la puerta, encender las luces de emergencia y activar una alarma sonora, todo de forma local (Edge Computing), es decir, sin depender de internet ni de la nube. Este diseño responde a los supuestos técnicos de la sección 1.2.2.2 y a las historias de usuario de las épicas EP02, EP03, EP04 y EP06.
+ 
+#### Criterios de diseño
+ 
+- **Operación sin conexión (offline):** la decisión de abrir la puerta la toma el microcontrolador ESP32. La conexión de red no interviene en la acción crítica.
+- **Fail-safe:** la puerta solo permanece cerrada mientras el ESP32 mantiene energizado el relé. Si el ESP32 se apaga, falla o el sensor deja de responder, el relé se desenergiza y la chapa libera la puerta.
+- **Monitoreo de energía:** el firmware mide la energía de la red y el nivel de la batería de respaldo, e informa al usuario mediante el LED amarillo.
+- **Interfaz física clara:** tres LEDs de colores y un buzzer comunican el estado del sistema, en coherencia con la guía de estilo IoT (sección 5.1.2) y con las etiquetas de la sección 5.2.2: verde (normal), amarillo (precaución) y rojo (emergencia).
+- **Simulacro integrado:** un botón físico permite probar que la puerta se libera sin necesidad de un sismo real (US16).
+#### Herramienta utilizada
+ 
+El diseño del circuito y la simulación del firmware se realizaron en **Wokwi**, que permite armar el circuito con una placa ESP32 y ejecutar el código directamente. Para representar las magnitudes eléctricas que en el dispositivo real miden dos divisores de voltaje, el circuito incluye dos potenciómetros que se ajustan con el ratón.
+ 
+#### Componentes del dispositivo
+ 
+| Componente                            | Función en el sistema                                                                                                                  | Pin ESP32                  |
+| :------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------- | :------------------------- |
+| ESP32                                 | Microcontrolador. Lee el sensor, decide cuándo hay un sismo y controla todas las salidas.                                              | —                          |
+| Acelerómetro MPU6050                  | Sensor sísmico. Mide la aceleración en los tres ejes. Se comunica con el ESP32 por I2C.                                                | GPIO21 (SDA), GPIO22 (SCL) |
+| Módulo relé                           | Interruptor que controla la chapa electromagnética. Mientras está energizado, la puerta permanece cerrada; al desenergizarse, la libera. | GPIO16                     |
+| Botón azul                            | Inicia un simulacro de evacuación con una pulsación corta. Con una pulsación de 3 segundos rearma el sistema tras una emergencia.      | GPIO32                     |
+| LED blanco                            | Representa las luces de emergencia que iluminan la ruta de evacuación.                                                                 | GPIO17                     |
+| LED verde                             | Estado normal: sistema armado y puerta cerrada.                                                                                        | GPIO25                     |
+| LED amarillo                          | Precaución: fijo indica modo respaldo (se perdió la energía de la red); parpadeante indica batería baja.                               | GPIO26                     |
+| LED rojo                              | Emergencia o simulacro en curso.                                                                                                       | GPIO27                     |
+| Buzzer                                | Alarma sonora: continua en emergencia y con pitidos cortos durante un simulacro.                                                       | GPIO14                     |
+| Potenciómetro de red                  | Simula el voltaje del adaptador de 5 V. Al moverlo se simula un corte o el regreso de la energía de la red.                            | GPIO35                     |
+| Potenciómetro de batería              | Simula el voltaje de la batería de respaldo. Al moverlo se simula una carga alta o baja.                                               | GPIO34                     |
+| Resistencias de 220 Ω                 | Limitan la corriente de cada LED para protegerlo.                                                                                      | —                          |
+ 
+**Nota sobre los potenciómetros.** Son los dos "relojes" que se ven a la derecha del circuito. No forman parte del dispositivo físico: en el prototipo real, esa función la cumplirán dos divisores de voltaje (10 kΩ / 15 kΩ para la red y 100 kΩ / 100 kΩ para la batería). En la simulación permiten cambiar el valor con el ratón para probar el comportamiento del firmware.
+ 
+**Nota sobre la chapa.** En la simulación la chapa no se dibuja. Se observa el relé, que emite un clic cada vez que cambia de estado. En el prototipo físico, la chapa de 12 V se alimentará por el contacto normalmente abierto (NO) del relé, con un diodo de protección en paralelo.
+ 
+#### Circuito en Wokwi
+ 
+Evidencia de nuestro Circuito del QuakExit Hub en Wokwi:
+ 
+<p align="center">
+  <img src="assets/cap5/Circuito del QuakExit Hub en Wokwi.png" alt="Circuito del QuakExit Hub en Wokwi" width="800" />
+</p>
+
+**Proyecto en Wokwi:** [https://wokwi.com/projects/477286927660936193](https://wokwi.com/projects/477286927660936193)
+ 
+El enlace permite ver el circuito, leer el código del firmware y ejecutar la simulación.
+ 
+#### Funcionamiento del firmware
+ 
+El firmware funciona como una máquina de tres estados:
+ 
+| Estado    | Qué ocurre                                                                                                      | Salidas                                                           |
+| :-------- | :-------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------- |
+| NORMAL    | Monitorea el sensor y la energía. La puerta permanece cerrada.                                                  | Relé energizado, LED verde (o amarillo si hay precaución).        |
+| DRILL     | Simulacro de 10 segundos iniciado con el botón. Libera la puerta como en un sismo y luego vuelve a NORMAL.      | Relé desenergizado, luces y LED rojo encendidos, pitidos cortos.  |
+| EMERGENCY | Se activa al detectar un sismo o al fallar el sensor. Permanece activo hasta que el usuario rearma el sistema.  | Relé desenergizado, luces y LED rojo encendidos, buzzer continuo. |
+ 
+**Detección sísmica.** El sensor se lee unas 50 veces por segundo. Se calcula cuánto cambia la aceleración entre dos lecturas consecutivas y, si ese cambio supera 0.28 g en tres lecturas dentro de una ventana de 200 milisegundos, se considera que hay un sismo. Este umbral es ajustable y corresponde a la sensibilidad definida en la historia de usuario US10.
+ 
+**Rearme.** Tras una emergencia, el sistema vuelve a cerrar la puerta cuando el usuario mantiene pulsado el botón durante 3 segundos y no se ha detectado movimiento en los últimos 5 segundos.
+ 
+**Fallo del sensor.** Si el MPU6050 no responde en cinco lecturas seguidas, o no responde al encender el dispositivo, el sistema entra en emergencia y libera la puerta.
+ 
+**Monitoreo de energía.** Cada 5 segundos el firmware imprime por el monitor serial el estado, la fuente de energía y el voltaje de red y batería.
+ 
+#### Pruebas en la simulación
+ 
+| Prueba           | Cómo realizarla                                                 | Resultado esperado                                                                                |
+| :--------------- | :-------------------------------------------------------------- | :------------------------------------------------------------------------------------------------ |
+| Arranque normal  | Poner el potenciómetro de red y el de batería cerca del máximo. | LED verde encendido, relé energizado y `state=NORMAL` en el monitor serial.                       |
+| Corte de energía | Bajar el potenciómetro de red a menos de la mitad.              | LED amarillo fijo y `power=BACKUP` en el monitor serial.                                          |
+| Batería baja     | Bajar el potenciómetro de batería.                              | LED amarillo parpadeante.                                                                         |
+| Simulacro        | Pulsar el botón azul.                                           | Relé libera la puerta, luces y LED rojo encendidos, pitidos cortos y regreso a NORMAL a los 10 s. |
+| Sismo            | Sacudir el MPU6050 con sus controles de aceleración.            | `[EMERGENCY] seismic activity detected`, relé desenergizado, buzzer continuo.                     |
+| Rearme           | Mantener el botón 3 segundos, sin movimiento.                   | `[REARM] system armed` y puerta cerrada de nuevo.                                                 |
+| Fallo del sensor | Desconectar el MPU6050 y reiniciar.                             | El sistema entra en emergencia al arrancar.                                                       |
+
+Evidencia de estado normal:
+
+Verde: estado normal. La puerta está cerrada y todo está bien.
+
+<p align="center">
+  <img src="assets/cap5/modo normal.png" alt="Evidencia de estado normal" width="800" />
+</p>
+
+Amarillo: es una precaución que solo aparece cuando el sistema está en NORMAL. Si está fijo, se cortó la luz de la red y funciona con la batería de respaldo. Si parpadea, la batería está baja. No es un estado aparte, es un aviso dentro de NORMAL.
+
+<p align="center">
+  <img src="assets/cap5/baja bateria.png" alt="Evidencia de estado normal" width="800" />
+</p>
+
+Evidencia de estado de simulacro:
+
+Rojo + blanco: alarma activa, y se encienden en dos casos distintos: simulacro (DRILL) y emergencia real (EMERGENCY).
+
+<p align="center">
+  <img src="assets/cap5/simulacro.png" alt="Evidencia de estado de simulacro" width="800" />
+</p>
+
+La diferencia entre simulacro y emergencia no se ve en las luces, se oye en el buzzer:
+
+Simulacro: pitidos cortos, y termina solo a los 10 segundos.
+Emergencia: buzzer continuo, y no se apaga hasta que mantengas el botón 3 segundos.
+ 
+#### Código fuente
+ 
+El firmware está escrito en C++ para Arduino (ESP32). Utiliza solo la librería `Wire`, incluida con la plataforma. El código se encuentra en el proyecto de Wokwi y en el repositorio del equipo: `[COMPLETAR: URL del repositorio del firmware]`.
+ 
+#### Alcance actual y siguientes pasos
+ 
+- La versión actual del firmware no se comunica con el Edge API ni con el backend. El estado se muestra por el monitor serial.
+- En el siguiente Sprint se integrará el envío de eventos (emergencia, simulacro, pérdida de red y batería baja) al Edge API, de modo que la aplicación web pueda mostrar el historial y las notificaciones.
+- El prototipo físico se armará con los componentes de la tabla, sustituyendo los potenciómetros por divisores de voltaje y añadiendo la chapa electromagnética real.
 
 <div style="page-break-after: always;"></div>
 
