@@ -2793,13 +2793,45 @@ Los analíticos muestran la participación de los integrantes en cada repositori
 
 ---
 
-##### Conclusiones
+## Conclusiones
 
-- A través del proceso de investigación y validación con la metodología Lean UX, se comprobó que existe una necesidad crítica en el mercado residencial (B2C) e inmobiliario (B2B) por sistemas de seguridad que superen el enfoque meramente informativo. QuakExit demostró viabilidad al cubrir la brecha existente entre las alertas tempranas estatales (SISMATE) y la ejecución de acciones físicas de salvaguarda, como el desbloqueo automático de cerraduras en situaciones de falta de suministro eléctrico.
-- La aplicación del Domain-Driven Design (DDD) a nivel estratégico, apoyada en dinámicas de EventStorming, permitió descomponer eficazmente la complejidad del dominio sísmico e IoT. Como resultado, se identificaron 6 Bounded Contexts altamente cohesionados, aislando procesos críticos como el _Emergency Core_ y el _IoT & Energy Management_ de los dominios de soporte, lo que garantiza que la lógica de evacuación no se vea afectada por fallos en otras áreas del sistema.
-- El diseño de la Arquitectura de Software bajo el Modelo C4 validó la factibilidad técnica del proyecto. Se consolidó una topología híbrida que combina el _Edge Computing_ local (mediante microcontroladores ESP32 operando offline con baterías de respaldo) y una infraestructura _Serverless_ en AWS orientada a eventos. Esto asegura latencias mínimas para la acción de los actuadores y una alta escalabilidad sin costos iniciales prohibitivos.
-- El modelado táctico del software permitió definir con claridad las capas internas de cada Bounded Context (Dominio, Aplicación, Infraestructura e Interfaz). La definición de Agregados, Entidades y Objetos de Valor asegura que las reglas de negocio, como el procesamiento de métricas sísmicas y el umbral de activación fail-safe, queden encapsuladas y sean trazables directamente hasta el código fuente y el diseño de la base de datos.
-- La organización del equipo en subgrupos especializados (estrategia y requerimientos, arquitectura macro y diseño táctico) garantizó el cumplimiento de los hitos del primer avance (AV1). Esta distribución permitió satisfacer los criterios del Student Outcome 5 (ABET), evidenciando un entorno colaborativo y un liderazgo compartido en la toma de decisiones técnicas.
+### Conclusiones y recomendaciones
+
+#### Conclusiones
+
+- **El problema fue validado con los dos segmentos.** Mediante la metodología Lean UX y las entrevistas a dueños de Smart Homes e inmobiliarias, se comprobó que existe una necesidad real de sistemas que vayan más allá de lo informativo. QuakExit cubre la brecha entre las alertas tempranas estatales (SISMATE) y la acción física de salvaguarda: desbloquear la chapa electromagnética y encender las luces de emergencia en los primeros segundos del sismo, incluso con corte de energía, gracias a la batería de respaldo.
+
+- **El Domain-Driven Design permitió ordenar la complejidad del dominio.** Con EventStorming y Context Mapping se identificaron 6 Bounded Contexts cohesionados, separando los procesos críticos (_Emergency Core_ e _IoT & Energy Management_) de los dominios de soporte. Así, la lógica de evacuación no depende de fallos en otras áreas del sistema.
+
+- **La arquitectura responde a las condiciones reales de un sismo.** El modelo C4 consolidó una topología híbrida: _Edge Computing_ local en el ESP32, que ejecuta la acción crítica sin conexión, y una infraestructura en la nube para monitoreo, notificaciones e historial. Esto asegura latencias mínimas en los actuadores y escalabilidad sin costos iniciales prohibitivos.
+
+- **El modelado táctico dejó las reglas de negocio trazables.** La definición de capas (Dominio, Aplicación, Infraestructura e Interfaz), Agregados, Entidades y Objetos de Valor permite rastrear reglas como el procesamiento de lecturas sísmicas y el umbral de activación hasta el código y la base de datos.
+
+- **El prototipo IoT demostró el comportamiento esperado.** El circuito simulado en Wokwi valida los tres estados del firmware (NORMAL, DRILL y EMERGENCY), el mecanismo fail-safe del relé, la detección sísmica por umbral (0.28 g) y el monitoreo de energía de red y batería. Queda pendiente medir el tiempo real de apertura en hardware físico.
+
+- **El diseño UI/UX unificó la experiencia en todas las plataformas.** Las Style Guidelines, la arquitectura de información, los wireframes y mock-ups de la Landing Page y de la aplicación garantizaron coherencia visual y una navegación pensada para reducir la carga cognitiva en situaciones de estrés.
+
+- **El Sprint 1 entregó productos desplegados y documentados.** Se publicaron la Landing Page (Netlify), los Web Services con documentación OpenAPI/Swagger (Render) y la Web Application (Vercel). Esta última permite registrarse, completar el perfil de vivienda, vincular un QuakExit Hub, consultar la batería y revisar el historial de eventos. Se complementó con pruebas unitarias y escenarios BDD.
+
+- **El trabajo en equipo fue efectivo y trazable.** La división en subgrupos y, luego, la asignación de líderes y colaboradores por aspecto, junto con Scrum, Trello, GitFlow y Conventional Commits, permitieron avanzar en paralelo y cumplir los hitos del AV1 y del TB1, evidenciando el Student Outcome 5 (ABET).
+
+#### Recomendaciones
+
+1. **Pasar del prototipo simulado al físico.** Armar el hub con el ESP32, el MPU6050, el relé y la chapa electromagnética real, reemplazando los potenciómetros por divisores de voltaje, y medir el tiempo de apertura frente a la meta de menos de 5 segundos.
+
+2. **Integrar el hub con el backend.** Enviar los eventos de emergencia, simulacro, pérdida de red y batería baja para que la aplicación muestre el historial y las notificaciones en tiempo real.
+
+3. **Desarrollar la aplicación móvil y las notificaciones push y SMS.** Así el usuario recibirá el aviso incluso fuera de casa, y se completarán los contactos de emergencia.
+
+4. **Calibrar y validar la detección sísmica.** Probar el umbral con vibraciones reales (camiones, golpes, puertas) para reducir falsos positivos sin perder sensibilidad.
+
+5. **Migrar a una infraestructura estable.** Los planes gratuitos (Render, Aiven) se suspenden por inactividad; un sistema de seguridad no puede tardar minutos en responder, por lo que se recomienda un despliegue sin suspensión.
+
+6. **Completar el módulo B2B y los pilotos.** Implementar el dashboard del edificio y la configuración por lotes (US19 y US20), y probar el sistema en un piso piloto con una inmobiliaria.
+
+7. **Buscar certificación.** Validar el sistema con INDECI, requisito que los entrevistados del segmento B2B señalaron como clave para su adopción.
+
+8. **Cerrar las tareas pendientes del Sprint 1.** Terminar las tareas en proceso (internacionalización, accesibilidad, SEO, términos y condiciones, formulario de contacto y video) y reflejarlas en el tablero de Trello.
 
 <div style="page-break-after: always;"></div>
 
@@ -2807,17 +2839,91 @@ Los analíticos muestran la participación de los integrantes en cada repositori
 
 ##### Bibliografía
 
+**Contexto del problema y alertas sísmicas**
+
+Instituto Geofísico del Perú [IGP]. (2023). _Centro Nacional de Alerta de Tsunamis y Sismos_. Gobierno del Perú. https://www.igp.gob.pe/
+
+Instituto Nacional de Defensa Civil [INDECI]. (s.f.). _Portal institucional del INDECI_. Gobierno del Perú. https://www.gob.pe/indeci
+
+Ministerio de Transportes y Comunicaciones [MTC]. (s.f.). _Sistema de Mensajería de Alerta Temprana de Emergencias (SISMATE)_. Gobierno del Perú. https://www.gob.pe/institucion/mtc/colecciones/532-sistema-de-mensajeria-de-alerta-temprana-de-emergencias-sismate
+
+Servicio Sismológico Nacional de México. (s.f.). _Sistema de Alerta Sísmica Mexicano (SASMEX)_. https://sasmex.net/
+
+SASSLA. (s.f.). _Sistema de Alerta Sísmica_. https://www.sassla.mx/
+
+U.S. Geological Survey [USGS]. (s.f.). _ShakeAlert: Earthquake Early Warning System_. https://www.shakealert.org/
+
+**Metodologías de requisitos y diseño de producto**
+
+Adzic, G. (2012). _Impact Mapping: Making a big impact with software products and projects_. Provoking Thoughts. https://www.impactmapping.org/
+
+Gothelf, J., & Seiden, J. (2021). _Lean UX: Designing great products with agile teams_ (3.ª ed.). O'Reilly Media. https://jeffgothelf.com/lean-ux-book/
+
+Schwaber, K., & Sutherland, J. (2020). _The Scrum Guide_. https://scrumguides.org/scrum-guide.html
+
+**Domain-Driven Design y arquitectura de software**
+
 Brandolini, A. (2021). _Introducing EventStorming_. EventStorming. https://www.eventstorming.com/
 
 Brown, S. (s.f.). _The C4 model for visualising software architecture_. C4 Model. https://c4model.com/
 
 DDD Crew. (2023). _Bounded Context Canvas_. GitHub. https://github.com/ddd-crew/bounded-context-canvas
 
-Gothelf, J., & Seiden, J. (2021). _Lean UX: Designing great products with agile teams_. Jeff Gothelf. https://jeffgothelf.com/lean-ux-book/
+Evans, E. (2003). _Domain-Driven Design: Tackling complexity in the heart of software_. Addison-Wesley. https://www.domainlanguage.com/ddd/
 
-Instituto Geofísico del Perú [IGP]. (2023). _Centro Nacional de Alerta de Tsunamis y Sismos_. Gobierno del Perú. https://www.igp.gob.pe/
+Hofer, S., & Schwentner, H. (s.f.). _Domain Storytelling_. https://domainstorytelling.org/
 
-Ministerio de Transportes y Comunicaciones [MTC]. (s.f.). _Sistema de Mensajería de Alerta Temprana de Emergencias (SISMATE)_. Gobierno del Perú. https://www.gob.pe/institucion/mtc/colecciones/532-sistema-de-mensajeria-de-alerta-temprana-de-emergencias-sismate
+Vernon, V. (2013). _Implementing Domain-Driven Design_. Addison-Wesley.
+
+**IoT, hardware y firmware**
+
+Espressif Systems. (s.f.). _ESP32 Series_. https://www.espressif.com/en/products/socs/esp32
+
+InvenSense / TDK. (s.f.). _MPU-6050: 6-axis motion tracking device_. https://invensense.tdk.com/products/motion-tracking/6-axis/mpu-6050/
+
+MQTT.org. (s.f.). _MQTT: The standard for IoT messaging_. https://mqtt.org/
+
+Wokwi. (s.f.). _Wokwi: World's most advanced ESP32 simulator_. https://wokwi.com/
+
+**Desarrollo, pruebas y documentación de servicios**
+
+Astro. (s.f.). _Astro documentation_. https://docs.astro.build/
+
+Cucumber. (s.f.). _Gherkin reference_. https://cucumber.io/docs/gherkin/
+
+JaCoCo. (s.f.). _JaCoCo Java Code Coverage Library_. https://www.jacoco.org/jacoco/
+
+Meta Platforms. (s.f.). _React documentation_. https://react.dev/
+
+OpenAPI Initiative. (s.f.). _OpenAPI Specification_. https://spec.openapis.org/oas/latest.html
+
+Spring. (s.f.). _Spring Boot_. VMware. https://spring.io/projects/spring-boot
+
+Vite. (s.f.). _Vite documentation_. https://vite.dev/
+
+**Gestión de configuración y despliegue**
+
+Conventional Commits. (s.f.). _Conventional Commits 1.0.0_. https://www.conventionalcommits.org/
+
+Driessen, V. (2010). _A successful Git branching model_. https://nvie.com/posts/a-successful-git-branching-model/
+
+Netlify. (s.f.). _Netlify documentation_. https://docs.netlify.com/
+
+Preston-Werner, T. (s.f.). _Semantic Versioning 2.0.0_. https://semver.org/
+
+Render. (s.f.). _Free instances_. https://render.com/docs/free
+
+Vercel. (s.f.). _Vercel documentation_. https://vercel.com/docs
+
+**Calidad, accesibilidad y ética profesional**
+
+Association for Computing Machinery [ACM]. (2018). _ACM Code of Ethics and Professional Conduct_. https://www.acm.org/code-of-ethics
+
+Google. (s.f.). _Lighthouse overview_. Chrome for Developers. https://developer.chrome.com/docs/lighthouse/overview
+
+World Wide Web Consortium [W3C]. (2018). _Web Content Accessibility Guidelines (WCAG) 2.1_. https://www.w3.org/TR/WCAG21/
+
+ABET. (s.f.). _Criteria for accrediting engineering programs_. https://www.abet.org/
 
 <div style="page-break-after: always;"></div>
 
@@ -2831,11 +2937,7 @@ Ministerio de Transportes y Comunicaciones [MTC]. (s.f.). _Sistema de Mensajerí
 
 - **Frontend:** [![Frontend Page](https://img.shields.io/badge/Visit-Frontend%20Page-blue?style=for-the-badge&logo=netlify&logoColor=white)](https://frontend-quak-exit.vercel.app/)
 
-<!-- Pegar abajo, borra el comentario cuando pegues :P -->
-
 - **Backend (Swagger UI):** [![Swagger UI](https://img.shields.io/badge/API-Swagger%20UI-green?style=for-the-badge&logo=swagger&logoColor=white)](https://neurozen-backend-mobile.onrender.com/swagger/index.html)
-
-<!-- Pegar arriba, borra el comentario cuando pegues :P -->
 
 - **Repositorio Landing Page** [![Landing Page Repository](https://img.shields.io/badge/Landing-repository-black?style=for-the-badge&logo=github&logoColor=white)](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/QuakExit-Landing)
 
