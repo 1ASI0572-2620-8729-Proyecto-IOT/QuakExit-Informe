@@ -2670,7 +2670,7 @@ En el Sprint 1 se publicó la primera versión de la Landing Page y se implement
 | Estado del dispositivo | US07       | El panel muestra el porcentaje de batería y el estado de conexión. | `![Battery](assets/cap6/sprint1/web-device-status.png)` |
 | Historial de eventos   | US14       | Lista de eventos sísmicos y simulacros con fecha y hora.           | `![History](assets/cap6/sprint1/web-event-history.png)` |
 
-- **Video de navegación (Product Navigation):** `[COMPLETAR: URL de Microsoft Stream/Clipchamp]`
+- **Video de navegación (Product Navigation):** [https://drive.google.com/file/d/1vGnquQHfiYyPUvgIyMRiK7XKMtCH8IdE/view?usp=sharing](https://drive.google.com/file/d/1vGnquQHfiYyPUvgIyMRiK7XKMtCH8IdE/view?usp=sharing)
 
 ##### 6.2.1.7. Services Documentation Evidence for Sprint Review
 
