@@ -2937,7 +2937,7 @@ ABET. (s.f.). _Criteria for accrediting engineering programs_. https://www.abet.
 
 - **Frontend:** [![Frontend Page](https://img.shields.io/badge/Visit-Frontend%20Page-blue?style=for-the-badge&logo=netlify&logoColor=white)](https://frontend-quak-exit.vercel.app/)
 
-- **Backend (Swagger UI):** [![Swagger UI](https://quakexit-back.onrender.com/swagger-ui/index.html)](https://quakexit-back.onrender.com/swagger-ui/index.html)
+- **Backend (Swagger UI):** [![Swagger UI](https://img.shields.io/badge/API-Swagger%20UI-green?style=for-the-badge&logo=swagger&logoColor=white)](https://quakexit-back.onrender.com/swagger-ui/index.html)
 
 - **Repositorio Landing Page** [![Landing Page Repository](https://img.shields.io/badge/Landing-repository-black?style=for-the-badge&logo=github&logoColor=white)](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/QuakExit-Landing)
 
