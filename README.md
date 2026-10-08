@@ -2298,9 +2298,9 @@ A continuación se describe la configuración del despliegue de cada producto di
 5. El sitio queda disponible por HTTPS en `https://quakexit-landing.netlify.app/`.
 6. Se verifica que los call-to-action apuntan a las vistas correspondientes de las aplicaciones.
 
-**Web Application (Netlify)**
+**Web Application (Vercel)**
 
-1. Se importa el repositorio `Frontend-QuakExit` desde GitHub en un nuevo sitio de Netlify.
+1. Se importa el repositorio `Frontend-QuakExit` desde GitHub en un nuevo sitio de Vercel.
 2. Se configura el comando de construcción `npm run build` y el directorio de publicación `dist`.
 3. Se define la variable de entorno `VITE_API_URL` con la URL pública de los Web Services.
 4. Se agrega la regla de redirección `/* /index.html 200` para el enrutamiento de la aplicación de una sola página.
@@ -2324,9 +2324,11 @@ A continuación se describe la configuración del despliegue de cada producto di
 
 **QuakExit Hub (ESP32)**
 
-1. Se compila el firmware con PlatformIO.
-2. Se carga en el microcontrolador mediante USB.
-3. Se aprovisionan las credenciales Wi-Fi y los certificados MQTT del dispositivo.
+1. Se diseña el circuito del QuakExit Hub en Wokwi con una placa ESP32, el acelerómetro MPU6050, el módulo relé, los LEDs, el buzzer, el botón y dos potenciómetros que simulan el voltaje de red y de batería.
+2. Se escribe el firmware en C++ para Arduino (ESP32) y se carga en la simulación de Wokwi, que lo ejecuta directamente.
+3. Se verifica el comportamiento mediante el monitor serial y las salidas del circuito (estados NORMAL, DRILL y EMERGENCY), según la tabla de pruebas de la sección 5.6.
+4. El proyecto queda disponible en Wokwi: https://wokwi.com/projects/477286927660936193
+5. En el siguiente Sprint se cargará el firmware en el ESP32 físico mediante USB y se integrará el envío de eventos al backend.
 
 > **Software Architecture Deployment Diagram:** ver la sección [4.1.3.4](#4134-software-architecture-deployment-diagrams).
 
@@ -2412,12 +2414,12 @@ Los aspectos considerados en el Sprint 1 son: Landing Page (contenido y diseño;
 
 El objetivo del Sprint 1 es publicar la primera versión de la Landing Page, los Web Services y la Web Application, desplegadas y documentadas.
 
-- **Tablero del Sprint (Trello):** `[COMPLETAR: URL público del tablero]`
+- **Tablero del Sprint (Trello):** [https://trello.com/invite/b/6ac7bc383877b72e7c9c6f7f/ATTI13b131a0bab0ee2f504af69ea681923303610CC8/quakexit](https://trello.com/invite/b/6ac7bc383877b72e7c9c6f7f/ATTI13b131a0bab0ee2f504af69ea681923303610CC8/quakexit)
 
-> 📸 **SUBIR CAPTURA:** tablero de Trello del Sprint 1 con las columnas To-do / InProcess / ToReview / Done.
+Evidencias del Trello:
 
 <p align="center">
-  <img src="assets/cap6/sprint1/trello-sprint1.png" alt="Sprint 1 board" width="800" />
+  <img src="assets/cap6/trelloQuakExit.png" alt="Trello" width="800" />
 </p>
 
 | Story Id | Story Title                                        | Task Id | Task Title                                           | Task Description                                                                                          | Estimation (Hours) | Assigned To                    | Status    |
@@ -2458,13 +2460,15 @@ El objetivo del Sprint 1 es publicar la primera versión de la Landing Page, los
 
 ##### 6.2.1.4. Development Evidence for Sprint Review
 
-En el Sprint 1 se implementó la primera versión de la Landing Page (secciones El Problema, Cómo Funciona, Soluciones, Planes y Precios, Preguntas frecuentes y Contacto), de los Web Services (registro e inicio de sesión, perfil de vivienda, vinculación de dispositivo, estado de batería e historial de eventos) y de la Web Application que los consume. Los commits más relevantes por repositorio se detallan a continuación.
+En el Sprint 1 se implementó la primera versión de la Landing Page (secciones El Problema, Cómo Funciona, Soluciones, Planes y Precios, Preguntas frecuentes y Contacto), de los Web Services (registro e inicio de sesión, perfil de vivienda, vinculación de dispositivo, estado de batería e historial de eventos) y de la Web Application que los consume. A continuación se detalla el desarrollo de cada producto, su responsable y el repositorio donde se encuentra el código.
 
-| Repository                                        | Branch                      | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
-| :------------------------------------------------ | :-------------------------- | :-------- | :------------- | :------------------ | :----------------- |
-| 1ASI0572-2620-8729-Proyecto-IOT/QuakExit-Landing  | `[PEGAR SALIDA DEL SCRIPT]` |           |                |                     |                    |
-| 1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit  | `[PEGAR SALIDA DEL SCRIPT]` |           |                |                     |                    |
-| 1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit | `[PEGAR SALIDA DEL SCRIPT]` |           |                |                     |                    |
+| Producto | Repositorio | Desarrollado por | Alcance implementado en el Sprint 1 |
+| :------- | :---------- | :--------------- | :---------------------------------- |
+| Landing Page | [QuakExit-Landing](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/QuakExit-Landing) | Solis Chang, Santiago Valentino | Proyecto base con Astro y pnpm, sección principal, El Problema y Cómo Funciona, Soluciones por segmento, Planes y Precios, Preguntas frecuentes, formulario de contacto, diseño responsivo y despliegue en Netlify. |
+| Web Services (Backend) | [Backend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit) | Castro Picón, Manuel Fernando Joao | Endpoints de registro e inicio de sesión, perfil de vivienda, vinculación de dispositivo, estado de batería e historial de eventos sísmicos; persistencia con MySQL y documentación con OpenAPI/Swagger. |
+| Web Application (Frontend) | [Frontend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit) | Castro Picón, Manuel Fernando Joao | Pantallas de registro e inicio de sesión, formulario del perfil de vivienda, vista de vinculación de dispositivo, indicador de batería, historial de eventos y consumo de la API mediante Axios. |
+
+El historial completo de cambios de cada producto puede consultarse en la pestaña **Commits** de su repositorio en GitHub, y la participación por integrante se muestra en la sección 6.2.1.9 (Team Collaboration Insights during Sprint).
 
 ##### 6.2.1.5. Testing Suite Evidence for Sprint Review
 
