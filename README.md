@@ -1,5 +1,3 @@
-# Informe del Trabajo Final
-
 <div>
   <p align="center"><img src="assets/cap1/logo/upc-logo.png" alt="Logo UPC" width="150px" /></p>
   <p align="center"><b>Universidad Peruana de Ciencias Aplicadas</b></p>
@@ -58,8 +56,6 @@
 </table>
 
 </div>
-
-<p align="center"><b>Tabla 0.1.</b> Relación de integrantes del equipo.</p>
 
 <div>
   <p align="center"><b>Octubre, 2026</b></p>
