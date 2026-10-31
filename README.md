@@ -5,7 +5,7 @@
   <p align="center"><b>1ASI0572</b></p>
   <p align="center"><b>Desarrollo de Soluciones IoT</b></p>
   <p align="center">NRC</p>
-  <p align="center">8729</p>
+  <p align="center"><b>8729</b></p>
   <p align="center"><b>Informe de Trabajo Final</b></p>
   <p align="center">Docente</p>
   <p align="center"><b>León Baca, Marco Antonio</b></p>
