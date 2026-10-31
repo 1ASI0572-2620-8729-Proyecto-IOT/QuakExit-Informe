@@ -14,8 +14,6 @@
   <p align="center">Nombre del producto: QuakExit</p>
 </div>
 
----
-
 <h3 align="center">Relación de integrantes</h3>
 
 <div align="center">
@@ -66,8 +64,6 @@
 <div>
   <p align="center"><b>Octubre, 2026</b></p>
 </div>
-
----
 
 <div style="page-break-after: always;"></div>
 
