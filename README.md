@@ -60,18 +60,10 @@
 
 </div>
 <br style="page-break-after: always;">
-<br style="page-break-after: always;">
-<br style="page-break-after: always;">
-<br style="page-break-after: always;">
 <div>
   <p align="center"><b>Período 202620</b></p>
 </div>
 
-<br style="page-break-after: always;">
-<br style="page-break-after: always;">
-<br style="page-break-after: always;">
-<br style="page-break-after: always;">
-<br style="page-break-after: always;">
 <br style="page-break-after: always;">
 ## Project Report Collaboration Insights
 
