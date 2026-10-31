@@ -1,9 +1,9 @@
 <div>
   <p align="center"><img src="assets/cap1/logo/upc-logo.png" alt="Logo UPC" width="150px" /></p>
-  <p align="center"><b>Universidad Peruana de Ciencias Aplicadas</b></p>
+  <p align="center">Universidad Peruana de Ciencias Aplicadas</p>
   <p align="center">Carrera de Ingeniería de Software</p>
-  <p align="center">1ASI0572</p>
-  <p align="center">Desarrollo de Soluciones IoT</p>
+  <p align="center"><b>1ASI0572</b></p>
+  <p align="center"><b>Desarrollo de Soluciones IoT</b></p>
   <p align="center">NRC</p>
   <p align="center">8729</p>
   <p align="center"><b>Informe de Trabajo Final</b></p>
@@ -61,7 +61,7 @@
 </div>
 
 <div>
-  <p align="center"><b>Octubre, 2026</b></p>
+  <p align="center"><b>Período 202620</b></p>
 </div>
 
 <div style="page-break-after: always;"></div>
