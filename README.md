@@ -1,7 +1,9 @@
 <div>
-  <p align="center"><img src="assets/cap1/logo/upc-logo.png" alt="Logo UPC" width="150px" /></p>
+  <p align="center"><img src="assets/cap1/logo/upc-logo.png" alt="Logo UPC" width="90px" /></p>
+  <br/>
   <p align="center">Universidad Peruana de Ciencias Aplicadas</p>
   <p align="center">Carrera de Ingeniería de Software</p>
+  <br/>
   <p align="center"><b>1ASI0572</b></p>
   <p align="center"><b>Desarrollo de Soluciones IoT</b></p>
   <p align="center">NRC</p>
@@ -9,12 +11,14 @@
   <p align="center"><b>Informe de Trabajo Final</b></p>
   <p align="center">Docente</p>
   <p align="center"><b>León Baca, Marco Antonio</b></p>
+  <br/>
   <p align="center">Equipo</p>
   <p align="center"><b>TerraGuard</b></p>
+  <br/>
   <p align="center">Proyecto</p>
   <p align="center"><b>QuakExit</b></p>
 </div>
-
+<br/>
 <h3 align="center">Integrantes</h3>
 
 <div align="center">
@@ -59,7 +63,7 @@
 </table>
 
 </div>
-<br style="page-break-after: always;">
+<br/>
 <div>
   <p align="center"><b>Período 202620</b></p>
 </div>
