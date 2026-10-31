@@ -1,18 +1,21 @@
 <div>
   <p align="center"><img src="assets/cap1/logo/upc-logo.png" alt="Logo UPC" width="150px" /></p>
   <p align="center"><b>Universidad Peruana de Ciencias Aplicadas</b></p>
-  <p align="center">Carrera: Ingeniería de Software</p>
-  <p align="center"><b>Ciclo: 2026-20</b></p>
-  <p align="center">Código del curso: 1ASI0572</p>
-  <p align="center">Nombre del curso: Desarrollo de Soluciones IoT</p>
-  <p align="center">NRC: 8729</p>
-  <p align="center">Nombre del profesor: León Baca, Marco Antonio</p>
+  <p align="center">Carrera de Ingeniería de Software</p>
+  <p align="center">1ASI0572</p>
+  <p align="center">Desarrollo de Soluciones IoT</p>
+  <p align="center">NRC</p>
+  <p align="center">8729</p>
   <p align="center"><b>Informe de Trabajo Final</b></p>
-  <p align="center">Nombre del startup: TerraGuard</p>
-  <p align="center">Nombre del producto: QuakExit</p>
+  <p align="center">Docente</p>
+  <p align="center">León Baca, Marco Antonio</p>
+  <p align="center">Equipo</p>
+  <p align="center">TerraGuard</p>
+  <p align="center">Proyecto</p>
+  <p align="center">QuakExit</p>
 </div>
 
-<h3 align="center">Relación de integrantes</h3>
+<h3 align="center">Integrantes</h3>
 
 <div align="center">
 
