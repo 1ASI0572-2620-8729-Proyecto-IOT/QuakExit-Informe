@@ -8,11 +8,11 @@
   <p align="center">8729</p>
   <p align="center"><b>Informe de Trabajo Final</b></p>
   <p align="center">Docente</p>
-  <p align="center">León Baca, Marco Antonio</p>
+  <p align="center"><b>León Baca, Marco Antonio</b></p>
   <p align="center">Equipo</p>
-  <p align="center">TerraGuard</p>
+  <p align="center"><b>TerraGuard</b></p>
   <p align="center">Proyecto</p>
-  <p align="center">QuakExit</p>
+  <p align="center"><b>QuakExit</b></p>
 </div>
 
 <h3 align="center">Integrantes</h3>
