@@ -3274,8 +3274,6 @@ Los analíticos muestran la participación activa de los integrantes en cada rep
 
 ### 6.3. Validation Interviews
 
-**Responsables de la sección:** Sebastián De Las Casas Latour, César Augusto Navarro Correa y Fabrizio Javier Quiroz Zambrano.
-
 En esta sección se registra y explica el proceso de validación funcional y de experiencia de usuario realizado con representantes reales de nuestros dos segmentos objetivo (**Segmento 1: Dueños de Smart Homes** y **Segmento 2: Inmobiliarias y Constructores**). Durante las sesiones, los participantes interactuaron directamente con la **Landing Page** ([quakexit-landing.netlify.app](https://quakexit-landing.netlify.app/)), la **Web Application** ([frontend-quak-exit.vercel.app](https://frontend-quak-exit.vercel.app/)) y la **Mobile Application**, ejecutando los flujos principales (*User Flows*) del negocio mientras manifestaban sus observaciones en voz alta.
 
 ---
