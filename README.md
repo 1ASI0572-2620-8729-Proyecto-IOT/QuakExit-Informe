@@ -1316,18 +1316,34 @@ El diagrama de contexto sitúa a la plataforma QuakExit en el centro (como una c
 
 #### 4.1.3.3. Software Architecture Container Level Diagrams
 
-A nivel de contenedores, se "abre" el sistema para revelar la arquitectura técnica responsable de soportar las historias de usuario. La solución se compone de los siguientes contenedores principales:
+A nivel de contenedores, se "abre" el sistema **QuakExit Platform** para revelar las unidades de despliegue y almacenamiento que soportan los procesos del negocio, integrando las capas de **Cloud Computing**, **Edge Computing** y **Embedded Systems** exigidas por la arquitectura de la solución. La plataforma se compone de los siguientes contenedores principales:
 
-- **Interfaces de Usuario:** Una aplicación móvil construida en **Flutter** para la gestión residencial rápida y reactiva, y un panel web en HTML/CSS/JS impulsado por Fetch API para la administración B2B.
+- **Aplicaciones Cliente (Frontend Web y Móvil):**
+  - **Mobile Application (Flutter / Dart):** Aplicación móvil multiplataforma orientada a los residentes (B2C) para el monitoreo de batería, recepción de alertas críticas, gestión de contactos y ejecución de simulacros manuales.
+  - **Web Application & Landing Page (React + TypeScript / Astro):** Sitio web estático promocional y panel web adaptable para la supervisión de dispositivos, auditoría de emergencias, reportes de tiempos de respuesta y gestión por lotes de edificios (B2B).
 
-- **API y Lógica Backend:** Un **Amazon API Gateway** que enruta las peticiones HTTP seguras hacia un backend Serverless compuesto por funciones AWS Lambda desarrolladas en Python, las cuales manejan la validación de tokens JWT y la lógica central de evacuación.
+- **Capa de Servicios Cloud y Persistencia (RESTful API Interna):**
+  - **API Gateway (Spring Cloud / HTTPS):** Punto de entrada unificado que enruta las peticiones REST desde las aplicaciones web y móviles, validando la autorización mediante tokens JWT.
+  - **IAM & Profile Service (Spring Boot + Spring Data JPA):** Servicio encargado de la gestión de identidad, roles, perfiles de vivienda y contactos de emergencia, con persistencia en **IAM Database (MySQL)**.
+  - **Emergency & Alert Service (Spring Boot + Spring Data JPA):** Servicio que orquesta los protocolos de emergencia, el historial de alertas y el despacho de notificaciones críticas, respaldado por **Emergency Database (MySQL)**.
+  - **B2B & Simulation Service (Spring Boot + Spring Data JPA):** Servicio dedicado a la programación y reporte de simulacros de evacuación (latencia en milisegundos) y a la administración de inmuebles B2B, persistiendo en **B2B Database (MySQL)**.
+  - **Telemetry & Seismic Service (Spring Boot + Spring Data JPA):** Servicio central que consolida la telemetría proveniente del borde (niveles de batería, cortes de energía y lecturas de aceleración sísmica) y almacena las series de eventos en **Telemetry Database (MySQL)**.
 
-- **Persistencia:** **Amazon DynamoDB**, seleccionado como base de datos NoSQL por su baja latencia para registrar perfiles de dispositivos y eventos sísmicos.
+- **Capa de Borde (Edge Computing):**
+  - **API Edge Gateway (REST / MQTT):** Interfaz de comunicación en el borde que sincroniza de forma segura la telemetría local y los comandos de control con el `API Gateway` y el `Telemetry & Seismic Service` en la nube.
+  - **Edge Connector Service (Python + Flask + Peewee ORM):** Servicio local de procesamiento en el borde que valida y filtra las lecturas de los nodos residenciales, gestiona las colas de eventos cuando se pierde la conexión a internet y expone la **Edge API** interna.
+  - **Edge Database (SQLite):** Base de datos relacional ligera en el borde que almacena localmente el estado de los actuadores, umbrales calibrados y registros sísmicos durante cortes de conectividad.
 
-- **Capa IoT:** Un microcontrolador **ESP32 (IoT Hub)** instalado localmente, el cual gestiona la detección física y la apertura de cerraduras mediante Edge Computing. Este componente se sincroniza asíncronamente con el backend utilizando el protocolo MQTT a través de AWS IoT Core, lo que permite mantener modos de bajo consumo (Deep Sleep) críticos para la duración de la batería de respaldo.
+- **Capa Embebida e Interacción con Hardware Físico (Embedded Systems):**
+  - **Embedded Application (C++ / ESP32 Firmware):** Aplicación embebida que se ejecuta en el microcontrolador del **QuakExit Hub**, operando como una máquina de estados (`NORMAL`, `DRILL`, `EMERGENCY`) que procesa las lecturas a 50 Hz y toma la decisión de desbloqueo en tiempo real (< 2 segundos) sin depender de internet.
+
+- **Sistemas y Hardware Externos:**
+  - **Smart Home Hardware (Sensores y Actuadores):** Componentes electrónicos físicos conectados al ESP32: acelerómetro sísmico MPU6050 (I2C), módulo relé fail-safe, chapa electromagnética de 12 V, luces de emergencia, buzzer, botón de rearme y batería de respaldo.
+  - **Security Auth & Push Service (Firebase / JWT Auth):** Proveedor externo para validación de seguridad y envío de notificaciones push críticas a los teléfonos móviles.
+  - **City Cloud Connector (SISMATE / USGS Earthquake API):** Servicio externo de terceros que provee señales de alerta sísmica temprana e información telúrica en tiempo real.
 
 <p align="center">
-  <img src="assets/cap4/software_architecture/containers_diagramContainers-dark.png" width="900">
+  <img src="assets/cap4/software_architecture/c4contenedorContainers-dark.png" width="900">
 </p>
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
