@@ -3258,11 +3258,191 @@ Los analíticos muestran la participación activa de los integrantes en cada rep
 
 ### 6.3. Validation Interviews
 
+**Responsables de la sección:** Sebastián De Las Casas Latour, César Augusto Navarro Correa y Fabrizio Javier Quiroz Zambrano.
+
+En esta sección se registra y explica el proceso de validación funcional y de experiencia de usuario realizado con representantes reales de nuestros dos segmentos objetivo (**Segmento 1: Dueños de Smart Homes** y **Segmento 2: Inmobiliarias y Constructores**). Durante las sesiones, los participantes interactuaron directamente con la **Landing Page** ([quakexit-landing.netlify.app](https://quakexit-landing.netlify.app/)), la **Web Application** ([frontend-quak-exit.vercel.app](https://frontend-quak-exit.vercel.app/)) y la **Mobile Application**, ejecutando los flujos principales (*User Flows*) del negocio mientras manifestaban sus observaciones en voz alta.
+
+---
+
 #### 6.3.1. Diseño de Entrevistas
+
+Para estructurar las sesiones de validación, el equipo estableció los elementos y tareas que cada segmento objetivo debía ejecutar de principio a fin, seguidos de un bloque de preguntas abiertas para recoger sus apreciaciones sobre la usabilidad, claridad informativa y confianza en el sistema.
+
+##### Elementos y User Flows incluidos en la sesión de validación
+
+**Segmento Objetivo #1: Dueños de Smart Homes (Residentes B2C)**
+
+- **Productos incluidos en la validación:** Landing Page, Web Application y Mobile Application.
+- **User Flows evaluados durante la sesión:**
+  1. **User Flow 1 – Exploración comercial y cambio de idioma (Landing Page):** Ingresar a la Landing Page, alternar el idioma entre inglés (`en_US`) y español (`es_419`), revisar cómo funciona el protocolo de desbloqueo en menos de 5 segundos, comparar los planes residenciales (*Kit Departamento* vs. *Kit Smart Home*), visualizar el video del producto y dirigirse a la aplicación mediante el botón *Call-to-Action*.
+  2. **User Flow 2 – Registro, perfil de vivienda y vinculación de Hub (Web / Mobile App):** Crear una nueva cuenta de residente, iniciar sesión, registrar los datos del perfil de vivienda (piso y ubicación) y vincular un dispositivo **QuakExit Hub** mediante su código identificador.
+  3. **User Flow 3 – Monitoreo energético y estado de actuadores (Web / Mobile App):** Ingresar a la sección **Dispositivos**, verificar el porcentaje de batería de respaldo, comprobar el estado de conexión de la chapa electromagnética (`ACTIVE`) y la fuente de energía (`MAIN` / `BACKUP`), y activar o desactivar el modo de bajo consumo (*Deep Sleep*).
+  4. **User Flow 4 – Ejecución de simulacro manual y contactos de emergencia (Web / Mobile App):** Acceder al módulo **Simulacro**, disparar un simulacro manual de evacuación, verificar el reporte de tiempo de respuesta en milisegundos (< 5000 ms) y registrar un contacto familiar de emergencia en el módulo **Operaciones**.
+
+**Segmento Objetivo #2: Inmobiliarias y Constructores (Supervisores B2B)**
+
+- **Productos incluidos en la validación:** Landing Page y Web Application.
+- **User Flows evaluados durante la sesión:**
+  1. **User Flow 1 – Evaluación de propuesta corporativa y cotización (Landing Page):** Navegar por la sección de soluciones para *Inmobiliarias y Constructoras*, revisar las preguntas frecuentes sobre el mecanismo *Fail-safe*, consultar los Términos y Condiciones en el pie de página y enviar el formulario de contacto solicitando una cotización para un edificio multifamiliar.
+  2. **User Flow 2 – Búsqueda y supervisión de nodos por código (Web Application):** Iniciar sesión en la plataforma web, acceder al módulo **Dispositivos** y utilizar la barra de búsqueda por código para localizar un nodo específico del edificio, inspeccionando su batería y etiqueta de estado (`ONLINE`, `SLEEPING`, `BACKUP`).
+  3. **User Flow 3 – Gestión de emergencias y calibración sísmica (Web Application):** Ingresar a la vista **Emergencias**, revisar el historial de eventos clasificados por severidad (`CRITICAL`, `HIGH`, `LOW`) y ajustar el umbral de sensibilidad del acelerómetro (en $g$) para evitar aperturas por vibraciones leves de obra o tránsito pesado.
+  4. **User Flow 4 – Auditoría técnica y reportes operativos (Web Application):** Recorrer las pestañas horizontales del módulo **Operaciones** (*Notificaciones*, *Auditoría*, *Reportes* y *Mantenimiento*), aplicar filtros por fecha y estado, y consultar los reportes de tiempos de respuesta y fallos mecánicos.
+
+##### Guion de preguntas post-interacción
+
+**Preguntas para el Segmento 1 (Dueños de Smart Homes):**
+
+1. Al navegar por la Landing Page, ¿quedó claro cómo actúa el QuakExit Hub para liberar tu puerta e iluminar la ruta cuando se corta la luz y el internet durante un sismo?
+2. ¿Qué tan sencillo te resultó registrarte, configurar los datos de tu vivienda y vincular el código de tu dispositivo QuakExit Hub?
+3. Al observar la sección de **Dispositivos**, ¿logras identificar a primera vista si tu batería de respaldo tiene carga suficiente y si tu cerradura electromagnética está operativa?
+4. Cuando presionaste el botón para iniciar el **Simulacro manual**, ¿la respuesta en pantalla y el reporte en milisegundos te brindaron la seguridad de que la puerta se abrió a tiempo?
+5. ¿Qué elemento visual, texto o botón mejorarías para que la aplicación sea aún más fácil de usar en un momento de emergencia?
+
+**Preguntas para el Segmento 2 (Inmobiliarias y Constructores):**
+
+1. Desde el punto de vista de una constructora o inmobiliaria, ¿el contenido de la Landing Page y el formulario de contacto transmiten la solidez técnica necesaria para solicitar una cotización B2B?
+2. ¿Qué tan práctico te pareció el buscador por código y el sistema de etiquetas (`ONLINE`, `SLEEPING`, `BACKUP`) para monitorear múltiples departamentos en un proyecto multifamiliar?
+3. Al utilizar las pestañas de *Auditoría*, *Reportes* y *Mantenimiento* en el módulo de **Operaciones**, ¿consideras que la información presentada facilita las pruebas de entrega y las inspecciones de seguridad (INDECI)?
+4. ¿Qué opinas sobre la opción de calibrar el umbral del sensor sísmico y consultar el tiempo de respuesta en milisegundos tras un simulacro?
+5. ¿Qué filtro o funcionalidad adicional incorporarías en el panel web para agilizar la supervisión técnica del edificio?
+
+---
 
 #### 6.3.2. Registro de Entrevistas
 
+##### Segmento 1: Dueños de Smart Homes
+
+**Entrevista de Validación N°1 (Realizada por: Fabrizio Quiroz)**
+
+- **Nombres y Apellidos:** Johan Karl Bottger Salazar
+- **Edad:** 21 años
+- **Distrito:** Santiago de Surco
+- **Segmento:** Dueños de Smart Homes (Residente B2C)
+- **Fecha de la entrevista:** 2026-11-08
+- **Timing de inicio en el video:** `00:10` `[VERIFICAR MINUTO EXACTO EN EL VIDEO EDITADO]`
+- **Duración:** `04:15`
+- **URL del video:** `[REEMPLAZAR CON EL LINK DE MICROSOFT STREAM / CLIPCHAMP]`
+
+<!-- [PONER IMAGEN AQUÍ: Captura de pantalla de la videollamada con el Entrevistado 1 probando la web/app. Guardar en assets/cap6/validation/entrevista-val-1.png] -->
+<p align="center">
+  <img src="assets/cap6/validation/entrevista-val-1.png" alt="Entrevista de validación 1 - Segmento 1" width="700" />
+</p>
+
+**Resumen descriptivo de las apreciaciones del entrevistado:**
+
+
+---
+
+**Entrevista de Validación N°2 (Realizada por: Fabrizio Quiroz)**
+
+- **Nombres y Apellidos:** Verónica Geraldine Candela Picón
+- **Edad:** 24 años
+- **Distrito:** Miraflores
+- **Segmento:** Dueños de Smart Homes (Residente B2C)
+- **Fecha de la entrevista:** 2026-11-08
+- **Timing de inicio en el video:** `04:25` `[VERIFICAR MINUTO EXACTO EN EL VIDEO EDITADO]`
+- **Duración:** `03:55`
+- **URL del video:** `[REEMPLAZAR CON EL LINK DE MICROSOFT STREAM / CLIPCHAMP]`
+
+<!-- [PONER IMAGEN AQUÍ: Captura de pantalla de la videollamada con el Entrevistado 2 probando la web/app. Guardar en assets/cap6/validation/entrevista-val-2.png] -->
+<p align="center">
+  <img src="assets/cap6/validation/entrevista-val-2.png" alt="Entrevista de validación 2 - Segmento 1" width="700" />
+</p>
+
+**Resumen descriptivo de las apreciaciones del entrevistado:**
+
+
+---
+
+**Entrevista de Validación N°3 (Realizada por: César Navarro)**
+
+- **Nombres y Apellidos:** `[COMPLETAR NOMBRE Y APELLIDO DEL ENTREVISTADO 3 - SEGMENTO 1]`
+- **Edad:** `[EDAD]` años
+- **Distrito:** `[DISTRITO, EJ. SAN BORJA]`
+- **Segmento:** Dueños de Smart Homes (Residente B2C)
+- **Fecha de la entrevista:** 2026-11-09
+- **Timing de inicio en el video:** `08:20` `[VERIFICAR MINUTO EXACTO EN EL VIDEO EDITADO]`
+- **Duración:** `04:05`
+- **URL del video:** `[REEMPLAZAR CON EL LINK DE MICROSOFT STREAM / CLIPCHAMP]`
+
+<!-- [PONER IMAGEN AQUÍ: Captura de pantalla de la videollamada con el Entrevistado 3 probando la web/app. Guardar en assets/cap6/validation/entrevista-val-3.png] -->
+<p align="center">
+  <img src="assets/cap6/validation/entrevista-val-3.png" alt="Entrevista de validación 3 - Segmento 1" width="700" />
+</p>
+
+**Resumen descriptivo de las apreciaciones del entrevistado:**
+
+
+---
+
+##### Segmento 2: Inmobiliarias y Constructores
+
+**Entrevista de Validación N°4 (Realizada por: César Navarro)**
+
+- **Nombres y Apellidos:** Mateo Alejandro Vargas Silva
+- **Edad:** 25 años
+- **Distrito:** San Isidro
+- **Segmento:** Inmobiliarias y Constructores (Supervisor de Obra B2B)
+- **Fecha de la entrevista:** 2026-11-09
+- **Timing de inicio en el video:** `12:25` `[VERIFICAR MINUTO EXACTO EN EL VIDEO EDITADO]`
+- **Duración:** `04:30`
+- **URL del video:** `[REEMPLAZAR CON EL LINK DE MICROSOFT STREAM / CLIPCHAMP]`
+
+<!-- [PONER IMAGEN AQUÍ: Captura de pantalla de la videollamada con el Entrevistado 4 probando la web/app. Guardar en assets/cap6/validation/entrevista-val-4.png] -->
+<p align="center">
+  <img src="assets/cap6/validation/entrevista-val-4.png" alt="Entrevista de validación 4 - Segmento 2" width="700" />
+</p>
+
+**Resumen descriptivo de las apreciaciones del entrevistado:**
+
+
+---
+
+**Entrevista de Validación N°5 (Realizada por: Sebastián De Las Casas)**
+
+- **Nombres y Apellidos:** Ariana Valentina Robles Huamaní
+- **Edad:** 22 años
+- **Distrito:** Jesús María
+- **Segmento:** Inmobiliarias y Constructores (Asistente de Proyectos Inmobiliarios B2B)
+- **Fecha de la entrevista:** 2026-11-10
+- **Timing de inicio en el video:** `16:55` `[VERIFICAR MINUTO EXACTO EN EL VIDEO EDITADO]`
+- **Duración:** `03:50`
+- **URL del video:** `[REEMPLAZAR CON EL LINK DE MICROSOFT STREAM / CLIPCHAMP]`
+
+<!-- [PONER IMAGEN AQUÍ: Captura de pantalla de la videollamada con el Entrevistado 5 probando la web/app. Guardar en assets/cap6/validation/entrevista-val-5.png] -->
+<p align="center">
+  <img src="assets/cap6/validation/entrevista-val-5.png" alt="Entrevista de validación 5 - Segmento 2" width="700" />
+</p>
+
+**Resumen descriptivo de las apreciaciones del entrevistado:**
+
+
+---
+
+**Entrevista de Validación N°6 (Realizada por: Sebastián De Las Casas)**
+
+- **Nombres y Apellidos:** `[COMPLETAR NOMBRE Y APELLIDO DEL ENTREVISTADO 6 - SEGMENTO 2]`
+- **Edad:** `[EDAD]` años
+- **Distrito:** `[DISTRITO, EJ. MAGDALENA DEL MAR]`
+- **Segmento:** Inmobiliarias y Constructores (Ingeniero / Supervisor B2B)
+- **Fecha de la entrevista:** 2026-11-10
+- **Timing de inicio en el video:** `20:45` `[VERIFICAR MINUTO EXACTO EN EL VIDEO EDITADO]`
+- **Duración:** `04:10`
+- **URL del video:** `[REEMPLAZAR CON EL LINK DE MICROSOFT STREAM / CLIPCHAMP]`
+
+<!-- [PONER IMAGEN AQUÍ: Captura de pantalla de la videollamada con el Entrevistado 6 probando la web/app. Guardar en assets/cap6/validation/entrevista-val-6.png] -->
+<p align="center">
+  <img src="assets/cap6/validation/entrevista-val-6.png" alt="Entrevista de validación 6 - Segmento 2" width="700" />
+</p>
+
+**Resumen descriptivo de las apreciaciones del entrevistado:**
+
+
+---
+
 #### 6.3.3. Evaluaciones según heurísticas
+
+
 
 <div style="page-break-after: always;"></div>
 
