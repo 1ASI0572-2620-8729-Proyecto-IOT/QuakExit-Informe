@@ -3310,9 +3310,11 @@ Para estructurar las sesiones de validación, el equipo estableció los elemento
 
 #### 6.3.2. Registro de Entrevistas
 
+Entrevistas 1, 2 y 3 (Segmento 1: Dueños de Smart Homes) → Landing Page + Aplicación Móvil (Flutter)
+
 ##### Segmento 1: Dueños de Smart Homes
 
-**Entrevista de Validación N°1 (Realizada por: Fabrizio Quiroz)**
+**Entrevista de Validación N°1**
 
 - **Nombres y Apellidos:** Johan Karl Bottger Salazar
 - **Edad:** 21 años
@@ -3333,7 +3335,7 @@ Para estructurar las sesiones de validación, el equipo estableció los elemento
 
 ---
 
-**Entrevista de Validación N°2 (Realizada por: Fabrizio Quiroz)**
+**Entrevista de Validación N°2**
 
 - **Nombres y Apellidos:** Verónica Geraldine Candela Picón
 - **Edad:** 24 años
@@ -3354,7 +3356,7 @@ Para estructurar las sesiones de validación, el equipo estableció los elemento
 
 ---
 
-**Entrevista de Validación N°3 (Realizada por: César Navarro)**
+**Entrevista de Validación N°3**
 
 - **Nombres y Apellidos:** `[COMPLETAR NOMBRE Y APELLIDO DEL ENTREVISTADO 3 - SEGMENTO 1]`
 - **Edad:** `[EDAD]` años
@@ -3375,9 +3377,11 @@ Para estructurar las sesiones de validación, el equipo estableció los elemento
 
 ---
 
+Entrevistas 4, 5 y 6 (Segmento 2: Inmobiliarias y Constructores) → Landing Page + Aplicación Web (Vercel)
+
 ##### Segmento 2: Inmobiliarias y Constructores
 
-**Entrevista de Validación N°4 (Realizada por: César Navarro)**
+**Entrevista de Validación N°4**
 
 - **Nombres y Apellidos:** Mateo Alejandro Vargas Silva
 - **Edad:** 25 años
@@ -3398,7 +3402,7 @@ Para estructurar las sesiones de validación, el equipo estableció los elemento
 
 ---
 
-**Entrevista de Validación N°5 (Realizada por: Sebastián De Las Casas)**
+**Entrevista de Validación N°5**
 
 - **Nombres y Apellidos:** Ariana Valentina Robles Huamaní
 - **Edad:** 22 años
@@ -3419,7 +3423,7 @@ Para estructurar las sesiones de validación, el equipo estableció los elemento
 
 ---
 
-**Entrevista de Validación N°6 (Realizada por: Sebastián De Las Casas)**
+**Entrevista de Validación N°6**
 
 - **Nombres y Apellidos:** `[COMPLETAR NOMBRE Y APELLIDO DEL ENTREVISTADO 6 - SEGMENTO 2]`
 - **Edad:** `[EDAD]` años
