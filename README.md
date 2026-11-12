@@ -2818,21 +2818,417 @@ Los analíticos muestran la participación de los integrantes en cada repositori
 
 ##### 6.2.2.1. Sprint Planning 2
 
+En esta sección se detallan los acuerdos y la planificación del segundo Sprint del proyecto, enfocado en culminar las tareas de internacionalización y accesibilidad de la Landing Page, implementar los módulos centrales de monitoreo energético, control de actuadores IoT, ejecución de simulacros manuales, alertas de emergencia y gestión operativa en los Web Services y la Web Application, y desplegar la primera versión de la Mobile Application en Flutter distribuida mediante Firebase App Distribution.
+
+| Sprint #                        | Sprint 2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| :------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Sprint Planning Background**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Date                            | 2026-10-12                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Time                            | 08:00 PM                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Location                        | Reunión virtual por Discord                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Prepared By                     | Castro Picón, Manuel Fernando Joao                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| Attendees (to planning meeting) | Castro Picón, Manuel Fernando Joao / Requena Gutiérrez, Diego Gabriel / Quiroz Zambrano, Fabrizio Javier / Solis Chang, Santiago Valentino / Vila Guillen, Miguel Angel / De Las Casas Latour, Sebastián / Navarro Correa, César Augusto                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Sprint 1 Review Summary         | Se desplegó la primera versión funcional de la Landing Page en Netlify, los Web Services en Render con base de datos MySQL en Aiven y la Web Application en Vercel. Los usuarios residentes pueden registrarse, iniciar sesión con JWT, configurar su perfil de vivienda, vincular su dispositivo QuakExit Hub, consultar el porcentaje de batería y visualizar el historial de eventos sísmicos. Quedaron en proceso la traducción completa inglés/español (i18n), la sección About the Team, los términos y condiciones y la incrustación del video promocional en la Landing Page, además del inicio del desarrollo de la aplicación móvil.                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Sprint 1 Retrospective Summary  | Aciertos: la integración continua entre GitHub, Netlify, Vercel y Render agilizó las pruebas de extremo a extremo, y la estructura por capas facilitó la creación rápida de endpoints. Oportunidades de mejora: evitar que la suspensión por inactividad del plan gratuito del backend retrase las pruebas del frontend y móvil, adelantar la escritura de los escenarios Gherkin (Cucumber) antes del cierre del Sprint y completar al 100 % las tareas transversales de la Landing Page.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **Sprint Goal & User Stories**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Sprint 2 Goal                   | **Our focus is on** delivering the complete bilingual and accessible version of the Landing Page, implementing the core emergency, actuator control, energy monitoring, and evacuation drill modules across the Web Services and Web Application, and deploying the first version of the Mobile Application in Flutter integrated with the API and QuakExit Hub telemetry. **We believe it delivers** immediate operational control and on-the-go peace of mind to Smart Home residents by allowing them to verify lock and light connections, monitor power outages and low-battery alerts, configure emergency contacts, and execute manual evacuation drills with response-time metrics under 5 seconds from both web and mobile devices. **This will be confirmed when** the Landing Page is fully navigable in English (en_US) and Spanish (es_419), residents can trigger a manual evacuation drill from the deployed Web Application and the Flutter Mobile Application (distributed via Firebase App Distribution) obtaining a response time report below 5000 ms, and all new RESTful endpoints are tested and documented in OpenAPI/Swagger. |
+| Sprint 2 Velocity               | 46                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| Sum of Story Points             | 46 (Cierre de tareas de Landing Page + Web Services, Web Application, Mobile Application e integración IoT: 46)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+
+**User Stories de Web Services, Web Application, Mobile Application e IoT incluidas en el Sprint 2.** Además de cerrar las tareas en proceso de la Landing Page (`LP03`, `LP06`, `LP07`, `LP08`, `LP09` y `LP10`), corresponden al Product Backlog de la sección 3.3; sus criterios de aceptación están en la sección 3.1.
+
+| Story ID | Título                                     | Bounded Context      | Story Points | Productos                                                  |
+| :------- | :----------------------------------------- | :------------------- | :----------: | :--------------------------------------------------------- |
+| US04     | Verificar estado de conexión de cerraduras | Device Monitoring    |      3       | Web Services, Web Application, Mobile Application          |
+| US05     | Configurar luces de emergencia IoT         | Device Provisioning  |      5       | Web Services, Web Application, Mobile Application          |
+| US06     | Gestionar modo de bajo consumo             | Device Monitoring    |      3       | Web Services, Web Application, Mobile Application, IoT Hub |
+| US08     | Recibir alertas de batería baja            | Alerting             |      3       | Web Services, Web Application, Mobile Application          |
+| US09     | Detectar corte de fluido eléctrico         | Energy Monitoring    |      5       | Web Services, Web Application, Mobile Application, IoT Hub |
+| US10     | Ajustar sensibilidad del sensor sísmico    | Emergency Core       |      3       | Web Services, Web Application, IoT Hub                     |
+| US11     | Ejecutar protocolo de desbloqueo           | Emergency Core       |      8       | Web Services, Web Application, Mobile Application, IoT Hub |
+| US13     | Notificación de Modo Emergencia activado   | Alerting             |      5       | Web Services, Web Application, Mobile Application          |
+| US15     | Configurar contactos de emergencia         | Household Profile    |      3       | Web Services, Web Application, Mobile Application          |
+| US16     | Iniciar simulacro de evacuación manual     | Simulation & Testing |      5       | Web Services, Web Application, Mobile Application, IoT Hub |
+| US18     | Generar reporte de tiempo de respuesta     | Analytics & Reports  |      3       | Web Services, Web Application, Mobile Application          |
+
 ##### 6.2.2.2. Aspect Leaders and Collaborators
+
+Los aspectos considerados en el Sprint 2 son: Landing Page (cierre de contenido, i18n y a11y), Web Services (actuadores, energía, emergencias y simulacros), Web Application (vistas de Dispositivos, Simulacro, Emergencias y Operaciones), Mobile Application (primera versión en Flutter para residentes), Integración IoT & Firmware, y Testing & Despliegue. La matriz guarda coherencia con la asignación de tareas del Sprint Backlog 2.
+
+| Team Member (Last Name, First Name) | Landing Page: i18n, a11y y cierre | Web Services | Web Application | Mobile Application (Flutter) | Integración IoT & Firmware | Testing & Despliegue |
+| :---------------------------------- | :-------------------------------: | :----------: | :-------------: | :--------------------------: | :------------------------: | :------------------: |
+| Castro Picón, Manuel Fernando Joao  |                                   |      L       |        L        |              L               |             C              |          C           |
+| Requena Gutiérrez, Diego Gabriel    |                 L                 |      C       |        C        |              C               |             L              |          L           |
+| Quiroz Zambrano, Fabrizio Javier    |                                   |      C       |        C        |              C               |             C              |                      |
+| Solis Chang, Santiago Valentino     |                 C                 |              |        C        |              C               |                            |          C           |
+| Vila Guillen, Miguel Angel          |                 C                 |              |        C        |              C               |                            |                      |
+| De Las Casas Latour, Sebastián      |                                   |      C       |                 |                              |                            |          C           |
+| Navarro Correa, César Augusto       |                 C                 |      C       |                 |                              |             C              |          L           |
 
 ##### 6.2.2.3. Sprint Backlog 2
 
+El objetivo del Sprint 2 es consolidar la versión bilingüe y accesible de la Landing Page, habilitar el flujo operativo completo para el residente en la Web Application y los Web Services, y publicar la primera versión de la Mobile Application en Flutter (distribuida con Firebase App Distribution), permitiendo supervisar cerraduras y luces, detectar cortes eléctricos y batería baja, configurar contactos de emergencia y ejecutar simulacros manuales con medición de latencia.
+
+- **Tablero del Sprint (Trello):** [https://trello.com/invite/b/6ac7bc383877b72e7c9c6f7f/ATTI13b131a0bab0ee2f504af69ea681923303610CC8/quakexit](https://trello.com/invite/b/6ac7bc383877b72e7c9c6f7f/ATTI13b131a0bab0ee2f504af69ea681923303610CC8/quakexit)
+
+Evidencias del Trello en el Sprint 2:
+
+<p align="center">
+  <img src="assets/cap6/sprint2/trello-sprint2.png" alt="Trello Sprint 2" width="800" />
+</p>
+
+| Story Id | Story Title                                        | Task Id | Task Title                                                   | Task Description                                                                                                          | Estimation (Hours) | Assigned To                    | Status |
+| :------- | :------------------------------------------------- | :------ | :----------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------ | :----------------: | :----------------------------- | :----- |
+| LP03     | Acceder a las aplicaciones desde un call-to-action | LP03-T2 | Actualizar enlaces definitivos de CTA                        | Vincular los botones principales de la Landing Page hacia la URL productiva en Vercel y la descarga móvil en Firebase.    |         2          | Solis Chang, Santiago          | Done   |
+| LP06     | Contactar al equipo o solicitar cotización         | LP06-T3 | Integrar recepción de formularios de contacto                | Configurar el envío y validación con confirmación visual para solicitudes B2C y B2B.                                      |         2          | Solis Chang, Santiago          | Done   |
+| LP07     | Conocer al equipo                                  | LP07-T2 | Publicar sección About the Team                              | Maquetar las tarjetas de los 7 integrantes de TerraGuard con fotografía, rol y carrera.                                   |         3          | Navarro Correa, César          | Done   |
+| LP08     | Ver el video About-the-Product                     | LP08-T2 | Incrustar reproductor de video del producto                  | Integrar el componente de video con atributos de accesibilidad (`title`, `aria-label`) en la Landing Page.                |         2          | Vila Guillen, Miguel           | Done   |
+| LP09     | Cambiar el idioma                                  | LP09-T2 | Completar internacionalización (en_US / es_419)              | Traducir la totalidad de textos estáticos, configurar inglés por defecto y habilitar el selector dinámico en el header.   |         4          | Requena Gutiérrez, Diego       | Done   |
+| LP10     | Consultar términos y condiciones                   | LP10-T2 | Publicar vista de Términos y Condiciones                     | Incorporar el documento ético y legal basado en ACM/IEEE y CIP accesible desde el footer de la Landing Page y Web App.    |         2          | Vila Guillen, Miguel           | Done   |
+| US04     | Verificar estado de conexión de cerraduras         | US04-T1 | Implementar endpoint de estado de cerraduras y actuadores    | Exponer en el backend el estado de enlace (`ACTIVE` / `FAULT`) de las chapas electromagnéticas asociadas al Hub.          |         3          | Quiroz Zambrano, Fabrizio      | Done   |
+| US04     | Verificar estado de conexión de cerraduras         | US04-T2 | Desarrollar tarjetas de estado de cerraduras en Web y Móvil  | Mostrar indicadores semánticos en verde (conectada) o rojo (falla de enlace) en la Web Application y en la App Flutter.   |         4          | Castro Picón, Manuel Joao      | Done   |
+| US05     | Configurar luces de emergencia IoT                 | US05-T1 | Implementar endpoint de vinculación de relés de iluminación  | Permitir asociar y configurar periféricos de iluminación de ruta de escape al protocolo del QuakExit Hub.                 |         4          | Quiroz Zambrano, Fabrizio      | Done   |
+| US05     | Configurar luces de emergencia IoT                 | US05-T2 | Construir interfaz de configuración de luces en Web y Móvil  | Agregar controles en Dispositivos (Web y Flutter) para vincular y probar las luces de ruta de evacuación.                 |         4          | Castro Picón, Manuel Joao      | Done   |
+| US06     | Gestionar modo de bajo consumo                     | US06-T1 | Implementar endpoint de cambio de modo de energía            | Actualizar el estado operativo del Hub (`ONLINE` vs. `SLEEPING` / Deep Sleep) en la base de datos.                        |         3          | De Las Casas Latour, Sebastián | Done   |
+| US06     | Gestionar modo de bajo consumo                     | US06-T2 | Implementar toggle de Deep Sleep en Web y Mobile App         | Permitir al residente activar o desactivar el ahorro de energía desde la tarjeta del dispositivo en Web y Flutter.        |         3          | Vila Guillen, Miguel           | Done   |
+| US08     | Recibir alertas de batería baja                    | US08-T1 | Implementar regla de negocio y endpoint de batería crítica   | Generar alerta automática cuando el nivel reportado por el Hub sea inferior al 15 % y exponerla en el módulo de alertas.  |         3          | Quiroz Zambrano, Fabrizio      | Done   |
+| US08     | Recibir alertas de batería baja                    | US08-T2 | Mostrar aviso y notificación de batería baja en Web y Móvil  | Renderizar alerta prioritaria en el Dashboard web y en la pantalla de alertas de la Mobile Application (< 15 %).          |         3          | Solis Chang, Santiago          | Done   |
+| US09     | Detectar corte de fluido eléctrico                 | US09-T1 | Implementar registro de cambio de fuente de energía (AC/Bat) | Procesar el evento de transición de red eléctrica (`MAIN`) a batería de respaldo (`BACKUP`) y registrar auditoría.        |         4          | De Las Casas Latour, Sebastián | Done   |
+| US09     | Detectar corte de fluido eléctrico                 | US09-T2 | Visualizar estado de fuente de alimentación en Web y Móvil   | Mostrar etiqueta `[AMARILLO - PRECAUCIÓN]` y estado `BACKUP` cuando el hogar pierde suministro eléctrico comercial.       |         3          | Castro Picón, Manuel Joao      | Done   |
+| US10     | Ajustar sensibilidad del sensor sísmico            | US10-T1 | Implementar endpoint de calibración de umbral sísmico        | Permitir configurar y validar el umbral de aceleración (en g) dentro de rangos seguros.                                   |         3          | Castro Picón, Manuel Joao      | Done   |
+| US10     | Ajustar sensibilidad del sensor sísmico            | US10-T2 | Implementar control de sensibilidad en la Web Application    | Añadir formulario con validación de rango para calibrar el sensor y evitar falsos positivos por vibraciones leves.        |         3          | Castro Picón, Manuel Joao      | Done   |
+| US11     | Ejecutar protocolo de desbloqueo                   | US11-T1 | Implementar servicio de activación del protocolo de apertura | Orquestar en el backend el registro de confirmación sísmica, liberación de cerraduras y activación de luces de ruta.      |         6          | Castro Picón, Manuel Joao      | Done   |
+| US11     | Ejecutar protocolo de desbloqueo                   | US11-T2 | Desarrollar vista de protocolo activo en Web y Mobile App    | Mostrar en tiempo real el estado de puertas liberadas y rutas despejadas durante una emergencia confirmada.               |         5          | Castro Picón, Manuel Joao      | Done   |
+| US13     | Notificación de Modo Emergencia activado           | US13-T1 | Implementar servicio de emisión y cola de notificaciones     | Registrar y despachar notificaciones críticas al activarse el Modo Emergencia, soportando historial de envíos.            |         4          | De Las Casas Latour, Sebastián | Done   |
+| US13     | Notificación de Modo Emergencia activado           | US13-T2 | Integrar centro de notificaciones en Web y Mobile App        | Mostrar alertas críticas en la cabecera web, módulo Operaciones y bandeja de alertas móviles en Flutter.                  |         4          | Castro Picón, Manuel Joao      | Done   |
+| US15     | Configurar contactos de emergencia                 | US15-T1 | Implementar CRUD de contactos de emergencia con límite de 5  | Crear endpoints para listar, registrar y eliminar contactos familiares validando el máximo de 5 registros por usuario.    |         3          | Quiroz Zambrano, Fabrizio      | Done   |
+| US15     | Configurar contactos de emergencia                 | US15-T2 | Construir interfaz de contactos de emergencia en Web y Móvil | Implementar formulario y lista de contactos en las secciones de Perfil y Operaciones tanto en Web como en Flutter.        |         4          | Solis Chang, Santiago          | Done   |
+| US16     | Iniciar simulacro de evacuación manual             | US16-T1 | Implementar endpoint de disparo de simulacro manual          | Crear endpoint `POST` que inicie una prueba controlada (`DRILL`), simule la apertura de chapas y registre la ejecución.   |         4          | Castro Picón, Manuel Joao      | Done   |
+| US16     | Iniciar simulacro de evacuación manual             | US16-T2 | Implementar pantalla interactiva de Simulacro en Web y Móvil | Desarrollar el módulo Simulacro con botón de activación, estado visual de puertas/luces y retroalimentación inmediata.    |         5          | Castro Picón, Manuel Joao      | Done   |
+| US18     | Generar reporte de tiempo de respuesta             | US18-T1 | Calcular y persistir latencia de apertura en milisegundos    | Registrar el tiempo transcurrido entre la orden de activación y la liberación del relé, verificando que sea < 5000 ms.    |         3          | De Las Casas Latour, Sebastián | Done   |
+| US18     | Generar reporte de tiempo de respuesta             | US18-T2 | Mostrar métricas de tiempo de respuesta en Web y Mobile App  | Presentar en la interfaz web y móvil los milisegundos de respuesta obtenidos en cada simulacro y el estado de la prueba.  |         3          | Castro Picón, Manuel Joao      | Done   |
+| —        | (Task transversal)                                 | T2-01   | Pruebas unitarias, de widgets y escenarios BDD del Sprint 2  | Escribir pruebas con JUnit/Mockito, escenarios `.feature` en Cucumber, pruebas en Vitest y `flutter test` en móvil.       |         5          | Navarro Correa, César          | Done   |
+| —        | (Task transversal)                                 | T2-02   | Actualizar despliegue en Netlify, Render, Vercel y Firebase  | Desplegar nuevas versiones de Landing Page, Backend y Web App, y distribuir el `.apk` en Firebase App Distribution.       |         4          | Requena Gutiérrez, Diego       | Done   |
+
 ##### 6.2.2.4. Development Evidence for Sprint Review
+
+Durante el Sprint 2 se completaron las funcionalidades de internacionalización, accesibilidad y secciones informativas de la Landing Page; se construyeron los servicios backend y las pantallas de la Web Application para el control de actuadores, monitoreo de cortes de energía, alertas de emergencia, gestión de contactos familiares y ejecución de simulacros; y se implementó la primera versión de la Mobile Application en Flutter para residentes.
+
+| Producto                   | Repositorio                                                                               | Desarrollado por                                                                               | Alcance implementado en el Sprint 2                                                                                                                                                                                    |
+| :------------------------- | :---------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Landing Page               | [QuakExit-Landing](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/QuakExit-Landing)   | Solis Chang, Santiago Valentino · Requena Gutiérrez, Diego Gabriel · Vila Guillen, Miguel      | Internacionalización completa (`en_US` por defecto y `es_419`), sección About the Team, vista de Términos y Condiciones, video incrustado, mejoras de accesibilidad (ARIA) y SEO.                                      |
+| Web Services (Backend)     | [Backend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit)   | Castro Picón, Manuel Fernando Joao · Quiroz Zambrano, Fabrizio · De Las Casas Latour, Sebastián | Endpoints para estado de cerraduras y luces, modo Deep Sleep, detección de corte eléctrico y batería baja, calibración de umbral sísmico, protocolo de desbloqueo, contactos de emergencia y simulacros con latencia. |
+| Web Application (Frontend) | [Frontend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit) | Castro Picón, Manuel Fernando Joao · Solis Chang, Santiago Valentino                           | Módulos completos de Dispositivos (con filtros y control de energía), Simulacro (ejecución manual y métricas en ms), Emergencias (alertas activas y calibración) y Operaciones (Notificaciones, Auditoría y Reportes). |
+| Mobile Application         | [Mobile-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Mobile-QuakExit)     | Castro Picón, Manuel Fernando Joao · Solis Chang, Santiago Valentino · Vila Guillen, Miguel    | Primera versión de la app móvil en Flutter (Dart) con autenticación JWT, monitoreo de batería y fuente de energía (`MAIN`/`BACKUP`), control de modo Deep Sleep, simulacro manual, alertas y contactos de emergencia.   |
+
+A continuación se presenta la tabla de commits representativos realizados en los repositorios durante el Sprint 2:
+
+| Repository                                          | Branch                               | Commit Id | Commit Message                                                      | Commit Message Body                                                                                                    | Commited on (Date) |
+| :-------------------------------------------------- | :----------------------------------- | :-------- | :------------------------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------- | :----------------- |
+| `1ASI0572-2620-8729-Proyecto-IOT/QuakExit-Landing`  | `feature/lp09-i18n-support`          | `a4f8c21` | `feat(i18n): add full English and Spanish translation dictionaries` | Set English (`en_US`) as default language and add language switcher in navigation bar for `es_419`.                    | 18/10/2026         |
+| `1ASI0572-2620-8729-Proyecto-IOT/QuakExit-Landing`  | `feature/lp07-lp10-team-and-terms`   | `c91d4e7` | `feat(landing): add About the Team section and Terms of Service`    | Include team member cards and ethical terms of service aligned with ACM/IEEE and CIP codes.                            | 20/10/2026         |
+| `1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit`  | `feature/us04-us06-device-actuators` | `7b3e910` | `feat(devices): add lock status, emergency lights and power mode`   | Implement endpoints to query electromagnetic lock connection, bind emergency lights and toggle Deep Sleep mode.        | 24/10/2026         |
+| `1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit`  | `feature/us08-us09-energy-alerts`    | `2d84a65` | `feat(energy): implement power outage and low battery alerts`       | Detect transition to backup battery and trigger critical alerts when battery drops below 15%.                          | 27/10/2026         |
+| `1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit`  | `feature/us10-us11-emergency-core`   | `9f12c48` | `feat(emergency): add sensor sensitivity calibration and unlock`    | Validate acceleration threshold and execute automatic door unlock and emergency lighting protocol.                     | 30/10/2026         |
+| `1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit`  | `feature/us15-us16-us18-drills`      | `5e67b32` | `feat(simulation): add manual drill execution and response metrics` | Implement manual evacuation drill endpoint, response time calculation in milliseconds and emergency contacts limit (5). | 02/11/2026         |
+| `1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit` | `feature/us04-us09-devices-view`     | `8c41f09` | `feat(devices): build device management table, search and toggles`  | Add device search bar, battery progress bars, connection status tags (`ONLINE`, `SLEEPING`) and Deep Sleep controls.   | 04/11/2026         |
+| `1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit` | `feature/us11-us16-simulacro-alerts` | `3a95d74` | `feat(simulacro): implement interactive drill and operations tabs`  | Add manual simulation trigger, millisecond latency report, emergency alerts table and operations sub-navigation tabs.  | 06/11/2026         |
+| `1ASI0572-2620-8729-Proyecto-IOT/Mobile-QuakExit`   | `feature/mobile-auth-and-devices`    | `6b14d82` | `feat(mobile): implement Flutter auth, dashboard and device status` | Build dark-mode resident views with BottomNavigationBar, battery monitoring, lock status and Deep Sleep toggle.        | 05/11/2026         |
+| `1ASI0572-2620-8729-Proyecto-IOT/Mobile-QuakExit`   | `feature/mobile-drill-and-alerts`    | `9e30a15` | `feat(mobile): add manual drill screen, latency report and contacts`| Connect Flutter app to simulation, emergency alerts and emergency contacts REST endpoints.                             | 07/11/2026         |
 
 ##### 6.2.2.5. Testing Suite Evidence for Sprint Review
 
+**Landing Page.** Durante el Sprint 2 se verificó el cumplimiento de la internacionalización, la accesibilidad y la ausencia de errores tras incorporar las nuevas secciones.
+
+| Prueba                                              | Herramienta                                  | User Story relacionada | Resultado esperado                                                                                   |
+| :-------------------------------------------------- | :------------------------------------------- | :--------------------- | :--------------------------------------------------------------------------------------------------- |
+| Cambio de idioma e idioma por defecto               | Prueba manual y de navegador                 | LP09                   | Carga inicial en inglés (`en_US`) y traducción completa al seleccionar español (`es_419`).           |
+| Rendimiento, accesibilidad, buenas prácticas y SEO  | Google Lighthouse                            | LP07, LP08, LP09, LP10 | Puntaje de 90 o más en Accessibility, Best Practices y SEO con las nuevas secciones integradas.      |
+| Enlace de Términos y Condiciones y Video incrustado | Prueba funcional                             | LP08, LP10             | El enlace del footer abre los términos de servicio y el video reproduce sin abandonar la página.     |
+| Diseño responsivo en vistas nuevas                  | Chrome DevTools (móvil, tableta, escritorio) | LP07, LP08             | La grilla de los 7 integrantes del equipo y el reproductor de video se adaptan sin desbordamiento.   |
+
+Evidencia de la prueba Lighthouse de la Landing Page en el Sprint 2:
+
+<p align="center">
+  <img src="assets/cap6/sprint2/lighthouse-landing-s2.png" alt="Lighthouse report Sprint 2" width="700" />
+</p>
+
+**Web Services.** Las pruebas unitarias y de aceptación automatizadas se ejecutan con `mvn clean test` y el reporte de cobertura con JaCoCo mediante `mvn clean verify -Djacoco.skip=false`. Repositorio de pruebas: [Backend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit) (carpeta `src/test`).
+
+_Unit Tests_
+
+| Clase probada                      | Comportamiento verificado                                                                                                   | User Story |
+| :--------------------------------- | :-------------------------------------------------------------------------------------------------------------------------- | :--------- |
+| `ActuatorStatusQueryHandler`       | Devuelve el estado `ACTIVE` cuando la cerradura electromagnética responde al ping y `FAULT` ante desconexión física.        | US04, US05 |
+| `UpdatePowerModeCommandHandler`    | Cambia el estado del QuakExit Hub a `SLEEPING` (Deep Sleep) y restaura `ONLINE` al desactivar el ahorro de energía.         | US06       |
+| `EnergyMonitoringService`          | Dispara una alerta crítica cuando la batería cae por debajo del 15 % y registra el cambio a fuente `BACKUP` ante un apagón. | US08, US09 |
+| `SensorCalibrationCommandHandler`  | Actualiza el umbral sísmico cuando el valor es válido (ej. `0.28 g`) y rechaza valores negativos o fuera de rango.          | US10       |
+| `EmergencyUnlockProtocolService`   | Confirma el evento sísmico al superar el umbral, ordena desenergizar el relé en < 2 s y activa las luces de ruta.           | US11, US13 |
+| `EmergencyContactCommandHandler`   | Registra contactos familiares de emergencia y lanza excepción de negocio cuando el usuario intenta superar los 5 contactos. | US15       |
+| `ManualSimulationCommandHandler`   | Ejecuta el simulacro manual (`DRILL`), calcula el tiempo de respuesta en milisegundos y genera el reporte técnico.          | US16, US18 |
+
+_Integration / Acceptance Tests (BDD)_
+
+Archivo `emergency-unlock-protocol.feature` (US10, US11, US13):
+
+```gherkin
+Feature: Automatic seismic detection and unlock protocol
+  As a resident
+  I want the system to detect seismic activity above the configured threshold and unlock the doors
+  So that my evacuation route is immediately secured and I receive an emergency notification
+
+  Scenario: Seismic reading exceeds threshold and activates emergency protocol
+    Given a linked QuakExit Hub with a configured acceleration threshold of 0.28 g
+    When the hub reports a seismic reading of 0.45 g
+    Then the system confirms a CRITICAL seismic event
+    And the electromagnetic lock status changes to UNLOCKED and emergency lights to ON
+    And a critical Emergency Mode notification is generated for the resident
+
+  Scenario: Invalid sensor sensitivity calibration is rejected
+    Given an authenticated user configuring sensor sensitivity
+    When the user submits an out-of-range threshold value of -1.5 g
+    Then the system rejects the configuration with status 400
+```
+
+Archivo `manual-evacuation-drill.feature` (US15, US16, US18):
+
+```gherkin
+Feature: Manual evacuation drill and emergency contacts management
+  As a resident
+  I want to trigger a manual evacuation drill and configure my emergency contacts
+  So that I can verify that the door opens in less than 5 seconds and keep my family informed
+
+  Scenario: Successful manual evacuation drill with response time report
+    Given an authenticated resident with an online QuakExit Hub
+    When the resident triggers a manual evacuation drill
+    Then the system responds with status 201 and sets the device state to DRILL
+    And the generated drill report records a response time lower than 5000 milliseconds
+
+  Scenario: Maximum limit of 5 emergency contacts enforced
+    Given an authenticated resident who already has 5 registered emergency contacts
+    When the resident attempts to register a 6th emergency contact
+    Then the system responds with status 400 indicating that the contact limit has been reached
+```
+
+**Web Application y Mobile Application.** Las pruebas del frontend web se ejecutan con `npm run test` y la verificación estática con `npm run lint` y `npm run build`. En la Mobile Application (Flutter), las pruebas de widgets y modelos se ejecutan con `flutter test` y el análisis estático con `flutter analyze`.
+
+| Repository                                         | Branch                                                                                                         | Commit Id | Commit Message                                                                             | Commited on (Date) |
+| :------------------------------------------------- | :------------------------------------------------------------------------------------------------------------- | :-------- | :----------------------------------------------------------------------------------------- | :----------------- |
+| 1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit   | <img src="assets/cap6/sprint2/tests/back-tests-s2.png" alt="Backend Testing Results Sprint 2" width="700" />   | `4c89e12` | `test(backend): add unit and Cucumber BDD tests for emergency unlock, contacts and drills` | 07/11/2026         |
+| 1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit  | <img src="assets/cap6/sprint2/tests/front-tests-s2.png" alt="Frontend Testing Results Sprint 2" width="700" /> | `6f20a83` | `test(frontend): add component tests for devices table, drill trigger and operations tabs` | 07/11/2026         |
+| 1ASI0572-2620-8729-Proyecto-IOT/Mobile-QuakExit    | <img src="assets/cap6/sprint2/tests/mobile-tests-s2.png" alt="Mobile Testing Results Sprint 2" width="700" />  | `8a41b07` | `test(mobile): add Flutter widget tests for device status cards and manual drill trigger`  | 07/11/2026         |
+
 ##### 6.2.2.6. Execution Evidence for Sprint Review
+
+En el Sprint 2 se desplegaron las actualizaciones de la Landing Page, los nuevos módulos interactivos de la Web Application (**Dispositivos**, **Simulacro**, **Emergencias** y **Operaciones**) y la primera versión de la **Mobile Application** en Flutter para residentes, integrados con los endpoints de los Web Services.
+
+**Landing Page**
+
+> Vistas actualizadas de nuestro Landing Page en el Sprint 2:
+
+<p align="center">
+  <img src="assets/cap6/sprint2/landing/landing-i18n.png" alt="Landing Page i18n EN/ES" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/sprint2/landing/landing-team.png" alt="Landing Page About the Team" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/sprint2/landing/landing-video.png" alt="Landing Page About the Product Video" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/sprint2/landing/landing-terms.png" alt="Landing Page Terms and Conditions" width="700" />
+</p>
+
+| Vista implementada / actualizada | User Story | Descripción                                                                                  | Captura                                                      |
+| :------------------------------- | :--------- | :------------------------------------------------------------------------------------------- | :----------------------------------------------------------- |
+| Selector de idioma (EN / ES)     | LP09       | Muestra la interfaz en inglés por defecto (`en_US`) y permite alternar a español (`es_419`). | `![i18n](assets/cap6/sprint2/landing/landing-i18n.png)`      |
+| Sección About the Team           | LP07       | Presenta a los 7 integrantes del equipo TerraGuard con sus fotos y perfiles.                 | `![Team](assets/cap6/sprint2/landing/landing-team.png)`      |
+| Video About-the-Product          | LP08       | Reproductor incrustado que explica la propuesta de valor y el funcionamiento de QuakExit.    | `![Video](assets/cap6/sprint2/landing/landing-video.png)`    |
+| Términos y Condiciones           | LP10       | Enlace en el pie de página con las políticas de servicio y responsabilidad ética.            | `![Terms](assets/cap6/sprint2/landing/landing-terms.png)`    |
+
+**Web Application**
+
+> Vistas de nuestro Frontend Web en el Sprint 2:
+
+<p align="center">
+  <img src="assets/cap6/sprint2/frontend/web-devices-actuators.png" alt="Módulo de Dispositivos y Actuadores" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/sprint2/frontend/web-drill-simulation.png" alt="Módulo de Simulacros y Tiempo de Respuesta" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/sprint2/frontend/web-emergencies-active.png" alt="Módulo de Emergencias y Calibración" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/sprint2/frontend/web-operations-contacts.png" alt="Módulo de Operaciones y Contactos de Emergencia" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/sprint2/frontend/web-operations-reports.png" alt="Módulo de Operaciones: Auditoría y Reportes" width="700" />
+</p>
+
+| Vista                                      | User Story             | Descripción                                                                                                                           | Captura                                                                   |
+| :----------------------------------------- | :--------------------- | :------------------------------------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------ |
+| Gestión de Dispositivos y Energía          | US04, US05, US06, US09 | Buscador por código, estado de cerraduras/luces, barras de batería, fuente de energía (`MAIN`/`BACKUP`) y control de modo `SLEEPING`. | `![Devices](assets/cap6/sprint2/frontend/web-devices-actuators.png)`      |
+| Ejecución de Simulacro y Reporte de Tiempo | US16, US18             | Permite disparar un simulacro manual de evacuación y muestra el reporte de latencia en milisegundos (< 5000 ms).                      | `![Drill](assets/cap6/sprint2/frontend/web-drill-simulation.png)`         |
+| Panel de Emergencias y Sensibilidad        | US10, US11, US13       | Visualización de emergencias con etiquetas de severidad (`CRITICAL`, `HIGH`, `LOW`), estado de desbloqueo y ajuste de umbral.         | `![Emergencies](assets/cap6/sprint2/frontend/web-emergencies-active.png)` |
+| Operaciones: Notificaciones y Contactos    | US08, US13, US15       | Configuración de hasta 5 contactos de emergencia y centro de notificaciones con filtros por tipo de alerta.                           | `![Contacts](assets/cap6/sprint2/frontend/web-operations-contacts.png)`   |
+| Operaciones: Auditoría, Reportes y Manten. | US04, US18             | Navegación por pestañas horizontales con tablas de auditoría de eventos, reportes de fallos mecánicos y registro de mantenimiento.    | `![Reports](assets/cap6/sprint2/frontend/web-operations-reports.png)`     |
+
+**Mobile Application (Flutter)**
+
+> Vistas de la primera versión de nuestra aplicación móvil para residentes en el Sprint 2:
+
+<p align="center">
+  <img src="assets/cap6/sprint2/mobile/mobile-login-dashboard.png" alt="Mobile App Login y Dashboard" width="500" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/sprint2/mobile/mobile-devices-battery.png" alt="Mobile App Dispositivos y Batería" width="500" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/sprint2/mobile/mobile-drill-simulation.png" alt="Mobile App Simulacro Manual" width="500" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/sprint2/mobile/mobile-alerts-contacts.png" alt="Mobile App Alertas y Contactos" width="500" />
+</p>
+
+| Vista Móvil (Flutter)                         | User Story             | Descripción                                                                                                                        | Captura                                                                 |
+| :-------------------------------------------- | :--------------------- | :--------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------- |
+| Acceso y Dashboard Principal                  | US01, US07, US09       | Vista móvil en modo oscuro de alto contraste con resumen del estado de la vivienda, nivel de batería y barra de navegación.        | `![MobileHome](assets/cap6/sprint2/mobile/mobile-login-dashboard.png)`  |
+| Mis Dispositivos, Cerraduras y Deep Sleep     | US04, US05, US06, US08 | Tarjetas adaptadas a pantallas táctiles con estado de chapas electromagnéticas, luces de ruta, alerta de batería y modo ahorro.    | `![MobileDevs](assets/cap6/sprint2/mobile/mobile-devices-battery.png)`  |
+| Simulacro de Evacuación Móvil                 | US16, US18             | Botón de alta visibilidad para iniciar simulacro desde el teléfono y visualización inmediata de los milisegundos de apertura.      | `![MobileDrill](assets/cap6/sprint2/mobile/mobile-drill-simulation.png)`|
+| Alertas de Emergencia y Contactos Familiares  | US11, US13, US15       | Bandeja de notificaciones de Modo Emergencia, estado de ruta despejada y gestión de los 5 contactos de emergencia.                 | `![MobileAlerts](assets/cap6/sprint2/mobile/mobile-alerts-contacts.png)`|
+
+- **Video de navegación (Product Navigation - Sprint 2):** [https://drive.google.com/file/d/1vGnquQHfiYyPUvgIyMRiK7XKMtCH8IdE/view?usp=sharing](https://drive.google.com/file/d/1vGnquQHfiYyPUvgIyMRiK7XKMtCH8IdE/view?usp=sharing)
 
 ##### 6.2.2.7. Services Documentation Evidence for Sprint Review
 
+En el Sprint 2 se amplió la especificación OpenAPI de los Web Services mediante Swagger para documentar los endpoints de control de actuadores, monitoreo energético, calibración sísmica, protocolo de emergencia, contactos familiares y ejecución de simulacros, los cuales son consumidos tanto por la Web Application como por la Mobile Application en Flutter.
+
+- **Repositorio:** [Backend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit)
+- **URL local de Swagger UI:** `http://localhost:8080/swagger-ui.html`
+- **URL desplegada de Swagger UI:** [quakexit-back.onrender.com](https://quakexit-back.onrender.com/swagger-ui/index.html)
+
+| Endpoint                                    | Acción (verbo HTTP) | Sintaxis de llamada                              | Parámetros                                                               | Ejemplo y explicación de la respuesta                                                                                             |
+| :------------------------------------------ | :------------------ | :----------------------------------------------- | :----------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
+| `/api/v1/sensors/{deviceId}/actuators`      | GET                 | `GET /api/v1/sensors/{deviceId}/actuators`       | Ruta: `deviceId`                                                         | `200 OK` con `{ "lockStatus": "ACTIVE", "emergencyLights": "LINKED", "relayState": "ENERGIZED" }`: estado de chapas y luces.      |
+| `/api/v1/sensors/{deviceId}/lights`         | PUT                 | `PUT /api/v1/sensors/{deviceId}/lights`          | Ruta: `deviceId`. Cuerpo: `lightRelayCode`, `enabled`                    | `200 OK` con la confirmación de vinculación de las luces de emergencia al protocolo del Hub.                                      |
+| `/api/v1/sensors/{deviceId}/power-mode`     | PATCH               | `PATCH /api/v1/sensors/{deviceId}/power-mode`    | Ruta: `deviceId`. Cuerpo: `mode` (`ONLINE` \| `SLEEPING`)                | `200 OK` con `{ "deviceId": "...", "mode": "SLEEPING" }`: activa o desactiva el modo Deep Sleep de bajo consumo.                  |
+| `/api/v1/sensors/{deviceId}/sensitivity`    | PUT                 | `PUT /api/v1/sensors/{deviceId}/sensitivity`     | Ruta: `deviceId`. Cuerpo: `thresholdG` (ej. `0.28`)                      | `200 OK` con el nuevo umbral guardado. `400 Bad Request` si el valor está fuera del rango seguro permitido.                       |
+| `/api/v1/sensors/{deviceId}/telemetry`      | POST                | `POST /api/v1/sensors/{deviceId}/telemetry`      | Ruta: `deviceId`. Cuerpo: `accelerationG`, `powerSource`, `batteryLevel` | `201 Created`: procesa la lectura del Hub; si `batteryLevel < 15` o `powerSource == "BACKUP"`, genera alerta automática.          |
+| `/api/v1/emergencies/protocol/unlock`       | POST                | `POST /api/v1/emergencies/protocol/unlock`       | Cuerpo: `deviceId`, `magnitude`, `epicenter`                             | `200 OK` con `{ "status": "ACTIVE", "lockReleased": true, "lightsOn": true, "responseTimeMs": 1150 }`: ejecuta desbloqueo.        |
+| `/api/v1/alerts`                            | GET                 | `GET /api/v1/alerts`                             | Consulta: `userId`, `status` (`ACTIVE`, `RESOLVED`)                      | `200 OK` con la lista de alertas críticas de Modo Emergencia, corte eléctrico y batería baja.                                     |
+| `/api/v1/users/{userId}/emergency-contacts` | POST                | `POST /api/v1/users/{userId}/emergency-contacts` | Ruta: `userId`. Cuerpo: `name`, `phone`, `relationship`                  | `201 Created` con el contacto agregado. `400 Bad Request` si el usuario ya alcanzó el límite máximo de 5 contactos.               |
+| `/api/v1/users/{userId}/emergency-contacts` | GET                 | `GET /api/v1/users/{userId}/emergency-contacts`  | Ruta: `userId`                                                           | `200 OK` con el listado de contactos de emergencia configurados por el residente.                                                 |
+| `/api/v1/simulations/start`                 | POST                | `POST /api/v1/simulations/start`                 | Cuerpo: `deviceId`, `userId`                                             | `201 Created` con `{ "simulationId": "...", "state": "DRILL", "doorUnlocked": true, "responseTimeMs": 1340 }`: inicia simulacro.  |
+| `/api/v1/simulations/reports`               | GET                 | `GET /api/v1/simulations/reports`                | Consulta: `deviceId` (opcional)                                          | `200 OK` con el historial de simulacros, estado (`COMPLETED`, `CANCELLED`) y tiempo de respuesta en milisegundos.                 |
+
+> Evidencias del Swagger desplegado con los endpoints del Sprint 2 y prueba de ejecución:
+
+<p align="center">
+  <img src="assets/cap6/sprint2/backend/swagger-s2-endpoints.png" alt="Swagger Sprint 2" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/sprint2/backend/swagger-s2-try.png" alt="Swagger Sprint 2 Try it out" width="700" />
+</p>
+
+| Repository                                       | Branch                        | Commit Id | Commit Message                                                          | Commit Message Body                                                                                   | Commited on (Date) |
+| :----------------------------------------------- | :---------------------------- | :-------- | :---------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------- | :----------------- |
+| 1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit | `feature/sprint2-openapi-doc` | `1d73c95` | `docs(openapi): add Swagger annotations for emergency and drill routes` | Document actuator, energy alert, emergency unlock, contact management and simulation REST controllers. | 06/11/2026         |
+
 ##### 6.2.2.8. Software Deployment Evidence for Sprint Review
 
+Durante el Sprint 2 se actualizaron los despliegues en la nube de la Landing Page, los Web Services y la Web Application, y se realizó el despliegue de la primera versión de la Mobile Application mediante Firebase App Distribution.
+
+**Landing Page (Netlify)**
+
+1. Se integró la rama `release/1.1.0` a `main` en el repositorio `QuakExit-Landing`.
+2. Netlify ejecutó automáticamente `pnpm build` y publicó el directorio `dist`.
+3. Se verificó en producción el selector de idiomas (`en_US` / `es_419`), la sección About the Team, el video incrustado y los Términos y Condiciones.
+
+- **URL:** [https://quakexit-landing.netlify.app/](https://quakexit-landing.netlify.app/)
+
+> Evidencias del despliegue actualizado del Landing Page:
+
+<p align="center">
+  <img src="assets/cap6/sprint2/landing/landing-i18n.png" alt="Landing deployment Sprint 2" width="700" />
+</p>
+
+**Web Services (Render y Aiven MySQL)**
+
+1. Se fusionaron los nuevos controladores y entidades en la rama `main` del repositorio `Backend-QuakExit`.
+2. Render compiló y desplegó automáticamente el servicio Spring Boot conectado a la instancia MySQL (`terraguard_db`).
+3. Se verificó que `/v3/api-docs` y `/swagger-ui/index.html` exponen los nuevos endpoints del Sprint 2 con respuesta HTTP 200.
+
+- **URL de Swagger UI:** [quakexit-back.onrender.com](https://quakexit-back.onrender.com/swagger-ui/index.html)
+
+> Evidencias del despliegue actualizado del Backend:
+
+<p align="center">
+  <img src="assets/cap6/sprint2/backend/swagger-s2-endpoints.png" alt="Backend deployment Sprint 2" width="700" />
+</p>
+
+**Web Application (Vercel)**
+
+1. Se fusionaron las vistas de Dispositivos, Simulacro, Emergencias y Operaciones en la rama `main` de `Frontend-QuakExit`.
+2. Vercel ejecutó `npm run build` y publicó el directorio `dist` conectado mediante `VITE_API_URL` a los Web Services desplegados.
+3. Se verificó la ejecución de simulacros manuales, gestión de dispositivos y consulta de reportes contra la API en producción.
+
+- **URL:** [https://frontend-quak-exit.vercel.app/](https://frontend-quak-exit.vercel.app/)
+
+> Evidencias del despliegue actualizado del Frontend:
+
+<p align="center">
+  <img src="assets/cap6/sprint2/frontend/web-devices-actuators.png" alt="Web Application deployment Sprint 2" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/sprint2/frontend/web-drill-simulation.png" alt="Web Application drill deployment Sprint 2" width="700" />
+</p>
+
+**Mobile Application (Firebase App Distribution)**
+
+1. Se configuró el proyecto móvil en Flutter apuntando a la URL pública de los Web Services desplegados en Render.
+2. Se generó el paquete de instalación de lanzamiento (`.apk`) ejecutando `flutter build apk --release`.
+3. Se registró la aplicación Android en la consola de Firebase y se subió el archivo `app-release.apk` (versión `1.0.0+1`) en el módulo **Firebase App Distribution**.
+4. Se habilitaron los enlaces de descarga e invitaciones por correo para los integrantes del equipo y los usuarios de las pruebas de validación en dispositivos físicos Android.
+
+> Evidencia del despliegue de la Mobile Application en Firebase App Distribution:
+
+<p align="center">
+  <img src="assets/cap6/sprint2/mobile/firebase-app-distribution.png" alt="Firebase App Distribution Mobile Deployment" width="700" />
+</p>
+
 ##### 6.2.2.9. Team Collaboration Insights during Sprint
+
+Durante el Sprint 2, el equipo mantuvo el flujo de trabajo colaborativo basado en GitFlow: la culminación de internacionalización y accesibilidad de la Landing Page estuvo liderada por Requena Gutiérrez con el apoyo de Solis Chang, Vila Guillen y Navarro Correa; los nuevos módulos de los Web Services, la Web Application y la primera versión de la Mobile Application en Flutter fueron liderados por Castro Picón junto con Quiroz Zambrano, De Las Casas Latour, Solis Chang y Vila Guillen; y la suite de pruebas fue liderada por Navarro Correa. Cada integrante trabajó sobre ramas `feature/*` integradas a `develop` y `main` mediante Pull Requests revisados y aplicando Conventional Commits.
+
+Evidencias de Insights del Landing Page, Backend, Frontend Web y Mobile Application en el Sprint 2:
+
+<p align="center">
+  <img src="assets/cap6/sprint2/insights/landing-s2.png" alt="Landing contributors Sprint 2" width="700" />
+</p>
+<p align="center">
+  <img src="assets/cap6/sprint2/insights/back-s2.png" alt="Backend contributors Sprint 2" width="700" />
+</p>
+<p align="center">
+  <img src="assets/cap6/sprint2/insights/front-s2.png" alt="Frontend contributors Sprint 2" width="700" />
+</p>
+<p align="center">
+  <img src="assets/cap6/sprint2/insights/mobile-s2.png" alt="Mobile contributors Sprint 2" width="700" />
+</p>
+
+Los analíticos muestran la participación activa de los integrantes en cada repositorio durante el Sprint 2, en coherencia con la matriz de la sección 6.2.2.2.
 
 <div style="page-break-after: always;"></div>
 
