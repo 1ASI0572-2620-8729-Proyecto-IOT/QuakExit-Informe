@@ -3196,17 +3196,19 @@ Durante el Sprint 2 se actualizaron los despliegues en la nube de la Landing Pag
   <img src="assets/cap6/sprint2/frontend/web-drill-simulation.png" alt="Web Application drill deployment Sprint 2" width="700" />
 </p>
 
-**Mobile Application (Firebase App Distribution)**
+**Mobile Application (GitHub Actions & GitHub Releases)**
 
 1. Se configuró el proyecto móvil en Flutter apuntando a la URL pública de los Web Services desplegados en Render.
-2. Se generó el paquete de instalación de lanzamiento (`.apk`) ejecutando `flutter build apk --release`.
-3. Se registró la aplicación Android en la consola de Firebase y se subió el archivo `app-release.apk` (versión `1.0.0+1`) en el módulo **Firebase App Distribution**.
-4. Se habilitaron los enlaces de descarga e invitaciones por correo para los integrantes del equipo y los usuarios de las pruebas de validación en dispositivos físicos Android.
+2. Se implementó un flujo de despliegue continuo (CD) mediante **GitHub Actions** (`cd: add Production Mobile Release workflow`) en el repositorio `Mobile-QuakExit`.
+3. Al integrar los cambios en la rama `main`, el workflow compila automáticamente el paquete de instalación de Android (`.apk`) y genera el lanzamiento oficial **QuakExit Mobile Release v1.0.0** (`Latest`) con la etiqueta `v1.0.0` en la sección **Releases** de GitHub.
+4. En el apartado **Assets** del Release quedan publicados y listos para descarga directa el instalador compilado (`app-debug.apk` con su respectivo hash de verificación `sha256`) y el código fuente empaquetado (`.zip` y `.tar.gz`), permitiendo la instalación directa en dispositivos físicos Android para el equipo y las pruebas de validación.
 
-> Evidencia del despliegue de la Mobile Application en Firebase App Distribution:
+- **URL de descarga (GitHub Releases):** [https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Mobile-QuakExit/releases/tag/v1.0.0](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Mobile-QuakExit/releases/tag/v1.0.0)
+
+> Evidencia del despliegue de la Mobile Application en GitHub Releases:
 
 <p align="center">
-  <img src="assets/cap6/sprint2/mobile/firebase-app-distribution.png" alt="Firebase App Distribution Mobile Deployment" width="700" />
+  <img src="assets/cap6/sprint2/mobile/github-release-mobile.png" alt="GitHub Releases Mobile Deployment" width="700" />
 </p>
 
 ##### 6.2.2.9. Team Collaboration Insights during Sprint
