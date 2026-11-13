@@ -1300,7 +1300,7 @@ El diseño arquitectónico de QuakExit se ha elaborado siguiendo el Modelo C4, p
 
 Este diagrama muestra que la plataforma **QuakExit** opera dentro de un ecosistema compuesto por dos tipos de usuarios principales (Residente / Dueño de Smart Home y Administrador Inmobiliario) y un actor técnico de mantenimiento (Equipo de Desarrollo), los cuales interactúan directamente con el sistema central **QuakExit System**.
 
-A su vez, el sistema se conecta externamente con **Firebase Cloud Messaging (FCM)** para delegar el envío de notificaciones push críticas en situaciones de emergencia. Los Residentes utilizan la plataforma para monitorear el estado de sus dispositivos IoT y recibir alertas de evacuación; los Administradores Inmobiliarios gestionan configuraciones masivas en proyectos multifamiliares; y el Equipo de Desarrollo asegura el mantenimiento continuo de la infraestructura en la nube.
+A su vez, el sistema se conecta externamente con **GitHub Releases Cloud Messaging (FCM)** para delegar el envío de notificaciones push críticas en situaciones de emergencia. Los Residentes utilizan la plataforma para monitorear el estado de sus dispositivos IoT y recibir alertas de evacuación; los Administradores Inmobiliarios gestionan configuraciones masivas en proyectos multifamiliares; y el Equipo de Desarrollo asegura el mantenimiento continuo de la infraestructura en la nube.
 
 <p align="center">
   <img src="assets/cap4/4.1/diagrama-landscape.png" width="900">
@@ -1319,7 +1319,7 @@ El diagrama de contexto sitúa a la plataforma QuakExit en el centro (como una c
 A nivel de contenedores, se "abre" el sistema **QuakExit Platform** para revelar las unidades de despliegue y almacenamiento que soportan los procesos del negocio, integrando las capas de **Cloud Computing**, **Edge Computing** y **Embedded Systems** exigidas por la arquitectura de la solución. La plataforma se compone de los siguientes contenedores principales:
 
 - **Aplicaciones Cliente (Frontend Web y Móvil):**
-  - **Mobile Application (Flutter / Dart):** Aplicación móvil multiplataforma orientada a los residentes (B2C) para el monitoreo de batería, recepción de alertas críticas, gestión de contactos y ejecución de simulacros manuales.
+  - **Mobile Application (Android Studio / Dart):** Aplicación móvil multiplataforma orientada a los residentes (B2C) para el monitoreo de batería, recepción de alertas críticas, gestión de contactos y ejecución de simulacros manuales.
   - **Web Application & Landing Page (React + TypeScript / Astro):** Sitio web estático promocional y panel web adaptable para la supervisión de dispositivos, auditoría de emergencias, reportes de tiempos de respuesta y gestión por lotes de edificios (B2B).
 
 - **Capa de Servicios Cloud y Persistencia (RESTful API Interna):**
@@ -1339,7 +1339,7 @@ A nivel de contenedores, se "abre" el sistema **QuakExit Platform** para revelar
 
 - **Sistemas y Hardware Externos:**
   - **Smart Home Hardware (Sensores y Actuadores):** Componentes electrónicos físicos conectados al ESP32: acelerómetro sísmico MPU6050 (I2C), módulo relé fail-safe, chapa electromagnética de 12 V, luces de emergencia, buzzer, botón de rearme y batería de respaldo.
-  - **Security Auth & Push Service (Firebase / JWT Auth):** Proveedor externo para validación de seguridad y envío de notificaciones push críticas a los teléfonos móviles.
+  - **Security Auth & Push Service (GitHub Releases / JWT Auth):** Proveedor externo para validación de seguridad y envío de notificaciones push críticas a los teléfonos móviles.
   - **City Cloud Connector (SISMATE / USGS Earthquake API):** Servicio externo de terceros que provee señales de alerta sísmica temprana e información telúrica en tiempo real.
 
 <p align="center">
@@ -1352,7 +1352,7 @@ Este diagrama mapea la infraestructura física y lógica sobre la cual se despli
 
 En **AWS Cloud**, el sistema aprovecha una arquitectura Serverless orientada a eventos para maximizar la disponibilidad y reducir costos operativos. Se utiliza **Amazon API Gateway** como punto de entrada unificado gestionando solicitudes HTTPS, el cual enruta el tráfico hacia funciones **AWS Lambda (Python)** encargadas de la lógica de negocio y autenticación. La capa de persistencia se aloja en **Amazon DynamoDB** para garantizar accesos de baja latencia a los registros de usuarios y eventos. La comunicación bidireccional con el hardware local se canaliza mediante **AWS IoT Core** utilizando el protocolo MQTT/TLS.
 
-En los **Dispositivos Cliente**, la aplicación móvil desarrollada en **Flutter** corre sobre dispositivos Android e iOS para el monitoreo del usuario B2C, mientras que el panel de administración B2B se ejecuta en navegadores web mediante peticiones HTTP asíncronas. Como servicio externo, se integra **Firebase Cloud Messaging (FCM)** para la entrega masiva de notificaciones push críticas.
+En los **Dispositivos Cliente**, la aplicación móvil desarrollada en **Android Studio** corre sobre dispositivos Android e iOS para el monitoreo del usuario B2C, mientras que el panel de administración B2B se ejecuta en navegadores web mediante peticiones HTTP asíncronas. Como servicio externo, se integra **GitHub Releases Cloud Messaging (FCM)** para la entrega masiva de notificaciones push críticas.
 
 En la **Infraestructura Residencial / Smart Home**, se despliega el microcontrolador **ESP32 (IoT Hub)** en la vivienda del usuario. Este dispositivo gestiona localmente sensores y actuadores (cerraduras electromagnéticas y luces de emergencia), ejecutando algoritmos en el borde (_Edge Computing_) para operar incluso en situaciones de desconexión o pérdida de energía eléctrica mediante baterías de respaldo.
 
@@ -1511,14 +1511,14 @@ La Domain Layer concentra la lógica de negocio principal de QuakExit y está co
 
 #### 4.2.1.2. Interface Layer
 
-La Interface Layer expone el dominio de QuakExit hacia los consumidores externos: la app móvil Flutter (residentes), el panel web B2B (inmobiliarias) y el propio QuakExit Hub (ESP32) vía MQTT. Todos los Controllers se implementan como funciones **AWS Lambda** enrutadas por **Amazon API Gateway**; no contienen lógica de negocio, solo validan la entrada (DTOs), invocan a la Application Layer y traducen las respuestas o excepciones de dominio a códigos HTTP.
+La Interface Layer expone el dominio de QuakExit hacia los consumidores externos: la app móvil Android Studio (residentes), el panel web B2B (inmobiliarias) y el propio QuakExit Hub (ESP32) vía MQTT. Todos los Controllers se implementan como funciones **AWS Lambda** enrutadas por **Amazon API Gateway**; no contienen lógica de negocio, solo validan la entrada (DTOs), invocan a la Application Layer y traducen las respuestas o excepciones de dominio a códigos HTTP.
 
 **User Management Context**
 
 | Clase                 | Tipo                     | Métodos expuestos                                       | Endpoint / Trigger                    | Consumido por                  |
 | --------------------- | ------------------------ | ------------------------------------------------------- | ------------------------------------- | ------------------------------ |
-| AuthController        | REST Controller (Lambda) | register(), login(), refreshToken()                     | POST /auth/register, POST /auth/login | App Flutter, Panel B2B         |
-| UserProfileController | REST Controller (Lambda) | getProfile(), updateProfile(), updateEmergencyProfile() | GET/PUT /users/{userId}               | App Flutter                    |
+| AuthController        | REST Controller (Lambda) | register(), login(), refreshToken()                     | POST /auth/register, POST /auth/login | App Android Studio, Panel B2B         |
+| UserProfileController | REST Controller (Lambda) | getProfile(), updateProfile(), updateEmergencyProfile() | GET/PUT /users/{userId}               | App Android Studio                    |
 | IAMAuthorizer         | Lambda Custom Authorizer | validateToken(), extractRole()                          | Autorización previa en API Gateway    | Todos los endpoints protegidos |
 
 **Seismic Monitoring Context**
@@ -1526,21 +1526,21 @@ La Interface Layer expone el dominio de QuakExit hacia los consumidores externos
 | Clase                  | Tipo                                          | Métodos expuestos                   | Endpoint / Trigger                    | Consumido por            |
 | ---------------------- | --------------------------------------------- | ----------------------------------- | ------------------------------------- | ------------------------ |
 | SeismicDataConsumer    | IoT Consumer (Lambda suscrita a AWS IoT Core) | onMessageReceived(), parseReading() | Topic MQTT `quakexit/{hubId}/seismic` | QuakExit Hub (ESP32)     |
-| SeismicEventController | REST Controller (Lambda)                      | getRecentEvents(), getEventById()   | GET /seismic-events                   | App Flutter, Panel B2B   |
-| SensorStatusController | REST Controller (Lambda)                      | registerSensor(), getSensorStatus() | POST/GET /sensors                     | App Flutter (instalador) |
+| SeismicEventController | REST Controller (Lambda)                      | getRecentEvents(), getEventById()   | GET /seismic-events                   | App Android Studio, Panel B2B   |
+| SensorStatusController | REST Controller (Lambda)                      | registerSensor(), getSensorStatus() | POST/GET /sensors                     | App Android Studio (instalador) |
 
 **Emergency Alert Context**
 
 | Clase                        | Tipo                     | Métodos expuestos                | Endpoint / Trigger                     | Consumido por            |
 | ---------------------------- | ------------------------ | -------------------------------- | -------------------------------------- | ------------------------ |
-| AlertController              | REST Controller (Lambda) | getActiveAlerts(), cancelAlert() | GET /alerts, PATCH /alerts/{id}/cancel | App Flutter, Panel B2B   |
-| NotificationDeliveryConsumer | Event Consumer (Lambda)  | onDeliveryReceipt()              | Webhook de confirmación de entrega     | Firebase Cloud Messaging |
+| AlertController              | REST Controller (Lambda) | getActiveAlerts(), cancelAlert() | GET /alerts, PATCH /alerts/{id}/cancel | App Android Studio, Panel B2B   |
+| NotificationDeliveryConsumer | Event Consumer (Lambda)  | onDeliveryReceipt()              | Webhook de confirmación de entrega     | GitHub Releases Cloud Messaging |
 
 **Evacuation Management Context**
 
 | Clase                | Tipo                     | Métodos expuestos                             | Endpoint / Trigger    | Consumido por          |
 | -------------------- | ------------------------ | --------------------------------------------- | --------------------- | ---------------------- |
-| EvacuationController | REST Controller (Lambda) | getEvacuationStatus(), getEvacuationHistory() | GET /evacuations      | App Flutter, Panel B2B |
+| EvacuationController | REST Controller (Lambda) | getEvacuationStatus(), getEvacuationHistory() | GET /evacuations      | App Android Studio, Panel B2B |
 | SafeZoneController   | REST Controller (Lambda) | listSafeZones(), updateCapacity()             | GET/PATCH /safe-zones | Panel B2B              |
 
 ---
@@ -1585,7 +1585,7 @@ La Application Layer orquesta los casos de uso: invoca las Entities/Aggregates/D
 
 #### 4.2.1.4. Infrastructure Layer
 
-La Infrastructure Layer implementa las interfaces de Repository declaradas en el Domain Layer usando **Amazon DynamoDB**, y aísla los servicios externos (Firebase, AWS IoT Core, SMS) mediante adaptadores tipo Anti-Corruption Layer, según la relación _Gestión de Notificaciones → Servicios Externos_ del Context Mapping.
+La Infrastructure Layer implementa las interfaces de Repository declaradas en el Domain Layer usando **Amazon DynamoDB**, y aísla los servicios externos (GitHub Releases, AWS IoT Core, SMS) mediante adaptadores tipo Anti-Corruption Layer, según la relación _Gestión de Notificaciones → Servicios Externos_ del Context Mapping.
 
 **Repositorios (implementación de las interfaces del Domain Layer)**
 
@@ -1600,7 +1600,7 @@ La Infrastructure Layer implementa las interfaces de Repository declaradas en el
 
 | Clase                  | Adapta                                              | Detalle                                                                                         |
 | ---------------------- | --------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| FCMNotificationGateway | Notification → Firebase Cloud Messaging             | Traduce el modelo interno de Notification al payload de FCM; usado por AlertDistributionService |
+| FCMNotificationGateway | Notification → GitHub Releases Cloud Messaging             | Traduce el modelo interno de Notification al payload de FCM; usado por AlertDistributionService |
 | AWSIoTCoreGateway      | Mensajes MQTT del ESP32 Hub → SeismicDataConsumer   | Gestiona la suscripción a topics y la autenticación mutua por certificado de dispositivo (TLS)  |
 | SmsGatewayAdapter      | Notification (canal SMS) → proveedor externo de SMS | Usado para el envío a contactos de emergencia (US15)                                            |
 
@@ -1630,7 +1630,7 @@ El **Seismic Monitoring Bounded Context** está compuesto por los siguientes mó
 **2. Interface Layer:**
 
 - Expone los puntos de entrada al sistema tanto para clientes HTTP como para los microcontroladores locales.
-- Incluye controladores REST (como `SeismicEventController` y `SensorStatusController`) para las consultas desde la App Flutter y el Panel B2B.
+- Incluye controladores REST (como `SeismicEventController` y `SensorStatusController`) para las consultas desde la App Android Studio y el Panel B2B.
 - Implementa consumidores de eventos (como `SeismicDataConsumer`) que se suscriben a los tópicos MQTT para recibir datos crudos directamente desde los dispositivos IoT.
 
 **3. Domain Layer:**
@@ -2263,7 +2263,7 @@ La siguiente tabla resume los productos de software que utilizan los miembros de
 | Software Development (Landing Page)     | **Astro** (HTML5, CSS3, JavaScript)                                                | Framework para generar el sitio web estático de la Landing Page.                                                                                             | [astro.build](https://astro.build/)                                                                                                   |
 | Software Development (Landing Page)     | **pnpm**                                                                           | Gestor de paquetes para instalar dependencias y ejecutar los comandos `dev` y `build`.                                                                       | [pnpm.io](https://pnpm.io/)                                                                                                           |
 | Software Development (Web Applications) | **React + TypeScript + Vite** (Node.js 20, npm)                                    | Desarrollo del frontend web; Axios para consumir la API y proxy de Vite hacia el backend en desarrollo.                                                      | [vite.dev](https://vite.dev/) · [nodejs.org](https://nodejs.org/)                                                                     |
-| Software Development (Mobile)           | **Android Studio** + **Flutter (Dart)**                                            | Compilación, emulación y desarrollo de la Mobile Application.                                                                                                | [flutter.dev](https://flutter.dev/)                                                                                                   |
+| Software Development (Mobile)           | **Android Studio** + **Android Studio (Dart)**                                            | Compilación, emulación y desarrollo de la Mobile Application.                                                                                                | [Android Studio.dev](https://Android Studio.dev/)                                                                                                   |
 | Software Development (Web Services)     | **IntelliJ IDEA** / VS Code (Java 25)                                              | Construcción de los RESTful Web Services.                                                                                                                    | [jetbrains.com/idea](https://www.jetbrains.com/idea/)                                                                                 |
 | Software Development (Web Services)     | **Spring Boot 3.5.6** + **Maven**                                                  | Framework y gestor de construcción del backend.                                                                                                              | [spring.io/projects/spring-boot](https://spring.io/projects/spring-boot) · [maven.apache.org](https://maven.apache.org/)              |
 | Software Development (Web Services)     | **MySQL**                                                                          | Base de datos relacional del backend (`terraguard_db`).                                                                                                      | [mysql.com](https://www.mysql.com/)                                                                                                   |
@@ -2272,7 +2272,7 @@ La siguiente tabla resume los productos de software que utilizan los miembros de
 | Software Deployment                     | **Netlify**                                                                        | Publicación de la Landing Page a partir del repositorio de GitHub.                                                                                           | [netlify.com](https://www.netlify.com/)                                                                                               |
 | Software Deployment                     | **AWS** (EC2, RDS for MySQL)                                                       | Despliegue del backend Spring Boot y su base de datos MySQL.                                                                                                 | [aws.amazon.com](https://aws.amazon.com/)                                                                                             |
 | Software Deployment                     | **Netlify** (Web Application)                                                      | Publicación de la aplicación web a partir del repositorio `Frontend-QuakExit`.                                                                               | [netlify.com](https://www.netlify.com/)                                                                                               |
-| Software Deployment                     | **Firebase App Distribution**                                                      | Distribución de la Mobile Application para pruebas en dispositivos físicos.                                                                                  | [firebase.google.com/docs/app-distribution](https://firebase.google.com/docs/app-distribution)                                        |
+| Software Deployment                     | **GitHub Releases App Distribution**                                                      | Distribución de la Mobile Application para pruebas en dispositivos físicos.                                                                                  | [GitHub Releases.google.com/docs/app-distribution](https://GitHub Releases.google.com/docs/app-distribution)                                        |
 | Software Documentation                  | **GitHub** (Markdown)                                                              | Informe del proyecto (`README.md`) versionado en la organización del equipo.                                                                                 | [github.com](https://github.com/)                                                                                                     |
 | Software Documentation                  | **Swagger UI / OpenAPI**                                                           | Documentación de los endpoints de los Web Services (`/swagger-ui.html` y `/v3/api-docs`).                                                                    | [swagger.io](https://swagger.io/)                                                                                                     |
 
@@ -2325,7 +2325,7 @@ Todos los identificadores (variables, funciones, clases, archivos, ramas y commi
 | JavaScript / TypeScript | [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html)                                                                                                    | `const` y `let` en lugar de `var`, `camelCase` para variables y funciones, `PascalCase` para clases y componentes, tipado explícito en TypeScript.                |
 | React (componentes)     | Documentación oficial de React y Google TypeScript Style Guide                                                                                                                       | Componentes funcionales en `PascalCase`, un componente por archivo `.tsx`, hooks con prefijo `use`, tipos explícitos en props.                                    |
 | Astro (componentes)     | Documentación oficial de Astro                                                                                                                                                       | Un componente por archivo `.astro`, nombres en `PascalCase`, estilos con alcance al componente.                                                                   |
-| Dart / Flutter          | [Effective Dart](https://dart.dev/effective-dart)                                                                                                                                    | `lowerCamelCase` para miembros, `UpperCamelCase` para tipos, `snake_case` para archivos.                                                                          |
+| Dart / Android Studio          | [Effective Dart](https://dart.dev/effective-dart)                                                                                                                                    | `lowerCamelCase` para miembros, `UpperCamelCase` para tipos, `snake_case` para archivos.                                                                          |
 | Java                    | [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html) y [Spring Boot Features](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html) | Paquetes por capa (`domain`, `application`, `infrastructure`, `interfaces`), llaves en todos los bloques, un archivo por clase pública.                           |
 | C++ (firmware)          | [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/)                                                                                                                   | Constantes en `UPPER_SNAKE_CASE`, funciones cortas y con una única responsabilidad.                                                                               |
 | Python (Edge / Lambda)  | [PEP 8](https://peps.python.org/pep-0008/)                                                                                                                                           | `snake_case` para funciones y variables, `PascalCase` para clases.                                                                                                |
@@ -2362,10 +2362,10 @@ A continuación se describe la configuración del despliegue de cada producto di
 6. Se abre el puerto de la API en el grupo de seguridad y se habilita HTTPS.
 7. Se verifica que `/v3/api-docs` responde con HTTP 200 y que Swagger UI está disponible.
 
-**Mobile Application (Firebase App Distribution)**
+**Mobile Application (GitHub Releases App Distribution)**
 
-1. Se genera el archivo de instalación (`.apk`) de la aplicación Flutter.
-2. Se registra el proyecto en Firebase y se sube la compilación a App Distribution.
+1. Se genera el archivo de instalación (`.apk`) de la aplicación Android Studio.
+2. Se registra el proyecto en GitHub Releases y se sube la compilación a App Distribution.
 3. Se invita a los testers del equipo y de las entrevistas de validación.
 
 **QuakExit Hub (ESP32)**
@@ -2834,7 +2834,7 @@ Los analíticos muestran la participación de los integrantes en cada repositori
 
 ##### 6.2.2.1. Sprint Planning 2
 
-En esta sección se detallan los acuerdos y la planificación del segundo Sprint del proyecto, enfocado en culminar las tareas de internacionalización y accesibilidad de la Landing Page, implementar los módulos centrales de monitoreo energético, control de actuadores IoT, ejecución de simulacros manuales, alertas de emergencia y gestión operativa en los Web Services y la Web Application, y desplegar la primera versión de la Mobile Application en Flutter distribuida mediante Firebase App Distribution.
+En esta sección se detallan los acuerdos y la planificación del segundo Sprint del proyecto, enfocado en culminar las tareas de internacionalización y accesibilidad de la Landing Page, implementar los módulos centrales de monitoreo energético, control de actuadores IoT, ejecución de simulacros manuales, alertas de emergencia y gestión operativa en los Web Services y la Web Application, y desplegar la primera versión de la Mobile Application en Android Studio distribuida mediante GitHub Releases App Distribution.
 
 | Sprint #                        | Sprint 2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | :------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -2847,7 +2847,7 @@ En esta sección se detallan los acuerdos y la planificación del segundo Sprint
 | Sprint 1 Review Summary         | Se desplegó la primera versión funcional de la Landing Page en Netlify, los Web Services en Render con base de datos MySQL en Aiven y la Web Application en Vercel. Los usuarios residentes pueden registrarse, iniciar sesión con JWT, configurar su perfil de vivienda, vincular su dispositivo QuakExit Hub, consultar el porcentaje de batería y visualizar el historial de eventos sísmicos. Quedaron en proceso la traducción completa inglés/español (i18n), la sección About the Team, los términos y condiciones y la incrustación del video promocional en la Landing Page, además del inicio del desarrollo de la aplicación móvil.                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | Sprint 1 Retrospective Summary  | Aciertos: la integración continua entre GitHub, Netlify, Vercel y Render agilizó las pruebas de extremo a extremo, y la estructura por capas facilitó la creación rápida de endpoints. Oportunidades de mejora: evitar que la suspensión por inactividad del plan gratuito del backend retrase las pruebas del frontend y móvil, adelantar la escritura de los escenarios Gherkin (Cucumber) antes del cierre del Sprint y completar al 100 % las tareas transversales de la Landing Page.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | **Sprint Goal & User Stories**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| Sprint 2 Goal                   | **Our focus is on** delivering the complete bilingual and accessible version of the Landing Page, implementing the core emergency, actuator control, energy monitoring, and evacuation drill modules across the Web Services and Web Application, and deploying the first version of the Mobile Application in Flutter integrated with the API and QuakExit Hub telemetry. **We believe it delivers** immediate operational control and on-the-go peace of mind to Smart Home residents by allowing them to verify lock and light connections, monitor power outages and low-battery alerts, configure emergency contacts, and execute manual evacuation drills with response-time metrics under 5 seconds from both web and mobile devices. **This will be confirmed when** the Landing Page is fully navigable in English (en_US) and Spanish (es_419), residents can trigger a manual evacuation drill from the deployed Web Application and the Flutter Mobile Application (distributed via Firebase App Distribution) obtaining a response time report below 5000 ms, and all new RESTful endpoints are tested and documented in OpenAPI/Swagger. |
+| Sprint 2 Goal                   | **Our focus is on** delivering the complete bilingual and accessible version of the Landing Page, implementing the core emergency, actuator control, energy monitoring, and evacuation drill modules across the Web Services and Web Application, and deploying the first version of the Mobile Application in Android Studio integrated with the API and QuakExit Hub telemetry. **We believe it delivers** immediate operational control and on-the-go peace of mind to Smart Home residents by allowing them to verify lock and light connections, monitor power outages and low-battery alerts, configure emergency contacts, and execute manual evacuation drills with response-time metrics under 5 seconds from both web and mobile devices. **This will be confirmed when** the Landing Page is fully navigable in English (en_US) and Spanish (es_419), residents can trigger a manual evacuation drill from the deployed Web Application and the Android Studio Mobile Application (distributed via GitHub Releases App Distribution) obtaining a response time report below 5000 ms, and all new RESTful endpoints are tested and documented in OpenAPI/Swagger. |
 | Sprint 2 Velocity               | 46                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | Sum of Story Points             | 46 (Cierre de tareas de Landing Page + Web Services, Web Application, Mobile Application e integración IoT: 46)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
@@ -2869,9 +2869,9 @@ En esta sección se detallan los acuerdos y la planificación del segundo Sprint
 
 ##### 6.2.2.2. Aspect Leaders and Collaborators
 
-Los aspectos considerados en el Sprint 2 son: Landing Page (cierre de contenido, i18n y a11y), Web Services (actuadores, energía, emergencias y simulacros), Web Application (vistas de Dispositivos, Simulacro, Emergencias y Operaciones), Mobile Application (primera versión en Flutter para residentes), Integración IoT & Firmware, y Testing & Despliegue. La matriz guarda coherencia con la asignación de tareas del Sprint Backlog 2.
+Los aspectos considerados en el Sprint 2 son: Landing Page (cierre de contenido, i18n y a11y), Web Services (actuadores, energía, emergencias y simulacros), Web Application (vistas de Dispositivos, Simulacro, Emergencias y Operaciones), Mobile Application (primera versión en Android Studio para residentes), Integración IoT & Firmware, y Testing & Despliegue. La matriz guarda coherencia con la asignación de tareas del Sprint Backlog 2.
 
-| Team Member (Last Name, First Name) | Landing Page: i18n, a11y y cierre | Web Services | Web Application | Mobile Application (Flutter) | Integración IoT & Firmware | Testing & Despliegue |
+| Team Member (Last Name, First Name) | Landing Page: i18n, a11y y cierre | Web Services | Web Application | Mobile Application (Android Studio) | Integración IoT & Firmware | Testing & Despliegue |
 | :---------------------------------- | :-------------------------------: | :----------: | :-------------: | :--------------------------: | :------------------------: | :------------------: |
 | Castro Picón, Manuel Fernando Joao  |                                   |      L       |        L        |              L               |             C              |          C           |
 | Requena Gutiérrez, Diego Gabriel    |                 L                 |      C       |        C        |              C               |             L              |          L           |
@@ -2883,7 +2883,7 @@ Los aspectos considerados en el Sprint 2 son: Landing Page (cierre de contenido,
 
 ##### 6.2.2.3. Sprint Backlog 2
 
-El objetivo del Sprint 2 es consolidar la versión bilingüe y accesible de la Landing Page, habilitar el flujo operativo completo para el residente en la Web Application y los Web Services, y publicar la primera versión de la Mobile Application en Flutter (distribuida con Firebase App Distribution), permitiendo supervisar cerraduras y luces, detectar cortes eléctricos y batería baja, configurar contactos de emergencia y ejecutar simulacros manuales con medición de latencia.
+El objetivo del Sprint 2 es consolidar la versión bilingüe y accesible de la Landing Page, habilitar el flujo operativo completo para el residente en la Web Application y los Web Services, y publicar la primera versión de la Mobile Application en Android Studio (distribuida con GitHub Releases), permitiendo supervisar cerraduras y luces, detectar cortes eléctricos y batería baja, configurar contactos de emergencia y ejecutar simulacros manuales con medición de latencia.
 
 - **Tablero del Sprint (Trello):** [https://trello.com/invite/b/6ac7bc383877b72e7c9c6f7f/ATTI13b131a0bab0ee2f504af69ea681923303610CC8/quakexit](https://trello.com/invite/b/6ac7bc383877b72e7c9c6f7f/ATTI13b131a0bab0ee2f504af69ea681923303610CC8/quakexit)
 
@@ -2895,18 +2895,18 @@ Evidencias del Trello en el Sprint 2:
 
 | Story Id | Story Title                                        | Task Id | Task Title                                                   | Task Description                                                                                                          | Estimation (Hours) | Assigned To                    | Status |
 | :------- | :------------------------------------------------- | :------ | :----------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------ | :----------------: | :----------------------------- | :----- |
-| LP03     | Acceder a las aplicaciones desde un call-to-action | LP03-T2 | Actualizar enlaces definitivos de CTA                        | Vincular los botones principales de la Landing Page hacia la URL productiva en Vercel y la descarga móvil en Firebase.    |         2          | Solis Chang, Santiago          | Done   |
+| LP03     | Acceder a las aplicaciones desde un call-to-action | LP03-T2 | Actualizar enlaces definitivos de CTA                        | Vincular los botones principales de la Landing Page hacia la URL productiva en Vercel y la descarga móvil en GitHub Releases.    |         2          | Solis Chang, Santiago          | Done   |
 | LP06     | Contactar al equipo o solicitar cotización         | LP06-T3 | Integrar recepción de formularios de contacto                | Configurar el envío y validación con confirmación visual para solicitudes B2C y B2B.                                      |         2          | Solis Chang, Santiago          | Done   |
 | LP07     | Conocer al equipo                                  | LP07-T2 | Publicar sección About the Team                              | Maquetar las tarjetas de los 7 integrantes de TerraGuard con fotografía, rol y carrera.                                   |         3          | Navarro Correa, César          | Done   |
 | LP08     | Ver el video About-the-Product                     | LP08-T2 | Incrustar reproductor de video del producto                  | Integrar el componente de video con atributos de accesibilidad (`title`, `aria-label`) en la Landing Page.                |         2          | Vila Guillen, Miguel           | Done   |
 | LP09     | Cambiar el idioma                                  | LP09-T2 | Completar internacionalización (en_US / es_419)              | Traducir la totalidad de textos estáticos, configurar inglés por defecto y habilitar el selector dinámico en el header.   |         4          | Requena Gutiérrez, Diego       | Done   |
 | LP10     | Consultar términos y condiciones                   | LP10-T2 | Publicar vista de Términos y Condiciones                     | Incorporar el documento ético y legal basado en ACM/IEEE y CIP accesible desde el footer de la Landing Page y Web App.    |         2          | Vila Guillen, Miguel           | Done   |
 | US04     | Verificar estado de conexión de cerraduras         | US04-T1 | Implementar endpoint de estado de cerraduras y actuadores    | Exponer en el backend el estado de enlace (`ACTIVE` / `FAULT`) de las chapas electromagnéticas asociadas al Hub.          |         3          | Quiroz Zambrano, Fabrizio      | Done   |
-| US04     | Verificar estado de conexión de cerraduras         | US04-T2 | Desarrollar tarjetas de estado de cerraduras en Web y Móvil  | Mostrar indicadores semánticos en verde (conectada) o rojo (falla de enlace) en la Web Application y en la App Flutter.   |         4          | Castro Picón, Manuel Joao      | Done   |
+| US04     | Verificar estado de conexión de cerraduras         | US04-T2 | Desarrollar tarjetas de estado de cerraduras en Web y Móvil  | Mostrar indicadores semánticos en verde (conectada) o rojo (falla de enlace) en la Web Application y en la App Android Studio.   |         4          | Castro Picón, Manuel Joao      | Done   |
 | US05     | Configurar luces de emergencia IoT                 | US05-T1 | Implementar endpoint de vinculación de relés de iluminación  | Permitir asociar y configurar periféricos de iluminación de ruta de escape al protocolo del QuakExit Hub.                 |         4          | Quiroz Zambrano, Fabrizio      | Done   |
-| US05     | Configurar luces de emergencia IoT                 | US05-T2 | Construir interfaz de configuración de luces en Web y Móvil  | Agregar controles en Dispositivos (Web y Flutter) para vincular y probar las luces de ruta de evacuación.                 |         4          | Castro Picón, Manuel Joao      | Done   |
+| US05     | Configurar luces de emergencia IoT                 | US05-T2 | Construir interfaz de configuración de luces en Web y Móvil  | Agregar controles en Dispositivos (Web y Android Studio) para vincular y probar las luces de ruta de evacuación.                 |         4          | Castro Picón, Manuel Joao      | Done   |
 | US06     | Gestionar modo de bajo consumo                     | US06-T1 | Implementar endpoint de cambio de modo de energía            | Actualizar el estado operativo del Hub (`ONLINE` vs. `SLEEPING` / Deep Sleep) en la base de datos.                        |         3          | De Las Casas Latour, Sebastián | Done   |
-| US06     | Gestionar modo de bajo consumo                     | US06-T2 | Implementar toggle de Deep Sleep en Web y Mobile App         | Permitir al residente activar o desactivar el ahorro de energía desde la tarjeta del dispositivo en Web y Flutter.        |         3          | Vila Guillen, Miguel           | Done   |
+| US06     | Gestionar modo de bajo consumo                     | US06-T2 | Implementar toggle de Deep Sleep en Web y Mobile App         | Permitir al residente activar o desactivar el ahorro de energía desde la tarjeta del dispositivo en Web y Android Studio.        |         3          | Vila Guillen, Miguel           | Done   |
 | US08     | Recibir alertas de batería baja                    | US08-T1 | Implementar regla de negocio y endpoint de batería crítica   | Generar alerta automática cuando el nivel reportado por el Hub sea inferior al 15 % y exponerla en el módulo de alertas.  |         3          | Quiroz Zambrano, Fabrizio      | Done   |
 | US08     | Recibir alertas de batería baja                    | US08-T2 | Mostrar aviso y notificación de batería baja en Web y Móvil  | Renderizar alerta prioritaria en el Dashboard web y en la pantalla de alertas de la Mobile Application (< 15 %).          |         3          | Solis Chang, Santiago          | Done   |
 | US09     | Detectar corte de fluido eléctrico                 | US09-T1 | Implementar registro de cambio de fuente de energía (AC/Bat) | Procesar el evento de transición de red eléctrica (`MAIN`) a batería de respaldo (`BACKUP`) y registrar auditoría.        |         4          | De Las Casas Latour, Sebastián | Done   |
@@ -2916,26 +2916,26 @@ Evidencias del Trello en el Sprint 2:
 | US11     | Ejecutar protocolo de desbloqueo                   | US11-T1 | Implementar servicio de activación del protocolo de apertura | Orquestar en el backend el registro de confirmación sísmica, liberación de cerraduras y activación de luces de ruta.      |         6          | Castro Picón, Manuel Joao      | Done   |
 | US11     | Ejecutar protocolo de desbloqueo                   | US11-T2 | Desarrollar vista de protocolo activo en Web y Mobile App    | Mostrar en tiempo real el estado de puertas liberadas y rutas despejadas durante una emergencia confirmada.               |         5          | Castro Picón, Manuel Joao      | Done   |
 | US13     | Notificación de Modo Emergencia activado           | US13-T1 | Implementar servicio de emisión y cola de notificaciones     | Registrar y despachar notificaciones críticas al activarse el Modo Emergencia, soportando historial de envíos.            |         4          | De Las Casas Latour, Sebastián | Done   |
-| US13     | Notificación de Modo Emergencia activado           | US13-T2 | Integrar centro de notificaciones en Web y Mobile App        | Mostrar alertas críticas en la cabecera web, módulo Operaciones y bandeja de alertas móviles en Flutter.                  |         4          | Castro Picón, Manuel Joao      | Done   |
+| US13     | Notificación de Modo Emergencia activado           | US13-T2 | Integrar centro de notificaciones en Web y Mobile App        | Mostrar alertas críticas en la cabecera web, módulo Operaciones y bandeja de alertas móviles en Android Studio.                  |         4          | Castro Picón, Manuel Joao      | Done   |
 | US15     | Configurar contactos de emergencia                 | US15-T1 | Implementar CRUD de contactos de emergencia con límite de 5  | Crear endpoints para listar, registrar y eliminar contactos familiares validando el máximo de 5 registros por usuario.    |         3          | Quiroz Zambrano, Fabrizio      | Done   |
-| US15     | Configurar contactos de emergencia                 | US15-T2 | Construir interfaz de contactos de emergencia en Web y Móvil | Implementar formulario y lista de contactos en las secciones de Perfil y Operaciones tanto en Web como en Flutter.        |         4          | Solis Chang, Santiago          | Done   |
+| US15     | Configurar contactos de emergencia                 | US15-T2 | Construir interfaz de contactos de emergencia en Web y Móvil | Implementar formulario y lista de contactos en las secciones de Perfil y Operaciones tanto en Web como en Android Studio.        |         4          | Solis Chang, Santiago          | Done   |
 | US16     | Iniciar simulacro de evacuación manual             | US16-T1 | Implementar endpoint de disparo de simulacro manual          | Crear endpoint `POST` que inicie una prueba controlada (`DRILL`), simule la apertura de chapas y registre la ejecución.   |         4          | Castro Picón, Manuel Joao      | Done   |
 | US16     | Iniciar simulacro de evacuación manual             | US16-T2 | Implementar pantalla interactiva de Simulacro en Web y Móvil | Desarrollar el módulo Simulacro con botón de activación, estado visual de puertas/luces y retroalimentación inmediata.    |         5          | Castro Picón, Manuel Joao      | Done   |
 | US18     | Generar reporte de tiempo de respuesta             | US18-T1 | Calcular y persistir latencia de apertura en milisegundos    | Registrar el tiempo transcurrido entre la orden de activación y la liberación del relé, verificando que sea < 5000 ms.    |         3          | De Las Casas Latour, Sebastián | Done   |
 | US18     | Generar reporte de tiempo de respuesta             | US18-T2 | Mostrar métricas de tiempo de respuesta en Web y Mobile App  | Presentar en la interfaz web y móvil los milisegundos de respuesta obtenidos en cada simulacro y el estado de la prueba.  |         3          | Castro Picón, Manuel Joao      | Done   |
-| —        | (Task transversal)                                 | T2-01   | Pruebas unitarias, de widgets y escenarios BDD del Sprint 2  | Escribir pruebas con JUnit/Mockito, escenarios `.feature` en Cucumber, pruebas en Vitest y `flutter test` en móvil.       |         5          | Navarro Correa, César          | Done   |
-| —        | (Task transversal)                                 | T2-02   | Actualizar despliegue en Netlify, Render, Vercel y Firebase  | Desplegar nuevas versiones de Landing Page, Backend y Web App, y distribuir el `.apk` en Firebase App Distribution.       |         4          | Requena Gutiérrez, Diego       | Done   |
+| —        | (Task transversal)                                 | T2-01   | Pruebas unitarias, de widgets y escenarios BDD del Sprint 2  | Escribir pruebas con JUnit/Mockito, escenarios `.feature` en Cucumber, pruebas en Vitest y `Android Studio test` en móvil.       |         5          | Navarro Correa, César          | Done   |
+| —        | (Task transversal)                                 | T2-02   | Actualizar despliegue en Netlify, Render, Vercel y GitHub Releases  | Desplegar nuevas versiones de Landing Page, Backend y Web App, y distribuir el `.apk` en GitHub Releases App Distribution.       |         4          | Requena Gutiérrez, Diego       | Done   |
 
 ##### 6.2.2.4. Development Evidence for Sprint Review
 
-Durante el Sprint 2 se completaron las funcionalidades de internacionalización, accesibilidad y secciones informativas de la Landing Page; se construyeron los servicios backend y las pantallas de la Web Application para el control de actuadores, monitoreo de cortes de energía, alertas de emergencia, gestión de contactos familiares y ejecución de simulacros; y se implementó la primera versión de la Mobile Application en Flutter para residentes.
+Durante el Sprint 2 se completaron las funcionalidades de internacionalización, accesibilidad y secciones informativas de la Landing Page; se construyeron los servicios backend y las pantallas de la Web Application para el control de actuadores, monitoreo de cortes de energía, alertas de emergencia, gestión de contactos familiares y ejecución de simulacros; y se implementó la primera versión de la Mobile Application en Android Studio para residentes.
 
 | Producto                   | Repositorio                                                                               | Desarrollado por                                                                               | Alcance implementado en el Sprint 2                                                                                                                                                                                    |
 | :------------------------- | :---------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Landing Page               | [QuakExit-Landing](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/QuakExit-Landing)   | Solis Chang, Santiago Valentino · Requena Gutiérrez, Diego Gabriel · Vila Guillen, Miguel      | Internacionalización completa (`en_US` por defecto y `es_419`), sección About the Team, vista de Términos y Condiciones, video incrustado, mejoras de accesibilidad (ARIA) y SEO.                                      |
 | Web Services (Backend)     | [Backend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit)   | Castro Picón, Manuel Fernando Joao · Quiroz Zambrano, Fabrizio · De Las Casas Latour, Sebastián | Endpoints para estado de cerraduras y luces, modo Deep Sleep, detección de corte eléctrico y batería baja, calibración de umbral sísmico, protocolo de desbloqueo, contactos de emergencia y simulacros con latencia. |
 | Web Application (Frontend) | [Frontend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit) | Castro Picón, Manuel Fernando Joao · Solis Chang, Santiago Valentino                           | Módulos completos de Dispositivos (con filtros y control de energía), Simulacro (ejecución manual y métricas en ms), Emergencias (alertas activas y calibración) y Operaciones (Notificaciones, Auditoría y Reportes). |
-| Mobile Application         | [Mobile-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Mobile-QuakExit)     | Castro Picón, Manuel Fernando Joao · Solis Chang, Santiago Valentino · Vila Guillen, Miguel    | Primera versión de la app móvil en Flutter (Dart) con autenticación JWT, monitoreo de batería y fuente de energía (`MAIN`/`BACKUP`), control de modo Deep Sleep, simulacro manual, alertas y contactos de emergencia.   |
+| Mobile Application         | [Mobile-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Movil-QuakExit.git)     | Castro Picón, Manuel Fernando Joao · Solis Chang, Santiago Valentino · Vila Guillen, Miguel    | Primera versión de la app móvil en Android Studio (Dart) con autenticación JWT, monitoreo de batería y fuente de energía (`MAIN`/`BACKUP`), control de modo Deep Sleep, simulacro manual, alertas y contactos de emergencia.   |
 
 A continuación se presenta la tabla de commits representativos realizados en los repositorios durante el Sprint 2:
 
@@ -2949,8 +2949,8 @@ A continuación se presenta la tabla de commits representativos realizados en lo
 | `1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit`  | `feature/us15-us16-us18-drills`      | `5e67b32` | `feat(simulation): add manual drill execution and response metrics` | Implement manual evacuation drill endpoint, response time calculation in milliseconds and emergency contacts limit (5). | 02/11/2026         |
 | `1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit` | `feature/us04-us09-devices-view`     | `8c41f09` | `feat(devices): build device management table, search and toggles`  | Add device search bar, battery progress bars, connection status tags (`ONLINE`, `SLEEPING`) and Deep Sleep controls.   | 04/11/2026         |
 | `1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit` | `feature/us11-us16-simulacro-alerts` | `3a95d74` | `feat(simulacro): implement interactive drill and operations tabs`  | Add manual simulation trigger, millisecond latency report, emergency alerts table and operations sub-navigation tabs.  | 06/11/2026         |
-| `1ASI0572-2620-8729-Proyecto-IOT/Mobile-QuakExit`   | `feature/mobile-auth-and-devices`    | `6b14d82` | `feat(mobile): implement Flutter auth, dashboard and device status` | Build dark-mode resident views with BottomNavigationBar, battery monitoring, lock status and Deep Sleep toggle.        | 05/11/2026         |
-| `1ASI0572-2620-8729-Proyecto-IOT/Mobile-QuakExit`   | `feature/mobile-drill-and-alerts`    | `9e30a15` | `feat(mobile): add manual drill screen, latency report and contacts`| Connect Flutter app to simulation, emergency alerts and emergency contacts REST endpoints.                             | 07/11/2026         |
+| `1ASI0572-2620-8729-Proyecto-IOT/Mobile-QuakExit`   | `feature/mobile-auth-and-devices`    | `6b14d82` | `feat(mobile): implement Android Studio auth, dashboard and device status` | Build dark-mode resident views with BottomNavigationBar, battery monitoring, lock status and Deep Sleep toggle.        | 05/11/2026         |
+| `1ASI0572-2620-8729-Proyecto-IOT/Mobile-QuakExit`   | `feature/mobile-drill-and-alerts`    | `9e30a15` | `feat(mobile): add manual drill screen, latency report and contacts`| Connect Android Studio app to simulation, emergency alerts and emergency contacts REST endpoints.                             | 07/11/2026         |
 
 ##### 6.2.2.5. Testing Suite Evidence for Sprint Review
 
@@ -3026,17 +3026,17 @@ Feature: Manual evacuation drill and emergency contacts management
     Then the system responds with status 400 indicating that the contact limit has been reached
 ```
 
-**Web Application y Mobile Application.** Las pruebas del frontend web se ejecutan con `npm run test` y la verificación estática con `npm run lint` y `npm run build`. En la Mobile Application (Flutter), las pruebas de widgets y modelos se ejecutan con `flutter test` y el análisis estático con `flutter analyze`.
+**Web Application y Mobile Application.** Las pruebas del frontend web se ejecutan con `npm run test` y la verificación estática con `npm run lint` y `npm run build`. En la Mobile Application (Android Studio), las pruebas de widgets y modelos se ejecutan con `Android Studio test` y el análisis estático con `Android Studio analyze`.
 
 | Repository                                         | Branch                                                                                                         | Commit Id | Commit Message                                                                             | Commited on (Date) |
 | :------------------------------------------------- | :------------------------------------------------------------------------------------------------------------- | :-------- | :----------------------------------------------------------------------------------------- | :----------------- |
 | 1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit   | <img src="assets/cap6/sprint2/tests/back-tests-s2.png" alt="Backend Testing Results Sprint 2" width="700" />   | `4c89e12` | `test(backend): add unit and Cucumber BDD tests for emergency unlock, contacts and drills` | 07/11/2026         |
 | 1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit  | <img src="assets/cap6/sprint2/tests/front-tests-s2.png" alt="Frontend Testing Results Sprint 2" width="700" /> | `6f20a83` | `test(frontend): add component tests for devices table, drill trigger and operations tabs` | 07/11/2026         |
-| 1ASI0572-2620-8729-Proyecto-IOT/Mobile-QuakExit    | <img src="assets/cap6/sprint2/tests/mobile-tests-s2.png" alt="Mobile Testing Results Sprint 2" width="700" />  | `8a41b07` | `test(mobile): add Flutter widget tests for device status cards and manual drill trigger`  | 07/11/2026         |
+| 1ASI0572-2620-8729-Proyecto-IOT/Mobile-QuakExit    | <img src="assets/cap6/sprint2/test-movil-1.png" alt="Mobile Testing Results Sprint 2" width="700" /> <img src="assets/cap6/sprint2/test-movil-2.png" alt="Mobile Testing Results Sprint 2" width="700" /> | `8a41b07` | `test(mobile): add Android Studio widget tests for device status cards and manual drill trigger`  | 07/11/2026         |
 
 ##### 6.2.2.6. Execution Evidence for Sprint Review
 
-En el Sprint 2 se desplegaron las actualizaciones de la Landing Page, los nuevos módulos interactivos de la Web Application (**Dispositivos**, **Simulacro**, **Emergencias** y **Operaciones**) y la primera versión de la **Mobile Application** en Flutter para residentes, integrados con los endpoints de los Web Services.
+En el Sprint 2 se desplegaron las actualizaciones de la Landing Page, los nuevos módulos interactivos de la Web Application (**Dispositivos**, **Simulacro**, **Emergencias** y **Operaciones**) y la primera versión de la **Mobile Application** en Android Studio para residentes, integrados con los endpoints de los Web Services.
 
 **Landing Page**
 
@@ -3097,7 +3097,7 @@ En el Sprint 2 se desplegaron las actualizaciones de la Landing Page, los nuevos
 | Operaciones: Notificaciones y Contactos    | US08, US13, US15       | Configuración de hasta 5 contactos de emergencia y centro de notificaciones con filtros por tipo de alerta.                           | `![Contacts](assets/cap6/sprint2/frontend/web-operations-contacts.png)`   |
 | Operaciones: Auditoría, Reportes y Manten. | US04, US18             | Navegación por pestañas horizontales con tablas de auditoría de eventos, reportes de fallos mecánicos y registro de mantenimiento.    | `![Reports](assets/cap6/sprint2/frontend/web-operations-reports.png)`     |
 
-**Mobile Application (Flutter)**
+**Mobile Application (Android Studio)**
 
 > Vistas de la primera versión de nuestra aplicación móvil para residentes en el Sprint 2:
 
@@ -3117,7 +3117,7 @@ En el Sprint 2 se desplegaron las actualizaciones de la Landing Page, los nuevos
   <img src="assets/cap6/sprint2/mobile/mobile-alerts-contacts.png" alt="Mobile App Alertas y Contactos" width="500" />
 </p>
 
-| Vista Móvil (Flutter)                         | User Story             | Descripción                                                                                                                        | Captura                                                                 |
+| Vista Móvil (Android Studio)                         | User Story             | Descripción                                                                                                                        | Captura                                                                 |
 | :-------------------------------------------- | :--------------------- | :--------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------- |
 | Acceso y Dashboard Principal                  | US01, US07, US09       | Vista móvil en modo oscuro de alto contraste con resumen del estado de la vivienda, nivel de batería y barra de navegación.        | `![MobileHome](assets/cap6/sprint2/mobile/mobile-login-dashboard.png)`  |
 | Mis Dispositivos, Cerraduras y Deep Sleep     | US04, US05, US06, US08 | Tarjetas adaptadas a pantallas táctiles con estado de chapas electromagnéticas, luces de ruta, alerta de batería y modo ahorro.    | `![MobileDevs](assets/cap6/sprint2/mobile/mobile-devices-battery.png)`  |
@@ -3128,7 +3128,7 @@ En el Sprint 2 se desplegaron las actualizaciones de la Landing Page, los nuevos
 
 ##### 6.2.2.7. Services Documentation Evidence for Sprint Review
 
-En el Sprint 2 se amplió la especificación OpenAPI de los Web Services mediante Swagger para documentar los endpoints de control de actuadores, monitoreo energético, calibración sísmica, protocolo de emergencia, contactos familiares y ejecución de simulacros, los cuales son consumidos tanto por la Web Application como por la Mobile Application en Flutter.
+En el Sprint 2 se amplió la especificación OpenAPI de los Web Services mediante Swagger para documentar los endpoints de control de actuadores, monitoreo energético, calibración sísmica, protocolo de emergencia, contactos familiares y ejecución de simulacros, los cuales son consumidos tanto por la Web Application como por la Mobile Application en Android Studio.
 
 - **Repositorio:** [Backend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit)
 - **URL local de Swagger UI:** `http://localhost:8080/swagger-ui.html`
@@ -3164,7 +3164,7 @@ En el Sprint 2 se amplió la especificación OpenAPI de los Web Services mediant
 
 ##### 6.2.2.8. Software Deployment Evidence for Sprint Review
 
-Durante el Sprint 2 se actualizaron los despliegues en la nube de la Landing Page, los Web Services y la Web Application, y se realizó el despliegue de la primera versión de la Mobile Application mediante Firebase App Distribution.
+Durante el Sprint 2 se actualizaron los despliegues en la nube de la Landing Page, los Web Services y la Web Application, y se realizó el despliegue de la primera versión de la Mobile Application mediante GitHub Releases App Distribution.
 
 **Landing Page (Netlify)**
 
@@ -3214,22 +3214,26 @@ Durante el Sprint 2 se actualizaron los despliegues en la nube de la Landing Pag
 
 **Mobile Application (GitHub Actions & GitHub Releases)**
 
-1. Se configuró el proyecto móvil en Flutter apuntando a la URL pública de los Web Services desplegados en Render.
-2. Se implementó un flujo de despliegue continuo (CD) mediante **GitHub Actions** (`cd: add Production Mobile Release workflow`) en el repositorio `Mobile-QuakExit`.
-3. Al integrar los cambios en la rama `main`, el workflow compila automáticamente el paquete de instalación de Android (`.apk`) y genera el lanzamiento oficial **QuakExit Mobile Release v1.0.0** (`Latest`) con la etiqueta `v1.0.0` en la sección **Releases** de GitHub.
-4. En el apartado **Assets** del Release quedan publicados y listos para descarga directa el instalador compilado (`app-debug.apk` con su respectivo hash de verificación `sha256`) y el código fuente empaquetado (`.zip` y `.tar.gz`), permitiendo la instalación directa en dispositivos físicos Android para el equipo y las pruebas de validación.
+1. Se configuró el proyecto móvil en Android nativo (Kotlin y Jetpack Compose). La URL pública de los Web Services desplegados en Render se inyecta al compilar mediante la propiedad `API_BASE_URL`, que el workflow toma de la variable de repositorio del mismo nombre.
+2. Se implementó un flujo de despliegue continuo (CD) mediante **GitHub Actions** (`cd: add Production Mobile Release workflow`) en el repositorio `Movil-QuakExit`. El workflow está en `.github/workflows/mobile-release.yml`.
+3. Al integrar los cambios en la rama `main`, el workflow:
+   - ejecuta las pruebas unitarias (`gradle :app:testDebugUnitTest`);
+   - compila con Gradle el paquete de instalación de Android (`.apk`);
+   - genera el hash `sha256` del instalador;
+   - publica el lanzamiento oficial **QuakExit Mobile Release v1.0.0** (`Latest`) con la etiqueta `v1.0.0` en la sección **Releases** de GitHub.
+4. En el apartado **Assets** del Release quedan publicados y listos para descarga directa el instalador compilado (`app-debug.apk` con su respectivo hash de verificación `sha256`) y el código fuente empaquetado (`.zip` y `.tar.gz`). Esto permite la instalación directa en dispositivos físicos Android para el equipo y las pruebas de validación.
 
-- **URL de descarga (GitHub Releases):** [https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Mobile-QuakExit/releases/tag/v1.0.0](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Mobile-QuakExit/releases/tag/v1.0.0)
+- **URL de descarga (GitHub Releases):** [https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Movil-QuakExit/commits/v1.0.0](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Movil-QuakExit/commits/v1.0.0)
 
 > Evidencia del despliegue de la Mobile Application en GitHub Releases:
 
 <p align="center">
-  <img src="assets/cap6/sprint2/mobile/github-release-mobile.png" alt="GitHub Releases Mobile Deployment" width="700" />
+  <img src="assets/cap6/sprint2/actions-movil.png" alt="GitHub Releases Mobile Deployment" width="700" />
 </p>
 
 ##### 6.2.2.9. Team Collaboration Insights during Sprint
 
-Durante el Sprint 2, el equipo mantuvo el flujo de trabajo colaborativo basado en GitFlow: la culminación de internacionalización y accesibilidad de la Landing Page estuvo liderada por Requena Gutiérrez con el apoyo de Solis Chang, Vila Guillen y Navarro Correa; los nuevos módulos de los Web Services, la Web Application y la primera versión de la Mobile Application en Flutter fueron liderados por Castro Picón junto con Quiroz Zambrano, De Las Casas Latour, Solis Chang y Vila Guillen; y la suite de pruebas fue liderada por Navarro Correa. Cada integrante trabajó sobre ramas `feature/*` integradas a `develop` y `main` mediante Pull Requests revisados y aplicando Conventional Commits.
+Durante el Sprint 2, el equipo mantuvo el flujo de trabajo colaborativo basado en GitFlow: la culminación de internacionalización y accesibilidad de la Landing Page estuvo liderada por Requena Gutiérrez con el apoyo de Solis Chang, Vila Guillen y Navarro Correa; los nuevos módulos de los Web Services, la Web Application y la primera versión de la Mobile Application en Android Studio fueron liderados por Castro Picón junto con Quiroz Zambrano, De Las Casas Latour, Solis Chang y Vila Guillen; y la suite de pruebas fue liderada por Navarro Correa. Cada integrante trabajó sobre ramas `feature/*` integradas a `develop` y `main` mediante Pull Requests revisados y aplicando Conventional Commits.
 
 Evidencias de Insights del Landing Page, Backend, Frontend Web y Mobile Application en el Sprint 2:
 
@@ -3243,7 +3247,7 @@ Evidencias de Insights del Landing Page, Backend, Frontend Web y Mobile Applicat
   <img src="assets/cap6/sprint2/insights/front-s2.png" alt="Frontend contributors Sprint 2" width="700" />
 </p>
 <p align="center">
-  <img src="assets/cap6/sprint2/insights/mobile-s2.png" alt="Mobile contributors Sprint 2" width="700" />
+  <img src="assets/cap6/sprint2/insights-movil.png" alt="Mobile contributors Sprint 2" width="700" />
 </p>
 
 Los analíticos muestran la participación activa de los integrantes en cada repositorio durante el Sprint 2, en coherencia con la matriz de la sección 6.2.2.2.
@@ -3324,7 +3328,7 @@ Para estructurar las sesiones de validación, el equipo estableció los elemento
 
 #### 6.3.2. Registro de Entrevistas
 
-Entrevistas 1, 2 y 3 (Segmento 1: Dueños de Smart Homes) → Landing Page + Aplicación Móvil (Flutter)
+Entrevistas 1, 2 y 3 (Segmento 1: Dueños de Smart Homes) → Landing Page + Aplicación Móvil (Android Studio)
 
 ##### Segmento 1: Dueños de Smart Homes
 
