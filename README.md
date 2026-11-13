@@ -3102,27 +3102,52 @@ En el Sprint 2 se desplegaron las actualizaciones de la Landing Page, los nuevos
 > Vistas de la primera versión de nuestra aplicación móvil para residentes en el Sprint 2:
 
 <p align="center">
-  <img src="assets/cap6/sprint2/mobile/mobile-login-dashboard.png" alt="Mobile App Login y Dashboard" width="500" />
+  <img src="assets/cap6/sprint2/movil1.jpeg" alt="Mobile App Login y Dashboard" width="500" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/sprint2/mobile/mobile-devices-battery.png" alt="Mobile App Dispositivos y Batería" width="500" />
+  <img src="assets/cap6/sprint2/movil2.jpeg" alt="Mobile App Login y Dashboard" width="500" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/sprint2/mobile/mobile-drill-simulation.png" alt="Mobile App Simulacro Manual" width="500" />
+  <img src="assets/cap6/sprint2/movil3.jpeg" alt="Mobile App Login y Dashboard" width="500" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/sprint2/mobile/mobile-alerts-contacts.png" alt="Mobile App Alertas y Contactos" width="500" />
+  <img src="assets/cap6/sprint2/movil4.jpeg" alt="Mobile App Dispositivos y Batería" width="500" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/sprint2/movil6.jpeg" alt="Mobile App Dispositivos y Batería" width="500" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/sprint2/movil5.jpeg" alt="Mobile App Simulacro Manual" width="500" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/sprint2/movil7.jpeg" alt="Perfil Usuario" width="500" />
 </p>
 
 | Vista Móvil (Android Studio)                         | User Story             | Descripción                                                                                                                        | Captura                                                                 |
 | :-------------------------------------------- | :--------------------- | :--------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------- |
-| Acceso y Dashboard Principal                  | US01, US07, US09       | Vista móvil en modo oscuro de alto contraste con resumen del estado de la vivienda, nivel de batería y barra de navegación.        | `![MobileHome](assets/cap6/sprint2/mobile/mobile-login-dashboard.png)`  |
-| Mis Dispositivos, Cerraduras y Deep Sleep     | US04, US05, US06, US08 | Tarjetas adaptadas a pantallas táctiles con estado de chapas electromagnéticas, luces de ruta, alerta de batería y modo ahorro.    | `![MobileDevs](assets/cap6/sprint2/mobile/mobile-devices-battery.png)`  |
-| Simulacro de Evacuación Móvil                 | US16, US18             | Botón de alta visibilidad para iniciar simulacro desde el teléfono y visualización inmediata de los milisegundos de apertura.      | `![MobileDrill](assets/cap6/sprint2/mobile/mobile-drill-simulation.png)`|
-| Alertas de Emergencia y Contactos Familiares  | US11, US13, US15       | Bandeja de notificaciones de Modo Emergencia, estado de ruta despejada y gestión de los 5 contactos de emergencia.                 | `![MobileAlerts](assets/cap6/sprint2/mobile/mobile-alerts-contacts.png)`|
+| Acceso y Dashboard Principal                  | US01, US07, US09       | Vista móvil en modo oscuro de alto contraste con resumen del estado de la vivienda, nivel de batería y barra de navegación.        | <p align="center">
+  <img src="assets/cap6/sprint2/movil2.jpeg" alt="Mobile App Login y Dashboard" width="500" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/sprint2/movil3.jpeg" alt="Mobile App Login y Dashboard" width="500" />
+</p>
+ |
+| Mis Dispositivos, Cerraduras y Deep Sleep     | US04, US05, US06, US08 | Tarjetas adaptadas a pantallas táctiles con estado de chapas electromagnéticas, luces de ruta, alerta de batería y modo ahorro.    | <p align="center">
+  <img src="assets/cap6/sprint2/movil6.jpeg" alt="Mobile App Dispositivos y Batería" width="500" />
+</p>  |
+| Simulacro de Evacuación Móvil                 | US16, US18             | Botón de alta visibilidad para iniciar simulacro desde el teléfono y visualización inmediata de los milisegundos de apertura.      | <p align="center">
+  <img src="assets/cap6/sprint2/movil5.jpeg" alt="Mobile App Simulacro Manual" width="500" />
+</p>|
+| Alertas de Emergencia y Contactos Familiares  | US11, US13, US15       | Bandeja de notificaciones de Modo Emergencia, estado de ruta despejada y gestión de los 5 contactos de emergencia.                 | <p align="center">
+  <img src="assets/cap6/sprint2/movil4.jpeg" alt="Mobile App Dispositivos y Batería" width="500" />
+</p> |
 
 - **Video de navegación (Product Navigation - Sprint 2):** [https://drive.google.com/file/d/1vGnquQHfiYyPUvgIyMRiK7XKMtCH8IdE/view?usp=sharing](https://drive.google.com/file/d/1vGnquQHfiYyPUvgIyMRiK7XKMtCH8IdE/view?usp=sharing)
 
