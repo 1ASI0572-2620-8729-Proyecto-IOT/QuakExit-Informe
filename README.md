@@ -3357,7 +3357,7 @@ Para estructurar las sesiones de validación, el equipo estableció los elemento
 
 #### 6.3.2. Registro de Entrevistas
 
-Entrevistas 1, 2 y 3 (Segmento 1: Dueños de Smart Homes) → Landing Page + Aplicación Móvil (Android Studio)
+Entrevistas 1, 2 y 3 (Segmento 1: Dueños de Smart Homes)
 
 ##### Segmento 1: Dueños de Smart Homes
 
@@ -3424,7 +3424,7 @@ El usuario está conforme con el estilo de la aplicación, entiende muy bien el 
 
 ---
 
-Entrevistas 4, 5 y 6 (Segmento 2: Inmobiliarias y Constructores) → Landing Page + Aplicación Web (Vercel)
+Entrevistas 4, 5 y 6 (Segmento 2: Inmobiliarias y Constructores) 
 
 ##### Segmento 2: Inmobiliarias y Constructores
 
