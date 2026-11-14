@@ -3471,29 +3471,195 @@ El entrevistado en representación de una constructora considera que, aunque la 
 ---
 
 #### 6.3.3. Evaluaciones según heurísticas
+UX Heuristics & Principles Evaluation
 
-Con el objetivo de identificar problemas de usabilidad en la solución propuesta, se realizó una evaluación heurística basada en los principios de usabilidad de Jakob Nielsen. La evaluación fue aplicada sobre los principales flujos de interacción de la plataforma QuakExit, incluyendo el registro de usuarios, la visualización del estado de los sensores, la gestión de alertas sísmicas y la configuración de dispositivos IoT.
+Usability – Inclusive Design – Information Architecture
 
-Durante el proceso se analizaron las interfaces del sistema considerando las diez heurísticas de Nielsen. Los hallazgos permitieron detectar oportunidades de mejora relacionadas con la claridad de la información mostrada, la retroalimentación brindada al usuario y la consistencia visual de algunos componentes.
+**CARRERA:** Ingeniería de Software
 
-### Resultados de la evaluación heurística
+**CURSO:** Desarrollo de Soluciones IoT
 
-| Heurística | Hallazgo identificado | Severidad | Mejora propuesta |
+**SECCIÓN:** 1ASI0572
+
+**PROFESORES:** Todos
+
+**AUDITOR:** TerraGuard Team / QuakExit Team
+
+**CLIENTE(S):** Usuarios participantes en las sesiones de validación
+
+
+SITE o APP A EVALUAR:
+
+**QuakExit \- Plataforma Inteligente de Seguridad Sísmica Residencial**
+
+
+TAREAS A EVALUAR:
+
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
+
+1. Registro de un nuevo usuario.
+2. Inicio de sesión en la plataforma.
+3. Registro y vinculación de un dispositivo IoT.
+4. Consulta del estado de sensores sísmicos.
+5. Visualización de alertas de emergencia.
+6. Revisión de rutas de evacuación recomendadas.
+7. Consulta del historial de eventos sísmicos.
+8. Configuración de notificaciones de alertas.
+
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+
+1. Administración avanzada de dispositivos.
+2. Configuración técnica de sensores por personal especializado.
+3. Integraciones futuras con entidades externas de emergencias.
+
+ESCALA DE SEVERIDAD
+
+| Nivel | Descripción |
+| --- | --- |
+| 1 | Problema superficial. No requiere corrección inmediata. |
+| 2 | Problema menor. Debe considerarse para futuras mejoras. |
+| 3 | Problema mayor. Debe corregirse con alta prioridad. |
+| 4 | Problema muy grave. Impide al usuario continuar con la tarea y debe corregirse antes del lanzamiento. |
+
+TABLA RESUMEN
+
+| \# | Problema | Escala de Severidad | Heurística / Principio Violado |
 | --- | --- | --- | --- |
-| Visibilidad del estado del sistema | Algunos procesos de sincronización con los dispositivos IoT no muestran indicadores de progreso. | Media | Incorporar mensajes informativos y animaciones de carga durante la sincronización. |
-| Correspondencia entre el sistema y el mundo real | Ciertos términos técnicos relacionados con sensores sísmicos pueden resultar difíciles para usuarios no especializados. | Media | Utilizar lenguaje más familiar y agregar descripciones explicativas. |
-| Control y libertad del usuario | No todas las configuraciones permiten revertir cambios de manera inmediata. | Baja | Añadir opciones de cancelar o restaurar valores predeterminados. |
-| Consistencia y estándares | Se identificaron diferencias menores en estilos de botones y mensajes entre pantallas. | Baja | Estandarizar componentes mediante una guía de diseño común. |
-| Prevención de errores | Algunos formularios permiten enviar información incompleta antes de validarla. | Alta | Implementar validaciones en tiempo real y mensajes preventivos. |
-| Reconocer antes que recordar | Determinadas opciones de configuración requieren recordar información previamente mostrada. | Media | Mostrar ayudas contextuales y etiquetas descriptivas permanentes. |
-| Flexibilidad y eficiencia de uso | Usuarios frecuentes podrían beneficiarse de accesos rápidos a funciones críticas. | Baja | Incorporar accesos directos y paneles de acciones frecuentes. |
-| Diseño estético y minimalista | Algunas pantallas contienen gran cantidad de información simultánea. | Media | Priorizar información crítica e implementar organización jerárquica del contenido. |
-| Ayudar a reconocer, diagnosticar y recuperarse de errores | Los mensajes de error no siempre indican cómo solucionar el problema. | Media | Mostrar instrucciones específicas para corregir cada error detectado. |
-| Ayuda y documentación | La plataforma cuenta con soporte limitado para usuarios nuevos. | Baja | Incorporar tutoriales rápidos, preguntas frecuentes y guías de uso. |
+| 1 | No se muestra claramente el estado del proceso durante la vinculación del dispositivo IoT. | 3 | Usabilidad: Visibilidad del estado del sistema |
+| 2 | Algunos términos técnicos de sensores y telemetría resultan difíciles para usuarios no especializados. | 2 | Usabilidad: Correspondencia entre el sistema y el mundo real |
+| 3 | No existe confirmación visual suficiente después de guardar configuraciones importantes. | 3 | Usabilidad: Visibilidad del estado del sistema |
+| 4 | Algunos mensajes de error no indican cómo resolver el problema. | 3 | Usabilidad: Ayuda para reconocer, diagnosticar y recuperarse de errores |
+| 5 | Ciertas imágenes e íconos informativos no incluyen texto alternativo accesible. | 3 | Inclusive Design: Proporciona experiencias comparables |
+| 6 | La ubicación de algunas funciones de monitoreo no resulta intuitiva para usuarios nuevos. | 2 | Information Architecture: Is it findable? |
+| 7 | Existen pantallas con alta densidad de información que dificultan la lectura rápida durante emergencias. | 2 | Usabilidad: Diseño estético y minimalista |
 
-### Conclusiones de la evaluación
 
-Los resultados obtenidos muestran que la plataforma presenta un nivel de usabilidad adecuado para las tareas principales del usuario. Sin embargo, se identificaron oportunidades de mejora relacionadas principalmente con la prevención de errores, la comunicación del estado del sistema y la simplificación de ciertos procesos de configuración. Las recomendaciones propuestas serán consideradas en futuras iteraciones con el propósito de incrementar la eficiencia, satisfacción y facilidad de uso de la solución.
+DESCRIPCIÓN DE PROBLEMAS
+
+PROBLEMA \#1: No se muestra claramente el estado del proceso durante la vinculación del dispositivo IoT
+
+**Severidad:** 3
+
+**Heurística violada:** Usabilidad \- Visibilidad del estado del sistema
+
+**Problema:**
+
+Durante el proceso de vinculación de un dispositivo IoT, el usuario no recibe retroalimentación suficiente acerca del progreso de la conexión. Esto genera incertidumbre sobre si el proceso continúa ejecutándose o si se produjo algún error.
+
+*(Insertar captura de pantalla del proceso de vinculación.)*
+
+**Recomendación:**
+
+Implementar indicadores visuales de progreso, mensajes de estado y confirmaciones claras al finalizar satisfactoriamente la conexión del dispositivo.
+
+---
+
+PROBLEMA \#2: Uso de terminología técnica poco familiar para usuarios finales
+
+**Severidad:** 2
+
+**Heurística violada:** Usabilidad \- Correspondencia entre el sistema y el mundo real
+
+**Problema:**
+
+Algunas pantallas presentan términos especializados relacionados con telemetría, acelerómetros y calibración que pueden resultar difíciles de comprender para usuarios sin conocimientos técnicos.
+
+*(Insertar captura de pantalla correspondiente.)*
+
+**Recomendación:**
+
+Sustituir conceptos técnicos por términos más cercanos al usuario y complementar con descripciones o ayudas contextuales.
+
+---
+
+PROBLEMA \#3: Falta de confirmación visual después de guardar configuraciones
+
+**Severidad:** 3
+
+**Heurística violada:** Usabilidad \- Visibilidad del estado del sistema
+
+**Problema:**
+
+Luego de modificar configuraciones críticas, como notificaciones o niveles de alerta, el usuario no recibe una confirmación clara que indique que los cambios han sido almacenados correctamente.
+
+*(Insertar captura de pantalla correspondiente.)*
+
+**Recomendación:**
+
+Mostrar mensajes de confirmación visibles y consistentes después de cada actualización exitosa.
+
+---
+
+PROBLEMA \#4: Mensajes de error poco descriptivos
+
+**Severidad:** 3
+
+**Heurística violada:** Usabilidad \- Ayudar a reconocer, diagnosticar y recuperarse de errores
+
+**Problema:**
+
+Cuando ocurre un fallo de conexión o una validación incorrecta, algunos mensajes únicamente muestran que existe un error sin explicar la causa ni la forma de solucionarlo.
+
+*(Insertar captura de pantalla correspondiente.)*
+
+**Recomendación:**
+
+Agregar mensajes específicos que indiquen la causa del error y los pasos necesarios para resolverlo.
+
+---
+
+PROBLEMA \#5: Ausencia de elementos de accesibilidad en algunos componentes visuales
+
+**Severidad:** 3
+
+**Heurística violada:** Inclusive Design \- Proporciona experiencias comparables
+
+**Problema:**
+
+Determinados íconos e imágenes utilizados en la plataforma carecen de textos alternativos o descripciones accesibles para tecnologías de asistencia.
+
+*(Insertar captura de pantalla correspondiente.)*
+
+**Recomendación:**
+
+Incorporar atributos de accesibilidad y etiquetas descriptivas para mejorar la experiencia de usuarios con discapacidad visual.
+
+---
+
+PROBLEMA \#6: Dificultad para localizar ciertas funcionalidades
+
+**Severidad:** 2
+
+**Heurística violada:** Information Architecture \- Is it findable?
+
+**Problema:**
+
+Usuarios participantes en la validación indicaron que algunas funciones relacionadas con el monitoreo histórico de eventos sísmicos requieren varios pasos para ser encontradas.
+
+*(Insertar captura de pantalla correspondiente.)*
+
+**Recomendación:**
+
+Reestructurar la navegación y priorizar accesos directos a funciones de alto valor para el usuario.
+
+---
+
+PROBLEMA \#7: Exceso de información en situaciones críticas
+
+**Severidad:** 2
+
+**Heurística violada:** Usabilidad \- Diseño estético y minimalista
+
+**Problema:**
+
+En determinadas vistas de monitoreo se presentan simultáneamente múltiples métricas técnicas que pueden generar sobrecarga cognitiva en contextos de emergencia.
+
+*(Insertar captura de pantalla correspondiente.)*
+
+**Recomendación:**
+
+Priorizar visualmente la información crítica y mostrar detalles avanzados únicamente cuando el usuario los solicite.
+
 
 <div style="page-break-after: always;"></div>
 
