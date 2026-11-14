@@ -3174,11 +3174,11 @@ En el Sprint 2 se amplió la especificación OpenAPI de los Web Services mediant
 > Evidencias del Swagger desplegado con los endpoints del Sprint 2 y prueba de ejecución:
 
 <p align="center">
-  <img src="assets/cap6/sprint2/backend/swagger-s2-endpoints.png" alt="Swagger Sprint 2" width="700" />
+  <img src="assets/cap6/sprint2/Swagger Sprint 2.png" alt="Swagger Sprint 2" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/sprint2/backend/swagger-s2-try.png" alt="Swagger Sprint 2 Try it out" width="700" />
+  <img src="assets/cap6/sprint2/Swagger Sprint 2 2.png" alt="Swagger Sprint 2 Try it out" width="700" />
 </p>
 
 | Repository                                       | Branch                        | Commit Id | Commit Message                                                          | Commit Message Body                                                                                   | Commited on (Date) |
@@ -3197,11 +3197,16 @@ Durante el Sprint 2 se actualizaron los despliegues en la nube de la Landing Pag
 
 - **URL:** [https://quakexit-landing.netlify.app/](https://quakexit-landing.netlify.app/)
 
-> Evidencias del despliegue actualizado del Landing Page:
+> Evidencias del despliegue del Landing Page con URL publica:
 
 <p align="center">
-  <img src="assets/cap6/sprint2/landing/landing-i18n.png" alt="Landing deployment Sprint 2" width="700" />
+  <img src="assets/cap6/sprint2/landing-pruebaIdioma2.png" alt="Landing deployment" width="700" />
 </p>
+
+<p align="center">
+  <img src="assets/cap6/testing-google-landingpage.png" alt="Landing deployment" width="700" />
+</p>
+
 
 **Web Services (Render y Aiven MySQL)**
 
@@ -3211,11 +3216,12 @@ Durante el Sprint 2 se actualizaron los despliegues en la nube de la Landing Pag
 
 - **URL de Swagger UI:** [quakexit-back.onrender.com](https://quakexit-back.onrender.com/swagger-ui/index.html)
 
-> Evidencias del despliegue actualizado del Backend:
+> Evidencias del despliegue del Backend con URL publica:
 
 <p align="center">
-  <img src="assets/cap6/sprint2/backend/swagger-s2-endpoints.png" alt="Backend deployment Sprint 2" width="700" />
+  <img src="assets/cap6/backend/DespliegueBackendIot.png" alt="Swagger" width="700" />
 </p>
+
 
 **Web Application (Vercel)**
 
@@ -3225,14 +3231,14 @@ Durante el Sprint 2 se actualizaron los despliegues en la nube de la Landing Pag
 
 - **URL:** [https://frontend-quak-exit.vercel.app/](https://frontend-quak-exit.vercel.app/)
 
-> Evidencias del despliegue actualizado del Frontend:
+> Evidencias del despliegue del Frontend con URL publica:
 
 <p align="center">
-  <img src="assets/cap6/sprint2/frontend/web-devices-actuators.png" alt="Web Application deployment Sprint 2" width="700" />
+  <img src="assets/cap6/frontend/despliegue/FrontendQuakExitDesplegado.png" alt="Web Application" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/sprint2/frontend/web-drill-simulation.png" alt="Web Application drill deployment Sprint 2" width="700" />
+  <img src="assets/cap6/frontend/despliegue/FrontendDesplegadoIot.png" alt="Web application deployment" width="700" />
 </p>
 
 **Mobile Application (GitHub Actions & GitHub Releases)**
