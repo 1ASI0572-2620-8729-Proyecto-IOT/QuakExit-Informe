@@ -3384,18 +3384,17 @@ El usuario está conforme con el estilo de la aplicación, entiende muy bien el 
 
 **Entrevista de Validación N°2**
 
-- **Nombres y Apellidos:** Verónica Geraldine Candela Picón
-- **Edad:** 24 años
+- **Nombres y Apellidos:** Joseph Thierry Del Piero Falcon Ferreyra
+- **Edad:** 21 años
 - **Distrito:** Miraflores
 - **Segmento:** Dueños de Smart Homes (Residente B2C)
-- **Fecha de la entrevista:** 2026-11-08
-- **Timing de inicio en el video:** `04:25` `[VERIFICAR MINUTO EXACTO EN EL VIDEO EDITADO]`
-- **Duración:** `03:55`
-- **URL del video:** `[REEMPLAZAR CON EL LINK DE MICROSOFT STREAM / CLIPCHAMP]`
+- **Fecha de la entrevista:** 2026-14-08
+- **Timing de inicio en el video:** 00:01
+- **Duración:** 08:28
+- **URL del video:** ([LINK DE ENTREVISTA](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202213406_upc_edu_pe/IQDv1RV1_28sTrikJaZzkp5xAek_I7WBOeahirEttQMQ7Po?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=mEDTnh))
 
-<!-- [PONER IMAGEN AQUÍ: Captura de pantalla de la videollamada con el Entrevistado 2 probando la web/app. Guardar en assets/cap6/validation/entrevista-val-2.png] -->
 <p align="center">
-  <img src="assets/cap6/validation/entrevista-val-2.png" alt="Entrevista de validación 2 - Segmento 1" width="700" />
+  <img src="assets/cap6/validation/entrevista-val-2.jpeg" alt="Entrevista de validación 2 - Segmento 1" width="700" />
 </p>
 
 **Resumen descriptivo de las apreciaciones del entrevistado:**
