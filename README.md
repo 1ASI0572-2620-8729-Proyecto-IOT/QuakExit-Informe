@@ -2970,7 +2970,7 @@ A continuación se presenta la tabla de commits representativos realizados en lo
 Evidencia de la prueba Lighthouse de la Landing Page en el Sprint 2:
 
 <p align="center">
-  <img src="assets/cap6/sprint2/lighthouse-landing-s2.png" alt="Lighthouse report Sprint 2" width="700" />
+  <img src="assets/cap6/testing-google-landingpage.png" alt="Lighthouse report Sprint 2" width="700" />
 </p>
 
 **Web Services.** Las pruebas unitarias y de aceptación automatizadas se ejecutan con `mvn clean test` y el reporte de cobertura con JaCoCo mediante `mvn clean verify -Djacoco.skip=false`. Repositorio de pruebas: [Backend-QuakExit](https://github.com/1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit) (carpeta `src/test`).
@@ -3047,25 +3047,24 @@ En el Sprint 2 se desplegaron las actualizaciones de la Landing Page, los nuevos
 > Vistas actualizadas de nuestro Landing Page en el Sprint 2:
 
 <p align="center">
-  <img src="assets/cap6/sprint2/landing/landing-i18n.png" alt="Landing Page i18n EN/ES" width="700" />
+  <img src="assets/cap6/sprint2/landing-pruebaIdioma1.png" alt="Landing Page i18n EN/ES" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/sprint2/landing/landing-team.png" alt="Landing Page About the Team" width="700" />
+  <img src="assets/cap6/sprint2/landing-pruebaIdioma2.png" alt="Landing Page i18n EN/ES" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/sprint2/landing/landing-video.png" alt="Landing Page About the Product Video" width="700" />
+  <img src="assets/cap6/sprint2/video-aboutUS.png" alt="Landing Page About the Product Video" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/sprint2/landing/landing-terms.png" alt="Landing Page Terms and Conditions" width="700" />
+  <img src="assets/cap6/sprint2/terminos_condicionesQUAKEXIT.png" alt="Landing Page Terms and Conditions" width="700" />
 </p>
 
 | Vista implementada / actualizada | User Story | Descripción                                                                                  | Captura                                                      |
 | :------------------------------- | :--------- | :------------------------------------------------------------------------------------------- | :----------------------------------------------------------- |
 | Selector de idioma (EN / ES)     | LP09       | Muestra la interfaz en inglés por defecto (`en_US`) y permite alternar a español (`es_419`). | `![i18n](assets/cap6/sprint2/landing/landing-i18n.png)`      |
-| Sección About the Team           | LP07       | Presenta a los 7 integrantes del equipo TerraGuard con sus fotos y perfiles.                 | `![Team](assets/cap6/sprint2/landing/landing-team.png)`      |
 | Video About-the-Product          | LP08       | Reproductor incrustado que explica la propuesta de valor y el funcionamiento de QuakExit.    | `![Video](assets/cap6/sprint2/landing/landing-video.png)`    |
 | Términos y Condiciones           | LP10       | Enlace en el pie de página con las políticas de servicio y responsabilidad ética.            | `![Terms](assets/cap6/sprint2/landing/landing-terms.png)`    |
 
