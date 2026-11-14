@@ -3399,6 +3399,7 @@ El usuario está conforme con el estilo de la aplicación, entiende muy bien el 
 
 **Resumen descriptivo de las apreciaciones del entrevistado:**
 
+El usuario comprendió con claridad el funcionamiento de QuakExit desde la Landing Page, en especial que el sistema abre la puerta y enciende las luces sin internet gracias a la batería de respaldo. El registro y el perfil de vivienda le resultaron sencillos, pero tuvo dificultad para vincular el dispositivo porque no sabía dónde encontrar el código. En la sección Dispositivos identificó fácilmente la batería, aunque recomendó un texto explícito para el estado de la cerradura. Del simulacro valoró ver el tiempo en milisegundos, pero sugirió indicar si ese valor está dentro del límite de 5 segundos y avisar antes de que la chapa se abra. Por último, recomienda destacar las alertas de emergencia con un banner visible en toda la plataforma y dejar accesos directos en el Dashboard.
 
 ---
 
