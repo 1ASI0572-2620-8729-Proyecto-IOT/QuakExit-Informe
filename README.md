@@ -3430,47 +3430,25 @@ Entrevistas 4, 5 y 6 (Segmento 2: Inmobiliarias y Constructores)
 
 **Entrevista de Validación N°4**
 
-- **Nombres y Apellidos:** Mateo Alejandro Vargas Silva
-- **Edad:** 25 años
-- **Distrito:** San Isidro
-- **Segmento:** Inmobiliarias y Constructores (Supervisor de Obra B2B)
-- **Fecha de la entrevista:** 2026-11-09
-- **Timing de inicio en el video:** `12:25` `[VERIFICAR MINUTO EXACTO EN EL VIDEO EDITADO]`
-- **Duración:** `04:30`
-- **URL del video:** `[REEMPLAZAR CON EL LINK DE MICROSOFT STREAM / CLIPCHAMP]`
-
-<!-- [PONER IMAGEN AQUÍ: Captura de pantalla de la videollamada con el Entrevistado 4 probando la web/app. Guardar en assets/cap6/validation/entrevista-val-4.png] -->
-<p align="center">
-  <img src="assets/cap6/validation/entrevista-val-4.png" alt="Entrevista de validación 4 - Segmento 2" width="700" />
-</p>
-
-**Resumen descriptivo de las apreciaciones del entrevistado:**
-
-
----
-
-**Entrevista de Validación N°5**
-
 - **Nombres y Apellidos:** Ariana Valentina Robles Huamaní
 - **Edad:** 22 años
 - **Distrito:** Jesús María
 - **Segmento:** Inmobiliarias y Constructores (Asistente de Proyectos Inmobiliarios B2B)
 - **Fecha de la entrevista:** 2026-11-10
-- **Timing de inicio en el video:** `16:55` `[VERIFICAR MINUTO EXACTO EN EL VIDEO EDITADO]`
-- **Duración:** `03:50`
-- **URL del video:** 
+- **Duración:** 5:09
+- **URL del video:** [https://drive.google.com/file/d/1ySO6xGU5yKAoFzs8T4gHt52-GEtnYkKD/view?usp=sharing](https://drive.google.com/file/d/1ySO6xGU5yKAoFzs8T4gHt52-GEtnYkKD/view?usp=sharing)
 
-<!-- [PONER IMAGEN AQUÍ: Captura de pantalla de la videollamada con el Entrevistado 5 probando la web/app. Guardar en assets/cap6/validation/entrevista-val-5.png] -->
 <p align="center">
-  <img src="assets/cap6/validation/entrevista-val-5.png" alt="Entrevista de validación 5 - Segmento 2" width="700" />
+  <img src="assets/cap6/sprint2/entrevista-segmento2-movil.png" alt="Entrevista de validación 4 - Segmento 2" width="700" />
 </p>
 
 **Resumen descriptivo de las apreciaciones del entrevistado:**
 
+La entrevistada, Ariana Valentina Robles Huamaní (Asistente de Proyectos Inmobiliarios B2B), destacó el alto valor comercial y diferenciador de integrar QuakExit en proyectos residenciales multifamiliares nuevos, señalando que en distritos con alta oferta inmobiliaria como Jesús María el equipamiento de seguridad sísmica inteligente representa un argumento sólido frente a compradores que buscan departamentos smart. Valoró positivamente la claridad de la interfaz móvil, resaltando el esquema visual de la vivienda distribuido por pisos y habitaciones, la supervisión individual del nivel de batería por cada cerradura o nodo con alertas tempranas (como el aviso por debajo del 15 %) y la funcionalidad de simulacro de evacuación (DRILL) para validar tiempos de apertura tanto en áreas privadas como comunes. Como oportunidad de mejora orientada al segmento constructor y de administración predial, sugirió incorporar un rol o vista específica para la Junta de Propietarios o administración del edificio que permita gestionar y monitorear de forma centralizada las salidas de emergencia y accesos de áreas comunes de toda la torre.
 
 ---
 
-**Entrevista de Validación N°6**
+**Entrevista de Validación N°5**
 
 - **Nombres y Apellidos:** Diego Alonso Cacho Seminario
 - **Edad:** 21 años
@@ -3483,7 +3461,7 @@ Entrevistas 4, 5 y 6 (Segmento 2: Inmobiliarias y Constructores)
 
 <!-- [PONER IMAGEN AQUÍ: Captura de pantalla de la videollamada con el Entrevistado 6 probando la web/app. Guardar en assets/cap6/validation/entrevista-val-6.png] -->
 <p align="center">
-  <img src="assets/cap6/validation/entrevista-val-6.png" alt="Entrevista de validación 6 - Segmento 2" width="700" />
+  <img src="assets/cap6/validation/entrevista-val-6.png" alt="Entrevista de validación 5 - Segmento 2" width="700" />
 </p>
 
 **Resumen descriptivo de las apreciaciones del entrevistado:**
