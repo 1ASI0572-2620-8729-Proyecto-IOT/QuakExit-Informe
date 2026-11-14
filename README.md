@@ -3486,6 +3486,9 @@ Entrevistas 4, 5 y 6 (Segmento 2: Inmobiliarias y Constructores) → Landing Pag
 
 ### 6.4. Video About-the-Product
 
+- **Video de navegación (Product Navigation - Web):** [https://drive.google.com/file/d/1vGnquQHfiYyPUvgIyMRiK7XKMtCH8IdE/view?usp=sharing](https://drive.google.com/file/d/1vGnquQHfiYyPUvgIyMRiK7XKMtCH8IdE/view?usp=sharing)
+- **Video de navegación (Product Navigation - Movil):** [https://drive.google.com/file/d/1aM2Y0MIlZRaPWDKCypJFrkM7DRdk9Y_e/view?usp=sharing](https://drive.google.com/file/d/1aM2Y0MIlZRaPWDKCypJFrkM7DRdk9Y_e/view?usp=sharing)
+
 
 <div style="page-break-after: always;"></div>
 
