@@ -204,7 +204,7 @@ El objetivo de esta sección es resumir las modificaciones relevantes que se rea
       - [6.2.1.2. Aspect Leaders and Collaborators](#6212-aspect-leaders-and-collaborators)
       - [6.2.1.3. Sprint Backlog 1](#6213-sprint-backlog-1)
       - [6.2.1.4. Development Evidence for Sprint Review](#6214-development-evidence-for-sprint-review)
-      - [6.2.1.5. Testing Suite Evidence for Sprint Review](#6215-testing-suite-evidence-for-sprint-review)
+      - [6.2.1.5. ](#6215-testing-suite-evidence-for-sprint-review)
       - [6.2.1.6. Execution Evidence for Sprint Review](#6216-execution-evidence-for-sprint-review)
       - [6.2.1.7. Services Documentation Evidence for Sprint Review](#6217-services-documentation-evidence-for-sprint-review)
       - [6.2.1.8. Software Deployment Evidence for Sprint Review](#6218-software-deployment-evidence-for-sprint-review)
@@ -3034,8 +3034,8 @@ Feature: Manual evacuation drill and emergency contacts management
 
 | Repository                                         | Branch                                                                                                         | Commit Id | Commit Message                                                                             | Commited on (Date) |
 | :------------------------------------------------- | :------------------------------------------------------------------------------------------------------------- | :-------- | :----------------------------------------------------------------------------------------- | :----------------- |
-| 1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit   | <img src="assets/cap6/sprint2/tests/back-tests-s2.png" alt="Backend Testing Results Sprint 2" width="700" />   | `4c89e12` | `test(backend): add unit and Cucumber BDD tests for emergency unlock, contacts and drills` | 07/11/2026         |
-| 1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit  | <img src="assets/cap6/sprint2/tests/front-tests-s2.png" alt="Frontend Testing Results Sprint 2" width="700" /> | `6f20a83` | `test(frontend): add component tests for devices table, drill trigger and operations tabs` | 07/11/2026         |
+| 1ASI0572-2620-8729-Proyecto-IOT/Backend-QuakExit   | <img src="assets/cap6/tests/back-tests.png" alt="Backend Testing Results" width="700" />   | `4c89e12` | `test(backend): add unit and Cucumber BDD tests for emergency unlock, contacts and drills` | 07/11/2026         |
+| 1ASI0572-2620-8729-Proyecto-IOT/Frontend-QuakExit  | <img src="assets/cap6/tests/front-tests.png" alt="Frontend Testing Results" width="700" /> | `6f20a83` | `test(frontend): add component tests for devices table, drill trigger and operations tabs` | 07/11/2026         |
 | 1ASI0572-2620-8729-Proyecto-IOT/Mobile-QuakExit    | <img src="assets/cap6/sprint2/test-movil-1.png" alt="Mobile Testing Results Sprint 2" width="700" /> <img src="assets/cap6/sprint2/test-movil-2.png" alt="Mobile Testing Results Sprint 2" width="700" /> | `8a41b07` | `test(mobile): add Android Studio widget tests for device status cards and manual drill trigger`  | 07/11/2026         |
 
 ##### 6.2.2.6. Execution Evidence for Sprint Review
