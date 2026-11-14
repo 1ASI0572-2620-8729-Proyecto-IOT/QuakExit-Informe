@@ -68,7 +68,8 @@
   <p align="center"><b>Período 202620</b></p>
 </div>
 
-<br style="page-break-after: always;">
+<div style="page-break-after: always;"></div>
+
 ## Project Report Collaboration Insights
 
 El equipo ha trabajado de manera colaborativa en el repositorio de GitHub, registrando avances constantes en la construcción del informe.  
