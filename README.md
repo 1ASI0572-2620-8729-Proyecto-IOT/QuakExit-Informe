@@ -3392,9 +3392,9 @@ Entrevistas 1, 2 y 3 (Segmento 1: Dueños de Smart Homes) → Landing Page + Apl
 
 **Entrevista de Validación N°3**
 
-- **Nombres y Apellidos:** `[COMPLETAR NOMBRE Y APELLIDO DEL ENTREVISTADO 3 - SEGMENTO 1]`
-- **Edad:** `[EDAD]` años
-- **Distrito:** `[DISTRITO, EJ. SAN BORJA]`
+- **Nombres y Apellidos:** Harold Benigno Montero
+- **Edad:** 30 años
+- **Distrito:** San Borja
 - **Segmento:** Dueños de Smart Homes (Residente B2C)
 - **Fecha de la entrevista:** 2026-11-09
 - **Timing de inicio en el video:** `08:20` `[VERIFICAR MINUTO EXACTO EN EL VIDEO EDITADO]`
