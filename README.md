@@ -3477,8 +3477,8 @@ Entrevistas 4, 5 y 6 (Segmento 2: Inmobiliarias y Constructores)
 - **Distrito:** Surco
 - **Segmento:** Inmobiliarias y Constructores (Asistente Inmobiliario B2B)
 - **Fecha de la entrevista:** 2026-11-11
-- **Timing de inicio en el video:** `20:45` `[VERIFICAR MINUTO EXACTO EN EL VIDEO EDITADO]`
-- **Duración:** `04:10`
+- **Timing de inicio en el video:** `00:02`
+- **Duración:** `06:04`
 - **URL del video:** ([entrevista.validacion.6](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202213553_upc_edu_pe/IQDu48BwFzgRTaWHLAeIP3toAWuwPPY7M6C7mr5xbd2Myjs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=DySwO0)
 
 <!-- [PONER IMAGEN AQUÍ: Captura de pantalla de la videollamada con el Entrevistado 6 probando la web/app. Guardar en assets/cap6/validation/entrevista-val-6.png] -->
