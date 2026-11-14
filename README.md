@@ -3487,7 +3487,7 @@ Entrevistas 4, 5 y 6 (Segmento 2: Inmobiliarias y Constructores)
 </p>
 
 **Resumen descriptivo de las apreciaciones del entrevistado:**
-
+El entrevistado en representación de una constructora considera que, aunque la propuesta de QuakExit es muy atractiva, la Landing Page debe proyectar mayor solidez técnica incluyendo certificaciones y formularios B2B específicos para generar confianza comercial. Por otro lado, destaca que el sistema de etiquetas y el buscador resultan sumamente prácticos, ya que agilizan el monitoreo multifamiliar y optimizan el mantenimiento. Además, valora profundamente los módulos de auditoría y reportes, puesto que la automatización de estas bitácoras simplifica enormemente las rigurosas inspecciones de INDECI. En cuanto al aspecto técnico, subraya que calibrar el umbral del sensor sísmico es indispensable para evitar falsos positivos por vibraciones externas, mientras que la métrica de respuesta en milisegundos representa un potente argumento de ventas hacia el comprador final. Finalmente, para perfeccionar el panel web, el cliente sugiere incorporar filtros espaciales por torre o piso, alertas preventivas sobre el nivel de las baterías y un botón de simulacro general, lo cual consolidaría la eficiencia de la supervisión técnica en sus proyectos a gran escala.
 
 ---
 
