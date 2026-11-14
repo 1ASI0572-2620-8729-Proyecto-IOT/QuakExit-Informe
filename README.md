@@ -3493,7 +3493,28 @@ El entrevistado en representación de una constructora considera que, aunque la 
 
 #### 6.3.3. Evaluaciones según heurísticas
 
+Con el objetivo de identificar problemas de usabilidad en la solución propuesta, se realizó una evaluación heurística basada en los principios de usabilidad de Jakob Nielsen. La evaluación fue aplicada sobre los principales flujos de interacción de la plataforma QuakExit, incluyendo el registro de usuarios, la visualización del estado de los sensores, la gestión de alertas sísmicas y la configuración de dispositivos IoT.
 
+Durante el proceso se analizaron las interfaces del sistema considerando las diez heurísticas de Nielsen. Los hallazgos permitieron detectar oportunidades de mejora relacionadas con la claridad de la información mostrada, la retroalimentación brindada al usuario y la consistencia visual de algunos componentes.
+
+### Resultados de la evaluación heurística
+
+| Heurística | Hallazgo identificado | Severidad | Mejora propuesta |
+| --- | --- | --- | --- |
+| Visibilidad del estado del sistema | Algunos procesos de sincronización con los dispositivos IoT no muestran indicadores de progreso. | Media | Incorporar mensajes informativos y animaciones de carga durante la sincronización. |
+| Correspondencia entre el sistema y el mundo real | Ciertos términos técnicos relacionados con sensores sísmicos pueden resultar difíciles para usuarios no especializados. | Media | Utilizar lenguaje más familiar y agregar descripciones explicativas. |
+| Control y libertad del usuario | No todas las configuraciones permiten revertir cambios de manera inmediata. | Baja | Añadir opciones de cancelar o restaurar valores predeterminados. |
+| Consistencia y estándares | Se identificaron diferencias menores en estilos de botones y mensajes entre pantallas. | Baja | Estandarizar componentes mediante una guía de diseño común. |
+| Prevención de errores | Algunos formularios permiten enviar información incompleta antes de validarla. | Alta | Implementar validaciones en tiempo real y mensajes preventivos. |
+| Reconocer antes que recordar | Determinadas opciones de configuración requieren recordar información previamente mostrada. | Media | Mostrar ayudas contextuales y etiquetas descriptivas permanentes. |
+| Flexibilidad y eficiencia de uso | Usuarios frecuentes podrían beneficiarse de accesos rápidos a funciones críticas. | Baja | Incorporar accesos directos y paneles de acciones frecuentes. |
+| Diseño estético y minimalista | Algunas pantallas contienen gran cantidad de información simultánea. | Media | Priorizar información crítica e implementar organización jerárquica del contenido. |
+| Ayudar a reconocer, diagnosticar y recuperarse de errores | Los mensajes de error no siempre indican cómo solucionar el problema. | Media | Mostrar instrucciones específicas para corregir cada error detectado. |
+| Ayuda y documentación | La plataforma cuenta con soporte limitado para usuarios nuevos. | Baja | Incorporar tutoriales rápidos, preguntas frecuentes y guías de uso. |
+
+### Conclusiones de la evaluación
+
+Los resultados obtenidos muestran que la plataforma presenta un nivel de usabilidad adecuado para las tareas principales del usuario. Sin embargo, se identificaron oportunidades de mejora relacionadas principalmente con la prevención de errores, la comunicación del estado del sistema y la simplificación de ciertos procesos de configuración. Las recomendaciones propuestas serán consideradas en futuras iteraciones con el propósito de incrementar la eficiencia, satisfacción y facilidad de uso de la solución.
 
 <div style="page-break-after: always;"></div>
 
