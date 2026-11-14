@@ -3140,7 +3140,7 @@ En el Sprint 2 se desplegaron las actualizaciones de la Landing Page, los nuevos
 | Simulacro de Evacuación Móvil | US16, US18 | Botón de alta visibilidad para iniciar simulacro desde el teléfono y visualización inmediata de los milisegundos de apertura. | <img src="assets/cap6/sprint2/movil5.jpeg" alt="Mobile App Simulacro Manual" width="250" /> |
 | Alertas de Emergencia y Contactos Familiares | US11, US13, US15 | Bandeja de notificaciones de Modo Emergencia, estado de ruta despejada y gestión de los 5 contactos de emergencia. | <img src="assets/cap6/sprint2/movil4.jpeg" alt="Mobile App Alertas y Contactos" width="250" /> |
 
-- **Video de navegación (Product Navigation - Sprint 2):** [https://drive.google.com/file/d/1vGnquQHfiYyPUvgIyMRiK7XKMtCH8IdE/view?usp=sharing](https://drive.google.com/file/d/1vGnquQHfiYyPUvgIyMRiK7XKMtCH8IdE/view?usp=sharing)
+- **Video de navegación (Product Navigation - Movil):** [https://drive.google.com/file/d/1aM2Y0MIlZRaPWDKCypJFrkM7DRdk9Y_e/view?usp=sharing](https://drive.google.com/file/d/1aM2Y0MIlZRaPWDKCypJFrkM7DRdk9Y_e/view?usp=sharing)
 
 ##### 6.2.2.7. Services Documentation Evidence for Sprint Review
 
