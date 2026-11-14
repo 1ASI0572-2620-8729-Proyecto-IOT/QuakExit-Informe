@@ -3458,7 +3458,7 @@ Entrevistas 4, 5 y 6 (Segmento 2: Inmobiliarias y Constructores)
 - **Fecha de la entrevista:** 2026-11-10
 - **Timing de inicio en el video:** `16:55` `[VERIFICAR MINUTO EXACTO EN EL VIDEO EDITADO]`
 - **Duración:** `03:50`
-- **URL del video:** `[REEMPLAZAR CON EL LINK DE MICROSOFT STREAM / CLIPCHAMP]`
+- **URL del video:** 
 
 <!-- [PONER IMAGEN AQUÍ: Captura de pantalla de la videollamada con el Entrevistado 5 probando la web/app. Guardar en assets/cap6/validation/entrevista-val-5.png] -->
 <p align="center">
@@ -3472,14 +3472,14 @@ Entrevistas 4, 5 y 6 (Segmento 2: Inmobiliarias y Constructores)
 
 **Entrevista de Validación N°6**
 
-- **Nombres y Apellidos:** `[COMPLETAR NOMBRE Y APELLIDO DEL ENTREVISTADO 6 - SEGMENTO 2]`
-- **Edad:** `[EDAD]` años
-- **Distrito:** `[DISTRITO, EJ. MAGDALENA DEL MAR]`
-- **Segmento:** Inmobiliarias y Constructores (Ingeniero / Supervisor B2B)
-- **Fecha de la entrevista:** 2026-11-10
+- **Nombres y Apellidos:** Diego Alonso Cacho Seminario
+- **Edad:** 21 años
+- **Distrito:** Surco
+- **Segmento:** Inmobiliarias y Constructores (Asistente Inmobiliario B2B)
+- **Fecha de la entrevista:** 2026-11-11
 - **Timing de inicio en el video:** `20:45` `[VERIFICAR MINUTO EXACTO EN EL VIDEO EDITADO]`
 - **Duración:** `04:10`
-- **URL del video:** `[REEMPLAZAR CON EL LINK DE MICROSOFT STREAM / CLIPCHAMP]`
+- **URL del video:** ([entrevista.validacion.6](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202213553_upc_edu_pe/IQDu48BwFzgRTaWHLAeIP3toAWuwPPY7M6C7mr5xbd2Myjs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=DySwO0)
 
 <!-- [PONER IMAGEN AQUÍ: Captura de pantalla de la videollamada con el Entrevistado 6 probando la web/app. Guardar en assets/cap6/validation/entrevista-val-6.png] -->
 <p align="center">
