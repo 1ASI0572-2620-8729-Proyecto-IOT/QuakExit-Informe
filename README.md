@@ -2464,7 +2464,7 @@ Los aspectos considerados en el Sprint 1 son: Landing Page (contenido y diseño;
 
 El objetivo del Sprint 1 es publicar la primera versión de la Landing Page, los Web Services y la Web Application, desplegadas y documentadas.
 
-- **Tablero del Sprint (Trello):** [https://trello.com/invite/b/6ac7bc383877b72e7c9c6f7f/ATTI13b131a0bab0ee2f504af69ea681923303610CC8/quakexit](https://trello.com/invite/b/6ac7bc383877b72e7c9c6f7f/ATTI13b131a0bab0ee2f504af69ea681923303610CC8/quakexit)
+- **Tablero del Sprint (Trello):** [https://trello.com/invite/b/6af8a3d5c3c2e680ea296988/ATTI9b1f56d3bac38ed098712ad62ce3428373C561A0/quakexit](https://trello.com/invite/b/6af8a3d5c3c2e680ea296988/ATTI9b1f56d3bac38ed098712ad62ce3428373C561A0/quakexit)
 
 Evidencias del Trello:
 
@@ -2894,7 +2894,7 @@ El objetivo del Sprint 2 es consolidar la versión bilingüe y accesible de la L
 Evidencias del Trello en el Sprint 2:
 
 <p align="center">
-  <img src="assets/cap6/sprint2/trello-sprint2.png" alt="Trello Sprint 2" width="800" />
+  <img src="assets/cap6/sprint2/trello-sprint2.jpeg" alt="Trello Sprint 2" width="800" />
 </p>
 
 | Story Id | Story Title                                        | Task Id | Task Title                                                   | Task Description                                                                                                          | Estimation (Hours) | Assigned To                    | Status |
