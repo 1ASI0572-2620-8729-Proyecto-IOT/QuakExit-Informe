@@ -3267,13 +3267,13 @@ Durante el Sprint 2, el equipo mantuvo el flujo de trabajo colaborativo basado e
 Evidencias de Insights del Landing Page, Backend, Frontend Web y Mobile Application en el Sprint 2:
 
 <p align="center">
-  <img src="assets/cap6/sprint2/insights/landing-s2.png" alt="Landing contributors Sprint 2" width="700" />
+  <img src="assets/cap6/sprint2/Landing contributors Sprint 2.png" alt="Landing contributors Sprint 2" width="700" />
 </p>
 <p align="center">
-  <img src="assets/cap6/sprint2/insights/back-s2.png" alt="Backend contributors Sprint 2" width="700" />
+  <img src="assets/cap6/sprint2/Backend contributors Sprint 2.png" alt="Backend contributors Sprint 2" width="700" />
 </p>
 <p align="center">
-  <img src="assets/cap6/sprint2/insights/front-s2.png" alt="Frontend contributors Sprint 2" width="700" />
+  <img src="assets/cap6/sprint2/Frontend contributors Sprint 2.png" alt="Frontend contributors Sprint 2" width="700" />
 </p>
 <p align="center">
   <img src="assets/cap6/sprint2/insights-movil.png" alt="Mobile contributors Sprint 2" width="700" />
