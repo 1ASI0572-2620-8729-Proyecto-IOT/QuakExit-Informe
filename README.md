@@ -3355,17 +3355,17 @@ Entrevistas 1, 2 y 3 (Segmento 1: Dueños de Smart Homes) → Landing Page + Apl
 - **Distrito:** Santiago de Surco
 - **Segmento:** Dueños de Smart Homes (Residente B2C)
 - **Fecha de la entrevista:** 2026-11-08
-- **Timing de inicio en el video:** `00:10` `[VERIFICAR MINUTO EXACTO EN EL VIDEO EDITADO]`
-- **Duración:** `04:15`
-- **URL del video:** `[REEMPLAZAR CON EL LINK DE MICROSOFT STREAM / CLIPCHAMP]`
+- **Timing de inicio en el video:** 00:05
+- **Duración:** 12:02
+- **URL del video:** ([entrevista.validacion.1]([https://quakexit-landing.netlify.app/](https://upcedupe-my.sharepoint.com/personal/u20231g054_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20231g054%5Fupc%5Fedu%5Fpe%2FDocuments%2FRecordings%2FGrabaci%C3%B3n%20de%20la%20reuni%C3%B3n%20de%20Nueva%20reuni%C3%B3n%2D20261114%5F125632%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E2828e5a4%2D296b%2D4e49%2Da15c%2Dcd40e704e450)))
 
-<!-- [PONER IMAGEN AQUÍ: Captura de pantalla de la videollamada con el Entrevistado 1 probando la web/app. Guardar en assets/cap6/validation/entrevista-val-1.png] -->
 <p align="center">
-  <img src="assets/cap6/validation/entrevista-val-1.png" alt="Entrevista de validación 1 - Segmento 1" width="700" />
+  <img src="assets/cap6/validation/entrevista-val-1.jpeg" alt="Entrevista de validación 1 - Segmento 1" width="700" />
 </p>
 
 **Resumen descriptivo de las apreciaciones del entrevistado:**
 
+El usuario está conforme con el estilo de la aplicación, entiende muy bien el enfoque de la solución, no presenta dificultades para navegar en la landing page, comprende para que sirve cada botón, vista, etc. En la página web comprende fácilmente los flujos de cada acción presentada. Por último, el usuario recomienda mejor señalización, notificaciones o elementos visuales que ayuden a entender mejor los flujos de la plataforma.
 
 ---
 
