@@ -3073,23 +3073,31 @@ En el Sprint 2 se desplegaron las actualizaciones de la Landing Page, los nuevos
 > Vistas de nuestro Frontend Web en el Sprint 2:
 
 <p align="center">
-  <img src="assets/cap6/sprint2/frontend/web-devices-actuators.png" alt="Módulo de Dispositivos y Actuadores" width="700" />
+  <img src="assets/cap6/sprint2/Módulo de Dispositivos y Actuadores.png" alt="Módulo de Dispositivos y Actuadores" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/sprint2/frontend/web-drill-simulation.png" alt="Módulo de Simulacros y Tiempo de Respuesta" width="700" />
+  <img src="assets/cap6/sprint2/Módulo de Simulacros y Tiempo de Respuesta.png" alt="Módulo de Simulacros y Tiempo de Respuesta" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/sprint2/frontend/web-emergencies-active.png" alt="Módulo de Emergencias y Calibración" width="700" />
+  <img src="assets/cap6/sprint2/Módulo de Simulacros y Tiempo de Respuesta2.png" alt="Módulo de Simulacros y Tiempo de Respuesta" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/sprint2/frontend/web-operations-contacts.png" alt="Módulo de Operaciones y Contactos de Emergencia" width="700" />
+  <img src="assets/cap6/sprint2/Módulo de Emergencias y Calibración.png" alt="Módulo de Emergencias y Calibración" width="700" />
 </p>
 
 <p align="center">
-  <img src="assets/cap6/sprint2/frontend/web-operations-reports.png" alt="Módulo de Operaciones: Auditoría y Reportes" width="700" />
+  <img src="assets/cap6/sprint2/Módulo de Operaciones y Contactos de Emergencia.png" alt="Módulo de Operaciones y Contactos de Emergencia" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/sprint2/Módulo de Operaciones Auditoría y Reportes.png" alt="Módulo de Operaciones: Auditoría y Reportes" width="700" />
+</p>
+
+<p align="center">
+  <img src="assets/cap6/sprint2/Módulo de Operaciones Auditoría y Reportes2.png" alt="Módulo de Operaciones: Auditoría y Reportes" width="700" />
 </p>
 
 | Vista                                      | User Story             | Descripción                                                                                                                           | Captura                                                                   |
